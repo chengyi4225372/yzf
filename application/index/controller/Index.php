@@ -14,4 +14,5 @@ class Index extends Common {
       return $this->view->fetch();
     }
 
+
 }
