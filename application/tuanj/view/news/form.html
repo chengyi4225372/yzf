@@ -16,8 +16,20 @@
         </div>
     </div>
 
-   
+    <div class="layui-form-item">
+        <label class="layui-form-label">新闻来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="laiyuan" value="{$vo.laiyuan|default=''}" class="layui-input">
+        </div>
+    </div>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否推荐为热门</label>
+            <div class="layui-input-block">
+                推荐：<input type="radio" name="tuijian" value="1">
+                不推荐：<input type="radio" name="tuijian" value="0" checked="" >
+            </div>
+    </div>
 
     <div class="layui-form-item layui-form-text">
     <label class="layui-form-label">新闻内容</label>

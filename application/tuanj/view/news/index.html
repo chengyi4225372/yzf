@@ -50,7 +50,8 @@
                 </th>
                 <th class='text-left nowrap'>新闻ID</th>
                 <th class='text-left nowrap'>新闻标题</th>
-                <th class='text-left nowrap'>预览图</th>          
+                <th class='text-left nowrap'>预览图</th>
+                <th class='text-left nowrap'>新闻来源</th>
                 <th class='text-left nowrap'>创建时间</th>
                 <th class='text-left nowrap'></th>
             </tr>
@@ -69,6 +70,16 @@
                 </td>
                 <td class='text-left nowrap'>
                     <img data-tips-image src="{$vo.img|default='/static/theme/img/image.png'}" height="20"/>
+                </td>
+                <td class='text-left nowrap'>
+                    {$vo.laiyuan}
+                </td>
+                <td class='text-left nowrap'>
+                    {eq name="vo.tuijian" value='1'}
+                    <a data-href="{:url('tuanj/news/remen')}?id={$vo.id}&tuijian={$vo.tuijian}" >热门推荐</a>
+                    {else /}
+                    <a data-href="{:url('tuanj/news/remen')}?id={$vo.id}&tuijian={$vo.tuijian}" >普通新闻</a>
+                    {/eq}
                 </td>
                 <td class='text-left nowrap'>
                     {$vo.time}

@@ -22,26 +22,15 @@
                         </div>
                         <div class="news-panel-body">
                             <ul class="hot-news-list row">
-
+                                {volist name="remen" id="vo" }
                                 <li class="col-xs-4">
-                                    <a href="/CompanyNews/Detail/7793" class="img-box"><img src="__STATIC__/home/image/logo.jpg" alt=""></a>
-                                    <h3><a href="/CompanyNews/Detail/7793">汇巢</a></h3>
-                                    <p>汇巢</p>
-                                    <div class="news-date">2019-02-27</div>
+                                    <a href="{:url('index/news/detail')}?id={$vo.id}" class="img-box">
+                                        <img src="{$vo.img}" alt=""></a>
+                                    <h3><a href="{:url('index/news/detail')}?id={$vo.id}">{$vo.title}</a></h3>
+                                    <p>{$vo.content|raw|mb_substr='0','50'}</p>
+                                    <div class="news-date">{$vo.time|date="Y-m-d"}</div>
                                 </li>
-                                <li class="col-xs-4">
-                                    <a href="/CompanyNews/Detail/7463" class="img-box"><img src="http://picfw.yzf.com.cn/zt/2018/3/13/1955621350648.jpg" alt=""></a>
-                                    <h3><a href="/CompanyNews/Detail/7463">再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</a></h3>
-                                    <p>再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</p>
-                                    <div class="news-date">2018-03-13</div>
-                                </li>
-                                <li class="col-xs-4">
-                                    <a href="/CompanyNews/Detail/7451" class="img-box"><img src="http://picfw.yzf.com.cn/999999/2018/1/26/1915837507009.jpg" alt=""></a>
-                                    <h3><a href="/CompanyNews/Detail/7451">有榜样·不一样！CCTV-2《空间榜样》与业之峰独家战略合作伙伴签约仪式在京举行!</a></h3>
-                                    <p>有榜样&#183;不一样！1月20日，CCTV-2《空间榜样》|业之峰独家战略合作伙伴签约仪式暨“榜样设计天团”发布会在北京举行。</p>
-                                    <div class="news-date">2018-01-26</div>
-                                </li>
-
+                               {/volist}
                             </ul>
                         </div>
                     </div>
@@ -120,19 +109,12 @@
                             </div>
                         </form>
                     </div>
-
-
-
                     <div class="side-adv">
                         <a target="_blank" href="http://suzhou.yzf.com.cn/s2017/qgkjby0901"><img src="/images/side-adv.jpg" alt=""></a>
                     </div>
                     <div class="side-adv">
                         <a><img src="/Images/side-advlr.png" /></a>
                     </div>
-
-
-
-
 
 
                     <div class="side-panel">
@@ -206,154 +188,25 @@
                         </div>
                         <div class="news-panel-body">
                             <ul class="strategy-list">
-
+                                {volist name="nomal" id="vo" }
                                 <li>
                                     <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7384"><img src="http://picfw.yzf.com.cn/2017/8/2/1763045862144.jpg" alt=""></a>
+                                        <a href="{:url('index/news/detail')}?id={$vo.id}">
+                                            <img src="{$vo.img}" alt=""></a>
                                     </div>
                                     <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7384">庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆 </a></h3>
-                                        <p>2017年8月1日，第五届庆八一“业之峰将军杯”中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。
-                                        </p>
+                                        <h3><a href="{:url('index/news/detail')}?id={$vo.id}">{$vo.title}</a></h3>
+                                        <p>{$vo.content|raw|mb_substr='0','60'}</p>
                                         <div class="strategy-control">
-                                            <span class="pull-right">2017-08-1</span>
-
+                                            <span class="pull-right">{$vo.time|date='Y-m-d'}</span>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7383"><img src="http://picfw.yzf.com.cn/2017/7/27/1757753214275.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7383">业之峰20周年庆张钧致辞：六箭齐发剑指百亿 </a></h3>
-                                        <p>2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京九华山庄隆重举行。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-07-27</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7382"><img src="http://picfw.yzf.com.cn/2017/7/24/1755183250420.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7382">匠心筑梦！业之峰20周年庆典暨第二届英雄大会颁奖典礼圆满落幕 </a></h3>
-                                        <p>2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京九华山庄隆重举行，业之峰集团领导、北京建筑装饰协会领导、全国工商联家具装饰业商会领导、老客户代表、合作商代表，以及远道而来的业之峰各分公司代表参加了本次20周年庆典暨第二届英雄大会颁奖典礼活动。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-07-21</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7377"><img src="http://picfw.yzf.com.cn/2017/7/17/1749094159453.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7377">倒计时！“匠心筑梦”业之峰20周年庆典即将举行 </a></h3>
-                                        <p>1997年，是香港回归祖国的年份，“东方明珠”开启了新的发展篇章。同一年，在中国家装业，也诞生了一家日后领跑行业的明星企业，那就是业之峰装饰。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-07-17</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7375"><img src="http://picfw.yzf.com.cn/2017/7/10/1743213756675.JPG" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7375">业之峰董事长张钧：20年感受最深的是“专注”和“敬畏” </a></h3>
-                                        <p>2017年，是业之峰集团成立的第二十个年头。当年北京德胜门百姓家装市场的小门脸，如今已经成长为家装业的领军企业。今年，业之峰要完成30亿元的产值，向公司成立20周年献礼，这对整个家装业都意义非凡。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-07-10</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7362"><img src="http://picfw.yzf.com.cn/2017/6/16/1722298785265.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7362">错过开春装修季？还有6•18业之峰年中大促 </a></h3>
-                                        <p></p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-06-16</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7351"><img src="http://picfw.yzf.com.cn/2017/6/5/1712963425232.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7351">环境日关注环保装修！业之峰为您的家保驾护航 </a></h3>
-                                        <p>6月5日，是“世界环境日”，今年环境日的主题为“绿水青山就是金山银山”，旨在动员引导社会各界牢固树立“绿水青山就是金山银山”的强烈意识，尊重自然、顺应自然、保护自然，自觉践行绿色生活，共同建设美丽中国。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-06-5</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7346"><img src="http://picfw.yzf.com.cn/2017/6/1/1709485690558.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7346">环保专家业之峰提示：儿童房装修应该注意啥？ </a></h3>
-                                        <p>儿童，是祖国的花朵，是父母的希望。关心爱护儿童，就要给他们一个安全、健康的生活环境。
-                                        </p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-06-1</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-hd">
-
-                                        <a href="/CompanyNews/Detail/7344"><img src="http://picfw.yzf.com.cn/2017/5/26/1704331122528.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/CompanyNews/Detail/7344">家装品牌如何突围？看业之峰怎么玩转网球营销 </a></h3>
-                                        <p>5月21日，北京九华国际运动中心，第九届“沃尔沃杯”清华EMBA网球团体邀请赛正在这里举行。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2017-05-26</span>
-
-                                        </div>
-                                    </div>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
+                        {$nomal|raw}
                     </div>
-
-                    <nav class="text-center">
-                        <ul class="pagination">
-                            <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                            <li class="active"><a data-pjax="" href="/CompanyNews?PageIndex=1">1</a></li>
-                            <li class=""><a data-pjax="" href="/CompanyNews?PageIndex=2">2</a></li>
-                            <li class=""><a data-pjax="" href="/CompanyNews?PageIndex=3">3</a></li>
-                            <li class=""><a data-pjax="" href="/CompanyNews?PageIndex=4">4</a></li>
-                            <li class=""><a data-pjax="" href="/CompanyNews?PageIndex=5">5</a></li>
-
-                            <li><a data-pjax="" id="spanMax" Max="21" href="/CompanyNews?PageIndex=21">共 21 页</a></li>
-                            <li><a data-pjax="" href="/CompanyNews?PageIndex=2">下一页</a></li>
-
-                        </ul>
-                    </nav>
 
 
                 </div>
