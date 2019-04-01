@@ -1,0 +1,924 @@
+{include file="public/header-two" /}
+
+
+{include file="public/location-two" /}
+
+<div class="header">
+   {include file="public/menu" /}
+</div>
+<div id="RenderBody">
+
+    <div class="content">
+        <div class="suggest-wrap">
+            <div class="auto-box">
+                <div class="suggest-form">
+                    <div class="suggest-header">
+                        投诉建议 /
+                        <small>Complaint proposal</small>
+                    </div>
+                    <div class="suggest-body">
+                        <form class="form-horizontal" enctype="multipart/form-data" action="/TsjyTemporary/Edit" method="post">
+                            <input class="ignore" data-val="true" data-val-number="The field Id must be a number." data-val-required="Id 字段是必需的。" id="Id" name="Id" type="hidden" value="0" />
+                            <input class="ignore" id="TenantTypeId" name="TenantTypeId" type="hidden" value="" />
+                            <input class="ignore" data-val="true" data-val-date="The field 创建日期 must be a date." data-val-required="创建日期 字段是必需的。" id="DateCreated" name="DateCreated" type="hidden" value="0001/1/1 0:00:00" />
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">您的投诉/建议：</label>
+                                <div class="col-sm-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="IsTousu" id="IsTousu1" value="0" checked>投诉
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="IsTousu" id="IsTousu2" value="1">建议
+                                    </label>
+                                </div>
+                                <label class="col-sm-3 control-label">您的性别：</label>
+                                <div class="col-sm-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="IsMan" id="IsMan1" value="0" checked>先生
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="IsMan" id="IsMan2" value="1">女士
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">您的姓名：</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-required="必填" id="Title" name="Title" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">您的联系方式：</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-required="必填" id="CustomFieldsValue" name="CustomFieldsValue" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="CustomFieldsValue" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">内容：</label>
+                                <div class="col-sm-9">
+                                <textarea class="form-control" cols="20" id="CustomFieldsValues" name="CustomFieldsValues" rows="2">
+</textarea>
+                                    <span class="field-validation-valid" data-valmsg-for="CustomFieldsValues" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-block" id="submit">提    交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer" /}
+
+<div class="fixed-menu-wrap">
+    <ul class="fixed-menu">
+        <li>
+            <a href="javascript:void(0)" onclick="doyoo.util.openChat('g=10064078');return false;">
+                <i class="iconfont icon-erjikefu"></i>
+                <span>在线咨询</span>
+            </a>
+            <script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001829/10063849.js"></script>
+        </li>
+        <li>
+            <a href="JavaScript:;" data-toggle="modal" data-target="#priceModal">
+                <i class="iconfont icon-ERP_hetonghao"></i>
+                <span>免费报价</span>
+            </a>
+        </li>
+        <li>
+            <a href="JavaScript:;" data-toggle="modal" data-target="#yuyuesheji">
+                <i class="iconfont icon-pan_icon"></i>
+                <span>预约设计</span>
+            </a>
+        </li>
+        <li class="last">
+            <a href="javascript:;">
+                <i class="iconfont icon-erweima1"></i>
+                <span>案例解析</span>
+                <div class="drop-on">
+                    <img src="/Images/ecode.jpg" />
+                </div>
+            </a>
+        </li>
+    </ul>
+    <a id="scrollUp" href="javascript:;" class="go-top iconfont icon-jiantou3"></a>
+</div>
+<div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index:20;">
+    <div id="control-bar" class="control-bar"></div>
+    <div class="fixed-white-box">
+        <div class="fixed-white-l">
+            <div class="fixed-panel-header">
+                装修计算器
+                <small>今天已有681位业主获取了装修预算</small>
+            </div>
+            <div class="fixed-panel-body">
+                <form class="form-horizontal calculator-form">
+                    <input name="channel" value="设计师报价计算器" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="squareMeters" placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="phoneNumber" placeholder="报价结果将发送到您的手机">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button class="btn submit-label-btn">开始计算</button>
+                        <span class="circle-animate"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="fixed-white-r">
+            <h3>超精准计算，一步解决预算难题</h3>
+            <div class="fixed-disc">
+                您的装修预算 <strong id="zong">132569</strong> 元
+            </div>
+            <ul class="fixed-result">
+                <li>材料费：<strong id="cai">87858</strong>元</li>
+                <li>人工费：<strong id="ren">58962</strong>元</li>
+                <li>设计费：<strong id="she">7853</strong>元</li>
+                <li>质检费：<strong id="zhi">1223</strong>元</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var zong = $('#zong');
+        var cai = $('#cai');
+        var ren = $('#ren');
+        var she = $('#she');
+        var zhi = $('#zhi');
+        var myArray = [[121459, 58365, 50497, 8218, 4379],
+            [155424, 69322, 77284, 5373, 3445],
+            [108289, 87732, 17309, 1583, 1665],
+            [236859, 126580, 92027, 11769, 6483],
+            [142826, 75720, 52404, 9717, 4985]];
+
+        var i = 0;
+        var timer = setInterval(function () {
+            if (i > 4) {
+                i = 0;
+            }
+            var arraySon = myArray[i];
+            zong.text(arraySon[0]);
+            cai.text(arraySon[1]);
+            ren.text(arraySon[2]);
+            she.text(arraySon[3]);
+            zhi.text(arraySon[4]);
+            i++
+        }, 200);
+    })
+</script>
+
+<!-- 右侧悬浮：免费报价 -->
+<div class="modal fade" id="priceModal">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">获取装修报价<small>Decorate for quotation</small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="channel" value="获取装修报价" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label><div class="col-xs-10"><input name="name" type="text" class="form-control" placeholder="输入姓名"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label><div class="col-xs-10">
+                        <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">小区</label><div class="col-xs-4"><input name="residentialName" type="text" class="form-control" placeholder="输入小区名"></div>
+                        <label class="col-xs-2 control-label">面积</label><div class="col-xs-4"><input name="squareMeters" type="text" class="form-control" placeholder="输入面积"></div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap"><button type="button" class="btn btn-gold btn-block">发送报价至手机</button></div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 右侧悬浮：预约设计 -->
+<!-- 主页 / 环保三防体系 / 预约设计 -->
+<div class="modal fade" id="yuyuesheji" style="display: none;">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">预约设计<small></small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="channel" value="预约设计" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label><div class="col-xs-10"><input name="name" type="text" class="form-control" placeholder="输入姓名"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label><div class="col-xs-10"><input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">小区</label><div class="col-xs-4"><input name="residentialName" type="text" class="form-control" placeholder="输入小区名"></div>
+                        <label class="col-xs-2 control-label">面积</label><div class="col-xs-4"><input name="squareMeters" type="text" class="form-control" placeholder="输入面积"></div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap"><button type="button" class="btn btn-gold btn-block">预约设计</button></div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 装修工具箱 / 装修计算器 -->
+<div class="modal fade" id="calculateModal" style="display: none;">
+    <div class="modal-dialog yzf-modal lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">装修计算器<small>今天已有2269位业主获取了装修预算</small></h4>
+            </div>
+            <div class="modal-body">
+                <div class="fixed-white-box modal-white-box">
+                    <div class="fixed-white-l">
+                        <div class="fixed-panel-body">
+                            <form class="form-horizontal calculator-form">
+                                <input name="channel" value="装修计算器" type="hidden" />
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <select class="form-control  remark">
+                                                    <option value="1室">1室</option>
+                                                    <option value="2室">2室</option>
+                                                    <option value="3室" selected>3室</option>
+                                                    <option value="4室">4室</option>
+                                                    <option value="5室">5室</option>
+                                                    <option value="6室">6室</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厅" selected>1厅</option>
+                                                    <option value="2厅">2厅</option>
+                                                    <option value="3厅">3厅</option>
+                                                    <option value="4厅">4厅</option>
+                                                    <option value="5厅">5厅</option>
+                                                    <option value="6厅">6厅</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厨" selected>1厨</option>
+                                                    <option value="2厨">2厨</option>
+                                                    <option value="3厨">3厨</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1卫" selected>1卫</option>
+                                                    <option value="2卫">2卫</option>
+                                                    <option value="3卫">3卫</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1阳台" selected>1阳台</option>
+                                                    <option value="2阳台">2阳台</option>
+                                                    <option value="3阳台">3阳台</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12 area">
+                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积"><span class="m2">㎡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12"><input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group group-disc">
+                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                </div>
+                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <span class="circle-animate"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="fixed-white-r">
+                        <h3>超精准计算，一步解决预算难题</h3>
+                        <div class="fixed-disc">您的装修预算  <strong>132569</strong> 元</div>
+                        <div class="calculate-img"><img src="/images/calculate-icon.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 装修工具箱 / 装修费用比例 -->
+<div class="modal fade" id="percentModal" style="display: none;">
+    <div class="modal-dialog yzf-modal lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">装修费用比例<small>今天已有681位业主获取费用计算</small></h4>
+            </div>
+            <div class="modal-body">
+                <div class="fixed-white-box modal-white-box">
+                    <div class="fixed-white-l">
+                        <div class="fixed-panel-body">
+                            <form class="form-horizontal calculator-form">
+                                <input name="channel" value="装修费用比例" type="hidden" />
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <select class="form-control  remark">
+                                                    <option value="1室">1室</option>
+                                                    <option value="2室">2室</option>
+                                                    <option value="3室" selected="">3室</option>
+                                                    <option value="4室">4室</option>
+                                                    <option value="5室">5室</option>
+                                                    <option value="6室">6室</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厅" selected="">1厅</option>
+                                                    <option value="2厅">2厅</option>
+                                                    <option value="3厅">3厅</option>
+                                                    <option value="4厅">4厅</option>
+                                                    <option value="5厅">5厅</option>
+                                                    <option value="6厅">6厅</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厨" selected="">1厨</option>
+                                                    <option value="2厨">2厨</option>
+                                                    <option value="3厨">3厨</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1卫" selected="">1卫</option>
+                                                    <option value="2卫">2卫</option>
+                                                    <option value="3卫">3卫</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1阳台" selected="">1阳台</option>
+                                                    <option value="2阳台">2阳台</option>
+                                                    <option value="3阳台">3阳台</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12 area">
+                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <span class="m2">㎡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group group-disc">
+                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                </div>
+                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <span class="circle-animate"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="fixed-white-r">
+                        <h3>超精准计算，一步解决预算难题</h3>
+                        <ul class="fixed-result">
+                            <li>主材费：<strong>87858</strong>元</li>
+                            <li>辅材费：<strong>58962</strong>元</li>
+                            <li>人工费：<strong>7853</strong>元</li>
+                            <li>设计费：<strong>1223</strong>元</li>
+                            <li>管理费：<strong>2223</strong>元</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 装修工具箱 / 工期计算器 -->
+<div class="modal fade" id="timeModal">
+    <div class="modal-dialog yzf-modal lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">工期计算器<small>今天已有2269位业主获取工程进度</small></h4>
+            </div>
+            <div class="modal-body">
+                <div class="fixed-white-box modal-white-box">
+                    <div class="fixed-white-l">
+                        <div class="fixed-panel-body">
+                            <form class="form-horizontal calculator-form">
+                                <input name="channel" value="工期计算器" type="hidden" />
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">开工日期：</label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="2018年">2018</option>
+                                                    <option value="2019年">2019</option>
+                                                    <option value="2020年">2020</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1月">1月</option>
+                                                    <option value="2月">2月</option>
+                                                    <option value="3月">3月</option>
+                                                    <option value="4月">4月</option>
+                                                    <option value="5月">5月</option>
+                                                    <option value="6月">6月</option>
+                                                    <option value="7月">7月</option>
+                                                    <option value="8月">8月</option>
+                                                    <option value="9月">9月</option>
+                                                    <option value="10月">10月</option>
+                                                    <option value="11月">11月</option>
+                                                    <option value="12月">12月</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1日">1日</option>
+                                                    <option value="2日">2日</option>
+                                                    <option value="3日">3日</option>
+                                                    <option value="4日">4日</option>
+                                                    <option value="5日">5日</option>
+                                                    <option value="6日">6日</option>
+                                                    <option value="7日">7日</option>
+                                                    <option value="8日">8日</option>
+                                                    <option value="9日">9日</option>
+                                                    <option value="10日">10日</option>
+                                                    <option value="11日">11日</option>
+                                                    <option value="12日">12日</option>
+                                                    <option value="13日">13日</option>
+                                                    <option value="14日">14日</option>
+                                                    <option value="15日">15日</option>
+                                                    <option value="16日">16日</option>
+                                                    <option value="17日">17日</option>
+                                                    <option value="18日">18日</option>
+                                                    <option value="19日">19日</option>
+                                                    <option value="20日">20日</option>
+                                                    <option value="21日">21日</option>
+                                                    <option value="22日">22日</option>
+                                                    <option value="23日">23日</option>
+                                                    <option value="24日">24日</option>
+                                                    <option value="25日">25日</option>
+                                                    <option value="26日">26日</option>
+                                                    <option value="27日">27日</option>
+                                                    <option value="28日">28日</option>
+                                                    <option value="29日">29日</option>
+                                                    <option value="30日">30日</option>
+                                                    <option value="31日">31日</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <select class="form-control  remark">
+                                                    <option value="1室">1室</option>
+                                                    <option value="2室">2室</option>
+                                                    <option value="3室" selected="">3室</option>
+                                                    <option value="4室">4室</option>
+                                                    <option value="5室">5室</option>
+                                                    <option value="6室">6室</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厅" selected="">1厅</option>
+                                                    <option value="2厅">2厅</option>
+                                                    <option value="3厅">3厅</option>
+                                                    <option value="4厅">4厅</option>
+                                                    <option value="5厅">5厅</option>
+                                                    <option value="6厅">6厅</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厨" selected="">1厨</option>
+                                                    <option value="2厨">2厨</option>
+                                                    <option value="3厨">3厨</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1卫" selected="">1卫</option>
+                                                    <option value="2卫">2卫</option>
+                                                    <option value="3卫">3卫</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1阳台" selected="">1阳台</option>
+                                                    <option value="2阳台">2阳台</option>
+                                                    <option value="3阳台">3阳台</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12 area">
+                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <span class="m2">㎡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group group-disc">
+                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                </div>
+                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <span class="circle-animate"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="fixed-white-r">
+                        <h3>10秒填写，获知装修工期进度</h3>
+                        <ul class="fixed-result fixed-result-three">
+                            <li>水电验收：<strong>2018-05-02</strong></li>
+                            <li>中期验收：<strong>2018-05-25</strong></li>
+                            <li>竣工验收：<strong>2018-06-15</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 装修工具箱 / 2018装修吉日 -->
+<div class="modal fade" id="luckyModal">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">查询2019装修吉日<small>今天已有2269位业主获取装修吉日</small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="channel" value="查询装修吉日" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">小区</label>
+                        <div class="col-xs-4">
+                            <input name="residentialName" type="text" class="form-control" placeholder="输入小区名">
+                        </div>
+                        <label class="col-xs-2 control-label">面积</label>
+                        <div class="col-xs-4">
+                            <input name="squareMeters" type="text" class="form-control" placeholder="输入面积">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">吉日</label>
+
+                        <div class="col-xs-5">
+                            <select class="form-control remark">
+                                <option value="1月">1月</option>
+                                <option value="2月">2月</option>
+                                <option value="3月">3月</option>
+                                <option value="4月">4月</option>
+                                <option value="5月">5月</option>
+                                <option value="6月">6月</option>
+                                <option value="7月">7月</option>
+                                <option value="8月">8月</option>
+                                <option value="9月">9月</option>
+                                <option value="10月">10月</option>
+                                <option value="11月">11月</option>
+                                <option value="12月">12月</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-5">
+                            <select class="form-control remark">
+                                <option value="1日">1日</option>
+                                <option value="2日">2日</option>
+                                <option value="3日">3日</option>
+                                <option value="4日">4日</option>
+                                <option value="5日">5日</option>
+                                <option value="6日">6日</option>
+                                <option value="7日">7日</option>
+                                <option value="8日">8日</option>
+                                <option value="9日">9日</option>
+                                <option value="10日">10日</option>
+                                <option value="11日">11日</option>
+                                <option value="12日">12日</option>
+                                <option value="13日">13日</option>
+                                <option value="14日">14日</option>
+                                <option value="15日">15日</option>
+                                <option value="16日">16日</option>
+                                <option value="17日">17日</option>
+                                <option value="18日">18日</option>
+                                <option value="19日">19日</option>
+                                <option value="20日">20日</option>
+                                <option value="21日">21日</option>
+                                <option value="22日">22日</option>
+                                <option value="23日">23日</option>
+                                <option value="24日">24日</option>
+                                <option value="25日">25日</option>
+                                <option value="26日">26日</option>
+                                <option value="27日">27日</option>
+                                <option value="28日">28日</option>
+                                <option value="29日">29日</option>
+                                <option value="30日">30日</option>
+                                <option value="31日">31日</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn btn-gold btn-block">查询结果发送至手机</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 环保三防体系 / 官网专属礼包 -->
+<div class="modal fade" id="exclusiveModal">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    官网专属礼包
+                    <small>The exclusive gift bag</small>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="channel" value="官网专属礼包" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" name="name" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" name="phoneNumber" placeholder="输入手机号">
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn btn-gold btn-block">立即领取</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*可与线下活动同时享用</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主页 / 看工地 / 服务流程 / 领官网礼包 -->
+<div class="modal fade" id="guanwangzhuanshulibao">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">官网专属礼包<small></small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="channel" value="官网专属礼包" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn btn-gold btn-block">立即领取</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="shangmenliangfang" style="display: none;">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">上门量房<small></small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="Channel" value="上门量房" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">小区</label>
+                        <div class="col-xs-4">
+                            <input name="residentialName" type="text" class="form-control" placeholder="输入小区名">
+                        </div>
+                        <label class="col-xs-2 control-label">面积</label>
+                        <div class="col-xs-4">
+                            <input name="squareMeters" type="text" class="form-control" placeholder="输入面积">
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn btn-gold btn-block">立即报名</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
+<script src="__STATIC__/home/js/main.js"></script>
+<script>
+    // Slideshow 2
+    $(".gl-kn-ul li").hover(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.gl-kn-cont a').eq($(this).index()).stop(true, true).fadeIn(100).siblings().hide();
+    });
+    $(".gl-kn-tab").mouseleave(function () {
+        $('.gl-kn-cont a').hide();
+        $(".gl-kn-ul li").removeClass('active');
+    })
+</script>
+
+<input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
+<script src="__STATIC__/home/js/yzf_city.js"></script>
+
+
+<script>
+    $('#a_qq').click(function () {
+        $('#consultation').trigger('click');
+    });
+</script>
+
+<script src="__STATIC__/home/js/customer-common.js"></script>
+<script src="__STATIC__/home/js/tj.js"></script>
+</body>
+</html>
+

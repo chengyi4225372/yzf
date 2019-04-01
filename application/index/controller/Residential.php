@@ -21,4 +21,26 @@ class Residential extends Common{
         return $this->view->fetch();
     }
 
+
+    //案例地区
+    public function areaid(){
+        return $this->fetch();
+    }
+
+    //案例风格
+    public  function styleid(){
+        return $this->fetch();
+    }
+
+    //案例户型
+    public function roomid(){
+        return $this->fetch();
+    }
+
+    //案例面积
+    public function squaresid(){
+        return $this->fetch();
+    }
+
+
 }
