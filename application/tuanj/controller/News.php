@@ -13,7 +13,7 @@ class News extends BasicAdmin {
 //    private $cate = 'news_cate';
 
     public function index() {
-        $this->title = '新闻中心';
+        $this->title = '企业新闻';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('name|id', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -25,6 +25,15 @@ class News extends BasicAdmin {
         }
         return parent::_list($db->order('id desc'));
     }
+
+    //推荐为热门
+    public function remen(){
+        $id = input('get.id');
+        $tuijian = input('get.tuijian');
+        $res = Db::name('new')->where('id',$id)->update(['tuijian'=>$tuijian>0?0:1]);
+        $this->_form_result($res);
+    }
+
 
 
     /**
