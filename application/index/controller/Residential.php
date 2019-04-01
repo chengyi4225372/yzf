@@ -21,7 +21,6 @@ class Residential extends Common{
         return $this->view->fetch();
     }
 
-
     //案例地区
     public function areaid(){
         return $this->fetch();
@@ -42,5 +41,9 @@ class Residential extends Common{
         return $this->fetch();
     }
 
+    //热门小区
+    public function popular(){
+        return $this->fetch();
+    }
 
 }

@@ -241,7 +241,7 @@ img {
 .drop-dl {
   float: left;
   width: 260px;
-  background: url(../images/drop-dl.jpg) right center no-repeat;
+  background: url(../image/drop-dl.jpg) right center no-repeat;
   padding: 0 26px; }
   .drop-dl dt {
     font-size: 16px;
@@ -261,7 +261,7 @@ img {
 .drop-al-l {
   width: 580px;
   float: left;
-  background: url(../images/drop-dl.jpg) right center no-repeat;
+  background: url(../image/drop-dl.jpg) right center no-repeat;
   margin-right: 60px; }
   .drop-al-l .al-tab {
     margin-bottom: 16px; }
@@ -498,7 +498,7 @@ img {
   border-radius: 2px;
   margin-top: 20px;
   height: 405px;
-  background: url(../images/side-calculator.jpg) 0 0 no-repeat;
+  background: url(../image/side-calculator.jpg) 0 0 no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -521,7 +521,7 @@ img {
   margin: 0 auto;
   width: 230px;
   height: 52px;
-  background: url(../images/calculator-screen.gif) 0 0 no-repeat; }
+  background: url(../image/calculator-screen.gif) 0 0 no-repeat; }
 
 .news-a {
   margin-top: 15px; }
@@ -615,7 +615,7 @@ img {
     padding: 0 12px;
     font-size: 16px;
     color: #ffffff;
-    background: url(../images/strategy-tag.png) 0 0 no-repeat; }
+    background: url(../image/strategy-tag.png) 0 0 no-repeat; }
   .strategy-list .strategy-bd h3 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -977,7 +977,7 @@ nav .pagination li {
     margin-top: 10px; }
 
 .construction-banner {
-  background: url(../images/construction-banner.jpg) center no-repeat; }
+  background: url(../image/construction-banner.jpg) center no-repeat; }
   .construction-banner .auto-box {
     position: relative;
     height: 580px; }
@@ -1020,7 +1020,7 @@ nav .pagination li {
         padding-top: 22px; }
 
 .case-banner {
-  background: url(../images/case-banner.jpg) center no-repeat; }
+  background: url(../image/case-banner.jpg) center no-repeat; }
   .case-banner .auto-box {
     position: relative;
     height: 420px; }
@@ -1184,10 +1184,10 @@ nav .pagination li {
   left: 0;
   right: 0;
   min-width: 980px;
-  background: url(../images/fixed-bar-bg.png) center 0 no-repeat;
+  background: url(../image/fixed-bar-bg.png) center 0 no-repeat;
   z-index: 10; }
   .fixed-bar-wrap.open .control-bar:after {
-    background: url(../images/arrow-xia.png) center 0 no-repeat; }
+    background: url(../image/arrow-xia.png) center 0 no-repeat; }
   .fixed-bar-wrap .control-bar {
     position: relative;
     margin-top: 80px;
@@ -1201,7 +1201,7 @@ nav .pagination li {
       margin-left: 405px;
       width: 28px;
       height: 34px;
-      background: url(../images/arrow-shang.png) center 0 no-repeat; }
+      background: url(../image/arrow-shang.png) center 0 no-repeat; }
 
 .fixed-white-box {
   position: relative;
@@ -1216,7 +1216,7 @@ nav .pagination li {
   .fixed-white-box.modal-white-box {
     width: 100%;
     height: 266px;
-    background: url(../images/modal-white-box.png) center 20px no-repeat; }
+    background: url(../image/modal-white-box.png) center 20px no-repeat; }
     .fixed-white-box.modal-white-box .submit-label-btn {
       bottom: 82px;
       margin-left: -46px; }
@@ -1365,7 +1365,7 @@ nav .pagination li {
   .case-detail-wrap .case-detail-main {
     height: 100%;
     margin-right: 315px;
-    background: #272423 url(../images/case-detail-main.jpg) center no-repeat;
+    background: #272423 url(../image/case-detail-main.jpg) center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1892,7 +1892,7 @@ nav .pagination li {
         text-overflow: ellipsis; }
 
 .hot-case-banner {
-  background: url(../images/hot-case-banner.jpg) center no-repeat; }
+  background: url(../image/hot-case-banner.jpg) center no-repeat; }
   .hot-case-banner .auto-box {
     position: relative;
     height: 475px; }
@@ -2312,7 +2312,7 @@ nav .pagination li {
 
 .construction-detail-banner {
   height: 395px;
-  background: url(../images/construction-detail-banner.jpg) center no-repeat;
+  background: url(../image/construction-detail-banner.jpg) center no-repeat;
   color: #ffffff; }
   .construction-detail-banner .auto-box {
     padding: 136px 245px 0 20px; }
@@ -2429,7 +2429,7 @@ nav .pagination li {
 
 .hot-list-banner {
   height: 471px;
-  background: url(../images/hot-list-banner.jpg) center no-repeat; }
+  background: url(../image/hot-list-banner.jpg) center no-repeat; }
   .hot-list-banner .auto-box {
     position: relative;
     height: 471px; }
@@ -2479,7 +2479,7 @@ nav .pagination li {
       line-height: 40px;
       padding-left: 15px;
       color: #ffffff;
-      background: url(../images/tuangou.png) 0 0 no-repeat;
+      background: url(../image/tuangou.png) 0 0 no-repeat;
       font-size: 16px; }
     .hot-z-list li .hpt-z-hd .img-box {
       display: block;
@@ -2521,7 +2521,7 @@ nav .pagination li {
 
 .designer-banner {
   height: 515px;
-  background: url(../images/designer-banner.jpg) center no-repeat; }
+  background: url(../image/designer-banner.jpg) center no-repeat; }
   .designer-banner .msg-form {
     margin-top: 450px; }
     .designer-banner .msg-form .form-control {
@@ -2603,7 +2603,7 @@ nav .pagination li {
       right: 0;
       height: 45px;
       line-height: 45px;
-      background: url(../images/designer-control.jpg) center no-repeat; }
+      background: url(../image/designer-control.jpg) center no-repeat; }
       .designer-list > li.hover .designer-control li {
         float: left;
         width: 50%;
@@ -2648,7 +2648,7 @@ nav .pagination li {
 .designer-detail-banner {
   position: relative;
   height: 648px;
-  background: url(../images/designer-detail-banner.jpg) center no-repeat; }
+  background: url(../image/designer-detail-banner.jpg) center no-repeat; }
   .designer-detail-banner .breadcrumb {
     color: #a6a6a6; }
     .designer-detail-banner .breadcrumb li {
@@ -2907,7 +2907,7 @@ nav .pagination li {
     color: #676767; }
 
 .test-banner {
-  background: url(../images/test-banner.jpg) center no-repeat;
+  background: url(../image/test-banner.jpg) center no-repeat;
   margin-bottom: 30px; }
   .test-banner .auto-box {
     position: relative;
@@ -3028,7 +3028,7 @@ nav .pagination li {
 .hot-type-detail {
   position: relative;
   height: 822px;
-  background: url(../images/hot-type-detail.jpg) center no-repeat; }
+  background: url(../image/hot-type-detail.jpg) center no-repeat; }
   .hot-type-detail .hot-type-box {
     position: absolute;
     left: 50%;
@@ -3167,7 +3167,7 @@ nav .pagination li {
     background-image: none; }
 
 .index-a {
-  background: url(../images/index-a-bg.jpg) center no-repeat; }
+  background: url(../image/index-a-bg.jpg) center no-repeat; }
   .index-a .index-a-box {
     width: 1120px;
     margin: 0 auto; }
@@ -3401,7 +3401,7 @@ nav .pagination li {
 
 .index-team {
   height: 687px;
-  background: url(../images/index-a-team.jpg) center no-repeat;
+  background: url(../image/index-a-team.jpg) center no-repeat;
   overflow: hidden; }
   .index-team .index-normal-bd:before, .index-team .index-normal-bd:after {
     content: " ";
@@ -3675,7 +3675,7 @@ nav .pagination li {
   float: left;
   width: 856px;
   height: 584px;
-  background: url(../images/construction-main.jpg) 0 0 no-repeat;
+  background: url(../image/construction-main.jpg) 0 0 no-repeat;
   overflow: hidden; }
   .index-construction .construction-main .construction-main-inner {
     position: relative;
@@ -4066,7 +4066,7 @@ nav .pagination li {
       bottom: 0;
       right: 0;
       padding: 10px 10px 10px 45px;
-      background: url("../images/play-icon.jpg") 15px center no-repeat rgba(24, 24, 24, 0.8);
+      background: url("../image/play-icon.jpg") 15px center no-repeat rgba(24, 24, 24, 0.8);
       color: #ffffff;
       white-space: nowrap;
       overflow: hidden;
@@ -4076,7 +4076,7 @@ nav .pagination li {
     .index-class-bd .index-class-right .video-list li {
       margin-bottom: 10px;
       padding-left: 30px;
-      background: url("../images/play-icon2.jpg") 0 center no-repeat;
+      background: url("../image/play-icon2.jpg") 0 center no-repeat;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
@@ -4133,7 +4133,7 @@ nav .pagination li {
 
 .index-five {
   height: 292px;
-  background: url(../images/index-five.jpg) center no-repeat;
+  background: url(../image/index-five.jpg) center no-repeat;
   padding-top: 60px; }
   .index-five .five-a {
     position: relative;
@@ -4183,7 +4183,7 @@ nav .pagination li {
 
 .index-last {
   height: 1100px;
-  background: url(../images/index-last.jpg) center top no-repeat; }
+  background: url(../image/index-last.jpg) center top no-repeat; }
 
 .index-last-header {
   text-align: center;
@@ -4474,7 +4474,7 @@ nav .pagination li {
   .yzf-modal.lg {
     width: 1022px; }
     .yzf-modal.lg .modal-content {
-      background: #efefef url(../images/modal-content-lg.jpg) 0 0 no-repeat;
+      background: #efefef url(../image/modal-content-lg.jpg) 0 0 no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -4484,7 +4484,7 @@ nav .pagination li {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    background: #f2f2f2 url(../images/yzf-modal.jpg) 0 0 no-repeat;
+    background: #f2f2f2 url(../image/yzf-modal.jpg) 0 0 no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -4588,7 +4588,7 @@ nav .pagination li {
   height: 110px;
   background-color: #22262b; }
   .index-top .auto-box-lg {
-    background: url(../images/index-top-bg.png) right center no-repeat; }
+    background: url(../image/index-top-bg.png) right center no-repeat; }
   .index-top .index-logo {
     position: relative;
     float: left;
@@ -4665,7 +4665,7 @@ nav .pagination li {
     .city-wrap .city-box .city-list {
       position: relative;
       min-height: 485px;
-      background: #fff url(../images/city-list.jpg) right 0 no-repeat;
+      background: #fff url(../image/city-list.jpg) right 0 no-repeat;
       padding-top: 144px; }
       .city-wrap .city-box .city-list:before {
         content: '';
@@ -4856,7 +4856,7 @@ nav .pagination li {
   margin-top: 15px;
   padding-top: 58px;
   height: 337px;
-  background: url(../images/city-b.jpg) center 0 no-repeat; }
+  background: url(../image/city-b.jpg) center 0 no-repeat; }
 
 .city-b-tab .nav:before, .city-b-tab .nav:after {
   content: " ";
@@ -4988,7 +4988,7 @@ nav .pagination li {
 
 .no-msg-wrap {
   padding-bottom: 35px;
-  background: #fff url(../images/no-msg-wrap.jpg) center bottom no-repeat; }
+  background: #fff url(../image/no-msg-wrap.jpg) center bottom no-repeat; }
 
 .no-msg-panel {
   border: 1px solid #cccccc;
@@ -5118,9 +5118,9 @@ nav .pagination li {
 
 .suggest-wrap {
   height: 734px;
-  background: url(../images/suggest-wrap.jpg) center no-repeat; }
+  background: url(../image/suggest-wrap.jpg) center no-repeat; }
   .suggest-wrap.visit-wrap {
-    background: url(../images/visit-wrap.jpg) center no-repeat; }
+    background: url(../image/visit-wrap.jpg) center no-repeat; }
     .suggest-wrap.visit-wrap .suggest-form {
       margin-top: 184px;
       height: 400px; }
@@ -5460,7 +5460,7 @@ nav .pagination li {
     bottom: 0;
     right: 0;
     padding: 10px 10px 10px 45px;
-    background: url("../images/play-icon.jpg") 15px center no-repeat rgba(24, 24, 24, 0.8);
+    background: url("../image/play-icon.jpg") 15px center no-repeat rgba(24, 24, 24, 0.8);
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
@@ -5471,7 +5471,7 @@ nav .pagination li {
   .video-list li {
     margin-bottom: 10px;
     padding-left: 30px;
-    background: url("../images/play-icon2.jpg") 0 center no-repeat; }
+    background: url("../image/play-icon2.jpg") 0 center no-repeat; }
     .video-list li a {
       color: #7e7e7e; }
       .video-list li a:hover {
@@ -6031,7 +6031,7 @@ nav .pagination li {
   padding-top: 85px;
   padding-left: 66px;
   padding-right: 66px;
-  background: url(../images/vd-top.jpg) 0 0 no-repeat; }
+  background: url(../image/vd-top.jpg) 0 0 no-repeat; }
   .vd-top .gl-space-tag {
     position: absolute;
     right: 10px;
