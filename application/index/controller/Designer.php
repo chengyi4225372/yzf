@@ -19,4 +19,10 @@ class Designer extends Common {
         return  $this->fetch();
     }
 
+    //设计师详情页
+    public function detail(){
+        return $this->fetch();
+    }
+
+
 }

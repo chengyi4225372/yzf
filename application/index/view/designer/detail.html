@@ -2,201 +2,366 @@
 
 {include file="public/location-two" /}
 
-
 <div class="header">
-    {include file="public/menu" /}
+     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
 
-    <div class="designer-banner" style="">
-        <div class="auto-box">
-            <div class="msg-form row">
-                <form>
-                    <div class="col-xs-2 col-xs-offset-1 required">
-                        <input type="text" name="Name" class="form-control" placeholder="您的称呼1" />
-                    </div>
-                    <div class="col-xs-2 required">
-                        <input type="text" name="PhoneNumber" class="form-control" placeholder="您的电话" />
-                    </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="ResidentialName" class="form-control" placeholder="小区" />
-                    </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="SquareMeters" class="form-control" placeholder="面积" />
-                    </div>
-                    <div class="col-xs-2 submit">
-                        <button class="btn btn-block btn-gold">预约免费平面设计</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="content bg-dark">
+    <script src="__STATIC__/home/assets/plugins/jquery-pjax/jquery.pjax.js"></script>
+    <div class="designer-detail-banner">
         <div class="auto-box">
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li class="active"><a href="/Designer"></a></li>
+                <li><a href="/Designer">设计师</a></li>
+                <li class="active"><span href="#">吴文</span></li>
             </ol>
+            <img src="http://picfw.yzf.com.cn/100059/2018/3/6/1949704105905.png" height="600" alt="" class="designer-img">
+            <div class="designer-banner-form">
+                <dl>
+                    <dt>
+                        吴文
+                        <small>wen wu</small>
+                    </dt>
+                    <dd>首席设计师 / 江西科技师范学院 <i class="iconfont icon-jiantou2"></i></dd>
+                </dl>
+                <form>
+                    <input type="hidden" name="channel" value="设计师" />
+                    <div class="form-group">
+                        <input type="text" name="mame" class="form-control" placeholder="您的称呼">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phoneNumber" class="form-control" placeholder="您的电话">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="remark" class="form-control" placeholder="喜欢什么风格">
+                    </div>
+                    <div class="btn-wrap submit">
+                        <button class="btn btn-block">找TA设计</button>
+                    </div>
+                    <div class="wx-group">
+                        <a class="wx-code" href="javascript:;">
+                            <i class="iconfont icon-weixin"></i>获取优秀案例解析 >
+                            <div class="drop-on">
+                                <img src="/Images/ecode.jpg" alt="" />
+                            </div>
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="designer-tab">
+        <ul class="designer-tab-ul">
+            <li class="active"><a href="JavaScript:;">个人资料</a></li>
+            <li><a href="JavaScript:;">所获荣誉</a></li>
+        </ul>
+        <div class="designer-tab-content">
+            <div class="auto-box">
+                <div class="designer-tab-body" style="display: block">
+                    <div class="profile-dl-wrap">
+                        <dl>
+                            <dt>从业时间</dt>
+                            <dd>2007年工作至今</dd>
+                        </dl>
+                        <dl>
+                            <dt>毕业院校</dt>
+                            <dd>江西科技师范学院</dd>
+                        </dl>
+                        <dl>
+                            <dt>诚信宣言</dt>
+                            <dd>在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！</dd>
+                        </dl>
+                        <dl>
+                            <dt>设计理念</dt>
+                            <dd>运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！</dd>
+                        </dl>
+                        <dl>
+                            <dt>主要作品</dt>
+                            <dd>狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="designer-tab-body">
+                    <div class="designer-tab-l">
+                        <div style="height:300px">
+                            <ul class="honor-ul">
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2011年 &nbsp; &nbsp;荣获新浪家居设计之星；
+                                    2012年 &nbsp; &nbsp;荣获集团设计大赛金奖；
+                                    2013年 &nbsp; &nbsp;荣获苏州“先锋木业杯”三等奖；
+                                    2014年 &nbsp; &nbsp;荣获苏州首届室内设计大赛“优秀设计作品奖”；
+                                    2015年 &nbsp; &nbsp;“美涂士漆”杯业之峰全国室内设计精英奖
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                            </ul>
+                        </div>
+                        <div>
+                            <a class="btn btn-dark" href="javascript:void(0)" onclick="doyoo.util.openChat('g=10064078');return false;">咨询TA报价</a>
+                            <script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001829/10063849.js"></script>
+                        </div>
+                    </div>
+                    <div class="designer-tab-r">
+                        <div class="designer-video-box">
+                            <div>
+                                <img src="/Images/common/honor.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="auto-box">
             <div class="content-body">
-                <table class="table table-bordered table-filer">
-                    <tr>
-                        <th>擅长户型：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">全部</a>
-                            <a class="" href="/Designer?goodRoom=%E4%B8%80%E5%B1%85&amp;orderby=CaseCount">一居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%BA%8C%E5%B1%85&amp;orderby=CaseCount">二居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%B8%89%E5%B1%85&amp;orderby=CaseCount">三居</a>
-                            <a class="" href="/Designer?goodRoom=%E5%9B%9B%E5%B1%85&amp;orderby=CaseCount">四居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%BA%94%E5%B1%85&amp;orderby=CaseCount">五居</a>
-                            <a class="" href="/Designer?goodRoom=%E5%B9%B3%E5%B1%82&amp;orderby=CaseCount">平层</a>
-                            <a class="" href="/Designer?goodRoom=%E5%A4%8D%E5%BC%8F&amp;orderby=CaseCount">复式</a>
-                            <a class="" href="/Designer?goodRoom=%E5%88%AB%E5%A2%85&amp;orderby=CaseCount">别墅</a>
-                            <a class="" href="/Designer?goodRoom=%E5%8A%9E%E5%85%AC%E7%A9%BA%E9%97%B4&amp;orderby=CaseCount">办公空间</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>擅长风格：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">不限</a>
-                            <a class="" href="/Designer?goodstyle=%E7%8E%B0%E4%BB%A3%E7%AE%80%E7%BA%A6%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">现代简约风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%96%B0%E5%8F%A4%E5%85%B8%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">新古典风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%96%B0%E4%B8%AD%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">新中式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E4%B8%9C%E5%8D%97%E4%BA%9A%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">东南亚风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%9C%B0%E4%B8%AD%E6%B5%B7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">地中海风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%8C%97%E6%AC%A7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">北欧风格</a>
-                            <a class="" href="/Designer?goodstyle=%E7%AE%80%E6%AC%A7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">简欧风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B7%B7%E6%90%AD%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">混搭风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%85%B6%E4%BB%96&amp;orderby=CaseCount">其他</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B3%95%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">法式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B8%AF%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">港式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E7%BE%8E%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">美式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%AC%A7%E5%BC%8F&amp;orderby=CaseCount">欧式</a>
+                <div class="designer-panel">
+                    <div class="designer-panel-header">
+                        <strong>吴文设计师案例</strong>
+                    </div>
+                    <div class="designer-panel-body">
+                        <div class="case-list-wrap">
+                            <ul class="case-list">
+                                <li>
+                                    <a href="/ResidentialCase/Detail/69424?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283094978076.jpg" alt="现代园墅">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="现代园墅" href="/ResidentialCase/Detail/69424?designerId=836">现代园墅</a></dt>
+                                        <dd><span>别墅</span> | <span>360㎡</span> | <span>北欧风格</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/69423?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283090663533.jpg" alt="狮山原著">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="狮山原著" href="/ResidentialCase/Detail/69423?designerId=836">狮山原著</a></dt>
+                                        <dd><span>四居</span> | <span>143㎡</span> | <span>新中式风格</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/68581?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg" alt="中航樾园">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="中航樾园" href="/ResidentialCase/Detail/68581?designerId=836">中航樾园</a></dt>
+                                        <dd><span>别墅</span> | <span>270㎡</span> | <span>美式风格</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/66337?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164885802285.jpg" alt="中南世纪城">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="中南世纪城" href="/ResidentialCase/Detail/66337?designerId=836">中南世纪城</a></dt>
+                                        <dd><span>复式</span> | <span>300㎡</span> | <span>新中式风格</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/66336?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164884691892.jpg" alt="中南锦苑">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="中南锦苑" href="/ResidentialCase/Detail/66336?designerId=836">中南锦苑</a></dt>
+                                        <dd><span>三居</span> | <span>140㎡</span> | <span>简美</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/66335?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164883832237.jpg" alt="苏州御园">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="苏州御园" href="/ResidentialCase/Detail/66335?designerId=836">苏州御园</a></dt>
+                                        <dd><span>别墅</span> | <span>600㎡</span> | <span>简美</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/66334?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164881447970.jpg" alt="世贸御珑墅">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="世贸御珑墅" href="/ResidentialCase/Detail/66334?designerId=836">世贸御珑墅</a></dt>
+                                        <dd><span>三居</span> | <span>139㎡</span> | <span>简欧风格</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <a href="/ResidentialCase/Detail/66333?designerId=836" class="img-box">
+                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164880403533.jpg" alt="明珠城">
+                                    </a>
+                                    <a href="/Designer/Detail/836" class="user-img">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    </a>
+                                    <dl>
+                                        <dt><a title="明珠城" href="/ResidentialCase/Detail/66333?designerId=836">明珠城</a></dt>
+                                        <dd><span>别墅</span> | <span>400㎡</span> | <span>简美</span></dd>
+                                    </dl>
+                                </li>
+                            </ul>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>设计师级别：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">全部</a>
-                            <a class="" href="/Designer?designerLevelId=43&amp;orderby=CaseCount">优秀设计师</a>
-                            <a class="" href="/Designer?designerLevelId=52&amp;orderby=CaseCount">资深设计师</a>
-                            <a class="" href="/Designer?designerLevelId=39&amp;orderby=CaseCount">副主任设计师</a>
-                            <a class="" href="/Designer?designerLevelId=38&amp;orderby=CaseCount">主任设计师</a>
-                            <a class="" href="/Designer?designerLevelId=40&amp;orderby=CaseCount">高级设计师</a>
-                            <a class="" href="/Designer?designerLevelId=51&amp;orderby=CaseCount">主案设计师</a>
-                            <a class="" href="/Designer?designerLevelId=41&amp;orderby=CaseCount">首席设计师</a>
-                            <a class="" href="/Designer?designerLevelId=42&amp;orderby=CaseCount">设计总监</a>
-                        </td>
-                    </tr>
-                </table>
-                <div class="case-sort-wrap">
-                    <span>排序：</span> <a class="selected" href="/Designer?orderby=CaseCount">人气 <i class="iconfont icon-shang"></i></a>|
-                    <a class="" href="/Designer?orderby=StartWorkingTime">
-                        从业经验<i class="iconfont icon-xia"></i>
-                    </a>
-                </div>
-                <div class="designer-list-wrap">
-                    <ul class="designer-list">
+                            <nav class="text-center">
+                                <ul class="pagination">
+                                    <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
 
-                        <li>
-                            <img class="designer-level" src="/images/icon-level-2.png" alt="">
-                            <a href="{:url('designer/detail')}">
-                                <div class="img-view">
-                                    <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_325x485.jpg" alt="">
-                                </div>
-                                <div class="designer-info">
-                                    <h3>吴文 <small>首席设计师</small></h3>
-                                    <div class="item-wrap">
-                                        <span>案例数：32套</span>
-                                        <span>从业经验：13年</span>
-                                    </div>
-                                    <p>           2011年  荣获新浪家...</p>                            </div>
-                                <ul class="designer-control">
-                                    <li><a href="javascript:void(0)" onclick="doyoo.util.openChat(&#39;g=10064078&#39;);return false;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                    http://lead.soperson.com/20001829/10063849.js
-                                    <li><a href="/Designer/detail/836"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    <li class="active"><a data-pjax="" href="/Designer/detail/836?PageIndex=1">1</a></li>
+                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=2">2</a></li>
+                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=3">3</a></li>
+                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=4">4</a></li>
+
+                                    <li><a data-pjax="" href="/Designer/detail/836?PageIndex=2">下一页</a></li>
+
                                 </ul>
-                            </a>
-                        </li>
-
-                    </ul>
+                            </nav>
 
 
 
+
+
+                        </div>
+                    </div>
                 </div>
-                <div class="web-adv">
-                    <img src="/images/web-adv.jpg" alt="">
+                <div class="designer-panel">
+                    <div class="designer-panel-header">
+                        <strong>同类型设计师</strong>
+                    </div>
+                    <div class="designer-panel-body">
+                        <ul class="designer-list">
+                            <li class="">
+                                <a href="/Designer/detail/1056">
+                                    <div class="img-view">
+                                        <img src="http://picfw.yzf.com.cn/2016/7/29/1444134106287.jpg_280x280.jpg" alt="">
+                                    </div>
+                                    <div class="designer-info">
+                                        <h3>梁侠 <small>首席设计师</small></h3>
+                                        <div class="item-wrap">
+                                            <span>案例数：44套</span>
+                                            <span>从业经验：14年</span>
+                                        </div>
+                                        <p>设计源于生活、设计创造生活、生...</p>                                    </div>
+                                    <ul class="designer-control">
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Designer/detail/836">
+                                    <div class="img-view">
+                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_280x280.jpg" alt="">
+                                    </div>
+                                    <div class="designer-info">
+                                        <h3>吴文 <small>首席设计师</small></h3>
+                                        <div class="item-wrap">
+                                            <span>案例数：32套</span>
+                                            <span>从业经验：13年</span>
+                                        </div>
+                                        <p>           2011年  荣获新浪家...</p>                                    </div>
+                                    <ul class="designer-control">
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Designer/detail/3301">
+                                    <div class="img-view">
+                                        <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_280x280.jpg" alt="">
+                                    </div>
+                                    <div class="designer-info">
+                                        <h3>陈晓龙 <small>首席设计师</small></h3>
+                                        <div class="item-wrap">
+                                            <span>案例数：13套</span>
+                                            <span>从业经验：10年</span>
+                                        </div>
+                                        <p>           2006年  “设计之星...</p>                                    </div>
+                                    <ul class="designer-control">
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Designer/detail/1639">
+                                    <div class="img-view">
+                                        <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_280x280.jpg" alt="">
+                                    </div>
+                                    <div class="designer-info">
+                                        <h3>张超 <small>首席设计师</small></h3>
+                                        <div class="item-wrap">
+                                            <span>案例数：12套</span>
+                                            <span>从业经验：10年</span>
+                                        </div>
+                                        <p>           2010年  湖北省室内...</p>                                    </div>
+                                    <ul class="designer-control">
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
+                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    </ul>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="modal_apply">
-        <div class="modal-dialog yzf-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">免费平面规划<small></small></h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <input name="Channel" value="免费平面规划" type="hidden" />
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">姓名</label>
-                            <div class="col-xs-10">
-                                <input name="Name" type="text" class="form-control" placeholder="输入姓名">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">手机</label>
-                            <div class="col-xs-10">
-                                <input name="PhoneNumber" type="text" class="form-control" placeholder="输入手机号">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">小区</label>
-                            <div class="col-xs-4">
-                                <input name="ResidentialName" type="text" class="form-control" placeholder="输入小区名">
-                            </div>
-                            <label class="col-xs-2 control-label">面积</label>
-                            <div class="col-xs-4">
-                                <input name="SquareMeters" type="text" class="form-control" placeholder="输入面积">
-                            </div>
-                        </div>
-                        <div class="form-group submit">
-                            <div class="btn-wrap">
-                                <button type="submit" class="btn btn-gold btn-block">立即报名</button>
-                            </div>
-                        </div>
-                        <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        $(function () {
+            $(document).pjax('a[data-pjax]', '.case-list-wrap', {
+                scrollTo: false,
+                replace: true
+            });
+        })
+    </script>
+
     <script>
         $(function () {
             $('.designer-list li').hover(function () {
-                $(this).toggleClass('hover');
-            });
-        })
+                $(this).addClass('hover');
+            }, function () {
+                $(this).removeClass('hover');
+            })
 
+            $('.designer-tab-ul li').click(function () {
+                $(this).addClass('active').siblings('li').removeClass('active');
+                $('.designer-tab-content .designer-tab-body').eq($(this).index()).stop(true, true).fadeIn(100).siblings('.designer-tab-body').hide();
+            })
+        })
     </script>
     <!--  "我要咨询"绑定“母版页2018”悬浮框“在线咨询” -->
     <script>
-        //$('.consult').click(function () {
-        //    $('#consultation').trigger('click');
-        //});
-        $('.a_apply').click(function () {
-            $('#modal_apply').modal('show');
+        $('.consult').click(function () {
+            $('#consultation').trigger('click');
         });
     </script>
+
 </div>
 
 {include file="public/footer" /}
 
-{include file="public/menu_right"  /}
+{include file="public/menu_right" /}
 
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
@@ -368,7 +533,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1053位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有1043位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -813,6 +978,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
@@ -856,6 +1024,9 @@
         </div>
     </div>
 </div>
+
+
+
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -872,11 +1043,14 @@
 
 <input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
 <script src="__STATIC__/home/js/yzf_city.js"></script>
+
+
 <script>
     $('#a_qq').click(function () {
         $('#consultation').trigger('click');
     });
 </script>
+
 <script src="__STATIC__/home/js/customer-common.js"></script>
 </body>
 </html>
