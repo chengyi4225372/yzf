@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-01 18:26:28
+Date: 2019-04-03 18:01:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -125,6 +125,36 @@ INSERT INTO `condition` VALUES ('5', '0', '拓展天数', '0', '2018-12-19 17:14
 INSERT INTO `condition` VALUES ('6', '0', '团队凝聚力', '1', '2018-12-19 17:19:44');
 
 -- ----------------------------
+-- Table structure for `designer`
+-- ----------------------------
+DROP TABLE IF EXISTS `designer`;
+CREATE TABLE `designer` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `img` varchar(255) NOT NULL COMMENT '设计师头像',
+  `names` varchar(200) NOT NULL COMMENT '设计师姓名',
+  `job_time` varchar(200) NOT NULL COMMENT '从业时间',
+  `school` varchar(255) NOT NULL COMMENT '毕业院校',
+  `xuanyan` varchar(255) NOT NULL COMMENT '诚信宣言',
+  `linian` varchar(255) NOT NULL COMMENT '设计理念',
+  `zuoping` varchar(255) NOT NULL COMMENT '设计师作品',
+  `rongyu` varchar(255) NOT NULL COMMENT '所获荣誉',
+  `r_img` varchar(255) NOT NULL COMMENT '荣誉图像',
+  `h_id` varchar(200) NOT NULL COMMENT '对应户型id',
+  `s_id` varchar(200) NOT NULL COMMENT '对应风格id',
+  `j_id` varchar(200) NOT NULL COMMENT '对应级别id',
+  `job_year` varchar(200) NOT NULL COMMENT '从业年头',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of designer
+-- ----------------------------
+INSERT INTO `designer` VALUES ('0000000001', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴文', '2007年工作至今', '江西科技师范学院', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...', '2011年    荣获新浪家居设计之星； 2012年    荣获集团设计大赛金奖； 2013年    荣获苏州“先锋木业杯”三等奖； 2014年    荣获苏州首届室内设计大赛“优秀设计作品奖”； 2015年    “美涂士漆”杯业之峰全国室内设计精英奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '9', '0', '0', '13年');
+INSERT INTO `designer` VALUES ('0000000002', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '张超', '2010年工作至今', '', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '给您最舒适的家！', '玫瑰园、尊园、海尚壹品、蝴蝶湾、保利国际、雅戈尔太阳城、绿地华尔道、路劲主场、中海国际社区、置地悦湖、海德公园、世茂运河城...', '2010年    湖北省室内装饰协会最佳创意奖； 2014年    苏州芒果杯最佳新人奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5', '0', '0', '10年');
+INSERT INTO `designer` VALUES ('0000000003', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '李静波', '2007年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '第三方的', '大幅度丰富的仿的房东', '的地方放的地方的方法大幅度发东方大道辅导费', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '1,2,3', '1,2,3', '10年');
+INSERT INTO `designer` VALUES ('0000000005', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '东方时尚', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '3,4,5', '7', '10年');
+
+-- ----------------------------
 -- Table structure for `dingzhi`
 -- ----------------------------
 DROP TABLE IF EXISTS `dingzhi`;
@@ -208,6 +238,51 @@ INSERT INTO `goods` VALUES ('23', '帆船竞速体验团建', '/static/upload/b3
 INSERT INTO `goods` VALUES ('25', '团建实验', '/static/upload/80b76c70f20fea26/f208f687dd420f23.jpg', '/static/upload/bcd6d7d48fcd48a2/859afeebff4d0925.jpg|/static/upload/88b2f08df0d7c3c9/a3032ab0e8498fd0.jpg', '5', '5', '5', '亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，', '体育团建，活力团队，户外体育', '80', '1', '2', 'jjty20190101', '350', '', '', '', '', '3', '1', '2019-01-04 17:00:19');
 
 -- ----------------------------
+-- Table structure for `huxing`
+-- ----------------------------
+DROP TABLE IF EXISTS `huxing`;
+CREATE TABLE `huxing` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of huxing
+-- ----------------------------
+INSERT INTO `huxing` VALUES ('0000000001', '一居');
+INSERT INTO `huxing` VALUES ('0000000002', '两居');
+INSERT INTO `huxing` VALUES ('0000000003', '三居');
+INSERT INTO `huxing` VALUES ('0000000004', '四居');
+INSERT INTO `huxing` VALUES ('0000000005', '五居');
+INSERT INTO `huxing` VALUES ('0000000006', '平层');
+INSERT INTO `huxing` VALUES ('0000000007', '复式');
+INSERT INTO `huxing` VALUES ('0000000008', '别墅');
+INSERT INTO `huxing` VALUES ('0000000009', '办公空间');
+
+-- ----------------------------
+-- Table structure for `jibie`
+-- ----------------------------
+DROP TABLE IF EXISTS `jibie`;
+CREATE TABLE `jibie` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of jibie
+-- ----------------------------
+INSERT INTO `jibie` VALUES ('0000000001', '优秀设计师');
+INSERT INTO `jibie` VALUES ('0000000002', '资深设计师');
+INSERT INTO `jibie` VALUES ('0000000003', '副主任设计师');
+INSERT INTO `jibie` VALUES ('0000000004', '主任设计师');
+INSERT INTO `jibie` VALUES ('0000000005', '高级设计师');
+INSERT INTO `jibie` VALUES ('0000000006', '主案设计师');
+INSERT INTO `jibie` VALUES ('0000000007', '首席设计师');
+INSERT INTO `jibie` VALUES ('0000000008', '设计总监');
+
+-- ----------------------------
 -- Table structure for `list`
 -- ----------------------------
 DROP TABLE IF EXISTS `list`;
@@ -236,6 +311,26 @@ INSERT INTO `list` VALUES ('7', '0', '服务团队', 'Service team', '', '', '',
 INSERT INTO `list` VALUES ('8', '0', '往期案例', 'Past cases', '', '', '', '');
 INSERT INTO `list` VALUES ('9', '0', '新闻中心', 'News center', '', '', '', '');
 INSERT INTO `list` VALUES ('10', '0', '联系我们', 'Contact us', '', '', '', '');
+
+-- ----------------------------
+-- Table structure for `mianji`
+-- ----------------------------
+DROP TABLE IF EXISTS `mianji`;
+CREATE TABLE `mianji` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mianji
+-- ----------------------------
+INSERT INTO `mianji` VALUES ('0000000014', '500㎡以上');
+INSERT INTO `mianji` VALUES ('0000000013', '321-500㎡');
+INSERT INTO `mianji` VALUES ('0000000012', '181-320㎡');
+INSERT INTO `mianji` VALUES ('0000000009', '90㎡以下');
+INSERT INTO `mianji` VALUES ('0000000010', '90-120㎡');
+INSERT INTO `mianji` VALUES ('0000000011', '121-180㎡');
 
 -- ----------------------------
 -- Table structure for `new`
@@ -285,6 +380,61 @@ INSERT INTO `partner` VALUES ('12', '招商银行', '/static/upload/a4c0ff0b9be9
 INSERT INTO `partner` VALUES ('13', '戴德梁行', '/static/upload/19c630cff8d7571c/f2e1de7fbc1e01a6.jpg', '#', '0', '1', '2018-12-25 15:27:39');
 INSERT INTO `partner` VALUES ('14', '中海地产', '/static/upload/2b49a556d02aff7f/b9110a95e7d0a80a.jpg', '#', '0', '1', '2018-12-25 15:28:37');
 INSERT INTO `partner` VALUES ('15', '万科地产', '/static/upload/1ed56a82ec0c36d3/dc5fb272c5f1353d.jpg', '#', '0', '1', '2018-12-25 15:30:06');
+
+-- ----------------------------
+-- Table structure for `region`
+-- ----------------------------
+DROP TABLE IF EXISTS `region`;
+CREATE TABLE `region` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of region
+-- ----------------------------
+INSERT INTO `region` VALUES ('0000000009', '太仓市');
+INSERT INTO `region` VALUES ('0000000010', '张家港市');
+INSERT INTO `region` VALUES ('0000000011', '昆山市');
+INSERT INTO `region` VALUES ('0000000012', '常熟市');
+INSERT INTO `region` VALUES ('0000000013', '吴江区');
+
+-- ----------------------------
+-- Table structure for `remen_lou`
+-- ----------------------------
+DROP TABLE IF EXISTS `remen_lou`;
+CREATE TABLE `remen_lou` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `d_id` int(10) unsigned NOT NULL COMMENT '关联案例地区id',
+  `title` varchar(255) NOT NULL COMMENT '楼盘名称',
+  `location` varchar(255) NOT NULL COMMENT '楼盘地理位置',
+  `content` text NOT NULL COMMENT '楼盘介绍',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of remen_lou
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `style`
+-- ----------------------------
+DROP TABLE IF EXISTS `style`;
+CREATE TABLE `style` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of style
+-- ----------------------------
+INSERT INTO `style` VALUES ('0000000001', '现代简约风格');
+INSERT INTO `style` VALUES ('0000000002', '新古典风格');
+INSERT INTO `style` VALUES ('0000000003', '新中式风格');
+INSERT INTO `style` VALUES ('0000000004', '东南亚风格');
+INSERT INTO `style` VALUES ('0000000005', '地中海风格');
 
 -- ----------------------------
 -- Table structure for `system_auth`
@@ -339,7 +489,7 @@ CREATE TABLE `system_config` (
 -- ----------------------------
 -- Records of system_config
 -- ----------------------------
-INSERT INTO `system_config` VALUES ('1', 'app_name', '团建后台');
+INSERT INTO `system_config` VALUES ('1', 'app_name', '尺渡后台管理');
 INSERT INTO `system_config` VALUES ('2', 'site_name', '');
 INSERT INTO `system_config` VALUES ('3', 'app_version', '');
 INSERT INTO `system_config` VALUES ('4', 'site_copy', '2014 - 2017 江西九江亿元科技有限公司 www.yumaodian.com 版权所有,御猫店网店转让平台');
@@ -362,7 +512,7 @@ INSERT INTO `system_config` VALUES ('64', 'sms_user', '');
 INSERT INTO `system_config` VALUES ('65', 'sms_pwd', '');
 INSERT INTO `system_config` VALUES ('66', 'sms_prefix', '');
 INSERT INTO `system_config` VALUES ('67', 'sms_phone', '');
-INSERT INTO `system_config` VALUES ('72', 'urlname', '寻奇者团建,深圳团建定制,深圳拓展培训');
+INSERT INTO `system_config` VALUES ('72', 'urlname', '尺渡后台管理');
 INSERT INTO `system_config` VALUES ('73', 'keywords', '网站关键词，网站关键词，网站关键词，网站关键词，网站关键词，网站关键词，');
 INSERT INTO `system_config` VALUES ('74', 'description', '网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，网站描述，');
 INSERT INTO `system_config` VALUES ('75', 'icon', '/static/upload/967b4537d937030e/62cfee19c8e8ee68.png');
@@ -387,7 +537,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=236 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -627,6 +777,16 @@ INSERT INTO `system_log` VALUES ('232', '61.144.174.29', 'admin/config/index', '
 INSERT INTO `system_log` VALUES ('233', '61.144.174.29', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-01-04 16:33:23');
 INSERT INTO `system_log` VALUES ('234', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-01-04 16:48:01');
 INSERT INTO `system_log` VALUES ('235', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-01 09:16:02');
+INSERT INTO `system_log` VALUES ('236', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 09:17:45');
+INSERT INTO `system_log` VALUES ('237', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 10:21:14');
+INSERT INTO `system_log` VALUES ('238', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 11:29:14');
+INSERT INTO `system_log` VALUES ('239', '127.0.0.1', 'admin/config/index', 'admin', '系统管理', '系统参数配置成功', '2019-04-02 14:26:42');
+INSERT INTO `system_log` VALUES ('240', '127.0.0.1', 'admin/config/index', 'admin', '系统管理', '系统参数配置成功', '2019-04-02 14:26:53');
+INSERT INTO `system_log` VALUES ('241', '127.0.0.1', 'admin/login/out', 'admin', '系统管理', '用户退出系统成功', '2019-04-02 14:27:14');
+INSERT INTO `system_log` VALUES ('242', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 14:27:26');
+INSERT INTO `system_log` VALUES ('243', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 17:22:13');
+INSERT INTO `system_log` VALUES ('244', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-03 10:50:09');
+INSERT INTO `system_log` VALUES ('245', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-03 15:27:22');
 
 -- ----------------------------
 -- Table structure for `system_menu`
@@ -647,14 +807,13 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
 -- ----------------------------
 INSERT INTO `system_menu` VALUES ('1', '0', '系统设置', '', '', '#', '', '_self', '2000', '1', '10000', '2018-01-19 15:27:00');
 INSERT INTO `system_menu` VALUES ('2', '10', '后台菜单', '', 'fa fa-leaf', 'admin/menu/index', '', '_self', '10', '1', '10000', '2018-01-19 15:27:17');
-INSERT INTO `system_menu` VALUES ('3', '10', '官方参数', '', 'fa fa-modx', 'admin/config/index', '', '_self', '20', '1', '10000', '2018-01-19 15:27:57');
 INSERT INTO `system_menu` VALUES ('5', '11', '用户管理', '', 'fa fa-user', 'admin/user/index', '', '_self', '0', '1', '0', '2018-01-23 12:15:12');
 INSERT INTO `system_menu` VALUES ('7', '0', '后台首页', '', '', 'admin/index/main', '', '_self', '1000', '1', '0', '2018-01-23 13:42:30');
 INSERT INTO `system_menu` VALUES ('9', '10', '文件存储', '', 'fa fa-stop-circle', 'admin/config/file', '', '_self', '30', '1', '0', '2018-01-25 10:54:28');
@@ -663,29 +822,41 @@ INSERT INTO `system_menu` VALUES ('11', '1', '访问权限', '', 'fa fa-anchor',
 INSERT INTO `system_menu` VALUES ('115', '11', '访问授权', '', 'fa fa-group', 'admin/auth/index', '', '_self', '0', '1', '0', '2018-12-18 15:57:58');
 INSERT INTO `system_menu` VALUES ('116', '11', '访问节点', '', 'fa fa-fort-awesome', 'admin/node/index', '', '_self', '0', '1', '0', '2018-12-18 16:00:05');
 INSERT INTO `system_menu` VALUES ('117', '0', '页面编辑', '', '', '#', '', '_self', '3000', '1', '0', '2018-12-18 16:28:55');
-INSERT INTO `system_menu` VALUES ('118', '117', '轮播图管理', '', '', '#', '', '_self', '0', '1', '0', '2018-12-18 16:29:19');
-INSERT INTO `system_menu` VALUES ('119', '118', '轮播图列表', '', '', 'tuanj/banner/index', '', '_self', '0', '1', '0', '2018-12-18 16:29:59');
-INSERT INTO `system_menu` VALUES ('120', '117', '分类管理', '', '', '#', '', '_self', '0', '1', '0', '2018-12-18 16:35:51');
-INSERT INTO `system_menu` VALUES ('121', '120', '菜单栏', '', '', 'tuanj/lists/index', '', '_self', '0', '1', '0', '2018-12-18 16:36:01');
-INSERT INTO `system_menu` VALUES ('122', '120', '场地分类', '', '', 'tuanj/categorys/index', '', '_self', '0', '1', '0', '2018-12-18 16:37:10');
-INSERT INTO `system_menu` VALUES ('123', '120', '拓展分类', '', '', 'tuanj/condition/index', '', '_self', '0', '1', '0', '2018-12-18 16:37:49');
-INSERT INTO `system_menu` VALUES ('124', '117', '项目管理', '', '', '#', '', '_self', '0', '1', '0', '2018-12-19 17:07:24');
-INSERT INTO `system_menu` VALUES ('125', '124', '项目列表', '', '', 'tuanj/goods/index', '', '_self', '0', '1', '0', '2018-12-19 17:07:43');
+INSERT INTO `system_menu` VALUES ('118', '117', '轮播图管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-18 16:29:19');
+INSERT INTO `system_menu` VALUES ('119', '118', '轮播图列表', '', '', 'tuanj/banner/index', '', '_self', '0', '0', '0', '2018-12-18 16:29:59');
+INSERT INTO `system_menu` VALUES ('120', '117', '分类管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-18 16:35:51');
+INSERT INTO `system_menu` VALUES ('121', '120', '菜单栏', '', '', 'tuanj/lists/index', '', '_self', '0', '0', '0', '2018-12-18 16:36:01');
+INSERT INTO `system_menu` VALUES ('122', '120', '场地分类', '', '', 'tuanj/categorys/index', '', '_self', '0', '0', '0', '2018-12-18 16:37:10');
+INSERT INTO `system_menu` VALUES ('123', '120', '拓展分类', '', '', 'tuanj/condition/index', '', '_self', '0', '0', '0', '2018-12-18 16:37:49');
+INSERT INTO `system_menu` VALUES ('124', '117', '项目管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-19 17:07:24');
+INSERT INTO `system_menu` VALUES ('125', '124', '项目列表', '', '', 'tuanj/goods/index', '', '_self', '0', '0', '0', '2018-12-19 17:07:43');
 INSERT INTO `system_menu` VALUES ('126', '117', '合作伙伴', '', '', '#', '', '_self', '0', '0', '0', '2018-12-21 10:42:54');
 INSERT INTO `system_menu` VALUES ('127', '126', '伙伴列表', '', '', 'tuanj/partner/index', '', '_self', '0', '0', '0', '2018-12-21 10:43:17');
 INSERT INTO `system_menu` VALUES ('128', '117', '服务团队', '', '', '#', '', '_self', '0', '0', '0', '2018-12-21 11:41:20');
 INSERT INTO `system_menu` VALUES ('129', '128', '团队列表', '', '', 'tuanj/tuandui/index', '', '_self', '0', '0', '0', '2018-12-21 11:41:42');
 INSERT INTO `system_menu` VALUES ('130', '117', '往期案例', '', '', '#', '', '_self', '0', '0', '0', '2018-12-21 12:05:24');
 INSERT INTO `system_menu` VALUES ('131', '130', '案例列表', '', '', 'tuanj/anli/index', '', '_self', '0', '0', '0', '2018-12-21 12:05:40');
-INSERT INTO `system_menu` VALUES ('132', '117', '企业新闻', '', '', '#', '', '_self', '0', '1', '0', '2018-12-22 09:55:31');
-INSERT INTO `system_menu` VALUES ('133', '132', '新闻列表', '', '', 'tuanj/news/index', '', '_self', '0', '1', '0', '2018-12-22 09:55:48');
+INSERT INTO `system_menu` VALUES ('132', '117', '企业新闻', '', 'fa fa-desktop', '#', '', '_self', '0', '1', '0', '2018-12-22 09:55:31');
+INSERT INTO `system_menu` VALUES ('133', '132', '新闻列表', '', 'fa fa-heartbeat', 'tuanj/news/index', '', '_self', '0', '1', '0', '2018-12-22 09:55:48');
 INSERT INTO `system_menu` VALUES ('134', '117', '专属定制', '', '', '#', '', '_self', '0', '0', '0', '2018-12-27 11:41:48');
 INSERT INTO `system_menu` VALUES ('135', '134', '定制列表', '', '', 'tuanj/dingzhi/index', '', '_self', '0', '0', '0', '2018-12-27 11:42:11');
-INSERT INTO `system_menu` VALUES ('136', '117', '底部管理', '', '', '#', '', '_self', '0', '1', '0', '2018-12-28 11:26:40');
-INSERT INTO `system_menu` VALUES ('137', '136', '关于我们', '', '', 'tuanj/gywm/index', '', '_self', '0', '1', '0', '2018-12-28 11:27:06');
-INSERT INTO `system_menu` VALUES ('138', '136', '帮助中心', '', '', 'tuanj/help/index', '', '_self', '0', '1', '0', '2018-12-28 11:27:28');
-INSERT INTO `system_menu` VALUES ('139', '117', '投诉建议', '', '', '#', '', '_self', '0', '1', '0', '2019-04-01 16:40:21');
-INSERT INTO `system_menu` VALUES ('140', '139', '投诉建议列表', '', '', '/tuanj/proposal/index', '', '_self', '0', '1', '0', '2019-04-01 16:41:08');
+INSERT INTO `system_menu` VALUES ('136', '117', '底部管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-28 11:26:40');
+INSERT INTO `system_menu` VALUES ('137', '136', '关于我们', '', '', 'tuanj/gywm/index', '', '_self', '0', '0', '0', '2018-12-28 11:27:06');
+INSERT INTO `system_menu` VALUES ('138', '136', '帮助中心', '', '', 'tuanj/help/index', '', '_self', '0', '0', '0', '2018-12-28 11:27:28');
+INSERT INTO `system_menu` VALUES ('139', '117', '投诉建议', '', 'fa fa-stop-circle', '#', '', '_self', '0', '1', '0', '2019-04-01 16:40:21');
+INSERT INTO `system_menu` VALUES ('140', '139', '投诉建议列表', '', 'fa fa-building-o', '/tuanj/proposal/index', '', '_self', '0', '1', '0', '2019-04-01 16:41:08');
+INSERT INTO `system_menu` VALUES ('141', '117', '设计师管理', '', 'fa fa-street-view', '#', '', '_self', '0', '1', '0', '2019-04-02 13:24:45');
+INSERT INTO `system_menu` VALUES ('142', '141', '设计师擅长户型', '', 'fa fa-star', 'tuanj/huxing/index', '', '_self', '0', '1', '0', '2019-04-02 13:27:25');
+INSERT INTO `system_menu` VALUES ('143', '141', '设计师擅长风格', '', 'fa fa-asterisk', 'tuanj/style/index', '', '_self', '0', '1', '0', '2019-04-02 13:27:41');
+INSERT INTO `system_menu` VALUES ('144', '141', '设计师级别', '', 'fa fa-clone', '/tuanj/jibie/index', '', '_self', '0', '1', '0', '2019-04-02 13:28:02');
+INSERT INTO `system_menu` VALUES ('145', '141', '设计师管理', '', 'fa fa-hand-stop-o', '/tuanj/Designer/index', '', '_self', '0', '1', '0', '2019-04-02 17:51:31');
+INSERT INTO `system_menu` VALUES ('146', '117', '装修案例', '', 'fa fa-shopping-bag', '/tuanj/case/index', '', '_self', '0', '1', '0', '2019-04-03 16:38:13');
+INSERT INTO `system_menu` VALUES ('147', '146', '案例地区', '', 'fa fa-credit-card-alt', '/tuanj/region/index', '', '_self', '0', '1', '0', '2019-04-03 16:40:35');
+INSERT INTO `system_menu` VALUES ('148', '146', '案例面积', '', 'fa fa-archive', '/tuanj/mianji/index', '', '_self', '0', '1', '0', '2019-04-03 16:41:55');
+INSERT INTO `system_menu` VALUES ('149', '117', '装修头条', '', 'fa fa-fort-awesome', '#', '', '_self', '0', '1', '0', '2019-04-03 17:13:41');
+INSERT INTO `system_menu` VALUES ('150', '149', '装修进度', '', 'fa fa-modx', '/tuanj/jingdu/index', '', '_self', '0', '1', '0', '2019-04-03 17:16:42');
+INSERT INTO `system_menu` VALUES ('151', '117', '热门楼盘', '', 'fa fa-institution', '#', '', '_self', '0', '1', '0', '2019-04-03 17:25:58');
+INSERT INTO `system_menu` VALUES ('152', '151', '热门小区', '', 'fa fa-dot-circle-o', '/tuanj/remen/index', '', '_self', '0', '1', '0', '2019-04-03 17:30:13');
 
 -- ----------------------------
 -- Table structure for `system_node`
