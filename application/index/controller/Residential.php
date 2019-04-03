@@ -46,4 +46,9 @@ class Residential extends Common{
         return $this->fetch();
     }
 
+    //热门小区详情
+    public function detail(){
+        return $this->fetch();
+    }
+
 }

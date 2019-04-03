@@ -40,6 +40,15 @@ class Common extends Controller {
         $this->assign('helps',$helps);
         $articles = Db::name('new')->order('id desc')->limit(5)->select();
         $this->assign('articles',$articles);
+        //户型
+        $huxing = Db::name('huxing')->select();
+        $this->assign('huxing',$huxing);
+        //风格
+        $style=Db::name('style')->select();
+        $this->assign('style',$style);
+        //级别
+        $jibie =Db::name('jibie')->select();
+        $this->assign('jibie',$jibie);
     }
   
 }

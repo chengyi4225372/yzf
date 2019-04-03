@@ -2,203 +2,525 @@
 
 {include file="public/location-two" /}
 
-
 <div class="header">
-    {include file="public/menu" /}
+     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
 
-    <div class="designer-banner" style="">
+    <div class="hot-case-banner">
         <div class="auto-box">
-            <div class="msg-form row">
-                <form>
-                    <div class="col-xs-2 col-xs-offset-1 required">
-                        <input type="text" name="Name" class="form-control" placeholder="您的称呼1" />
+            <ol class="breadcrumb normal">
+                <span>当前位置：</span>
+                <li><a href="/">首页</a></li>
+                <li><a href="/Residential">热装楼盘</a></li>
+                <li class="active">龙湖时代天街</li>
+            </ol>
+            <dl class="banner-disc" title="">
+                <dt>龙湖时代天街</dt>
+                <dd><i class="iconfont icon-dibiao1"></i><span>新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）</span></dd>
+                <dd><i class="iconfont icon-fangzi"></i><span> </span></dd>
+            </dl>
+            <div class="banner-form">
+                <h2>获取您的专属优惠</h2>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text"   name="Name"  class="form-control" placeholder="您的称呼">
                     </div>
-                    <div class="col-xs-2 required">
-                        <input type="text" name="PhoneNumber" class="form-control" placeholder="您的电话" />
+                    <div class="form-group">
+                        <input type="text"  name="PhoneNumber" class="form-control" placeholder="接收短信号码">
                     </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="ResidentialName" class="form-control" placeholder="小区" />
+                    <div class="form-group">
+                        <input type="text"  name="ResidentialName" class="form-control" placeholder="输入楼盘名称">
                     </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="SquareMeters" class="form-control" placeholder="面积" />
-                    </div>
-                    <div class="col-xs-2 submit">
-                        <button class="btn btn-block btn-gold">预约免费平面设计</button>
+                    <div class="form-group submit">
+                        <a class="btn btn-gold btn-block" href="JavaScript:;">发送至手机</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="content bg-dark">
-        <div class="auto-box">
-            <ol class="breadcrumb normal">
-                <span>当前位置：</span>
-                <li><a href="/">首页</a></li>
-                <li class="active"><a href="{:url('designer/index')}"></a></li>
-            </ol>
-            <div class="content-body">
-                <table class="table table-bordered table-filer">
-                    <tr>
-                        <th>擅长户型：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">全部</a>
-                            <a class="" href="/Designer?goodRoom=%E4%B8%80%E5%B1%85&amp;orderby=CaseCount">一居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%BA%8C%E5%B1%85&amp;orderby=CaseCount">二居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%B8%89%E5%B1%85&amp;orderby=CaseCount">三居</a>
-                            <a class="" href="/Designer?goodRoom=%E5%9B%9B%E5%B1%85&amp;orderby=CaseCount">四居</a>
-                            <a class="" href="/Designer?goodRoom=%E4%BA%94%E5%B1%85&amp;orderby=CaseCount">五居</a>
-                            <a class="" href="/Designer?goodRoom=%E5%B9%B3%E5%B1%82&amp;orderby=CaseCount">平层</a>
-                            <a class="" href="/Designer?goodRoom=%E5%A4%8D%E5%BC%8F&amp;orderby=CaseCount">复式</a>
-                            <a class="" href="/Designer?goodRoom=%E5%88%AB%E5%A2%85&amp;orderby=CaseCount">别墅</a>
-                            <a class="" href="/Designer?goodRoom=%E5%8A%9E%E5%85%AC%E7%A9%BA%E9%97%B4&amp;orderby=CaseCount">办公空间</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>擅长风格：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">不限</a>
-                            <a class="" href="/Designer?goodstyle=%E7%8E%B0%E4%BB%A3%E7%AE%80%E7%BA%A6%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">现代简约风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%96%B0%E5%8F%A4%E5%85%B8%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">新古典风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%96%B0%E4%B8%AD%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">新中式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E4%B8%9C%E5%8D%97%E4%BA%9A%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">东南亚风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%9C%B0%E4%B8%AD%E6%B5%B7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">地中海风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%8C%97%E6%AC%A7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">北欧风格</a>
-                            <a class="" href="/Designer?goodstyle=%E7%AE%80%E6%AC%A7%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">简欧风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B7%B7%E6%90%AD%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">混搭风格</a>
-                            <a class="" href="/Designer?goodstyle=%E5%85%B6%E4%BB%96&amp;orderby=CaseCount">其他</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B3%95%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">法式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%B8%AF%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">港式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E7%BE%8E%E5%BC%8F%E9%A3%8E%E6%A0%BC&amp;orderby=CaseCount">美式风格</a>
-                            <a class="" href="/Designer?goodstyle=%E6%AC%A7%E5%BC%8F&amp;orderby=CaseCount">欧式</a>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>设计师级别：</th>
-                        <td>
-                            <a class="selected" href="/Designer?orderby=CaseCount">全部</a>
-                            <a class="" href="/Designer?designerLevelId=43&amp;orderby=CaseCount">优秀设计师</a>
-                            <a class="" href="/Designer?designerLevelId=52&amp;orderby=CaseCount">资深设计师</a>
-                            <a class="" href="/Designer?designerLevelId=39&amp;orderby=CaseCount">副主任设计师</a>
-                            <a class="" href="/Designer?designerLevelId=38&amp;orderby=CaseCount">主任设计师</a>
-                            <a class="" href="/Designer?designerLevelId=40&amp;orderby=CaseCount">高级设计师</a>
-                            <a class="" href="/Designer?designerLevelId=51&amp;orderby=CaseCount">主案设计师</a>
-                            <a class="" href="/Designer?designerLevelId=41&amp;orderby=CaseCount">首席设计师</a>
-                            <a class="" href="/Designer?designerLevelId=42&amp;orderby=CaseCount">设计总监</a>
-                        </td>
-                    </tr>
-                </table>
-                <div class="case-sort-wrap">
-                    <span>排序：</span> <a class="selected" href="/Designer?orderby=CaseCount">人气 <i class="iconfont icon-shang"></i></a>|
-                    <a class="" href="/Designer?orderby=StartWorkingTime">
-                        从业经验<i class="iconfont icon-xia"></i>
-                    </a>
-                </div>
-                <div class="designer-list-wrap">
-                    <ul class="designer-list">
-                       {volist name="list" id="vo" }
-                        <li>
-                            <!--<img class="designer-level" src="{$vo.img}" alt="">-->
-                            <a href="{:url('designer/detail')}?id={$vo.id}">
-                                <div class="img-view">
-                                    <img src="{$vo.img}" alt="" />
-                                </div>
-                                <div class="designer-info">
-                                    <h3>{$vo.names}<small>首席设计师</small></h3>
-                                    <div class="item-wrap">
-                                        <span>案例数：32套</span>
-                                        <span>从业经验：{$vo.job_year}</span>
-                                    </div>
-                                    <p>{$vo.rongyu|mb_substr='0','10'} </p>
-                                </div>
-                                <ul class="designer-control">
-                                    <li><a href="javascript:void(0)" onclick="doyoo.util.openChat(&#39;g=10064078&#39;);return false;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                    <li><a href="{:url('designer/detail')}?id={$vo.id}">
-                                        <i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
-                                </ul>
-                            </a>
-                        </li>
-                        {/volist}
+
+
+    <div class="hot-tab-nav">
+        <div class="auto-box">
+            <ul>
+                <li class="active"><a href="/Residential/Detail/6872">楼盘案例（17）</a></li>
+                <li class=""><a href="/Residential/Detail_fay/6872">看工地（2）</a></li>
+                <li class=""><a href="/Residential/Detail_fayOver/6872">竣工实景图（0）</a></li>
+                <li class=""><a href="/Residential/Detail_hall/6872">楼盘户型（0）</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="auto-box">
+            <div class="hot-filter">
+                <span>&nbsp;</span>
+            </div>
+
+
+            <div class="case-list-wrap hot-list-wrap">
+
+                <ul class="case-list">
+                    <li>
+                        <a href="/ResidentialCase/Detail/66332" class="img-box">
+                            <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164879620403.jpg" alt="龙湖时代天街">
+                        </a>
+                        <a href="/Designer/Detail/836" class="user-img">
+                            <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街" href="/ResidentialCase/Detail/66332">龙湖时代天街</a></dt>
+                            <dd><span>三居</span> | <span>115㎡</span> | <span>轻奢风</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/65704" class="img-box">
+                            <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138139160950.png" alt="龙湖时代天街">
+                        </a>
+                        <a href="/Designer/Detail/3301" class="user-img">
+                            <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_100x100.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街" href="/ResidentialCase/Detail/65704">龙湖时代天街</a></dt>
+                            <dd><span>三居</span> | <span>115㎡</span> | <span>现代简约风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/58231" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/7/15/1747499356685.jpg_306x210.jpg" alt="龙湖一期1-603">
+                        </a>
+                        <a href="/Designer/Detail/852" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖一期1-603" href="/ResidentialCase/Detail/58231">龙湖一期1-603</a></dt>
+                            <dd><span>三居</span> | <span>105㎡</span> | <span>北欧风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/58229" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/7/15/1747497838998.jpg_306x210.jpg" alt="龙湖一期1-3106-效果图">
+                        </a>
+                        <a href="/Designer/Detail/852" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖一期1-3106-效果图" href="/ResidentialCase/Detail/58229">龙湖一期1-3106-效果...</a></dt>
+                            <dd><span>三居</span> | <span>105㎡</span> | <span>北欧风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57828" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/6/14/1720590041181.jpg_306x210.jpg" alt="龙湖时代天街二期2">
+                        </a>
+                        <a href="/Designer/Detail/3302" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街二期2" href="/ResidentialCase/Detail/57828">龙湖时代天街二期2</a></dt>
+                            <dd><span>二居</span> | <span>115㎡</span> | <span>新中式风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57827" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/6/14/1720588880165.jpg_306x210.jpg" alt="龙湖时代二期1">
+                        </a>
+                        <a href="/Designer/Detail/3302" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代二期1" href="/ResidentialCase/Detail/57827">龙湖时代二期1</a></dt>
+                            <dd><span>二居</span> | <span>115㎡</span> | <span>现代简约风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57826" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/6/13/1720000079021.jpg_306x210.jpg" alt="龙湖时代天街一期2">
+                        </a>
+                        <a href="/Designer/Detail/3302" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街一期2" href="/ResidentialCase/Detail/57826">龙湖时代天街一期2</a></dt>
+                            <dd><span>二居</span> | <span>105㎡</span> | <span>现代简约风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57825" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/6/13/1719999261656.jpg_306x210.jpg" alt="龙湖时代天街一期1">
+                        </a>
+                        <a href="/Designer/Detail/3302" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街一期1" href="/ResidentialCase/Detail/57825">龙湖时代天街一期1</a></dt>
+                            <dd><span>二居</span> | <span>105㎡</span> | <span>现代简约风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57424" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695776948390.jpg_306x210.jpg" alt="龙湖时代天街现代">
+                        </a>
+                        <a href="/Designer/Detail/836" class="user-img">
+                            <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街现代" href="/ResidentialCase/Detail/57424">龙湖时代天街现代</a></dt>
+                            <dd><span>三居</span> | <span>142㎡</span> | <span>现代简约风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57423" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695773849523.jpg_306x210.jpg" alt="龙湖时代天街美式">
+                        </a>
+                        <a href="/Designer/Detail/1340" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街美式" href="/ResidentialCase/Detail/57423">龙湖时代天街美式</a></dt>
+                            <dd><span>三居</span> | <span>142㎡</span> | <span>美式风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57422" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695772352123.jpg_306x210.jpg" alt="龙湖时代天街简美">
+                        </a>
+                        <a href="/Designer/Detail/1340" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57422">龙湖时代天街简美</a></dt>
+                            <dd><span>三居</span> | <span>142㎡</span> | <span>简美</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57421" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695771420079.jpg_306x210.jpg" alt="龙湖时代天街简美">
+                        </a>
+                        <a href="/Designer/Detail/1340" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57421">龙湖时代天街简美</a></dt>
+                            <dd><span>三居</span> | <span>140㎡</span> | <span>简美</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/57420" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695769271760.jpg_306x210.jpg" alt="龙湖时代天街简美">
+                        </a>
+                        <a href="/Designer/Detail/1340" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57420">龙湖时代天街简美</a></dt>
+                            <dd><span>二居</span> | <span>105㎡</span> | <span>简美</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/51019" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2016/8/18/1461444651470.jpg_306x210.jpg" alt="龙湖时代天街 美式风格">
+                        </a>
+                        <a href="/Designer/Detail/997" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街 美式风格" href="/ResidentialCase/Detail/51019">龙湖时代天街 美式风格</a></dt>
+                            <dd><span>四居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/50960" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2016/8/16/1459843850817.jpg_306x210.jpg" alt="龙湖时代天街 美式风格">
+                        </a>
+                        <a href="/Designer/Detail/1639" class="user-img">
+                            <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="龙湖时代天街 美式风格" href="/ResidentialCase/Detail/50960">龙湖时代天街 美式风格</a></dt>
+                            <dd><span>三居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="/ResidentialCase/Detail/50922" class="img-box">
+                            <img src="http://picfw.yzf.com.cn/2016/8/15/1458946948965.jpg_306x210.jpg" alt="时代天街美式风格">
+                        </a>
+                        <a href="/Designer/Detail/3294" class="user-img">
+                            <img src="/images/logo.jpg" alt="user">
+                        </a>
+                        <dl>
+                            <dt><a title="时代天街美式风格" href="/ResidentialCase/Detail/50922">时代天街美式风格</a></dt>
+                            <dd><span>三居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
+
+                        <li class="active"><a data-pjax="" href="/Residential/Detail/6872?PageIndex=1">1</a></li>
+                        <li class=""><a data-pjax="" href="/Residential/Detail/6872?PageIndex=2">2</a></li>
+
+                        <li><a data-pjax="" href="/Residential/Detail/6872?PageIndex=2">下一页</a></li>
 
                     </ul>
+                </nav>
 
 
 
-                </div>
-                <div class="web-adv">
-                    <img src="/images/web-adv.jpg" alt="">
-                </div>
+
+
+
+
+
             </div>
         </div>
     </div>
+</div>
+<div class="footer">
+    <div class="footer-a">
+        <div class="auto-box">
+            <div class="footer-a-top">
+                <div class="footer-a-logo">
+                    <a href="JavaScript:;"><img src="/images/footer-logo.png" alt=""></a>
+                </div>
+                <div class="footer-a-center">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a target="_blank" href="/SpecialTopics2/About">集团介绍</a></dd>
+                        <dd><a target="_blank" href="/CompanyNews">企业动态</a></dd>
+                        <dd><a target="_blank" href="/job/HR">人才招聘</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://www.263.net">企业邮箱</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>客户服务</dt>
+                        <dd><a target="_blank" href="/CompanyNews/TestimonialHome">业主感言</a></dd>
+                        <dd><a target="_blank" href="/ResidentialCase/AppointmentVisit">参观工地</a></dd>
+                        <dd><a target="_blank" href="/AboutUs/tousujianyi">投诉建议</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>品牌力量</dt>
+                        <dd><a target="_blank" href="/SpecialTopics2/ep">环保体系</a></dd>
+                        <dd><a target="_blank" href="/SpecialTopics2/BlueDiamond">蓝钻工程</a></dd>
+                        <dd><a target="_blank" href="/SpecialTopics2/FiveAfterSale">五星售后</a></dd>
+                        <dd><a target="_blank" href="/SpecialTopics2/FiveZero">五零承诺</a></dd>
+                    </dl>
+                    <dl class="last-dl">
+                        <dt><a target="_blank" href="JavaScript:;">电商平台</a></dt>
+                        <dd><a target="_blank" rel="nofollow" href="https://yezhifeng.tmall.com/">天猫旗舰店</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://anli.jiaju.sina.com.cn/">新浪案例库</a></dd>
+                    </dl>
+                </div>
+                <div class="footer-a-right">
+                    <div class="detail-share">
+                        <a class="share-btn" href="###"><i class="iconfont icon-weixin"></i><div class="drop-on"><img src="http://picfw.yzf.com.cn/2016/6/20/1410547802941.jpg" /></div></a>
+                        <a class="share-btn" target="_blank" href="http://weibo.com/yzfgroup"><i class="iconfont icon-weibo"></i></a>
+                        <a class="share-btn" href="#" id="a_qq"><i class="iconfont icon-QQ"></i></a>
+                        <a class="share-btn" target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&kw=%E4%B8%9A%E4%B9%8B%E5%B3%B0&fr=search&red_tag=q1754322760"><i class="iconfont icon-baidu1"></i></a>
+                    </div>
+                    <p>24h装修服务热线</p>
+                    <h4>15050137040</h4>
 
-    <div class="modal fade" id="modal_apply">
-        <div class="modal-dialog yzf-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">免费平面规划<small></small></h4>
                 </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <input name="Channel" value="免费平面规划" type="hidden" />
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">姓名</label>
-                            <div class="col-xs-10">
-                                <input name="Name" type="text" class="form-control" placeholder="输入姓名">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">手机</label>
-                            <div class="col-xs-10">
-                                <input name="PhoneNumber" type="text" class="form-control" placeholder="输入手机号">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">小区</label>
-                            <div class="col-xs-4">
-                                <input name="ResidentialName" type="text" class="form-control" placeholder="输入小区名">
-                            </div>
-                            <label class="col-xs-2 control-label">面积</label>
-                            <div class="col-xs-4">
-                                <input name="SquareMeters" type="text" class="form-control" placeholder="输入面积">
-                            </div>
-                        </div>
-                        <div class="form-group submit">
-                            <div class="btn-wrap">
-                                <button type="submit" class="btn btn-gold btn-block">立即报名</button>
-                            </div>
-                        </div>
-                        <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
-                    </form>
-                </div>
+            </div>
+            <div class="footer-a-bot">
+                <span>友情链接：</span>
+                <a target="_blank" href="http://qd.yzf.com.cn">青岛装修公司</a>
+                <a target="_blank" href="http://zz.yzf.com.cn">郑州装修公司</a>
+                <a target="_blank" href="http://nb.yzf.com.cn">宁波装修公司</a>
+                <a target="_blank" href="http://xa.yzf.com.cn">西安装修公司</a>
+                <a target="_blank" href="http://tj.yzf.com.cn">天津装修公司</a>
+                <a target="_blank" href="http://gy.yzf.com.cn">贵阳装修公司</a>
+                <a target="_blank" href="http://lz.yzf.com.cn">兰州装修公司</a>
+                <a target="_blank" href="http://heb.yzf.com.cn">哈尔滨装修公司</a>
+                <a target="_blank" href="http://jn.yzf.com.cn">济南装修公司</a>
+                <a target="_blank" href="http://cqhd.yzf.com.cn">重庆装修公司</a>
+                <a target="_blank" href="http://sjz.yzf.com.cn">石家庄装修公司</a>
+                <a target="_blank" href="http://cd.yzf.com.cn">成都装修公司</a>
+                <a target="_blank" href="http://nj.yzf.com.cn">南京装修公司</a>
+                <a target="_blank" href="http://nc.yzf.com.cn">南昌装修公司</a>
+                <a target="_blank" href="http://dl.yzf.com.cn">大连装修公司</a>
+                <a target="_blank" href="http://wh.yzf.com.cn">武汉装修公司</a>
+                <a target="_blank" href="http://sy.yzf.com.cn">沈阳装修公司</a>
+                <a target="_blank" href="http://ty.yzf.com.cn">太原装修公司</a>
+                <a target="_blank" href="http://wf.yzf.com.cn">潍坊装修公司</a>
+                <a target="_blank" href="http://suzhou.yzf.com.cn">苏州装修公司</a>
+                <a target="_blank" href="http://www.yzftx.cn">业之峰连锁官网</a>
             </div>
         </div>
     </div>
-    <script>
-        $(function () {
-            $('.designer-list li').hover(function () {
-                $(this).toggleClass('hover');
-            });
-        })
-
-    </script>
-    <!--  "我要咨询"绑定“母版页2018”悬浮框“在线咨询” -->
-    <script>
-        //$('.consult').click(function () {
-        //    $('#consultation').trigger('click');
-        //});
-        $('.a_apply').click(function () {
-            $('#modal_apply').modal('show');
-        });
-    </script>
+    <div class="footer-b">
+        业之峰诺华家居装饰集团股份有限公司版权所有© 2000-2018  京ICP备16022901号 | 京公网安备11010502001310号
+    </div>
+</div>
+<div class="fixed-menu-wrap">
+    <ul class="fixed-menu">
+        <li>
+            <a href="javascript:void(0)" onclick="doyoo.util.openChat('g=10064078');return false;">
+                <i class="iconfont icon-erjikefu"></i>
+                <span>在线咨询</span>
+            </a>
+            <script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001829/10063849.js"></script>
+        </li>
+        <li>
+            <a href="JavaScript:;" data-toggle="modal" data-target="#priceModal">
+                <i class="iconfont icon-ERP_hetonghao"></i>
+                <span>免费报价</span>
+            </a>
+        </li>
+        <li>
+            <a href="JavaScript:;" data-toggle="modal" data-target="#yuyuesheji">
+                <i class="iconfont icon-pan_icon"></i>
+                <span>预约设计</span>
+            </a>
+        </li>
+        <li class="last">
+            <a href="javascript:;">
+                <i class="iconfont icon-erweima1"></i>
+                <span>案例解析</span>
+                <div class="drop-on">
+                    <img src="/Images/ecode.jpg" />
+                </div>
+            </a>
+        </li>
+    </ul>
+    <a id="scrollUp" href="javascript:;" class="go-top iconfont icon-jiantou3"></a>
 </div>
 
-{include file="public/footer" /}
 
-{include file="public/menu_right"  /}
+<div id="fixed-bar-wrap" class="fixed-bar-wrap" style="z-index:20;">
+    <div id="control-bar" class="control-bar"></div>
+    <div class="fixed-white-box">
+        <div class="fixed-white-l">
+            <div class="fixed-panel-header">
+                装修计算器
+                <small>今天已有1055位业主获取了装修预算</small>
+            </div>
+            <div class="fixed-panel-body">
+                <form class="form-horizontal calculator-form">
+                    <input name="channel" value="设计师报价计算器" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="squareMeters" placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="phoneNumber" placeholder="报价结果将发送到您的手机">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button class="btn submit-label-btn">开始计算</button>
+                        <span class="circle-animate"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="fixed-white-r">
+            <h3>超精准计算，一步解决预算难题</h3>
+            <div class="fixed-disc">
+                您的装修预算 <strong id="zong">132569</strong> 元
+            </div>
+            <ul class="fixed-result">
+                <li>材料费：<strong id="cai">87858</strong>元</li>
+                <li>人工费：<strong id="ren">58962</strong>元</li>
+                <li>设计费：<strong id="she">7853</strong>元</li>
+                <li>质检费：<strong id="zhi">1223</strong>元</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var zong = $('#zong');
+        var cai = $('#cai');
+        var ren = $('#ren');
+        var she = $('#she');
+        var zhi = $('#zhi');
+        var myArray = [[121459, 58365, 50497, 8218, 4379],
+            [155424, 69322, 77284, 5373, 3445],
+            [108289, 87732, 17309, 1583, 1665],
+            [236859, 126580, 92027, 11769, 6483],
+            [142826, 75720, 52404, 9717, 4985]];
+
+        var i = 0;
+        var timer = setInterval(function () {
+            if (i > 4) {
+                i = 0;
+            }
+            var arraySon = myArray[i];
+            zong.text(arraySon[0]);
+            cai.text(arraySon[1]);
+            ren.text(arraySon[2]);
+            she.text(arraySon[3]);
+            zhi.text(arraySon[4]);
+            i++
+        }, 200);
+    })
+</script>
+
 
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
@@ -370,7 +692,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1053位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有1055位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -815,6 +1137,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
@@ -858,6 +1183,9 @@
         </div>
     </div>
 </div>
+
+
+
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -874,11 +1202,14 @@
 
 <input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
 <script src="__STATIC__/home/js/yzf_city.js"></script>
+
+
 <script>
     $('#a_qq').click(function () {
         $('#consultation').trigger('click');
     });
 </script>
+
 <script src="__STATIC__/home/js/customer-common.js"></script>
 </body>
 </html>
