@@ -20,12 +20,12 @@ class Designer extends BasicAdmin {
     public function index() {
         $this->title = '设计师管理';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('name', "%{$get['keywords']}%");
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('names|school', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
-        return parent::_list($db->order('sort asc,time desc,id desc'));
+        return parent::_list($db->order('id desc'));
     }
 
     /**
@@ -50,7 +50,7 @@ class Designer extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/condition/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/designer/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

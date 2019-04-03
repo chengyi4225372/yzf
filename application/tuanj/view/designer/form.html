@@ -1,10 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{extend name='admin@public/content'}
 
-</body>
-</html>
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师头像</label>
+        <div class="layui-input-block">
+            <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师荣誉图像</label>
+        <div class="layui-input-block">
+            <input type="text" name="r_img" value='{$vo.r_img|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="names" value='{$vo.names|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师从业时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="job_time" value='{$vo.job_time|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师从业年头</label>
+        <div class="layui-input-block">
+            <input type="text" name="job_year" value='{$vo.job_year|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师毕业院校</label>
+        <div class="layui-input-block">
+            <input type="text" name="school" value='{$vo.school|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师诚信宣言</label>
+        <div class="layui-input-block">
+            <input type="text" name="xuanyan" value='{$vo.xuanyan|default=""}' class="layui-input">
+        </div>
+    </div>
+
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设计师设计理念</label>
+        <div class="layui-input-block">
+            <input type="text" name="linian" value='{$vo.linian|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">设计师所获荣誉</label>
+        <div class="layui-input-block">
+            <textarea name="rongyu" class="layui-textarea">{if isset($vo['id'])}{$vo.rongyu}{/if}</textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">设计师主要作品</label>
+        <div class="layui-input-block">
+            <textarea name="zuoping" class="layui-textarea">{if isset($vo['id'])}{$vo.zuoping}{/if}</textarea>
+        </div>
+    </div>
+
+
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        $('form [name="r_img"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+
