@@ -3,8 +3,6 @@
 {block name="content"}
 <form class="layui-form layui-box modal-form-box" action="{:url('designer/add')}" data-auto="true" method="post">
 
-    <input type="hidden" name="id" value="{$vo.id}">
-
     <div class="layui-form-item">
         <label class="layui-form-label">设计师头像</label>
         <div class="layui-input-block">
@@ -82,7 +80,7 @@
         <label class="layui-form-label">擅长户型</label>
         <div class="layui-input-block">
             {volist name="huxing" id="list"}
-            <input type="checkbox" name="h_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" {in name="list.id" value="$vo.h_id"}checked="" {/in} >
+            <input type="checkbox" name="h_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" >
             {/volist}
         </div>
     </div>
@@ -92,20 +90,23 @@
         <label class="layui-form-label">擅长风格</label>
         <div class="layui-input-block">
             {volist name="style" id="list"}
-            <input type="checkbox" name="s_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" {in name="list.id" value="$vo.s_id"}checked="" {/in} >
+            <input type="checkbox" name="s_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" >
             {/volist}
         </div>
     </div>
+
 
     <div class="layui-form-item" pane="">
         <label class="layui-form-label">设计师级别</label>
         <div class="layui-input-block">
             {volist name="jibie" id="list"}
-            <input type="checkbox" name="j_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" {in name="list.id" value="$vo.j_id"}checked="" {/in} >
+            <input type="checkbox" name="j_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" >
             {/volist}
         </div>
     </div>
-    <span style="color:#ff2600;">*设计师级别只能选择一个!风格和户型可以多选！</span>
+
+ <span style="color:#ff2600;">*设计师级别只能选择一个!风格和户型可以多选！</span>
+
 
     <div class="hr-line-dashed"></div>
 

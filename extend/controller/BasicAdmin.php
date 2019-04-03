@@ -66,6 +66,16 @@ class BasicAdmin extends Controller {
                 $this->assign('categorys',$categorys);
 //                $conditions = Db::name('condition')->where('conid',0)->select();
 //                $this->assign('conditions',$conditions);
+                //户型
+                $huxing = Db::name('huxing')->select();
+                $this->assign('huxing',$huxing);
+                //风格
+                $style=Db::name('style')->select();
+                $this->assign('style',$style);
+                //级别
+                $jibie =Db::name('jibie')->select();
+                $this->assign('jibie',$jibie);
+
                 return $this->fetch($tplFile, ['vo' => $vo]);
             }
             return $vo;

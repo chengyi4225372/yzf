@@ -13,17 +13,17 @@
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li><a href="/Designer">设计师</a></li>
-                <li class="active"><span href="#">吴文</span></li>
+                <li><a href="{:url('designer/index')}">设计师</a></li>
+                <li class="active"><span href="#">{$res.names}</span></li>
             </ol>
             <img src="http://picfw.yzf.com.cn/100059/2018/3/6/1949704105905.png" height="600" alt="" class="designer-img">
             <div class="designer-banner-form">
                 <dl>
                     <dt>
-                        吴文
-                        <small>wen wu</small>
+                        {$res.names}
+                        <!--<small>wen wu</small>-->
                     </dt>
-                    <dd>首席设计师 / 江西科技师范学院 <i class="iconfont icon-jiantou2"></i></dd>
+                    <dd>首席设计师 / {$res.school} <i class="iconfont icon-jiantou2"></i></dd>
                 </dl>
                 <form>
                     <input type="hidden" name="channel" value="设计师" />
@@ -63,23 +63,23 @@
                     <div class="profile-dl-wrap">
                         <dl>
                             <dt>从业时间</dt>
-                            <dd>2007年工作至今</dd>
+                            <dd>{$res.job_time}</dd>
                         </dl>
                         <dl>
                             <dt>毕业院校</dt>
-                            <dd>江西科技师范学院</dd>
+                            <dd>{$res.school}</dd>
                         </dl>
                         <dl>
                             <dt>诚信宣言</dt>
-                            <dd>在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！</dd>
+                            <dd>{$res.xuanyan}</dd>
                         </dl>
                         <dl>
                             <dt>设计理念</dt>
-                            <dd>运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！</dd>
+                            <dd>{$res.linian}</dd>
                         </dl>
                         <dl>
                             <dt>主要作品</dt>
-                            <dd>狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...</dd>
+                            <dd>{$res.zuoping}</dd>
                         </dl>
                     </div>
                 </div>
@@ -87,12 +87,7 @@
                     <div class="designer-tab-l">
                         <div style="height:300px">
                             <ul class="honor-ul">
-                                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2011年 &nbsp; &nbsp;荣获新浪家居设计之星；
-                                    2012年 &nbsp; &nbsp;荣获集团设计大赛金奖；
-                                    2013年 &nbsp; &nbsp;荣获苏州“先锋木业杯”三等奖；
-                                    2014年 &nbsp; &nbsp;荣获苏州首届室内设计大赛“优秀设计作品奖”；
-                                    2015年 &nbsp; &nbsp;“美涂士漆”杯业之峰全国室内设计精英奖
-                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                                <p>{$res.rongyu}</p>
                             </ul>
                         </div>
                         <div>
@@ -112,12 +107,13 @@
             </div>
         </div>
     </div>
+    <!-- 设计案例-->
     <div class="content">
         <div class="auto-box">
             <div class="content-body">
                 <div class="designer-panel">
                     <div class="designer-panel-header">
-                        <strong>吴文设计师案例</strong>
+                        <strong>{$res.names}设计师案例</strong>
                     </div>
                     <div class="designer-panel-body">
                         <div class="case-list-wrap">
@@ -247,79 +243,26 @@
                     </div>
                     <div class="designer-panel-body">
                         <ul class="designer-list">
+                            {volist name="list" id="vo"}
                             <li class="">
-                                <a href="/Designer/detail/1056">
+                                <a href="{:url('designer/detail')}?id={$vo.id}">
                                     <div class="img-view">
-                                        <img src="http://picfw.yzf.com.cn/2016/7/29/1444134106287.jpg_280x280.jpg" alt="">
+                                        <img src="{$vo.img}" alt="">
                                     </div>
                                     <div class="designer-info">
-                                        <h3>梁侠 <small>首席设计师</small></h3>
+                                        <h3>{$vo.names} <small>首席设计师</small></h3>
                                         <div class="item-wrap">
                                             <span>案例数：44套</span>
-                                            <span>从业经验：14年</span>
+                                            <span>从业经验：{$vo.job_year}</span>
                                         </div>
-                                        <p>设计源于生活、设计创造生活、生...</p>                                    </div>
+                                        <p>{$vo.rongyu|mb_substr='0','15'}</p></div>
                                     <ul class="designer-control">
                                         <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
                                         <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
                                     </ul>
                                 </a>
                             </li>
-                            <li class="">
-                                <a href="/Designer/detail/836">
-                                    <div class="img-view">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_280x280.jpg" alt="">
-                                    </div>
-                                    <div class="designer-info">
-                                        <h3>吴文 <small>首席设计师</small></h3>
-                                        <div class="item-wrap">
-                                            <span>案例数：32套</span>
-                                            <span>从业经验：13年</span>
-                                        </div>
-                                        <p>           2011年  荣获新浪家...</p>                                    </div>
-                                    <ul class="designer-control">
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="/Designer/detail/3301">
-                                    <div class="img-view">
-                                        <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_280x280.jpg" alt="">
-                                    </div>
-                                    <div class="designer-info">
-                                        <h3>陈晓龙 <small>首席设计师</small></h3>
-                                        <div class="item-wrap">
-                                            <span>案例数：13套</span>
-                                            <span>从业经验：10年</span>
-                                        </div>
-                                        <p>           2006年  “设计之星...</p>                                    </div>
-                                    <ul class="designer-control">
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="/Designer/detail/1639">
-                                    <div class="img-view">
-                                        <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_280x280.jpg" alt="">
-                                    </div>
-                                    <div class="designer-info">
-                                        <h3>张超 <small>首席设计师</small></h3>
-                                        <div class="item-wrap">
-                                            <span>案例数：12套</span>
-                                            <span>从业经验：10年</span>
-                                        </div>
-                                        <p>           2010年  湖北省室内...</p>                                    </div>
-                                    <ul class="designer-control">
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                        <li><a href="JavaScript:;"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
-                                    </ul>
-                                </a>
-                            </li>
-
+                            {/volist}
                         </ul>
                     </div>
                 </div>

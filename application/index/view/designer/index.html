@@ -98,27 +98,29 @@
                 </div>
                 <div class="designer-list-wrap">
                     <ul class="designer-list">
-
+                       {volist name="list" id="vo" }
                         <li>
-                            <img class="designer-level" src="/images/icon-level-2.png" alt="">
-                            <a href="{:url('designer/detail')}">
+                            <!--<img class="designer-level" src="{$vo.img}" alt="">-->
+                            <a href="{:url('designer/detail')}?id={$vo.id}">
                                 <div class="img-view">
-                                    <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_325x485.jpg" alt="">
+                                    <img src="{$vo.img}" alt="" />
                                 </div>
                                 <div class="designer-info">
-                                    <h3>吴文 <small>首席设计师</small></h3>
+                                    <h3>{$vo.names}<small>首席设计师</small></h3>
                                     <div class="item-wrap">
                                         <span>案例数：32套</span>
-                                        <span>从业经验：13年</span>
+                                        <span>从业经验：{$vo.job_year}</span>
                                     </div>
-                                    <p>           2011年  荣获新浪家...</p>                            </div>
+                                    <p>{$vo.rongyu|mb_substr='0','10'} </p>
+                                </div>
                                 <ul class="designer-control">
                                     <li><a href="javascript:void(0)" onclick="doyoo.util.openChat(&#39;g=10064078&#39;);return false;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                    http://lead.soperson.com/20001829/10063849.js
-                                    <li><a href="/Designer/detail/836"><i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
+                                    <li><a href="{:url('designer/detail')}?id={$vo.id}">
+                                        <i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
                                 </ul>
                             </a>
                         </li>
+                        {/volist}
 
                     </ul>
 

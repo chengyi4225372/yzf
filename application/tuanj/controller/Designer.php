@@ -33,7 +33,24 @@ class Designer extends BasicAdmin {
      * @return type
      */
     public function add() {
-        return $this->_form($this->dataform, 'form');
+         if(request()->isPost()){
+             $data  = input('post.');
+           if(empty($data['id'])){
+                 $data['h_id'] = implode(',',$data['h_id']);
+                 $data['s_id'] = implode(',',$data['s_id']);
+                 $data['j_id'] = implode(',',$data['j_id']);
+                 $res = Db::name('designer')->data($data)->insert();
+                 $this->_form_result($res);
+             }else{
+                 $data['h_id'] = implode(',',$data['h_id']);
+                 $data['s_id'] = implode(',',$data['s_id']);
+                 $data['j_id'] = implode(',',$data['j_id']);
+                 $res = Db::name('designer')->where('id',$data['id'])->update($data);
+                 $this->_form_result($res);
+             }
+         }else{
+             return $this->_form($this->dataform, 'add');
+         }
     }
 
     /**
@@ -41,6 +58,9 @@ class Designer extends BasicAdmin {
      * @return type
      */
     public function edit() {
+        $id = input('get.id');
+        $vo=Db::name('designer')->where('id',$id)->find();
+        $this->assign('vo',$vo);
         return $this->_form($this->dataform, 'form');
     }
 
