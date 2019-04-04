@@ -1,284 +1,364 @@
 {include file="public/header-two" /}
 
 {include file="public/location-two" /}
-
 <div class="header">
-     {include file="public/menu" /}
+
+   {include file="public/menu" /}
 </div>
 <div id="RenderBody">
 
-    <div class="hot-list-banner">
+    <link rel="stylesheet" href="__STATIC__/home/css_/topic-lz.css" />
+
+    <div class="lz-a"></div>
+    <div class="lz-b">
         <div class="auto-box">
-            <div class="case-search">
-                <div class="search-group">
-                    <form method="get" action="{:url('residential/popular')}">
-                        <input type="text" name="searchkey" value="{$Think.get.searchkey}" class="form-control" placeholder="搜索我家小区">
-                        <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
-                    </form>
+            <div class="lz-header">
+                <h2>蓝钻工程 四大保障系统</h2>
+                <p>FOUR SECURITY SYSTEMS</p>
+            </div>
+            <div class="lz-body">
+                <img class="lz-b-img" src="__STATIC__/home/image/lz-b-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="lz-c">
+        <div class="auto-box">
+            <div class="lz-header">
+                <h2>工艺质量保障系统</h2>
+                <p>
+                    业之峰结合多年施工实践，运用美国CCP（关键控制点）管理概念，精心研发多项先进、稳定、标准 <br>
+                    的蓝钻施工工艺，确保家装工程质量无懈可击！
+                </p>
+            </div>
+            <div class="lz-body">
+                <ul class="lz-c-tab">
+                    <li class="active"><a href="JavaScript:;" class="btn">管道保温工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">分腔穿线工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">双层防水工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">德系吊顶工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">防霉抗菌工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">墙角保护工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">防护漏电工艺</a></li>
+                    <li><a href="JavaScript:;" class="btn">瓷砖薄贴工艺</a></li>
+                </ul>
+                <div class="lz-c-tabcont">
+                    <img style="display: block"  <img src="__STATIC__/home/image/c-tab-1.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-2.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-3.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-4.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-5.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-6.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-7.jpg" alt="">
+                    <img src="__STATIC__/home/image/c-tab-8.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="lz-d">
         <div class="auto-box">
-            <ol class="breadcrumb normal">
-                <span>当前位置：</span>
-                <li><a href="/">首页</a></li>
-                <li class="active">热装小区</li>
-            </ol>
-            <div class="content-body">
-                <table class="table table-bordered table-filer">
-                    <tr>
-                        <th>市区:</th>
-                        <td>
-                            <a href="/Residential" class="selected">不限</a>
-                            {volist name="region" id="vo" }
-                            <a class="" href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
-                             {/volist}
-                        </td>
-                    </tr>
-                </table>
-                <div class="const-wrap">
-
-                    <div class="const-main">
-                        <div class="hot-z-wrap">
-                            <ul class="hot-z-list">
-                                {volist name="info" id="vo" }
+            <div class="lz-header">
+                <h2>材料质量保障系统</h2>
+                <p>
+                    业之峰采用日本的全面质量管理（TQM：Total Quality Manageme）并将其运用到家装行业中。 <br>
+                    环保的材料保障家装工程卓越的环保性能，告别家装顽疾。
+                </p>
+            </div>
+            <div class="lz-body">
+                <div id="carousel-example-generic" class="carousel slide lz-d-slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <ul class="quality-list">
                                 <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="{:url('residential/detail')}?id={$vo.id}" class="img-box">
-                                            <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/12/3/龙湖.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
-                                            <span title="新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）">{$vo.location|mb_substr='0','30'}<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：17  </span>
-                                            <span>实景工地：2  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img.jpg" alt="">
+                                        <span>VASEN PP-R弧形大弯弯头</span>
+                                    </a>
                                 </li>
-                                {/volist}
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img2.jpg" alt="">
+                                        <span>欧洲澳松板</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img3.jpg" alt="">
+                                        <span>CAPAROL(德爱威)自然涂料</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img4.jpg" alt="">
+                                        <span>爱格欧松板</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img5.jpg" alt="">
+                                        <span>业之峰专用PPR水管</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img6.jpg" alt="">
+                                        <span>中国特变电工JHSZ-BV双绝缘电线</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img7.jpg" alt="">
+                                        <span>智恒负氧离子腻子粉</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/quality-img8.jpg" alt="">
+                                        <span>智恒白胶</span>
+                                    </a>
+                                </li>
                             </ul>
-                            <nav class="text-center">
-                                <ul class="pagination">
-                                    <li class="active">{$info|raw}</li>
-                                </ul>
-                            </nav>
-
+                        </div>
+                        <div class="item">
+                            <ul class="quality-list">
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/玻化砖瓷砖胶.jpg" alt="">
+                                        <span>玻化砖瓷砖胶</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/德国保温抗菌管.jpg" alt="">
+                                        <span>保温抗菌管</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/防水涂料.jpg" alt="">
+                                        <span>防水涂料</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/飞利浦弱电线.jpg" alt="">
+                                        <span>飞利浦弱电线</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/混凝土界面剂.jpg" alt="">
+                                        <span>混凝土界面剂</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/甲醛净化石膏板.jpg" alt="">
+                                        <span>甲醛净化石膏板</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/理想IDEAL导线连接器.jpg" alt="">
+                                        <span>理想IDEAL导线连接器</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:;" class="box-link">
+                                        <img src="__STATIC__/home/image/蓝钻/阻燃PVC电工套管.jpg" alt="">
+                                        <span>阻燃PVC电工套管</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="const-side">
-                        <div class="side-adv">
-                            <a href="/s2017/qgkjby0901"><img src="/images/adv-1.png" alt=""></a>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lz-e">
+        <div class="auto-box">
+            <div class="lz-header">
+                <h2>环境质量保障系统</h2>
+                <p>业之峰全力打造整洁、健康和人性化的施工环境，
+                    确保家装工程的生态健康。
+                </p>
+            </div>
+            <div class="lz-body">
+                <div class="lz-e-wrap">
+                    <div class="lz-e-left">
+                        <h2>创建一个生态自然的施工环境：</h2>
+                        <div class="lz-e-row">
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img1.jpg" alt="">
+                                <span>不同色彩搭配：缓解视觉疲劳，令人心情舒畅</span>
+                            </a>
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img2.jpg" alt="">
+                                <span>甲供材料摆放处：一目了然，查缺补漏。</span>
+                            </a>
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img3.jpg" alt="">
+                                <span>施工区和生活区分开，避免交叉“感染”</span>
+                            </a>
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img4.jpg" alt="">
+                                <span>辅材摆放处：正确码放，杜绝脏乱，提高效率。</span>
+                            </a>
                         </div>
-                        <div class="side-calculator sm">
-                            <dl>
-                                <dt>获取楼盘专属优惠</dt>
-                            </dl>
-                            <form class="form-horizontal calculator-form">
-                                <input name="Channel" value="获取楼盘专属优惠" type="hidden" />
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="您的称呼">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="接收短信号码">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="输入楼盘名称">
-                                    </div>
-                                </div>
-                                <div class="form-group btn-box submit">
-                                    <div class="col-xs-12">
-                                        <button class="btn btn-block">发送至手机</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <br />
-                        <div class="side-panel">
-                            <div class="side-panel-header">
-                                最新楼盘
-                            </div>
-                            <div class="side-panel-body">
-                                <ul class="phb-list">
-                                    <li>
-                                        <a href="/Residential/Detail/22241" title="中南世纪城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中南世纪城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22240" title="苏州御园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏州御园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22239" title="世贸御珑墅">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世贸御珑墅</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22162" title="万科精品家园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>万科精品家园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22109" title="金都城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>金都城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22108" title="桦林彩云城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>桦林彩云城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22107" title="南山檀郡">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>南山檀郡</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22077" title="新未来花园潇邦">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新未来花园潇邦</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22076" title="绿地精粹">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>绿地精粹</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22059" title="新创大河山">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新创大河山</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="side-panel">
-                            <div class="side-panel-header">
-                                最热销楼盘
-                            </div>
-                            <div class="side-panel-body">
-                                <ul class="phb-list">
-                                    <li>
-                                        <a href="/Residential/Detail/12522" title="新湖明珠城">
-                                            <b> 吴江区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新湖明珠城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15696" title="东方之门">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>东方之门</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/8245" title="白塘壹号">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>白塘壹号</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15597" title="胥江城市花园">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>胥江城市花园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15700" title="苏高新天之运">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏高新天之运</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15605" title="中粮祥云国际">
-                                            <b> 相城区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中粮祥云国际</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7674" title="世茂石湖湾">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世茂石湖湾</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/18921" title="和昌熙溪里">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>和昌熙溪里</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15730" title="红星国际生活广场">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>红星国际生活广场</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7991" title="九龙仓碧堤半岛">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>九龙仓碧堤半岛</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="lz-e-right">
+                        <h2>控制两大污染源：</h2>
+                        <div class="lz-e-row">
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img5.jpg" alt="">
+                                <span>不环保的装修材料会造成污染</span>
+                            </a>
+                            <a href="JavaScript:;">
+                                <img src="__STATIC__/home/image/lz-e-img6.jpg" alt="">
+                                <span>不规范的施工现场同样会带来污染</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="lz-f">
+        <div class="auto-box">
+            <div class="lz-header">
+                <h2>管理质量保障系统</h2>
+                <p>
+                    业之峰全球材料采购系统，为客户甄选高品质材料。蓝钻工程实施全面质量管理，蓝钻工程将其运用 <br>
+                    到家装行业中，确保整个施工过程和竣工后的管理服务完美无瑕。
+                </p>
+            </div>
+            <div class="lz-body">
+                <img src="__STATIC__/home/image/lz-f-bg.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="lz-g"></div>
+    <div class="lz-h">
+        <div class="auto-box">
+            <div class="lz-header">
+                <h2>蓝钻工程 · 发展历程</h2>
+                <p>development history</p>
+            </div>
+            <div class="lz-body">
+                <ul class="lz-step">
+                    <li>
+                        <div class="step-hd">
+                            <span>2006年</span>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="step-bd">
+                            <div class="dark-box">
+                                <dl>
+                                    <dt>推出</dt>
+                                    <dd>蓝钻工程</dd>
+                                </dl>
+                                <div class="ex-box">
+                                    <p>率先推出蓝钻工程“四大保障系统”着力打造工程品牌，带动了整个家装行业的施工水平和管理水平。</p>
+                                    <a href="JavaScript:;" class="btn btn-gold">了解详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-hd">
+                            <span>2008年</span>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="step-bd">
+                            <div class="dark-box">
+                                <dl>
+                                    <dt>形成</dt>
+                                    <dd>
+                                        完整的蓝钻工程<br>
+                                        管理体系
+                                    </dd>
+                                </dl>
+                                <div class="ex-box">
+                                    <p>
+                                        奠定了业之峰在施工领域、
+                                        环保领域的行业地位。
+                                    </p>
+                                    <a href="JavaScript:;" class="btn btn-gold">了解详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-hd">
+                            <span>2016年</span>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="step-bd">
+                            <div class="dark-box">
+                                <dl>
+                                    <dt>发布</dt>
+                                    <dd>11项黑科技工程</dd>
+                                </dl>
+                                <div class="ex-box">
+                                    <p>
+                                        引入新型环保材料和
+                                        先进施工工艺，
+                                        工程质量再上新台阶。
+                                    </p>
+                                    <a href="JavaScript:;" class="btn btn-gold">了解详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="last-child">
+                        <div class="step-hd">
+                            <span>2017年</span>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="step-bd">
+                            <div class="dark-box">
+                                <dl>
+                                    <dt>升级</dt>
+                                    <dd>高端环保蓝钻工程</dd>
+                                </dl>
+                                <div class="ex-box">
+                                    <p>
+                                        全球甄选高端产品，
+                                        为国人的环保健康生活，
+                                        持续打造更环保的美好家装。
+                                    </p>
+                                    <a href="JavaScript:;" class="btn btn-gold">了解详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.lz-c-tab li').hover(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.lz-c-tabcont img').eq($(this).index()).stop(true, true).fadeIn(200).siblings().hide();
+            })
+        })
+    </script>
 </div>
+
 {include file="public/footer" /}
 
-
-{include file="public/menu_right"  /}
-
+{include file="public/menu_right" /}
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
     <div class="modal-dialog yzf-modal">
@@ -435,7 +515,7 @@
                     <div class="fixed-white-r">
                         <h3>超精准计算，一步解决预算难题</h3>
                         <div class="fixed-disc">您的装修预算  <strong>132569</strong> 元</div>
-                        <div class="calculate-img"><img src="/images/calculate-icon.png" alt=""></div>
+                        <div class="calculate-img"><img src="__STATIC__/home/image/calculate-icon.png" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -449,7 +529,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有896位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有1041位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -968,7 +1048,7 @@
 </script>
 
 <script src="__STATIC__/home/js/customer-common.js"></script>
-<script src="__STATIC__/home/js/tj.js"></script>
 </body>
 </html>
 
+<script src="__STATIC__/home/js/tj.js"></script>

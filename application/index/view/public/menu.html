@@ -136,7 +136,7 @@
                 <dl class="drop-dl">
                     <dt><a href="{:url('designer/index')}">擅长户型 <i class="iconfont icon-jiantou-right"></i></a></dt>
                     <dd>
-                        {volist name="huxing" id="hu" offset="0" length='7'}
+                        {volist name="huxing" id="hu" offset="0" length='8'}
                         <span> <a href="{:url('designer/index')}?hid={$hu.id}">{$hu.title}</a></span>
                         {/volist}
                         <span><a href="{:url('designer/index')}">更多>></a></span>
@@ -145,29 +145,19 @@
                 <dl class="drop-dl">
                     <dt><a href="{:url('designer/index')}">擅长风格 <i class="iconfont icon-jiantou-right"></i></a></dt>
                     <dd>
-                        <span><a href="/Designer?goodstyle=现代简约">现代简约</a></span>
-                        <span><a href="/Designer?goodstyle=新中式">新中式</a></span>
-                        <span><a href="/Designer?goodstyle=新古典">新古典</a></span>
-                        <span><a href="/Designer?goodstyle=简欧风格">简欧风格</a></span>
-                        <span><a href="/Designer?goodstyle=美式风格">美式风格</a></span>
-                        <span><a href="/Designer?goodstyle=混搭风格">混搭风格</a></span>
-                        <span><a href="/Designer?goodstyle=东南亚">东南亚</a></span>
-                        <span><a href="/Designer?goodstyle=北欧风格">北欧风格</a></span>
-
+                         {volist name="style" id="ss" offset="0" length='8'}
+                        <span><a href="{:url('designer/index')}?sid={$ss.id}">{$ss.title}</a></span>
+                          {/volist}
                         <span><a href="{:url('designer/index')}">更多>></a></span>
                     </dd>
                 </dl>
                 <dl class="drop-dl">
                     <dt><a href="{:url('designer/index')}">设计师级别 <i class="iconfont icon-jiantou-right"></i></a></dt>
                     <dd>
-                        <span><a href="/Designer?designerLevelId=43">优秀设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=52">资深设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=39">副主任设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=38">主任设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=40">高级设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=51">主案设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=41">首席设计师</a></span>
-                        <span><a href="/Designer?designerLevelId=42">设计总监</a></span>
+                        {volist name="jibie" id="jj" offset="0" length='8' }
+                        <span><a href="{:url('designer/index')}?jid={$jj.id}">{$jj.title}</a></span>
+                         {/volist}
+                        <span><a href="{:url('designer/index')}">更多>></a></span>
                     </dd>
                 </dl>
                 <div class="drop-last-design">
@@ -240,7 +230,7 @@
             <div class="auto-box">
                 <div class="fw-wrap">
                     <div class="fw-media">
-                        <a target="_blank" href="/SpecialTopics2/BlueDiamond">
+                        <a target="_blank" href="{:url('special/blue')}">
                             <div class="fw-media-hd">
                                 <i class="iconfont icon-zuanshi"></i>
                             </div>
@@ -251,7 +241,7 @@
                         </a>
                     </div>
                     <div class="fw-media">
-                        <a target="_blank" href="/SpecialTopics2/ep">
+                        <a target="_blank" href="{:url('special/ep')}">
                             <div class="fw-media-hd">
                                 <i class="iconfont icon-fangshui"></i>
                             </div>
@@ -262,7 +252,7 @@
                         </a>
                     </div>
                     <div class="fw-media">
-                        <a target="_blank" href="/SpecialTopics2/FiveZero">
+                        <a target="_blank" href="{:url('special/fivezero')}">
                             <div class="fw-media-hd">
                                 <i class="iconfont icon-rexiaoloupan"></i>
                             </div>
@@ -274,7 +264,7 @@
                     </div>
 
                     <div class="fw-media">
-                        <a target="_blank" href="/SpecialTopics2/FiveAfterSale">
+                        <a target="_blank" href="{:url('index/sale/index')}">
                             <div class="fw-media-hd">
                                 <i class="iconfont icon-xin"></i>
                             </div>

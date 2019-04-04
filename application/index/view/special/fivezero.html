@@ -1,284 +1,230 @@
 {include file="public/header-two" /}
 
-{include file="public/location-two" /}
 
+{include file="public/location-two" /}
 <div class="header">
      {include file="public/menu" /}
 </div>
 <div id="RenderBody">
 
-    <div class="hot-list-banner">
+
+    <link rel="stylesheet" href="__STATIC__/home/css_/topic-promise.css" />
+
+    <div class="promise-a"></div>
+    <div class="promise-b">
+        <ul class="promise-list-box">
+            <li class="promise-1">
+                <a href="#promise-1">
+                    <dl>
+                        <dt>零污染</dt>
+                        <dd>
+                            环保不达标 <br>全额退款 <br>
+                            <small>（符合国家环保标准）</small>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="promise-2">
+                <a href="#promise-2">
+                    <dl>
+                        <dt>零假货</dt>
+                        <dd>
+                            厂家直销<br> 假一赔五<br>
+                            <small>（一线大牌合作商）</small>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="promise-3">
+                <a href="#promise-3">
+                    <dl>
+                        <dt>零增项</dt>
+                        <dd>
+                            客户被动增项 <br>全部免费
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="promise-4">
+                <a href="#promise-4">
+                    <dl>
+                        <dt>零延迟</dt>
+                        <dd>
+                            延迟一天 <br>就赔三百
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="promise-5">
+                <a href="#promise-5">
+                    <dl>
+                        <dt>零回扣</dt>
+                        <dd>
+                            集团统一采购<br>统一定价<br>杜绝回扣
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="promise-1" class="promise-c">
         <div class="auto-box">
-            <div class="case-search">
-                <div class="search-group">
-                    <form method="get" action="{:url('residential/popular')}">
-                        <input type="text" name="searchkey" value="{$Think.get.searchkey}" class="form-control" placeholder="搜索我家小区">
-                        <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
-                    </form>
-                </div>
+            <div class="promise-box pull-right">
+                <h2>零污染</h2>
+                <p>环保不达标 全额退款</p>
+                <dl>
+                    <dt>行业问题</dt>
+                    <dd>装修公司都打环保牌，</dd>
+                    <dd>该如何甄别好坏？</dd>
+                    <dd>拿什么做凭证？</dd>
+                </dl>
+                <dl>
+                    <dt>解决方案</dt>
+                    <dd>业之峰装饰通过了由国家环境保护部授权颁发的“十环认证”<br>—— 中国环境标志产品认证。</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>我们承诺，</dd>
+                    <dd>所有由业之峰施工的工地，</dd>
+                    <dd>空气质量均符合国家标准。</dd>
+                </dl>
             </div>
         </div>
     </div>
-    <div class="content">
+    <div id="promise-2" class="promise-d">
         <div class="auto-box">
-            <ol class="breadcrumb normal">
-                <span>当前位置：</span>
-                <li><a href="/">首页</a></li>
-                <li class="active">热装小区</li>
-            </ol>
-            <div class="content-body">
-                <table class="table table-bordered table-filer">
-                    <tr>
-                        <th>市区:</th>
-                        <td>
-                            <a href="/Residential" class="selected">不限</a>
-                            {volist name="region" id="vo" }
-                            <a class="" href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
-                             {/volist}
-                        </td>
-                    </tr>
-                </table>
-                <div class="const-wrap">
-
-                    <div class="const-main">
-                        <div class="hot-z-wrap">
-                            <ul class="hot-z-list">
-                                {volist name="info" id="vo" }
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="{:url('residential/detail')}?id={$vo.id}" class="img-box">
-                                            <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/12/3/龙湖.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
-                                            <span title="新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）">{$vo.location|mb_substr='0','30'}<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：17  </span>
-                                            <span>实景工地：2  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/volist}
-                            </ul>
-                            <nav class="text-center">
-                                <ul class="pagination">
-                                    <li class="active">{$info|raw}</li>
-                                </ul>
-                            </nav>
-
-                        </div>
-                    </div>
-                    <div class="const-side">
-                        <div class="side-adv">
-                            <a href="/s2017/qgkjby0901"><img src="/images/adv-1.png" alt=""></a>
-                        </div>
-                        <div class="side-calculator sm">
-                            <dl>
-                                <dt>获取楼盘专属优惠</dt>
-                            </dl>
-                            <form class="form-horizontal calculator-form">
-                                <input name="Channel" value="获取楼盘专属优惠" type="hidden" />
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="您的称呼">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="接收短信号码">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="输入楼盘名称">
-                                    </div>
-                                </div>
-                                <div class="form-group btn-box submit">
-                                    <div class="col-xs-12">
-                                        <button class="btn btn-block">发送至手机</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <br />
-                        <div class="side-panel">
-                            <div class="side-panel-header">
-                                最新楼盘
-                            </div>
-                            <div class="side-panel-body">
-                                <ul class="phb-list">
-                                    <li>
-                                        <a href="/Residential/Detail/22241" title="中南世纪城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中南世纪城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22240" title="苏州御园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏州御园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22239" title="世贸御珑墅">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世贸御珑墅</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22162" title="万科精品家园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>万科精品家园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22109" title="金都城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>金都城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22108" title="桦林彩云城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>桦林彩云城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22107" title="南山檀郡">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>南山檀郡</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22077" title="新未来花园潇邦">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新未来花园潇邦</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22076" title="绿地精粹">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>绿地精粹</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22059" title="新创大河山">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新创大河山</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="side-panel">
-                            <div class="side-panel-header">
-                                最热销楼盘
-                            </div>
-                            <div class="side-panel-body">
-                                <ul class="phb-list">
-                                    <li>
-                                        <a href="/Residential/Detail/12522" title="新湖明珠城">
-                                            <b> 吴江区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新湖明珠城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15696" title="东方之门">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>东方之门</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/8245" title="白塘壹号">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>白塘壹号</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15597" title="胥江城市花园">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>胥江城市花园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15700" title="苏高新天之运">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏高新天之运</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15605" title="中粮祥云国际">
-                                            <b> 相城区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中粮祥云国际</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7674" title="世茂石湖湾">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世茂石湖湾</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/18921" title="和昌熙溪里">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>和昌熙溪里</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15730" title="红星国际生活广场">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>红星国际生活广场</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7991" title="九龙仓碧堤半岛">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>九龙仓碧堤半岛</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="promise-box">
+                <h2>零假货</h2>
+                <p>厂家直销 假一赔五</p>
+                <dl>
+                    <dt>业主痛点</dt>
+                    <dd>怎么判断品牌好坏？</dd>
+                    <dd>如何甄别产品真假？</dd>
+                    <dd>买到假货如何维权？</dd>
+                </dl>
+                <dl>
+                    <dt>解决方案</dt>
+                    <dd>业之峰深耕家装行业20年，</dd>
+                    <dd>合作伙伴囊括国际一线大牌环保建材厂商，</dd>
+                    <dd>我们承诺，</dd>
+                    <dd>让您用较少的钱，</dd>
+                    <dd>享受到高性价比的高端环保材料。</dd>
+                </dl>
             </div>
         </div>
     </div>
+    <div id="promise-3" class="promise-e">
+        <div class="auto-box">
+            <div class="promise-box pull-right">
+                <h2>零增项</h2>
+                <p>客户被动增项全部免费</p>
+                <dl>
+                    <dt>行业问题</dt>
+                    <dd>漏报装修项，</dd>
+                    <dd>变相诱导客户增项，</dd>
+                    <dd>更改方案变相增项...</dd>
+                    <dd>调查显示，</dd>
+                    <dd>近9成有过装修经历的消费者</dd>
+                    <dd>遭遇过增项问题。</dd>
+                </dl>
+                <dl>
+                    <dt>解决方案</dt>
+                    <dd>我们承诺，</dd>
+                    <dd>客户被动增项全免费!</dd>
+                    <dd>让客户明明白白消费。</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="promise-4" class="promise-f">
+        <div class="auto-box">
+            <div class="promise-box">
+                <h2>零延迟</h2>
+                <p>延迟一天   就赔三百</p>
+                <dl>
+                    <dt>业主痛点</dt>
+                    <dd>工期一拖再拖，</dd>
+                    <dd>说好了3月底完工直到5月也没有交房...</dd>
+                    <dd>好不容易有了自己的房子，</dd>
+                    <dd>眼巴巴地盼着早点入住，</dd>
+                    <dd>可装修工期延迟让人好不恼火。</dd>
+                </dl>
+                <dl>
+                    <dt>解决方案</dt>
+                    <dd>我们承诺，</dd>
+                    <dd>延迟一天赔款三百，</dd>
+                    <dd>让您早日住进自己的新家。</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="promise-5" class="promise-g">
+        <div class="auto-box">
+            <div class="promise-box pull-right">
+                <h2>零回扣</h2>
+                <p>集团统一采购统一定价  拿一赔三</p>
+                <dl>
+                    <dt>行业问题</dt>
+                    <dd>买橱柜有回扣，</dd>
+                    <dd>买瓷砖有回扣.....</dd>
+                    <dd>装修结束后，</dd>
+                    <dd>许多业主才醒悟：设计师挖好了陷阱，</dd>
+                    <dd>“宰”你没商量！</dd>
+                </dl>
+                <dl>
+                    <dt>解决方案</dt>
+                    <dd>我们承诺,</dd>
+                    <dd>主材统一采购，</dd>
+                    <dd>材料统一定价，</dd>
+                    <dd>杜绝回扣，</dd>
+                    <dd>我们承诺，</dd>
+                    <dd>拿一赔三。</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="promise-h">
+        <div class="auto-box">
+            <h2>预约申请&lt;五零靠谱工程&gt;特权</h2>
+            <p>全城仅限99户</p>
+            <form class="msg-form row">
+                <div class="col-xs-2 col-xs-offset-1 required">
+                    <input type="text"name="Name"  class="form-control" placeholder="您的称呼">
+                </div>
+                <div class="col-xs-2 required">
+                    <input type="text" name="PhoneNumber" class="form-control" placeholder="您的电话">
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" name="ResidentialName"  class="form-control" placeholder="小区">
+                </div>
+                <div class="col-xs-2">
+                    <input type="text"name="SquareMeters"  class="form-control" placeholder="面积">
+                </div>
+                <div class="col-xs-2 submit">
+                    <button class="btn btn-block btn-gold">我要申请</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="__STATIC__/home/assets/plugins/jquery.SuperSlide.2.1.1.js"></script>
+
+    <script>
+        $(function () {
+            $('.promise-list-box a').click(function(){
+                $('html, body').animate({
+                    scrollTop: $( $.attr(this, 'href') ).offset().top
+                }, 500);
+                return false;
+            });
+        })
+    </script>
 </div>
+
+
+
 {include file="public/footer" /}
 
-
-{include file="public/menu_right"  /}
-
+{include file="public/menu_right" /}
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
     <div class="modal-dialog yzf-modal">
@@ -449,7 +395,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有896位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有1076位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -968,7 +914,7 @@
 </script>
 
 <script src="__STATIC__/home/js/customer-common.js"></script>
-<script src="__STATIC__/home/js/tj.js"></script>
 </body>
 </html>
 
+<script src="__STATIC__/home/js/tj.js"></script>
