@@ -1,9 +1,12 @@
 {extend name='admin@public/content'}
 
 {block name="button"}
-<button data-open='{:url("$classuri/add")}' class='layui-btn layui-btn-sm'>添加设计师</button>
-
+<!--{if auth("$classuri/add")}-->
+<button data-open='{:url("$classuri/add")}' class='layui-btn layui-btn-sm'>添加热门小区</button>
+<!--{/if}-->
+<!--{if auth("$classuri/del")}-->
 <button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-sm layui-btn-danger'>删除</button>
+<!--{/if}-->
 {/block}
 
 {block name="content"}
@@ -18,12 +21,12 @@
         </div>
     </div>
 
-    <!--<div class="layui-form-item layui-inline">-->
-        <!--<label class="layui-form-label">创建时间</label>-->
-        <!--<div class="layui-input-inline">-->
-            <!--<input name="date" id="create_at" value="{$Think.get.date}" placeholder="请选择创建时间" class="layui-input">-->
-        <!--</div>-->
-    <!--</div>-->
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">创建时间</label>
+        <div class="layui-input-inline">
+            <input name="date" id="create_at" value="{$Think.get.date}" placeholder="请选择创建时间" class="layui-input">
+        </div>
+    </div>
 
     <div class="layui-form-item layui-inline">
         <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
@@ -34,7 +37,6 @@
 </script>
 <!-- 表单搜索 结束 -->
 
-<span style="color:#ff2c27;">*本周人气设计师 ，请不要设置超过3个！</span>
 <form onsubmit="return false;" data-auto="true" method="post">
     {empty name='list'}
     <p class="help-block text-center well">没 有 记 录 哦！</p>
@@ -46,12 +48,12 @@
             <th class='list-table-check-td'>
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
-            <th class='text-left nowrap'>设计师头像</th>
-            <th class='text-left nowrap'>设计师姓名</th>
-            <th class='text-left nowrap'>从业时间</th>
-            <th class='text-left nowrap'>毕业院校</th>
-            <th class='text-left nowrap'>从业年数</th>
-            <th class='text-left nowrap'>是否本周人气设计师</th>
+            <th class='text-left nowrap'>楼盘名称</th>
+            <th class='text-left nowrap'>楼盘展示图</th>
+            <th class='text-left nowrap'>楼盘地理位置</th>
+            <th class='text-left nowrap'>所属案例地区</th>
+            <th class='text-left nowrap'>创建时间</th>
+            <!--                <th class='text-left nowrap'>状态</th>-->
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -59,31 +61,30 @@
         {foreach $list as $key=>$vo}
         <tr>
             <td class='list-table-check-td'>
-               {$vo.id}
+                {$vo.id}
             </td>
             <td class='text-left nowrap'>
-                <img data-tips-image src="{$vo.img|default=''}" height="60"/>
+                {$vo.title|default=''}
             </td>
             <td class='text-left nowrap'>
-                {$vo.names|default=''}
+                <img data-tips-image src="{$vo.img|default='/static/theme/img/image.png'}" height="20"/>
             </td>
             <td class='text-left nowrap'>
-                {$vo.job_time|default=''}
+                {$vo.location|default=''}
             </td>
             <td class='text-left nowrap'>
-                {$vo.school|default=''}
+               {$vo.region}
             </td>
             <td class='text-left nowrap'>
-                {$vo.job_year|default=''}
+                {$vo.time|date='Y-m-d H:i:s'|default=''}
             </td>
             <td class='text-left nowrap'>
-                <a  data-href='{:url("$classuri/huo")}?id={$vo.id}&renqi={$vo.huo}'>{eq name="vo.huo" value='1'}本周人气设计师{else /}普通设计师{/eq}</a>
-            </td>
-            <td class='text-left nowrap'>
+
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>
                 <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
                 {/if}
+
                 {if auth("$classuri/del")}
                 <span class="text-explode">|</span>
                 <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'>删除</a>
@@ -101,6 +102,5 @@
         window.form.render();
         window.laydate.render({range: true, elem: '#create_at'});
     })();
-
 </script>
 {/block}

@@ -28,6 +28,19 @@ class Designer extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+
+    //是否人气设计师
+    public function huo(){
+        $id = input('get.id');
+        $renqi = input('get.renqi');
+        $res = Db::name('designer')->where('id',$id)->update(['huo'=>$renqi>0?0:1]);
+        if ($res !== false) {
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/designer/index')];
+            $this->success('数据保存成功！', "{$base}#{$url}?spm=m-117-141-145");
+        }
+    }
+
+
     /**
      * 添加
      * @return type

@@ -136,19 +136,10 @@
                 <dl class="drop-dl">
                     <dt><a href="{:url('designer/index')}">擅长户型 <i class="iconfont icon-jiantou-right"></i></a></dt>
                     <dd>
-                        <span> <a href="/Designer?goodRoom=一居">一居</a></span>
-                        <span> <a href="/Designer?goodRoom=二居">二居</a></span>
-                        <span> <a href="/Designer?goodRoom=三居">三居</a></span>
-                        <span> <a href="/Designer?goodRoom=四居">四居</a></span>
-                        <span> <a href="/Designer?goodRoom=五居">五居</a></span>
-                        <span> <a href="/Designer?goodRoom=平层">平层</a></span>
-                        <span> <a href="/Designer?goodRoom=跃层">跃层</a></span>
-                        <span> <a href="/Designer?goodRoom=复式">复式</a></span>
-                        <span> <a href="/Designer?goodRoom=Townhouse">Townhouse</a></span>
-                        <span> <a href="/Designer?goodRoom=别墅">别墅</a></span>
-                        <span> <a href="/Designer?goodRoom=办公空间">办公空间</a></span>
-
-                        <span><a href="/Designer">更多>></a></span>
+                        {volist name="huxing" id="hu" offset="0" length='7'}
+                        <span> <a href="{:url('designer/index')}?hid={$hu.id}">{$hu.title}</a></span>
+                        {/volist}
+                        <span><a href="{:url('designer/index')}">更多>></a></span>
                     </dd>
                 </dl>
                 <dl class="drop-dl">
@@ -163,7 +154,7 @@
                         <span><a href="/Designer?goodstyle=东南亚">东南亚</a></span>
                         <span><a href="/Designer?goodstyle=北欧风格">北欧风格</a></span>
 
-                        <span><a href="/Designer">更多>></a></span>
+                        <span><a href="{:url('designer/index')}">更多>></a></span>
                     </dd>
                 </dl>
                 <dl class="drop-dl">
@@ -187,25 +178,14 @@
                     </div>
                     <div class="last-design-bd">
                         <ul>
+                            {volist name="huo" id="vo"}
                             <li>
-                                <a href="/Designer/Detail/1056" class="design-link">
-                                    <img src="http://picfw.yzf.com.cn/2016/7/29/1444134106287.jpg_280x280.jpg" alt="">
+                                <a href="{:url('designer/detail')}?id={$vo.id}" class="design-link">
+                                    <img src="{$vo.img}" alt="">
                                 </a>
-                                <span><a href="/Designer/Detail/1056">梁侠</a></span>
+                                <span><a href="{:url('designer/detail')}?id={$vo.id}">{$vo.names}</a></span>
                             </li>
-                            <li>
-                                <a href="/Designer/Detail/836" class="design-link">
-                                    <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_280x280.jpg" alt="">
-                                </a>
-                                <span><a href="/Designer/Detail/836">吴文</a></span>
-                            </li>
-                            <li>
-                                <a href="/Designer/Detail/3301" class="design-link">
-                                    <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_280x280.jpg" alt="">
-                                </a>
-                                <span><a href="/Designer/Detail/3301">陈晓龙</a></span>
-                            </li>
-
+                            {/volist}
                         </ul>
                     </div>
                 </div>

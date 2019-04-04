@@ -75,6 +75,9 @@ class BasicAdmin extends Controller {
                 //级别
                 $jibie =Db::name('jibie')->select();
                 $this->assign('jibie',$jibie);
+                //案例地区
+                $region  = Db::name('region')->select();
+                $this->assign('region',$region);
 
                 return $this->fetch($tplFile, ['vo' => $vo]);
             }
