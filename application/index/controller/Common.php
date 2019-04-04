@@ -49,6 +49,12 @@ class Common extends Controller {
         //级别
         $jibie =Db::name('jibie')->select();
         $this->assign('jibie',$jibie);
+        //人气设计师
+        $huo =Db::name('designer')->where('huo',1)->field('id,img,names')->select();
+        $this->assign('huo',$huo);
+        //案例地区
+        $region = Db::name('region')->select();
+         $this->assign('region',$region);
     }
   
 }

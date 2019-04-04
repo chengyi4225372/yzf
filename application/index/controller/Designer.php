@@ -17,7 +17,10 @@ class Designer extends Common {
     //设计师 列表页
     public function index(){
         //todo 搜索没有制作 案例总数
-        $list = Db::name('designer')->field('id,img,job_year,rongyu,names')->select();
+        $h_id = input('get.hid');
+        $list = Db::name('designer')
+                  ->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')
+                  ->select();
         $this->assign('list',$list);
         return  $this->fetch();
     }
@@ -32,7 +35,6 @@ class Designer extends Common {
         $this->assign('list',$list);
         return $this->fetch();
     }
-
 
 
 

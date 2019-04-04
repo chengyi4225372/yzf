@@ -20,16 +20,23 @@ class Remen extends BasicAdmin {
     public function index() {
         $this->title = '热门小区设置';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title|url', "%{$get['keywords']}%");
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-//            $start_time = strtotime("{$start} 00:00:00");
-//            $end_time = strtotime("{$end} 23:59:59");
-//            $db->whereBetween('create_at', [$start_time, $end_time]);
+
             $db->whereBetween('create_at', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
     }
+
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+                $data[$key]['region'] = Db::name('region')->where('id', '=', $val['d_id'])->value('title');
+        }
+    }
+
+
+
 
     /**
      * 添加
@@ -53,7 +60,7 @@ class Remen extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/mianji/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/remen/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

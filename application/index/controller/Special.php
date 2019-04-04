@@ -26,4 +26,18 @@ class Special extends Common {
         return $this->view->fetch();
     }
 
+    //蓝钻工程
+    public function blue(){
+        return $this->fetch();
+    }
+
+    //三重保护
+    public function ep(){
+        return $this->fetch();
+    }
+
+    //武灵靠谱承诺
+    public function fivezero(){
+        return $this->fetch();
+    }
 }

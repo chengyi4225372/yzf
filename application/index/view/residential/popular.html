@@ -11,8 +11,8 @@
         <div class="auto-box">
             <div class="case-search">
                 <div class="search-group">
-                    <form method="get" action="/Residential">
-                        <input type="text" name="searchKey" value="" class="form-control" placeholder="搜索我家小区">
+                    <form method="get" action="{:url('residential/popular')}">
+                        <input type="text" name="searchkey" value="{$Think.get.searchkey}" class="form-control" placeholder="搜索我家小区">
                         <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
                     </form>
                 </div>
@@ -32,33 +32,28 @@
                         <th>市区:</th>
                         <td>
                             <a href="/Residential" class="selected">不限</a>
-                            <a class="" href="/Residential?areaid=930">太仓市 </a>
-                            <a class="" href="/Residential?areaid=929">昆山市 </a>
-                            <a class="" href="/Residential?areaid=928">张家港市 </a>
-                            <a class="" href="/Residential?areaid=927">常熟市 </a>
-                            <a class="" href="/Residential?areaid=926">吴江区 </a>
-                            <a class="" href="/Residential?areaid=925">姑苏区 </a>
-                            <a class="" href="/Residential?areaid=924">相城区 </a>
-                            <a class="" href="/Residential?areaid=923">吴中区 </a>
-                            <a class="" href="/Residential?areaid=922">虎丘区 </a>
-                            <a class="" href="/Residential?areaid=921">市辖区 </a>
+                            {volist name="region" id="vo" }
+                            <a class="" href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
+                             {/volist}
                         </td>
                     </tr>
                 </table>
                 <div class="const-wrap">
-                    <!-- 如果未查询到楼盘 -->
+
                     <div class="const-main">
                         <div class="hot-z-wrap">
                             <ul class="hot-z-list">
+                                {volist name="info" id="vo" }
                                 <li>
                                     <div class="hpt-z-hd">
                                         <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/6872" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/12/3/龙湖.jpg" alt="楼盘图片" /></a>
+                                        <a href="{:url('residential/detail')}?id={$vo.id}" class="img-box">
+                                            <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/12/3/龙湖.jpg" alt="楼盘图片" /></a>
                                     </div>
                                     <div class="hpt-z-bd">
                                         <div class="hpt-tit">
-                                            <a href="/Residential/Detail/6872">龙湖时代天街</a>
-                                            <span title="新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）">  新区狮山路与塔园路交汇处...<i class="iconfont icon-dibiao"></i></span>
+                                            <a href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
+                                            <span title="新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）">{$vo.location|mb_substr='0','30'}<i class="iconfont icon-dibiao"></i></span>
                                         </div>
                                         <p>
 
@@ -70,237 +65,13 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/2438" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/4/2/11294191433d155eb-c.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/2438">中海国际社区橙郡</a>
-                                            <span title="湖东琉璃街与钟园路交汇处">  湖东琉璃街与钟园路交汇处<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：14  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/6873" class="img-box"><img src="/Images/common/residential.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/6873">中旅蓝岸国际</a>
-                                            <span title=" 苏州工业园区淞江路218号(松江路与南施街交汇处)">   苏州工业园区淞江路218号...<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：13  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/6865" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/12/4/荷澜廷.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/6865">荷澜廷</a>
-                                            <span title="新区狮山街道邓尉路北">  新区狮山街道邓尉路北<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：13  </span>
-                                            <span>实景工地：1  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/5464" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/5/1/合景.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/5464">合景领峰</a>
-                                            <span title="">  <i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-
-
-
-
-
-
-
-
-
-
-                                            主力户型：二居室 99-110平米
-
-                                            物业类型：普通住宅,商铺
-
-                                            建筑类别： 25层以及26层的高层
-
-
-
-
-                                            开盘时间：2012年05月01日
-
-                                            入住时间：2012年06月
-
-                                            产权年限：70年
-
-                                            装修情况：毛坯,精装
-
-
-
-
-                                            交通状况：竹园南路，金枫路，轻轨一号线金...
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：13  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/6423" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/9/4/151807f9f79cb2-a.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/6423">世茂御珑墅</a>
-                                            <span title="吴中金山北路688号">  吴中金山北路688号<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：12  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/5685" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/4/2/113514616685de6aa-6.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/5685">太阳城</a>
-                                            <span title="园区沈浒路南榭雨街西">  园区沈浒路南榭雨街西<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：10  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/5773" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/6/2/中梁天御.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/5773">中梁天御</a>
-                                            <span title="平江区城北东路与江宙路交汇处（人民路东、万达广场南）">  平江区城北东路与江宙路交...<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：10  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/4700" class="img-box"><img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2014/6/1/明珠城.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/4700">明珠城</a>
-                                            <span title="吴江区江陵西路1888号">  吴江区江陵西路1888号<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：10  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：0  </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hpt-z-hd">
-                                        <span class="tuangou">团购活动中</span>
-                                        <a href="/Residential/Detail/8245" class="img-box"><img src="http://picfw.yzf.com.cn/201712f/Download\092a69b0679740849b5d9983eb900550.jpg" alt="楼盘图片" /></a>
-                                    </div>
-                                    <div class="hpt-z-bd">
-                                        <div class="hpt-tit">
-                                            <a href="/Residential/Detail/8245">白塘壹号</a>
-                                            <span title="园区白塘路1号（南施街、沈浒路交汇处）">  园区白塘路1号（南施街、...<i class="iconfont icon-dibiao"></i></span>
-                                        </div>
-                                        <p>
-
-                                            白塘壹号位于园区湖东苏州新CBD内，总建筑面积达50多万方，位于工业园区现代大道北，南施街以东，紧邻60多万方的白塘生态植物园，临近轻轨南街站和星塘街站。
-                                            白塘壹号建筑群的分布排列南低北高，临南面沿湖排布置三层高的低层住宅群；第二排布置4+1层的多层住宅群；其...
-                                        </p>
-                                        <div class="hpt-disc">
-                                            <span>案例数：10  </span>
-                                            <span>实景工地：0  </span>
-                                            <span>户型：35  </span>
-                                        </div>
-                                    </div>
-                                </li>
+                                {/volist}
                             </ul>
-
                             <nav class="text-center">
                                 <ul class="pagination">
-                                    <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                                    <li class="active"><a data-pjax="" href="/Residential?PageIndex=1">1</a></li>
-                                    <li class=""><a data-pjax="" href="/Residential?PageIndex=2">2</a></li>
-                                    <li class=""><a data-pjax="" href="/Residential?PageIndex=3">3</a></li>
-                                    <li class=""><a data-pjax="" href="/Residential?PageIndex=4">4</a></li>
-                                    <li class=""><a data-pjax="" href="/Residential?PageIndex=5">5</a></li>
-
-                                    <li><a data-pjax="" id="spanMax" Max="45" href="/Residential?PageIndex=45">共 45 页</a></li>
-                                    <li><a data-pjax="" href="/Residential?PageIndex=2">下一页</a></li>
-
+                                    <li class="active">{$info|raw}</li>
                                 </ul>
                             </nav>
-
 
                         </div>
                     </div>

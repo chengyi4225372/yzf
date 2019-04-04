@@ -34,6 +34,7 @@
 </script>
 <!-- 表单搜索 结束 -->
 
+<span style="color:#ff2c27;">*本周人气设计师 ，请不要设置超过3个！</span>
 <form onsubmit="return false;" data-auto="true" method="post">
     {empty name='list'}
     <p class="help-block text-center well">没 有 记 录 哦！</p>
@@ -50,6 +51,7 @@
             <th class='text-left nowrap'>从业时间</th>
             <th class='text-left nowrap'>毕业院校</th>
             <th class='text-left nowrap'>从业年数</th>
+            <th class='text-left nowrap'>是否本周人气设计师</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -75,6 +77,9 @@
                 {$vo.job_year|default=''}
             </td>
             <td class='text-left nowrap'>
+                <a  data-href='{:url("$classuri/huo")}?id={$vo.id}&renqi={$vo.huo}'>{eq name="vo.huo" value='1'}本周人气设计师{else /}普通设计师{/eq}</a>
+            </td>
+            <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>
                 <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
@@ -96,5 +101,6 @@
         window.form.render();
         window.laydate.render({range: true, elem: '#create_at'});
     })();
+
 </script>
 {/block}
