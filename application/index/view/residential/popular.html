@@ -31,9 +31,9 @@
                     <tr>
                         <th>市区:</th>
                         <td>
-                            <a href="/Residential" class="selected">不限</a>
+                            <a href="{:url('residential/popular')}" {if condition=" $Think.get.id eq null "}class="selected" {else /} class=""{/if}>不限</a>
                             {volist name="region" id="vo" }
-                            <a class="" href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
+                            <a  {if condition=" $Think.get.id eq $vo.id"} class="selected" {else /} class="" {/if}  href="{:url('residential/popular')}?id={$vo.id}">{$vo.title}</a>
                              {/volist}
                         </td>
                     </tr>

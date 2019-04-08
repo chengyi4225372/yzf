@@ -44,13 +44,17 @@ class Residential extends Common{
     //热门小区
     public function popular(){
         //搜索
+        //小区名称搜索
         $names = input('get.searchkey');
-        if(empty($names)){
-            $info = Db::name('remen_lou')->paginate(15);
-        }else{
+        //小区地区搜索
+        $d_id = input('get.id');
+        if(!empty($d_id)){
+            $info = Db::name('remen_lou')->where('d_id',$d_id)->paginate(15);
+        }else if(!empty($names)){
             $info = Db::name('remen_lou')->where('title','like','%'.$names.'%')->paginate(15);
+        }else{
+            $info = Db::name('remen_lou')->paginate(15);
         }
-
         $this->assign('info',$info);
         return $this->fetch();
     }

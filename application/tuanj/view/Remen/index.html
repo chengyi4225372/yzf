@@ -52,6 +52,8 @@
             <th class='text-left nowrap'>楼盘展示图</th>
             <th class='text-left nowrap'>楼盘地理位置</th>
             <th class='text-left nowrap'>所属案例地区</th>
+            <th class='text-left nowrap'>设置为最新楼盘</th>
+            <th class='text-left nowrap'>设置为最热销楼盘</th>
             <th class='text-left nowrap'>创建时间</th>
             <!--                <th class='text-left nowrap'>状态</th>-->
             <th class='text-left nowrap'></th>
@@ -75,11 +77,26 @@
             <td class='text-left nowrap'>
                {$vo.region}
             </td>
+
+            <td class='text-left nowrap'>
+                 {eq name="vo.hot" value='1'}
+                  最新楼盘
+                   {else /}
+                 普通楼盘
+                 {/eq}
+            </td>
+            <td class='text-left nowrap'>
+                {eq name="vo.new" value='1'}
+                最热销楼盘
+                {else /}
+                普通楼盘
+                {/eq}
+            </td>
+
             <td class='text-left nowrap'>
                 {$vo.time|date='Y-m-d H:i:s'|default=''}
             </td>
             <td class='text-left nowrap'>
-
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>
                 <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
