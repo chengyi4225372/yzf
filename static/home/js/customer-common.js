@@ -416,7 +416,7 @@ $(".submit").click(function () {
     });
 });
 
-/* 追加百度统计代码到head */
+/* 追加百度统计代码到head
 function createScript_BaiduTongji() {
     if (typeof _hmt === "undefined") {
         let str = "    <script data-mk=\"pc信息流流量统计\">\n";
@@ -432,8 +432,9 @@ function createScript_BaiduTongji() {
     }
 
 }
+*/
 
-/* 追加百度ocpc代码到head */
+/* 追加百度ocpc代码到head
 function createScript_BaiduOCPC() {
     let str = "    <script>\n";
     str += "        window._agl = window._agl || [];\n";
@@ -453,6 +454,6 @@ function createScript_BaiduOCPC() {
     str += "    </script>\n";
     $('head').append(str);
 }
-
+*/
 /*y页面初始化*/
 customerInit.init();

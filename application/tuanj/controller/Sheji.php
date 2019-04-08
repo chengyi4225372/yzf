@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/4/2
- * Time: 18:12
+ * Date: 2019/4/8
+ * Time: 10:19
  */
 
 namespace app\tuanj\controller;
@@ -12,13 +12,13 @@ use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Designer extends BasicAdmin {
+class Sheji extends BasicAdmin {
 
-    private $dataform = 'designer';
+    private $dataform = 'sheji';
 
 
     public function index() {
-        $this->title = '设计师管理';
+        $this->title = '免费预约平面设计';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('names|school', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -28,42 +28,12 @@ class Designer extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
-
-    //是否人气设计师
-    public function huo(){
-        $id = input('get.id');
-        $renqi = input('get.renqi');
-        $res = Db::name('designer')->where('id',$id)->update(['huo'=>$renqi>0?0:1]);
-        if ($res !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/designer/index')];
-            $this->success('数据保存成功！', "{$base}#{$url}?spm=m-117-141-145");
-        }
-    }
-
-
     /**
      * 添加
      * @return type
      */
     public function add() {
-         if(request()->isPost()){
-             $data  = input('post.');
-           if(empty($data['id'])){
-                 $data['h_id'] = empty($data['h_id'])?'':implode(',',$data['h_id']);
-                 $data['s_id'] = empty($data['s_id'])?'':implode(',',$data['s_id']);
-                 $data['j_id'] = empty($data['j_id'])?'':implode(',',$data['j_id']);
-                 $res = Db::name('designer')->data($data)->insert();
-                 $this->_form_result($res);
-             }else{
-               $data['h_id'] = empty($data['h_id'])?'':implode(',',$data['h_id']);
-               $data['s_id'] = empty($data['s_id'])?'':implode(',',$data['s_id']);
-               $data['j_id'] = empty($data['j_id'])?'':implode(',',$data['j_id']);
-                 $res = Db::name('designer')->where('id',$data['id'])->update($data);
-                 $this->_form_result($res);
-             }
-         }else{
-             return $this->_form($this->dataform, 'add');
-         }
+        return $this->_form($this->dataform, 'form');
     }
 
     /**
@@ -71,9 +41,6 @@ class Designer extends BasicAdmin {
      * @return type
      */
     public function edit() {
-        $id = input('get.id');
-        $vo=Db::name('designer')->where('id',$id)->find();
-        $this->assign('vo',$vo);
         return $this->_form($this->dataform, 'form');
     }
 
@@ -83,7 +50,7 @@ class Designer extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/designer/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/sheji/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

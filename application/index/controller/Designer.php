@@ -18,9 +18,20 @@ class Designer extends Common {
     public function index(){
         //todo 搜索没有制作 案例总数
         $h_id = input('get.hid');
-        $list = Db::name('designer')
-                  ->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')
-                  ->select();
+        if(!empty($h_id)){
+            $list = Db::name('designer')
+                ->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')
+                ->where('h_id',$h_id)
+                ->select();
+        }else{
+            $list = Db::name('designer')
+                ->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')
+                ->select();
+        }
+
+
+
+
         $this->assign('list',$list);
         return  $this->fetch();
     }
