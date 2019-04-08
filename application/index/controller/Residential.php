@@ -68,4 +68,13 @@ class Residential extends Common{
     }
 
 
+    //楼盘案例
+    public function goodroom(){
+         return $this->fetch();
+    }
+
+    //工地 todo 无页面
+    public function detail_fay(){
+        return  $this->fetch();
+    }
 }
