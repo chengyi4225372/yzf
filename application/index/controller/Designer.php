@@ -20,20 +20,18 @@ class Designer extends Common {
         $h_id = input('get.hid');
         $s_id = input('get.sid');
         $j_id = input('get.jid');
-        if(!empty($h_id)) {
-            $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where find_in_set('$h_id',h_id); ");
+        if(empty($h_id)) {
+            $list = Db::name('designer')->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')->select();
         }else if(!empty($h_id)&& !empty($s_id)){
             $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where find_in_set('$h_id',h_id)  and find_in_set('$s_id',s_id)");
         }else if(!empty($h_id)&& !empty($s_id)&& !empty($j_id)){
             $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where find_in_set('$h_id',h_id) and find_in_set('$s_id',s_id) and j_id = '$j_id'");
         }else if(empty($h_id)&& empty($s_id)){
             $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where  j_id = '$j_id'");
-        }else if(empty($h_id)&& empty($j_id)){
-            $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where  find_in_set('$s_id',s_id)");
+        }else if(empty($j_id) || empty($h_id)){
+            $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where  find_in_set('$s_id',s_id) or find_in_set('$h_id',h_id)");
         }else {
-            $list = Db::name('designer')
-                ->field('id,img,job_year,rongyu,names,h_id,s_id,j_id')
-                ->select();
+            $list = Db::query("select id,img,job_year,rongyu,names,h_id,s_id,j_id from designer where find_in_set('$h_id',h_id); ");
         }
         $this->assign('list',$list);
         return  $this->fetch();
