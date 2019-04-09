@@ -100,7 +100,7 @@
         <label class="layui-form-label">设计师级别</label>
         <div class="layui-input-block">
             {volist name="jibie" id="list"}
-            <input type="checkbox" name="j_id[]" lay-skin="primary" title=" {$list.title}" value="{$list.id}" >
+            <input type="radio" name="j_id" lay-skin="primary" title=" {$list.title}" value="{$list.id}" >
             {/volist}
         </div>
     </div>

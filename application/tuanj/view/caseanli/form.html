@@ -1,10 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{extend name='admin@public/content'}
 
-</body>
-</html>
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联案例地区</label>
+        <div class="layui-input-inline">
+            <select name="r_id">
+                <option value=""></option>
+                {volist name="region" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.r_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联案例风格</label>
+        <div class="layui-input-inline">
+            <select name="s_id">
+                <option value=""></option>
+                {volist name="style" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.s_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联案例户型</label>
+        <div class="layui-input-inline">
+            <select name="h_id">
+                <option value=""></option>
+                {volist name="huxing" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.h_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联案例面积</label>
+        <div class="layui-input-inline">
+            <select name="m_id">
+                <option value=""></option>
+                {volist name="mianji" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.m_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联热门楼盘</label>
+        <div class="layui-input-inline">
+            <select name="re_id">
+                <option value=""></option>
+                {volist name="remen" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.re_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联设计师</label>
+        <div class="layui-input-inline">
+            <select name="she_id">
+                <option value=""></option>
+                {volist name="sheji" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.she_id"} selected="" {/if}>{$list.names}</option>
+                {else /}
+                <option value="{$list.id}">{$list.names}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">楼盘案例图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
+        </div>
+        <span style="color:#ff2c27; ">* 案例图片最多不要超过6条！</span>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">楼盘封面图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="logo" value='{$vo.logo|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">楼盘实际面积</label>
+        <div class="layui-input-block">
+            <input type="number" name="s_mianji" value='{$vo.s_mianji|default=""}' class="layui-input">
+        </div>
+        <span style="color: #FF5722">这里只需要填写数字即可。请不要填写文字</span>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">同楼盘的新一期楼盘名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="loupan" value='{$vo.loupan|default=""}' class="layui-input">
+        </div>
+        <span style="color:#dd191b;">*特别备注，如果是同楼盘的新开盘的楼盘，可以在此处填写新楼盘名称！</span>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例设计说明</label>
+        <div class="layui-input-block">
+            <textarea name="content" class="layui-textarea">{if isset($vo['id'])}{$vo.content}{/if}</textarea>
+        </div>
+    </div>
+
+
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="logo"]').uploadOneImage();
+        $('form [name="img"]').uploadMultipleImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+

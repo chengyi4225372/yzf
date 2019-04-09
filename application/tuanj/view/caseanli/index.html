@@ -1,0 +1,89 @@
+{extend name='admin@public/content'}
+
+{block name="button"}
+<!--{if auth("$classuri/add")}-->
+<button data-open='{:url("$classuri/add")}' class='layui-btn layui-btn-sm'>添加</button>
+<!--{/if}-->
+<!--{if auth("$classuri/del")}-->
+<button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-sm layui-btn-danger'>删除</button>
+<!--{/if}-->
+{/block}
+
+{block name="content"}
+
+
+<!-- 表单搜索 结束 -->
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    {empty name='list'}
+    <p class="help-block text-center well">没 有 记 录 哦！</p>
+    {else}
+    <input type="hidden" value="resort" name="action">
+    <table class="layui-table" lay-skin="line">
+        <thead>
+        <tr>
+            <th class='list-table-check-td'>
+                <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            <th class='text-left nowrap'>封面图</th>
+            <th class='text-left nowrap'>关联案例地区</th>
+            <th class='text-left nowrap'>关联案例风格</th>
+            <th class='text-left nowrap'>关联设计师</th>
+            <th class='text-left nowrap'>所属热门楼盘</th>
+            <th class='text-left nowrap'>所属户型</th>
+            <th class='text-left nowrap'>所属面积</th>
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            <td class='text-left nowrap'>
+                <img data-tips-image src="{$vo.logo|default=''}" height="60"/>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.r_id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.s_id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.she_id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.re_id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.h_id}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.m_id}
+            </td>
+            <td class='text-left nowrap'>
+                {if auth("$classuri/edit")}
+                <span class="text-explode">|</span>
+                <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
+                {/if}
+
+                {if auth("$classuri/del")}
+                <span class="text-explode">|</span>
+                <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'>删除</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {if isset($page)}<p>{$page|raw}</p>{/if}
+    {/empty}
+</form>
+<script>
+    (function() {
+        window.form.render();
+        window.laydate.render({range: true, elem: '#create_at'});
+    })();
+</script>
+{/block}

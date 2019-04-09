@@ -17,15 +17,29 @@ class  Caseanli extends  BasicAdmin {
 
 
     public function index() {
-        $this->title = '';
-        list($get, $db) = [$this->request->get(), Db::name($this->dataform)->where('status',1)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title|url', "%{$get['keywords']}%");
+        $this->title = '楼盘案例列表';
+        list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
             $db->whereBetween('create_at', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
-        return parent::_list($db->order('sort asc,create_at desc,id desc'));
+        return parent::_list($db->order('id desc'));
     }
+
+
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+                $data[$key]['r_id'] = Db::name('region')->where('id', '=', $val['r_id'])->value('title');
+                $data[$key]['s_id'] = Db::name('style')->where('id', '=', $val['s_id'])->value('title');
+                $data[$key]['h_id'] = Db::name('huxing')->where('id', '=', $val['h_id'])->value('title');
+                $data[$key]['m_id'] = Db::name('mianji')->where('id', '=', $val['m_id'])->value('title');
+                $data[$key]['re_id'] = Db::name('remen_lou')->where('id', '=', $val['re_id'])->value('title');
+                $data[$key]['she_id'] = Db::name('designer')->where('id', '=', $val['she_id'])->value('names');
+        }
+    }
+
+
 
     /**
      * 添加
@@ -49,7 +63,7 @@ class  Caseanli extends  BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/banner/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/caseanli/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

@@ -61,207 +61,21 @@
 
 
             <div class="case-list-wrap hot-list-wrap">
-
                 <ul class="case-list">
+                    {volist name="info" id="vo"}
                     <li>
-                        <a href="/ResidentialCase/Detail/66332" class="img-box">
-                            <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164879620403.jpg" alt="龙湖时代天街">
-                        </a>
-                        <a href="/Designer/Detail/836" class="user-img">
-                            <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                        </a>
+                        <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box"><img src="{$vo.logo}" alt="龙湖时代天街"></a>
+                        <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img"><img src="{$vo.bimg}" alt="user"></a>
                         <dl>
-                            <dt><a title="龙湖时代天街" href="/ResidentialCase/Detail/66332">龙湖时代天街</a></dt>
-                            <dd><span>三居</span> | <span>115㎡</span> | <span>轻奢风</span></dd>
+                            <dt><a title="龙湖时代天街" href="{:url('residential/goodroom')}?id={$vo.id}">{$result.title}</a></dt>
+                            <dd><span>{$vo.ctitle}</span> | <span>{$vo.loupan?$vo.loupan:$vo.s_mianji}㎡</span> | <span>{$vo.dtitle}</span></dd>
                         </dl>
                     </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/65704" class="img-box">
-                            <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138139160950.png" alt="龙湖时代天街">
-                        </a>
-                        <a href="/Designer/Detail/3301" class="user-img">
-                            <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_100x100.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街" href="/ResidentialCase/Detail/65704">龙湖时代天街</a></dt>
-                            <dd><span>三居</span> | <span>115㎡</span> | <span>现代简约风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/58231" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/7/15/1747499356685.jpg_306x210.jpg" alt="龙湖一期1-603">
-                        </a>
-                        <a href="/Designer/Detail/852" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖一期1-603" href="/ResidentialCase/Detail/58231">龙湖一期1-603</a></dt>
-                            <dd><span>三居</span> | <span>105㎡</span> | <span>北欧风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/58229" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/7/15/1747497838998.jpg_306x210.jpg" alt="龙湖一期1-3106-效果图">
-                        </a>
-                        <a href="/Designer/Detail/852" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖一期1-3106-效果图" href="/ResidentialCase/Detail/58229">龙湖一期1-3106-效果...</a></dt>
-                            <dd><span>三居</span> | <span>105㎡</span> | <span>北欧风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57828" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/6/14/1720590041181.jpg_306x210.jpg" alt="龙湖时代天街二期2">
-                        </a>
-                        <a href="/Designer/Detail/3302" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街二期2" href="/ResidentialCase/Detail/57828">龙湖时代天街二期2</a></dt>
-                            <dd><span>二居</span> | <span>115㎡</span> | <span>新中式风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57827" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/6/14/1720588880165.jpg_306x210.jpg" alt="龙湖时代二期1">
-                        </a>
-                        <a href="/Designer/Detail/3302" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代二期1" href="/ResidentialCase/Detail/57827">龙湖时代二期1</a></dt>
-                            <dd><span>二居</span> | <span>115㎡</span> | <span>现代简约风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57826" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/6/13/1720000079021.jpg_306x210.jpg" alt="龙湖时代天街一期2">
-                        </a>
-                        <a href="/Designer/Detail/3302" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街一期2" href="/ResidentialCase/Detail/57826">龙湖时代天街一期2</a></dt>
-                            <dd><span>二居</span> | <span>105㎡</span> | <span>现代简约风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57825" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/6/13/1719999261656.jpg_306x210.jpg" alt="龙湖时代天街一期1">
-                        </a>
-                        <a href="/Designer/Detail/3302" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街一期1" href="/ResidentialCase/Detail/57825">龙湖时代天街一期1</a></dt>
-                            <dd><span>二居</span> | <span>105㎡</span> | <span>现代简约风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57424" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695776948390.jpg_306x210.jpg" alt="龙湖时代天街现代">
-                        </a>
-                        <a href="/Designer/Detail/836" class="user-img">
-                            <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街现代" href="/ResidentialCase/Detail/57424">龙湖时代天街现代</a></dt>
-                            <dd><span>三居</span> | <span>142㎡</span> | <span>现代简约风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57423" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695773849523.jpg_306x210.jpg" alt="龙湖时代天街美式">
-                        </a>
-                        <a href="/Designer/Detail/1340" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街美式" href="/ResidentialCase/Detail/57423">龙湖时代天街美式</a></dt>
-                            <dd><span>三居</span> | <span>142㎡</span> | <span>美式风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57422" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695772352123.jpg_306x210.jpg" alt="龙湖时代天街简美">
-                        </a>
-                        <a href="/Designer/Detail/1340" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57422">龙湖时代天街简美</a></dt>
-                            <dd><span>三居</span> | <span>142㎡</span> | <span>简美</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57421" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695771420079.jpg_306x210.jpg" alt="龙湖时代天街简美">
-                        </a>
-                        <a href="/Designer/Detail/1340" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57421">龙湖时代天街简美</a></dt>
-                            <dd><span>三居</span> | <span>140㎡</span> | <span>简美</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/57420" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2017/5/16/1695769271760.jpg_306x210.jpg" alt="龙湖时代天街简美">
-                        </a>
-                        <a href="/Designer/Detail/1340" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街简美" href="/ResidentialCase/Detail/57420">龙湖时代天街简美</a></dt>
-                            <dd><span>二居</span> | <span>105㎡</span> | <span>简美</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/51019" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2016/8/18/1461444651470.jpg_306x210.jpg" alt="龙湖时代天街 美式风格">
-                        </a>
-                        <a href="/Designer/Detail/997" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街 美式风格" href="/ResidentialCase/Detail/51019">龙湖时代天街 美式风格</a></dt>
-                            <dd><span>四居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/50960" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2016/8/16/1459843850817.jpg_306x210.jpg" alt="龙湖时代天街 美式风格">
-                        </a>
-                        <a href="/Designer/Detail/1639" class="user-img">
-                            <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="龙湖时代天街 美式风格" href="/ResidentialCase/Detail/50960">龙湖时代天街 美式风格</a></dt>
-                            <dd><span>三居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="/ResidentialCase/Detail/50922" class="img-box">
-                            <img src="http://picfw.yzf.com.cn/2016/8/15/1458946948965.jpg_306x210.jpg" alt="时代天街美式风格">
-                        </a>
-                        <a href="/Designer/Detail/3294" class="user-img">
-                            <img src="/images/logo.jpg" alt="user">
-                        </a>
-                        <dl>
-                            <dt><a title="时代天街美式风格" href="/ResidentialCase/Detail/50922">时代天街美式风格</a></dt>
-                            <dd><span>三居</span> | <span>140㎡</span> | <span>美式风格</span></dd>
-                        </dl>
-                    </li>
+                    {/volist}
                 </ul>
                 <nav class="text-center">
                     <ul class="pagination">
-                        <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-                        <li class="active"><a data-pjax="" href="/Residential/Detail/6872?PageIndex=1">1</a></li>
-                        <li class=""><a data-pjax="" href="/Residential/Detail/6872?PageIndex=2">2</a></li>
-                        <li><a data-pjax="" href="/Residential/Detail/6872?PageIndex=2">下一页</a></li>
+                       {$info|raw}
                     </ul>
                 </nav>
 

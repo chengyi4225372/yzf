@@ -51,13 +51,13 @@ class Designer extends BasicAdmin {
            if(empty($data['id'])){
                  $data['h_id'] = empty($data['h_id'])?'':implode(',',$data['h_id']);
                  $data['s_id'] = empty($data['s_id'])?'':implode(',',$data['s_id']);
-                 $data['j_id'] = empty($data['j_id'])?'':implode(',',$data['j_id']);
+                 $data['j_id'] = empty($data['j_id'])?'':$data['j_id'];
                  $res = Db::name('designer')->data($data)->insert();
                  $this->_form_result($res);
              }else{
                $data['h_id'] = empty($data['h_id'])?'':implode(',',$data['h_id']);
                $data['s_id'] = empty($data['s_id'])?'':implode(',',$data['s_id']);
-               $data['j_id'] = empty($data['j_id'])?'':implode(',',$data['j_id']);
+               $data['j_id'] = empty($data['j_id'])?'':$data['j_id'];
                  $res = Db::name('designer')->where('id',$data['id'])->update($data);
                  $this->_form_result($res);
              }

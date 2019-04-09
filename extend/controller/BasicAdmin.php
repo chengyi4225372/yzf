@@ -78,6 +78,15 @@ class BasicAdmin extends Controller {
                 //案例地区
                 $region  = Db::name('region')->select();
                 $this->assign('region',$region);
+                //面积
+                $mianji = Db::name('mianji')->select();
+                $this->assign('mianji',$mianji);
+                //热门楼盘
+                $remen = Db::name('remen_lou')->field('id,title')->select();
+                $this->assign('remen',$remen);
+                //设计师
+                $sheji = Db::name('designer')->field('id,names')->select();
+                $this->assign('sheji',$sheji);
 
                 return $this->fetch($tplFile, ['vo' => $vo]);
             }

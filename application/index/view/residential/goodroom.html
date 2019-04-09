@@ -1,10 +1,11 @@
-{include fiel="public/header-two" /}
+{include file="public/header-two" /}
 
 {include file="public/location-two" /}
 <div class="header">
     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
+
     <style>
         .footer {
             display: none !important;
@@ -24,8 +25,8 @@
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li><a href="{:url('residential/index')}">案例</a></li>
-                <li class="active">龙湖时代天街现代案例</li>
+                <li><a href="/ResidentialCase">苏州案例</a></li>
+                <li class="active">{$info.remen_lou}</li>
             </ol>
             <div class="right-control">
                 <ul class="right-dropdown">
@@ -70,38 +71,24 @@
                     </dl>
                 </div>
                 <div class="ad-bottom">
-                    <a href="/ResidentialCase/nextPrev?next=False&amp;refid=57424&amp;bid=54" class="prev-suit">
+                    <a href="/ResidentialCase/nextPrev?next=False&amp;refid=66332&amp;bid=54" class="prev-suit">
                         <img src="/images/suit.jpg" alt="">
                         <span>上一套</span>
                     </a>
                     <div class="ad-nav">
                         <div class="ad-thumbs">
                             <ul class="ad-thumb-list">
+                                {volist name="$info.img" id="vo" key="k"}
                                 <li>
-                                    <a href="http://picfw.yzf.com.cn/2017/5/16/1695776950317.jpg">
-                                        <img src="http://picfw.yzf.com.cn/2017/5/16/1695776950317.jpg "
-                                             class="image0">
-                                        <span>休闲区 </span>
+                                    <a href="{$vo}">
+                                        <img src="{$vo}" class="image0">
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="http://picfw.yzf.com.cn/2017/5/16/1695776948390.jpg">
-                                        <img src="http://picfw.yzf.com.cn/2017/5/16/1695776948390.jpg "
-                                             class="image0">
-                                        <span>餐厅 </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://picfw.yzf.com.cn/2017/5/16/1695776952208.jpg">
-                                        <img src="http://picfw.yzf.com.cn/2017/5/16/1695776952208.jpg "
-                                             class="image0">
-                                        <span>客厅 </span>
-                                    </a>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
-                    <a href="/ResidentialCase/nextPrev?next=True&amp;refid=57424&amp;bid=54" class="next-suit">
+                    <a href="/ResidentialCase/nextPrev?next=True&amp;refid=66332&amp;bid=54" class="next-suit">
                         <img src="/images/suit.jpg" alt="">
                         <span>下一套</span>
                     </a>
@@ -112,25 +99,23 @@
             <div id="inner-content-div" class="case-side-inner">
                 <div class="case-side-a">
                     <div class="case-a-tit">
-                        <strong>龙湖时代天街现代 </strong>
-                        <span>
-                        案例编号： <br>57424
-                    </span>
+                        <strong>{$info.remen_lou} </strong>
+                        <!--<span>-->
+                        <!--案例编号： <br>66332-->
+                    <!--</span>-->
                     </div>
-                    <div class="case-a-bd">
-                        三居<span>|</span>142㎡ <span>|</span>现代简约风格
-                    </div>
+                    <div class="case-a-bd">{$info.huxing_lou}<span>|</span>{$info.loupan?$info.loupan:$info.s_mianji}㎡ <span>|</span>{$info.style_lou}</div>
                     <div class="case-designer">
-                        <a href="/Designer/Detail/836" class="cd-hd">
-                            <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_280x280.jpg" alt="">
+                        <a href="{:url('designer/detail')}?id={$info.designer.id}" class="cd-hd">
+                            <img src="{$info.designer.img}" alt="">
 
                         </a>
                         <div class="cd-bd">
-                            <h4><a href="/Designer/Detail/836">吴文 <i class="iconfont icon-jiantou2"></i></a></h4>
-                            <p>首席设计师 </p>
+                            <h4><a href="{:url('designer/detail')}?id={$info.designer.id}">{$info.designer.names} <i class="iconfont icon-jiantou2"></i></a></h4>
+                            <p>{$info.jibie}</p>
                             <div class="cd-disc">
-                                从业经验：13年 <br>
-                                案例数：32
+                                从业经验：{$info.designer.job_year} <br>
+                                <!--案例数：32-->
                             </div>
                         </div>
                     </div>
@@ -207,9 +192,6 @@
                         </div>
                     </form>
                 </div>
-
-
-
                 <div class="side-panel">
                     <div class="side-panel-header">
                         <a href="http://www.yzf.com.cn/DecorationRaiders/List/50" class="more">更多》</a>
@@ -236,39 +218,39 @@
                     <div class="side-panel-body">
                         <ul class="hot-list">
                             <li>
-                                <a href="/ResidentialCase/detail/28671" title="明珠城">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/5/26/375x250.jpg_306x210.jpg" alt="">
-                                    <span>明珠城 </span>
+                                <a href="/ResidentialCase/detail/65709" title="狮山原著">
+                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138141143318.png" alt="">
+                                    <span>狮山原著 </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/ResidentialCase/detail/28665" title="合景领峰">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/5/26/16203188404a0a3f6-7.jpg_306x210.jpg" alt="">
-                                    <span>合景领峰 </span>
+                                <a href="/ResidentialCase/detail/65708" title="狮山原著">
+                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138140546339.png" alt="">
+                                    <span>狮山原著 </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/ResidentialCase/detail/28658" title="中海橙郡">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/5/27/1048325086b72ac86-0.jpg_306x210.jpg" alt="">
-                                    <span>中海橙郡 </span>
+                                <a href="/ResidentialCase/detail/65707" title="狮山原著">
+                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138140351724.png" alt="">
+                                    <span>狮山原著 </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/ResidentialCase/detail/28613" title="合景峰汇">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/5/28/1626156058a9288eb-7.jpg_306x210.jpg" alt="">
-                                    <span>合景峰汇 </span>
+                                <a href="/ResidentialCase/detail/64944" title="小石城">
+                                    <img src="http://picfw3.yzf.com.cn/100007/2018/8/2/2078569030193.jpg" alt="">
+                                    <span>小石城 </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/ResidentialCase/detail/28550" title="世茂石湖湾">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/5/30/92750581ed06ea6c-f.jpg_306x210.jpg" alt="">
-                                    <span>世茂石湖湾 </span>
+                                <a href="/ResidentialCase/detail/58253" title="荷澜庭 ">
+                                    <img src="http://picfw.yzf.com.cn/2017/7/15/1747607599999.jpg_306x210.jpg" alt="">
+                                    <span>荷澜庭  </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/ResidentialCase/detail/27869" title="中海独墅九栋">
-                                    <img src="http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/7/24/16254892409cdf9fc-6.jpg_306x210.jpg" alt="">
-                                    <span>中海独墅九栋 </span>
+                                <a href="/ResidentialCase/detail/69101" title="姑苏铭著">
+                                    <img src="http://picfwoss.yzf.com.cn/100007/2019/3/13/2270993616647.jpg" alt="">
+                                    <span>姑苏铭著 </span>
                                 </a>
                             </li>
 
@@ -319,7 +301,6 @@
     <script src="__STATIC__/home/assets/plugins/jquery.slimscroll.min.js"></script>
     <link rel="stylesheet" href="__STATIC__/home/assets/plugins/jquery-lightbox/css/lightbox.css">
     <script src="__STATIC__/home/assets/plugins/jquery-lightbox/js/lightbox.min.js"></script>
-
     <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script>
     <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
     <script type="text/javascript">
@@ -389,9 +370,7 @@
         })
     </script>
 </div>
-
 {include file="public/footer" /}
-
 
 {include file="public/menu_right" /}
 <!-- 右侧悬浮：免费报价 -->
@@ -564,7 +543,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1070位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有981位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -1009,8 +988,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
     <div class="modal-dialog yzf-modal">
