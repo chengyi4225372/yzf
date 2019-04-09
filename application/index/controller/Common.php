@@ -54,7 +54,10 @@ class Common extends Controller {
         $this->assign('huo',$huo);
         //案例地区
         $region = Db::name('region')->select();
-         $this->assign('region',$region);
+        $this->assign('region',$region);
+        //面积
+        $mianji = Db::name('mianji')->select();
+        $this->assign('mianji',$mianji);
     }
   
 }

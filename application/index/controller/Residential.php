@@ -89,7 +89,6 @@ class Residential extends Common{
         $info['designer'] = Db::name('designer')->field('id,names,job_year,img,j_id')->where('id',$info['she_id'])->find();
         $info['jibie'] = Db::name('jibie')->where('id',$info['designer']['j_id'])->value('title');
         $info['img'] = explode('|',$info['img']);
-
         $this->assign('info',$info);
         return $this->fetch();
     }

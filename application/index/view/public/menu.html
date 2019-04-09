@@ -58,48 +58,26 @@
                     </ul>
                     <div class="al-tab-content">
                         <div class="al-tab-body" style="display: block">
-                            <a href="{:url('residential/areaid')}">太仓市</a>
-                            <a href="{:url('residential/areaid')}">昆山市</a>
-                            <a href="/ResidentialCase/Index?areaid=928">张家港市</a>
-                            <a href="/ResidentialCase/Index?areaid=927">常熟市</a>
-                            <a href="/ResidentialCase/Index?areaid=926">吴江区</a>
-                            <a href="/ResidentialCase/Index?areaid=925">姑苏区</a>
-                            <a href="/ResidentialCase/Index?areaid=924">相城区</a>
-                            <a href="/ResidentialCase/Index?areaid=923">吴中区</a>
-                            <a href="/ResidentialCase/Index?areaid=922">虎丘区</a>
-                            <a href="/ResidentialCase/Index?areaid=921">市辖区</a>
+                            {volist name="region" id="vo" offset='0' length='8' }
+                            <a href="{:url('residential/areaid')}?rid={$vo.id}">{$vo.title}</a>
+                            {/volist}
                         </div>
                         <div class="al-tab-body">
-                            <a href="{:url('residential/styleid')}">现代简约</a>
-                            <a href="/ResidentialCase/Index?styleId=11">新中式</a>
-                            <a href="/ResidentialCase/Index?styleId=3">新古典</a>
-                            <a href="/ResidentialCase/Index?styleId=400">简欧风格</a>
-                            <a href="/ResidentialCase/Index?styleId=415">美式风格</a>
-                            <a href="/ResidentialCase/Index?styleId=14">混搭风格</a>
-                            <a href="/ResidentialCase/Index?styleId=20">东南亚</a>
-                            <a href="/ResidentialCase/Index?styleId=403">北欧风格</a>
-                            <a href="/ResidentialCase/Index">更多</a>
+                             {volist name="style" id="vo" offset='0' length='8' }
+                            <a href="{:url('residential/styleid')}?sid={$vo.id}">{$vo.title}</a>
+                             {/volist}
+                            <a href="{:url('residential/styleid')}">更多</a>
                         </div>
                         <div class="al-tab-body">
-                            <a href="{:url('residential/roomid')}">一居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=535">二居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=549">三居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=551">四居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=552">五居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=548">平层</a>
-                            <a href="/ResidentialCase/Index?roomHallId=554">跃层</a>
-                            <a href="/ResidentialCase/Index?roomHallId=543">复式</a>
-                            <a href="/ResidentialCase/Index?roomHallId=550">Townhouse</a>
-                            <a href="/ResidentialCase/Index?roomHallId=530">别墅</a>
-                            <a href="/ResidentialCase/Index?roomHallId=553">办公空间</a>
+                            {volist name="huxing" id="vo" offset='0' length='8' }
+                            <a href="{:url('residential/roomid')}hid={$vo.id}">{$vo.title}</a>
+                            {/volist}
+                            <a href="{:url('residential/roomid')}">更多</a>
                         </div>
                         <div class="al-tab-body">
-                            <a href="/ResidentialCase/Index?squares=s90">90㎡以下</a>
-                            <a href="/ResidentialCase/Index?squares=s90_120">90-120㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s121_180">121-180㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s181_320">181-320㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s321_500">321-500㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s500">500㎡以上</a>
+                            {volist name="mianji" id="vo" offset='0' length='8' }
+                            <a href="{:url('residential/squaresid')}?mid={$vo.id}">{$vo.title}</a>
+                            {/volist}
                         </div>
                     </div>
                 </div>
