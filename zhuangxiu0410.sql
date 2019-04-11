@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-03 18:01:08
+Date: 2019-04-11 18:18:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -143,16 +143,21 @@ CREATE TABLE `designer` (
   `s_id` varchar(200) NOT NULL COMMENT '对应风格id',
   `j_id` varchar(200) NOT NULL COMMENT '对应级别id',
   `job_year` varchar(200) NOT NULL COMMENT '从业年头',
+  `huo` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '人气设计师 0=》普通 1=》人气',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of designer
 -- ----------------------------
-INSERT INTO `designer` VALUES ('0000000001', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴文', '2007年工作至今', '江西科技师范学院', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...', '2011年    荣获新浪家居设计之星； 2012年    荣获集团设计大赛金奖； 2013年    荣获苏州“先锋木业杯”三等奖； 2014年    荣获苏州首届室内设计大赛“优秀设计作品奖”； 2015年    “美涂士漆”杯业之峰全国室内设计精英奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '9', '0', '0', '13年');
-INSERT INTO `designer` VALUES ('0000000002', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '张超', '2010年工作至今', '', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '给您最舒适的家！', '玫瑰园、尊园、海尚壹品、蝴蝶湾、保利国际、雅戈尔太阳城、绿地华尔道、路劲主场、中海国际社区、置地悦湖、海德公园、世茂运河城...', '2010年    湖北省室内装饰协会最佳创意奖； 2014年    苏州芒果杯最佳新人奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5', '0', '0', '10年');
-INSERT INTO `designer` VALUES ('0000000003', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '李静波', '2007年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '第三方的', '大幅度丰富的仿的房东', '的地方放的地方的方法大幅度发东方大道辅导费', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '1,2,3', '1,2,3', '10年');
-INSERT INTO `designer` VALUES ('0000000005', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '东方时尚', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '3,4,5', '7', '10年');
+INSERT INTO `designer` VALUES ('0000000001', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴文', '2007年工作至今', '江西科技师范学院', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...', '2011年    荣获新浪家居设计之星； 2012年    荣获集团设计大赛金奖； 2013年    荣获苏州“先锋木业杯”三等奖； 2014年    荣获苏州首届室内设计大赛“优秀设计作品奖”； 2015年    “美涂士漆”杯业之峰全国室内设计精英奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,5,9', '3,4', '7', '13年', '1');
+INSERT INTO `designer` VALUES ('0000000002', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '张超', '2010年工作至今', '湖北武汉工业大学', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '给您最舒适的家！', '玫瑰园、尊园、海尚壹品、蝴蝶湾、保利国际、雅戈尔太阳城、绿地华尔道、路劲主场、中海国际社区、置地悦湖、海德公园、世茂运河城...', '2010年    湖北省室内装饰协会最佳创意奖； 2014年    苏州芒果杯最佳新人奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5', '1,2', '2', '10年', '1');
+INSERT INTO `designer` VALUES ('0000000003', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '李静波', '2007年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '第三方的', '大幅度丰富的仿的房东', '的地方放的地方的方法大幅度发东方大道辅导费', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5,6', '1,2,3', '1', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000005', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '东方时尚', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '4,5', '7', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000006', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '你是谁', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '辅导费大V', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3', '2,3', '6', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000007', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴秀波', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4', '4,5', '7', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000008', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '张无忌', '2010年工作至今', '江西科技师范学院', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6,7,8,9', '3,4,5', '7', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000009', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '李四光', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,5,9', '3,4,5', '7', '10年', '0');
 
 -- ----------------------------
 -- Table structure for `dingzhi`
@@ -313,6 +318,57 @@ INSERT INTO `list` VALUES ('9', '0', '新闻中心', 'News center', '', '', '', 
 INSERT INTO `list` VALUES ('10', '0', '联系我们', 'Contact us', '', '', '', '');
 
 -- ----------------------------
+-- Table structure for `lou_anli`
+-- ----------------------------
+DROP TABLE IF EXISTS `lou_anli`;
+CREATE TABLE `lou_anli` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `img` text NOT NULL COMMENT '楼盘案例图',
+  `content` text NOT NULL COMMENT '案例设计说明',
+  `r_id` int(10) unsigned NOT NULL COMMENT '案例地区id',
+  `s_id` int(10) unsigned NOT NULL COMMENT '案例风格id',
+  `h_id` int(10) unsigned NOT NULL COMMENT '户型id',
+  `m_id` int(10) unsigned NOT NULL COMMENT '面积id',
+  `re_id` int(10) unsigned NOT NULL COMMENT '热门楼盘id',
+  `she_id` int(10) unsigned NOT NULL COMMENT '关联设计id',
+  `logo` varchar(255) NOT NULL COMMENT '封面图',
+  `s_mianji` int(10) unsigned NOT NULL COMMENT '实际面积',
+  `loupan` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '同楼盘的新的一期',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of lou_anli
+-- ----------------------------
+INSERT INTO `lou_anli` VALUES ('0000000001', '/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '1', '1', '10', '1', '8', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '120', '');
+INSERT INTO `lou_anli` VALUES ('0000000002', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '2', '3', '10', '1', '9', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '115', '');
+
+-- ----------------------------
+-- Table structure for `lou_gongdi`
+-- ----------------------------
+DROP TABLE IF EXISTS `lou_gongdi`;
+CREATE TABLE `lou_gongdi` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `re_id` int(10) unsigned NOT NULL COMMENT '关联小区id',
+  `h_id` int(10) NOT NULL COMMENT '关联户型id',
+  `s_mianji` varchar(100) NOT NULL COMMENT '户型实际面积大小',
+  `q_title` varchar(100) NOT NULL COMMENT '工期进度前期',
+  `z_title` varchar(100) NOT NULL COMMENT '工期进度中期',
+  `h_title` varchar(100) NOT NULL COMMENT '工期进度后期',
+  `q_img` text NOT NULL COMMENT '前期进度图',
+  `z_img` text NOT NULL COMMENT '中期进度图',
+  `h_img` text NOT NULL COMMENT '后期进度图',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of lou_gongdi
+-- ----------------------------
+INSERT INTO `lou_gongdi` VALUES ('0000000001', '1', '1', '120', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '');
+INSERT INTO `lou_gongdi` VALUES ('0000000002', '2', '2', '150', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '');
+INSERT INTO `lou_gongdi` VALUES ('0000000003', '3', '3', '150', '竣工工程', '', '', '/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/76391228433df16c/cf0e29a6d2a3432a.jpg', '', '');
+
+-- ----------------------------
 -- Table structure for `mianji`
 -- ----------------------------
 DROP TABLE IF EXISTS `mianji`;
@@ -389,7 +445,7 @@ CREATE TABLE `region` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL COMMENT '名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='案例地区表';
 
 -- ----------------------------
 -- Records of region
@@ -399,6 +455,11 @@ INSERT INTO `region` VALUES ('0000000010', '张家港市');
 INSERT INTO `region` VALUES ('0000000011', '昆山市');
 INSERT INTO `region` VALUES ('0000000012', '常熟市');
 INSERT INTO `region` VALUES ('0000000013', '吴江区');
+INSERT INTO `region` VALUES ('0000000014', '姑苏区');
+INSERT INTO `region` VALUES ('0000000015', '相城区');
+INSERT INTO `region` VALUES ('0000000016', '吴中区');
+INSERT INTO `region` VALUES ('0000000017', '虎丘区');
+INSERT INTO `region` VALUES ('0000000018', '市辖区');
 
 -- ----------------------------
 -- Table structure for `remen_lou`
@@ -410,12 +471,39 @@ CREATE TABLE `remen_lou` (
   `title` varchar(255) NOT NULL COMMENT '楼盘名称',
   `location` varchar(255) NOT NULL COMMENT '楼盘地理位置',
   `content` text NOT NULL COMMENT '楼盘介绍',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `img` varchar(255) NOT NULL COMMENT '楼盘展示图',
+  `hot` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最热销售楼盘 0=》普通 1=》最火',
+  `new` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最新楼盘 0=》普通 1=》最新',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of remen_lou
 -- ----------------------------
+INSERT INTO `remen_lou` VALUES ('0000000001', '11', '天润尚院', '[ 昆山市 ] 周庄镇周商公路1号', '<p>昆山天润尚院位于昆山市5A级风景区周庄古镇，坐拥2500亩水景资源，全现代中式院墅，低密度容积率，高绿地率，打造古镇个性度假私密大宅，北京天润置地集团耗时3年潜心打造，传承江南居住文化理念，融通国际化新周庄之大配套环境，体现新周庄之大宅文化。</p>', '2019-04-04 14:05:39', '/static/upload/f62abf46da6a2468/bdf0205f8cae6479.jpg', '0', '0');
+INSERT INTO `remen_lou` VALUES ('0000000002', '13', '万科苏高新四季风景花园', '吴江长板路1号（长安路东侧）', '<p>万科苏高新四季风景花园项目是苏南万科携手苏高新战略布局吴江，万科公园社区作品。 项目主要为高层商品房住宅，小高层商品房住宅及配套公建等公共服务设施。项目位于苏州吴江区长板路1号（长安路东侧，紧邻吴江汽车站）。三大主题乐园覆盖儿童（自然山林乐园、自然之声，户外课堂、花果世界、探索乐园、昆虫总动员）、青年（户外客厅、静思读书花园、亲子农场花园）、老年（休闲小花园、健身花园、棋牌花园）各个年龄阶段，让您更轻松的生活；近3万方自带商业地块，未来可能规划建成商铺、公寓、SOHO，目前业态待规划。休闲、娱乐、餐饮丰富业态。</p>', '2019-04-04 16:01:18', '/static/upload/629ddeeaa01adbe6/110a46c7b614dd5c.jpg', '0', '0');
+INSERT INTO `remen_lou` VALUES ('0000000003', '13', '新湖明珠城', '吴江江陵西路1888号（仲英大道与江陵西路交汇处）', '<p>新湖明珠城位于南苏州仲英大道和江陵西路交界处，西北面由太湖环抱，与2.3公里原生态太湖水岸线，宽40米左右的湖岸绿化带相邻，与苏州石湖风景区遥隔相望，南接规划中的生态公园和吴江市中心，通过苏震桃跨湖大桥与苏州市区相连，距苏州市中心约12公里。 新湖明珠城占地1600余亩，总建筑面积约165万平方米，建筑风格为合院式地中海风情小镇，休闲化的全新生活形态。 新湖明珠城香湖苑推出，建筑风格为地中海风格，位于整个小区中轴正北面，坐拥3万方郁金香公园，临近太湖景观大堤。</p>', '2019-04-04 16:01:56', '/static/upload/cb0959a7bbc7bcb0/f58fb6a92f9a4c76.jpg', '0', '0');
+
+-- ----------------------------
+-- Table structure for `sheji`
+-- ----------------------------
+DROP TABLE IF EXISTS `sheji`;
+CREATE TABLE `sheji` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `names` varchar(255) NOT NULL COMMENT '称呼',
+  `phone` varchar(20) NOT NULL COMMENT '电话',
+  `xiaoqu` varchar(255) NOT NULL COMMENT '小区地址',
+  `mianji` varchar(255) NOT NULL COMMENT '户型面积',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '提交时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sheji
+-- ----------------------------
+INSERT INTO `sheji` VALUES ('0000000002', '', '', '', '', '2019-04-08 11:42:42');
+INSERT INTO `sheji` VALUES ('0000000003', '', '', '', '', '2019-04-08 11:46:25');
 
 -- ----------------------------
 -- Table structure for `style`
@@ -537,7 +625,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=253 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -787,6 +875,13 @@ INSERT INTO `system_log` VALUES ('242', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('243', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-02 17:22:13');
 INSERT INTO `system_log` VALUES ('244', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-03 10:50:09');
 INSERT INTO `system_log` VALUES ('245', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-03 15:27:22');
+INSERT INTO `system_log` VALUES ('246', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-04 14:35:59');
+INSERT INTO `system_log` VALUES ('247', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-08 09:13:03');
+INSERT INTO `system_log` VALUES ('248', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-08 09:20:53');
+INSERT INTO `system_log` VALUES ('249', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-08 13:18:59');
+INSERT INTO `system_log` VALUES ('250', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-08 13:34:09');
+INSERT INTO `system_log` VALUES ('251', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-11 09:20:24');
+INSERT INTO `system_log` VALUES ('252', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-11 09:52:50');
 
 -- ----------------------------
 -- Table structure for `system_menu`
@@ -807,7 +902,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -857,6 +952,11 @@ INSERT INTO `system_menu` VALUES ('149', '117', '装修头条', '', 'fa fa-fort-
 INSERT INTO `system_menu` VALUES ('150', '149', '装修进度', '', 'fa fa-modx', '/tuanj/jingdu/index', '', '_self', '0', '1', '0', '2019-04-03 17:16:42');
 INSERT INTO `system_menu` VALUES ('151', '117', '热门楼盘', '', 'fa fa-institution', '#', '', '_self', '0', '1', '0', '2019-04-03 17:25:58');
 INSERT INTO `system_menu` VALUES ('152', '151', '热门小区', '', 'fa fa-dot-circle-o', '/tuanj/remen/index', '', '_self', '0', '1', '0', '2019-04-03 17:30:13');
+INSERT INTO `system_menu` VALUES ('153', '151', '楼盘案例', '', 'fa fa-hashtag', '/tuanj/caseanli/index', '', '_self', '0', '1', '0', '2019-04-08 09:43:14');
+INSERT INTO `system_menu` VALUES ('154', '151', '看工地', '', 'fa fa-cloud', '/tuanj/site/index', '', '_self', '0', '1', '0', '2019-04-08 09:44:19');
+INSERT INTO `system_menu` VALUES ('155', '151', '竣工实景图', '', 'fa fa-area-chart', '/tuanj/picture/index', '', '_self', '0', '1', '0', '2019-04-08 09:45:38');
+INSERT INTO `system_menu` VALUES ('156', '151', '楼盘户型', '', 'fa fa-paypal', '/tuanj/apartment/index', '', '_self', '0', '1', '0', '2019-04-08 09:46:48');
+INSERT INTO `system_menu` VALUES ('157', '139', '预约平面设计', '', 'fa fa-paper-plane', '/tuanj/sheji/index', '', '_self', '0', '1', '0', '2019-04-08 10:18:04');
 
 -- ----------------------------
 -- Table structure for `system_node`
