@@ -61,55 +61,12 @@
                 <div class="const-main">
                     <div class="construct-list-wrap">
                         <ul class="construct-list">
+                             {volist name="list" id="vo"}
                             <li class="const-panel">
                                 <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/700">狮山原著 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="active">木工工程</span>
-                                            <span class="">瓦工工程</span>
-                                            <span class="">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890746745.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890749623.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890751100.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                                <div class="const-panel-footer">
-                                    <div class="const-bot-media">
-                                        <div class="bot-media-hd">
-                                            <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271190568572.png" alt="">
-                                            <span>业主说说</span>
-                                        </div>
-                                        <div class="bot-media-bd">
-                                            木工施工
-                                            <a class="more" href="/Fabricatingyard/detail/700">[详情]</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/699">狮山原著 </a>
-                                    <small>  | 三居 | 0㎡</small>
+                                    <a href="{:url('site/detail')}?id={$vo.id}">{$vo.btitle} </a>
+                                    <small>  | {$vo.ctitle} | {$vo.s_mianji?$vo.s_mianji:'0'}㎡</small>
+                                    <!--
                                     <div class="cons-step">
                                         <strong>中期工程：</strong>
                                         <div class="cons-step-list">
@@ -119,290 +76,38 @@
                                             <span class="active">油工工程</span>
                                         </div>
                                     </div>
+                                     -->
                                 </div>
                                 <div class="const-panel-body">
                                     <ul class="const-img-list">
+                                         {if condition="$vo.q_title neq null"}
+                                           {volist name="$vo.q_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a href="/Fabricatingyard/detail/699"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164889312551.jpg" alt=""></a>
-
+                                            <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                        {/volist}
+                                        {elseif condition="$vo.z_title neq null" /}
+                                         {volist name="$vo.z_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a href="/Fabricatingyard/detail/699"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164889315221.jpg" alt=""></a>
-
+                                            <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                         {/volist}
+                                        {else /}
+                                        {volist name="$vo.h_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a href="/Fabricatingyard/detail/699"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164889316696.jpg" alt=""></a>
-
+                                            <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                        {/volist}
+                                        {/if}
                                     </ul>
-
                                 </div>
                             </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/694">万科精品家园 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>后期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">主材安装</span>
-                                            <span class="active">环保整备</span>
-                                            <span class="active">竣工验收</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/694"><img src="http://picfwoss.yzf.com.cn/100019/2018/10/31/2156304106523.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/694"><img src="http://picfwoss.yzf.com.cn/100019/2018/10/31/2156304108995.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/694"><img src="http://picfwoss.yzf.com.cn/100019/2018/10/31/2156304110439.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/654">中航樾园 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="">木工工程</span>
-                                            <span class="">瓦工工程</span>
-                                            <span class="">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552131.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552327.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552644.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/653">中航樾园 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>前期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">开工大吉</span>
-                                            <span class="active">工地放线</span>
-                                            <span class="">量房交底</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/653"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143974975212.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/653"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143974977395.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/653"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143974978454.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/652">中航樾园 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="">木工工程</span>
-                                            <span class="">瓦工工程</span>
-                                            <span class="">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/652"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143973648366.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/652"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143973648068.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/652"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143973649169.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/644">狮山原著 </a>
-                                    <small>  | 四居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="active">木工工程</span>
-                                            <span class="active">瓦工工程</span>
-                                            <span class="active">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/644"><img src="http://picfw3.yzf.com.cn/100019/2018/9/27/2126652423912.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/644"><img src="http://picfw3.yzf.com.cn/100019/2018/9/27/2126652422764.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/644"><img src="http://picfw3.yzf.com.cn/100019/2018/9/27/2126652422257.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/643">新未来花园潇邦 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="active">木工工程</span>
-                                            <span class="">瓦工工程</span>
-                                            <span class="">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/643"><img src="http://picfw3.yzf.com.cn/100019/2018/9/20/2120796728634.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/643"><img src="http://picfw3.yzf.com.cn/100019/2018/9/20/2120796730438.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/643"><img src="http://picfw3.yzf.com.cn/100019/2018/9/20/2120796730018.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/641">狮山原著 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="active">木工工程</span>
-                                            <span class="active">瓦工工程</span>
-                                            <span class="active">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/641"><img src="http://picfw3.yzf.com.cn/100019/2018/9/15/2116702537118.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/641"><img src="http://picfw3.yzf.com.cn/100019/2018/9/15/2116702537645.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/641"><img src="http://picfw3.yzf.com.cn/100019/2018/9/15/2116702539076.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a href="/Fabricatingyard/detail/634">狮山原著 </a>
-                                    <small>  | 三居 | 0㎡</small>
-                                    <div class="cons-step">
-                                        <strong>中期工程：</strong>
-                                        <div class="cons-step-list">
-                                            <span class="active">水电工程</span>
-                                            <span class="">木工工程</span>
-                                            <span class="">瓦工工程</span>
-                                            <span class="">油工工程</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/634"><img src="http://picfw3.yzf.com.cn/100019/2018/8/26/2099231323806.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/634"><img src="http://picfw3.yzf.com.cn/100019/2018/8/26/2099231330876.jpg" alt=""></a>
-
-                                        </li>
-                                        <li>
-                                            <a href="/Fabricatingyard/detail/634"><img src="http://picfw3.yzf.com.cn/100019/2018/8/26/2099231333551.jpg" alt=""></a>
-
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
+                             {/volist}
                         </ul>
 
                         <nav class="text-center">
                             <ul class="pagination">
-                                <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                                <li class="active"><a data-pjax="" href="/Fabricatingyard?PageIndex=1">1</a></li>
-                                <li class=""><a data-pjax="" href="/Fabricatingyard?PageIndex=2">2</a></li>
-
-                                <li><a data-pjax="" href="/Fabricatingyard?PageIndex=2">下一页</a></li>
-
+                                <li class="active">{$page|raw}</li>
                             </ul>
                         </nav>
 
@@ -411,9 +116,9 @@
                 </div>
                 <div class="const-side">
                     <div class="search-group">
-                        <form method="get" action="/Fabricatingyard">
-                            <input type="text" name="searchKey" value="" class="form-control" placeholder="输入我家小区名称，查看工地">
-                            <button class="btn" type="button"><i class="iconfont icon-fangdajing"></i></button>
+                        <form method="get" action="{:url('index/site/index')}">
+                            <input type="text" name="searchKey" value="{$Think.get.searchKey}" class="form-control" placeholder="输入我家小区名称，查看工地">
+                            <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
                         </form>
                     </div>
 

@@ -29,6 +29,15 @@ class Site extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+    //关联热门小区 户型
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+            if($val['re_id'] != 0 && $val['h_id'] !=0 ) {
+                $data[$key]['re'] = Db::name('remen_lou')->where('id', '=', $val['re_id'])->value('title');
+                $data[$key]['hid'] = Db::name('huxing')->where('id', '=', $val['h_id'])->value('title');
+            }
+        }
+    }
 
 
     /**

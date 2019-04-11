@@ -1,10 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{extend name='admin@public/content'}
 
-</body>
-</html>
+{block name="content"}
+<span style="color: #9d000c">*:请注意，在填写那个进去的标题就去找对应的进度工地图片，进行上传！</span>
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联案例户型</label>
+        <div class="layui-input-inline">
+            <select name="h_id">
+                <option value=""></option>
+                {volist name="huxing" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.h_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联热门楼盘</label>
+        <div class="layui-input-inline">
+            <select name="re_id">
+                <option value=""></option>
+                {volist name="remen" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.re_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">前期进度标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="q_title" value='{$vo.q_title|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">中期进度标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="z_title" value='{$vo.z_title|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">后期进度标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="h_title" value='{$vo.h_title|default=""}' class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">前期进度工地图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="q_img" value='{$vo.q_img|default=""}' class="layui-input">
+        </div>
+        <span style="color:#ff2c27; ">* 案例图片最多不要超过7张！</span>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">中期进度工地图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="z_img" value='{$vo.z_img|default=""}' class="layui-input">
+        </div>
+        <span style="color:#ff2c27; ">* 案例图片最多不要超过7张！</span>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">后期进度工地图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="h_img" value='{$vo.h_img|default=""}' class="layui-input">
+        </div>
+        <span style="color:#ff2c27; ">* 案例图片最多不要超过7张！</span>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">楼盘实际面积尺寸</label>
+        <div class="layui-input-block">
+            <input type="number" name="s_mianji" value='{$vo.s_mianji|default=""}' class="layui-input">
+        </div>
+        <span style="color: #FF5722">*这里只需要填写数字即可。请不要填写文字!</span>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="q_img"]').uploadMultipleImage();
+        $('form [name="z_img"]').uploadMultipleImage();
+        $('form [name="h_img"]').uploadMultipleImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+
