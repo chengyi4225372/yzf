@@ -46,8 +46,8 @@
         <div class="auto-box">
             <ul>
                 <li class=""><a href="{:url('residential/detail')}?id={$Think.get.id}">楼盘案例（{$count}）</a></li>
-                <li class="active"><a href="{:url('residential/detail_fay')}?id={$Think.get.id}">看工地（2）</a></li>
-                <li class=""><a href="{:url('residential/detail_fayOver')}?id={$Think.get.id}">竣工实景图（0）</a></li>
+                <li class="active"><a href="{:url('residential/detail_fay')}?id={$Think.get.id}">看工地（{$gcount}）</a></li>
+                <li class=""><a href="{:url('residential/detail_fayover')}?id={$Think.get.id}">竣工实景图（0）</a></li>
                 <li class=""><a href="{:url('residential/detail_hall')}?id={$Think.get.id}">楼盘户型（0）</a></li>
             </ul>
         </div>
@@ -55,72 +55,62 @@
 
     <div class="content">
         <div class="auto-box">
-            <!--
+
             <div class="case-sort-wrap hot-sort-wrap">
-                <span>排序：</span> <a class="selected" href="/Residential/Detail_fay/6872?orderby=DateCreated">
-                最新工地 <i class="iconfont icon-shang"></i>
-            </a>|<a class="" href="/Residential/Detail_fay/6872?orderby=SortId">
-                最热工地<i class="iconfont icon-xia"></i>
-            </a>
-            </div>
-             -->
+                <!--
+            <span>排序：</span> <a class="selected" href="/Residential/Detail_fay/6872?orderby=DateCreated">
+            最新工地 <i class="iconfont icon-shang"></i>
+        </a>|<a class="" href="/Residential/Detail_fay/6872?orderby=SortId">
+            最热工地<i class="iconfont icon-xia"></i>
+        </a>
+                  -->
+        </div>
+
             <div class="const-wrap">
                 <div class="const-main">
                     <div class="construct-list-wrap">
                         <ul class="construct-list">
                             <li class="const-panel">
                                 <div class="const-panel-header">
-                                    <a target="_blank" href="/Fabricatingyard/detail/265">龙湖二期水电验收 </a>
-                                    <small> 龙湖时代天街 | 三居 | 140㎡</small>
+                                    <a target="_blank" href="{:url('site/detail')}?id={$info.id}">{$result.title} </a>
+                                    <small> {$result.title} | {$info.hu} | {$info.s_mianji?$info.s_mianji:'0'}㎡</small>
                                     <div class="cons-step">
                                     </div>
                                 </div>
                                 <div class="const-panel-body">
                                     <ul class="const-img-list">
-                                        <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/265"><img src="http://picfw.yzf.com.cn/2017/4/1/1656631632935.jpg_835x475.jpg" alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/265"><img src="http://picfw.yzf.com.cn/2017/4/1/1656631630283.jpg_835x475.jpg" alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/265"><img src="http://picfw.yzf.com.cn/2017/4/1/1656631631606.jpg_835x475.jpg" alt=""></a>
-                                        </li>
-                                    </ul>
+                                        {if condition="$info.q_title neq null" }
 
-                                </div>
-                            </li>
-                            <li class="const-panel">
-                                <div class="const-panel-header">
-                                    <a target="_blank" href="/Fabricatingyard/detail/263">龙湖时代二期水电、木工、油漆 </a>
-                                    <small> 龙湖时代天街 | 三居 | 140㎡</small>
-                                    <div class="cons-step">
-                                    </div>
-                                </div>
-                                <div class="const-panel-body">
-                                    <ul class="const-img-list">
+                                        {volist name="$info.q_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/263"><img src="http://picfw.yzf.com.cn/2017/3/31/1656065281444.jpg_835x475.jpg" alt=""></a>
+                                            <a target="_blank" href="{:url('site/detail')}?id={$info.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                        {/volist}
+                                        {elseif condition="$info.z_title neq null" /}
+
+                                        {volist name="$info.z_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/263"><img src="http://picfw.yzf.com.cn/2017/3/31/1656065289425.jpg_835x475.jpg" alt=""></a>
+                                            <a target="_blank" href="{:url('site/detail')}?id={$info.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                        {/volist}
+                                         {else  /}
+
+                                        {volist name="$info.h_img" id="vv" offset='0' length='3'}
                                         <li>
-                                            <a target="_blank" href="/Fabricatingyard/detail/263"><img src="http://picfw.yzf.com.cn/2017/3/31/1656065290022.jpg_835x475.jpg" alt=""></a>
+                                            <a target="_blank" href="{:url('site/detail')}?id={$info.id}"><img src="{$vv}" alt=""></a>
                                         </li>
+                                        {/volist}
+                                        {/if}
                                     </ul>
 
                                 </div>
                             </li>
                         </ul>
-
-
-
                     </div>
                 </div>
                 <div class="const-side">
                     <div class="search-group">
-                        <form method="get" action="/Residential/Detail_fay/6872">
+                        <form method="get" action="{:url('residential/detail_fay')}?id={$Think.get.id}">
                             <input type="text" name="searchKey" value="" class="form-control" placeholder="输入我家小区名称，查看工地">
                             <button class="btn" type="button"><i class="iconfont icon-fangdajing"></i></button>
                         </form>

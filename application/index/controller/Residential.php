@@ -155,6 +155,8 @@ class Residential extends Common{
         $result = Db::name('remen_lou')->where('id',$id)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
+        //楼盘工地 总数
+        $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
         //楼盘案例 关联 设计师
         $info = Db::name('lou_anli')
                      ->alias('a')
@@ -167,6 +169,7 @@ class Residential extends Common{
         $this->assign('result',$result);
         $this->assign('info',$info);
         $this->assign('count',$count);
+        $this->assign('gcount',$gcount);
         return $this->fetch();
     }
 
@@ -192,27 +195,47 @@ class Residential extends Common{
         $result = Db::name('remen_lou')->where('id',$id)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
-        //楼盘 工地
+        //楼盘工地 总数
+        $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        //楼盘 工地 展示
+        $info = Db::name('lou_gongdi')->where('re_id',$result['id'])->find();
+        $info['q_img'] = explode('|',$info['q_img']);
+        $info['z_img'] = explode('|',$info['z_img']);
+        $info['h_img'] = explode('|',$info['h_img']);
+        //户型 id 转标题
+        $info['hu'] = Db::name('huxing')->where('id',$info['h_id'])->value('title');
         $this->assign('result',$result);
         $this->assign('count',$count);
+        $this->assign('info',$info);
+        $this->assign('gcount',$gcount);
         return  $this->fetch();
     }
 
-    //竣工示意图 todo 页面不确定
-    public function detail_fayOver(){
+    //竣工示意图 todo 未完成
+    public function detail_fayover(){
+        $id = input('get.id');
+        $result = Db::name('remen_lou')->where('id',$id)->find();
+        //楼盘案例总数
+        $count = Db::name('lou_anli')->where('re_id',$id)->count();
+        //楼盘工地 总数
+        $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        $this->assign('result',$result);
+        $this->assign('count',$count);
+        $this->assign('gcount',$gcount);
         return $this->fetch();
     }
 
-    //楼盘户型
+    //楼盘户型 todo 未完成
     public function detail_hall(){
         $id = input('get.id');
         $result = Db::name('remen_lou')->where('id',$id)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
-        //楼盘 工地
+        //楼盘工地 总数
+        $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
         $this->assign('result',$result);
         $this->assign('count',$count);
-        return  $this->fetch();
+        $this->assign('gcount',$gcount);
         return $this->fetch();
     }
 }
