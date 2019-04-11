@@ -153,6 +153,8 @@ class Residential extends Common{
     public function detail(){
         $id = input('get.id');
         $result = Db::name('remen_lou')->where('id',$id)->find();
+        //楼盘案例总数
+        $count = Db::name('lou_anli')->where('re_id',$id)->count();
         //楼盘案例 关联 设计师
         $info = Db::name('lou_anli')
                      ->alias('a')
@@ -164,6 +166,7 @@ class Residential extends Common{
                      ->paginate(16);
         $this->assign('result',$result);
         $this->assign('info',$info);
+        $this->assign('count',$count);
         return $this->fetch();
     }
 
@@ -183,8 +186,33 @@ class Residential extends Common{
     }
 
 
-    //工地 todo 无页面
+    //工地
     public function detail_fay(){
+        $id = input('get.id');
+        $result = Db::name('remen_lou')->where('id',$id)->find();
+        //楼盘案例总数
+        $count = Db::name('lou_anli')->where('re_id',$id)->count();
+        //楼盘 工地
+        $this->assign('result',$result);
+        $this->assign('count',$count);
         return  $this->fetch();
+    }
+
+    //竣工示意图 todo 页面不确定
+    public function detail_fayOver(){
+        return $this->fetch();
+    }
+
+    //楼盘户型
+    public function detail_hall(){
+        $id = input('get.id');
+        $result = Db::name('remen_lou')->where('id',$id)->find();
+        //楼盘案例总数
+        $count = Db::name('lou_anli')->where('re_id',$id)->count();
+        //楼盘 工地
+        $this->assign('result',$result);
+        $this->assign('count',$count);
+        return  $this->fetch();
+        return $this->fetch();
     }
 }

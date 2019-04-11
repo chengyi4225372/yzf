@@ -45,10 +45,10 @@
     <div class="hot-tab-nav">
         <div class="auto-box">
             <ul>
-                <li class="active"><a href="/Residential/Detail/6872">楼盘案例（17）</a></li>
-                <li class=""><a href="/Residential/Detail_fay/6872">看工地（2）</a></li>
-                <li class=""><a href="/Residential/Detail_fayOver/6872">竣工实景图（0）</a></li>
-                <li class=""><a href="/Residential/Detail_hall/6872">楼盘户型（0）</a></li>
+                <li class="active"><a href="{:url('residential/detail')}?id={$Think.get.id}">楼盘案例（{$count}）</a></li>
+                <li class=""><a href="{:url('residential/detail_fay')}?id={$Think.get.id}">看工地（2）</a></li>
+                <li class=""><a href="{:url('residential/detail_fayOver')}?id={$Think.get.id}">竣工实景图（0）</a></li>
+                <li class=""><a href="{:url('residential/detail_hall')}?id={$Think.get.id}">楼盘户型（0）</a></li>
             </ul>
         </div>
     </div>
@@ -64,7 +64,7 @@
                 <ul class="case-list">
                     {volist name="info" id="vo"}
                     <li>
-                        <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box"><img src="{$vo.logo}" alt="龙湖时代天街"></a>
+                        <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box"><img src="{$vo.logo}" alt="{$result.title}"></a>
                         <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img"><img src="{$vo.bimg}" alt="user"></a>
                         <dl>
                             <dt><a title="龙湖时代天街" href="{:url('residential/goodroom')}?id={$vo.id}">{$result.title}</a></dt>

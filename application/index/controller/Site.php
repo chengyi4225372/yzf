@@ -17,4 +17,9 @@ class Site extends Common
    public function index(){
        return $this->fetch();
    }
+
+   //工地详情
+    public function detail(){
+       return $this->fetch();
+    }
 }
