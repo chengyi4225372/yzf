@@ -21,23 +21,13 @@ class Residential extends Common{
         return $this->view->fetch();
     }
 
-    //案例地区
+    /*
+     案例地区 rid
+     案例风格 sid
+     案例户型 hid
+     案例面积 mid
+   */
     public function areaid(){
-        return $this->fetch();
-    }
-
-    //案例风格
-    public  function styleid(){
-        return $this->fetch();
-    }
-
-    //案例户型
-    public function roomid(){
-        return $this->fetch();
-    }
-
-    //案例面积
-    public function squaresid(){
         return $this->fetch();
     }
 
@@ -76,7 +66,6 @@ class Residential extends Common{
         $this->assign('info',$info);
         return $this->fetch();
     }
-
 
     //楼盘案例详情图
     public function goodroom(){
