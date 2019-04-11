@@ -23,7 +23,7 @@
                 </div>
                 <div class="case-search-right">
                     <div class="search-group">
-                        <form method="get" action="/ResidentialCase">
+                        <form method="get" action="{:url('residential/areaid')}">
                             <input type="text" name="residential" class="form-control" placeholder="搜索我家小区">
                             <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
                         </form>
@@ -37,11 +37,11 @@
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li class="active"><a href="{:url('residential/index')}">苏州案例</a></li>
+                <li class="active"><a href="{:url('residential/index')}">装修案例</a></li>
                 <li class="nav-type-select">
-                    <a href="{:url('residential/areaid')}">
-                        昆山市 <span class="close-btn">×</span>
-                    </a>
+                    <!--<a href="{:url('residential/areaid')}">-->
+                        <!--昆山市 <span class="close-btn">×</span>-->
+                    <!--</a>-->
                 </li>
             </ol>
             <div class="content-body">
@@ -49,7 +49,7 @@
                     <tr>
                         <th>市区:</th>
                         <td>
-                            <a  href="{:url('residential/areaid')}" {if condition="$Think.get.rid eq null"}  class="selected" {/if}>不限</a>
+                            <a  href="{:url('residential/areaid')}?rid=" {if condition="$Think.get.rid eq null"}  class="selected" {/if}>不限</a>
                              {volist name="region" id="vo"}
                             <a   {if condition="$Think.get.rid eq $vo.id"}  class="selected" {else /} class=""{/if} href="{:url('residential/areaid')}?rid={$vo.id}">{$vo.title}</a>
                              {/volist}
@@ -58,80 +58,28 @@
                     <tr>
                         <th>风格:</th>
                         <td>
-                            <a href="/ResidentialCase?areaid=929"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?styleId=1&amp;areaid=929"
-                               class="">现代简约风格</a>
-                            <a href="/ResidentialCase?styleId=3&amp;areaid=929"
-                               class="">新古典风格</a>
-                            <a href="/ResidentialCase?styleId=11&amp;areaid=929"
-                               class="">新中式风格</a>
-                            <a href="/ResidentialCase?styleId=20&amp;areaid=929"
-                               class="">东南亚风格</a>
-                            <a href="/ResidentialCase?styleId=402&amp;areaid=929"
-                               class="">地中海风格</a>
-                            <a href="/ResidentialCase?styleId=403&amp;areaid=929"
-                               class="">北欧风格</a>
-                            <a href="/ResidentialCase?styleId=400&amp;areaid=929"
-                               class="">简欧风格</a>
-                            <a href="/ResidentialCase?styleId=14&amp;areaid=929"
-                               class="">混搭风格</a>
-                            <a href="/ResidentialCase?styleId=4&amp;areaid=929"
-                               class="">其他</a>
-                            <a href="/ResidentialCase?styleId=404&amp;areaid=929"
-                               class="">法式风格</a>
-                            <a href="/ResidentialCase?styleId=405&amp;areaid=929"
-                               class="">港式风格</a>
-                            <a href="/ResidentialCase?styleId=415&amp;areaid=929"
-                               class="">美式风格</a>
-                            <a href="/ResidentialCase?styleId=417&amp;areaid=929"
-                               class="">欧式</a>
-
+                            <a href="{:url('residential/areaid')}?sid=" {if condition="$Think.get.sid eq null"}  class="selected" {/if}>不限</a>
+                              {volist name="style" id="vo" }
+                            <a href="{:url('residential/areaid')}?sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
+                              {/volist}
                         </td>
                     </tr>
                     <tr>
                         <th>户型:</th>
                         <td>
-                            <a href="/ResidentialCase?areaid=929"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?roomHallId=532&amp;areaid=929"
-                               class="">一居</a>
-                            <a href="/ResidentialCase?roomHallId=535&amp;areaid=929"
-                               class="">二居</a>
-                            <a href="/ResidentialCase?roomHallId=549&amp;areaid=929"
-                               class="">三居</a>
-                            <a href="/ResidentialCase?roomHallId=551&amp;areaid=929"
-                               class="">四居</a>
-                            <a href="/ResidentialCase?roomHallId=552&amp;areaid=929"
-                               class="">五居</a>
-                            <a href="/ResidentialCase?roomHallId=548&amp;areaid=929"
-                               class="">平层</a>
-                            <a href="/ResidentialCase?roomHallId=543&amp;areaid=929"
-                               class="">复式</a>
-                            <a href="/ResidentialCase?roomHallId=530&amp;areaid=929"
-                               class="">别墅</a>
-                            <a href="/ResidentialCase?roomHallId=553&amp;areaid=929"
-                               class="">办公空间</a>
+                            <a href="{:url('residential/areaid')}?hid=" {if condition="$Think.get.hid eq null"}  class="selected" {/if}>不限</a>
+                              {volist name="huxing" id="vo"}
+                            <a href="{:url('residential/areaid')}?hid={$vo.id}" {if condition="$Think.get.hid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                              {/volist}
                         </td>
                     </tr>
                     <tr>
                         <th>面积:</th>
                         <td>
-
-                            <a href="/ResidentialCase?areaid=929"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?squares=s90&amp;areaid=929"
-                               class="">90㎡以下</a>
-                            <a href="/ResidentialCase?squares=s90_120&amp;areaid=929"
-                               class="">90-120㎡</a>
-                            <a href="/ResidentialCase?squares=s121_180&amp;areaid=929"
-                               class="">121-180㎡</a>
-                            <a href="/ResidentialCase?squares=s181_320&amp;areaid=929"
-                               class="">181-320㎡</a>
-                            <a href="/ResidentialCase?squares=s321_500&amp;areaid=929"
-                               class="">321-500㎡</a>
-                            <a href="/ResidentialCase?squares=s500&amp;areaid=929"
-                               class="">500㎡以上</a>
+                            <a href="{:url('residential/areaid')}?mid="{if condition="$Think.get.mid eq null"}  class="selected" {/if}>不限</a>
+                              {volist name="mianji" id="vo" }
+                            <a href="{:url('residential/areaid')}?mid={$vo.id}" {if condition="$Think.get.mid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                               {/volist}
                         </td>
                     </tr>
                 </table>
