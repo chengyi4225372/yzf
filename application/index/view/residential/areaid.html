@@ -8,7 +8,7 @@
 </div>
 <div id="RenderBody">
 
-    <div class="case-banner" style="background-image:url(/Images/residentialcase_banner/suzhou.jpg)  ">
+    <div class="case-banner" style="background-image:url(__STATIC__/home/Images/residentialcase_banner/suzhou.jpg)  ">
         <div class="auto-box">
             <div class="case-search">
                 <div class="case-search-left">
@@ -24,7 +24,7 @@
                 <div class="case-search-right">
                     <div class="search-group">
                         <form method="get" action="{:url('residential/areaid')}">
-                            <input type="text" name="residential" class="form-control" placeholder="搜索我家小区">
+                            <input type="text" name="residential" value="{$Think.get.residential}" class="form-control" placeholder="搜索我家小区">
                             <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
                         </form>
                     </div>
@@ -60,7 +60,7 @@
                         <td>
                             <a href="{:url('residential/areaid')}?sid=" {if condition="$Think.get.sid eq null"}  class="selected" {/if}>不限</a>
                               {volist name="style" id="vo" }
-                            <a href="{:url('residential/areaid')}?sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
                               {/volist}
                         </td>
                     </tr>
@@ -69,7 +69,7 @@
                         <td>
                             <a href="{:url('residential/areaid')}?hid=" {if condition="$Think.get.hid eq null"}  class="selected" {/if}>不限</a>
                               {volist name="huxing" id="vo"}
-                            <a href="{:url('residential/areaid')}?hid={$vo.id}" {if condition="$Think.get.hid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$vo.id}" {if condition="$Think.get.hid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
                               {/volist}
                         </td>
                     </tr>
@@ -78,38 +78,48 @@
                         <td>
                             <a href="{:url('residential/areaid')}?mid="{if condition="$Think.get.mid eq null"}  class="selected" {/if}>不限</a>
                               {volist name="mianji" id="vo" }
-                            <a href="{:url('residential/areaid')}?mid={$vo.id}" {if condition="$Think.get.mid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$Think.get.hid}&mid={$vo.id}" {if condition="$Think.get.mid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
                                {/volist}
                         </td>
                     </tr>
                 </table>
+                <!-- todo 注释
                 <div class="case-sort-wrap">
                     <span>排序：</span>
                     <a class="selected" href="/ResidentialCase?areaid=929">最热<i class="iconfont icon-xia"></i></a>|
                     <a class="" href="/ResidentialCase?areaid=929&amp;orderby=date"> 最新<i class="iconfont icon-shang"></i></a>
                 </div>
+                -->
                 <div class="case-list-wrap">
                     <ul class="case-list">
+                        {empty name='list'}
+
+                        {else /}
                         {volist name="list" id="vo"}
                         <li>
-                            <a href="/ResidentialCase/Detail/64865?areaid=929" class="img-box">
-                                <img src="http://picfw3.yzf.com.cn/100007/2018/7/29/2075085536942.jpg" alt="天润尚院">
+                            <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box">
+                                <img src="{$vo.logo}" alt="{$vo.ctitle}">
                             </a>
                             <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img">
-                                <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="user">
+                                <img src="{$vo.bimg}" alt="user">
                             </a>
                             <dl>
-                                <dt><a title="天润尚院" href="/ResidentialCase/Detail/64865?areaid=929">天润尚院</a></dt>
-                                <dd><span>四居</span> | <span>230㎡</span> | <span>新中式风格</span></dd>
+                                <dt><a title="{$vo.ctitle}" href="{:url('residential/goodroom')}?id={$vo.id}">{$vo.ctitle}</a></dt>
+                                <dd><span>{$vo.htitle}</span> | <span>{$vo.s_mianji?$vo.s_mianji:'不明确'}㎡</span> | <span>{$vo.stitle}</span></dd>
                             </dl>
                         </li>
                         {/volist}
+                        {/empty}
                     </ul>
-
-
                 </div>
+                  <!-- 分页-->
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li class="active">{$list|raw}</li>
+                    </ul>
+                </nav>
                 <div class="web-adv">
-                    <img src="__STATIC__/index/images/web-adv.jpg" alt="">
+                    <img src="__STATIC__/home/image/web-adv.jpg" alt="">
                 </div>
             </div>
         </div>
