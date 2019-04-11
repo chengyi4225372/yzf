@@ -84,19 +84,18 @@
                     </tr>
                 </table>
                 <div class="case-sort-wrap">
-                    <span>排序：</span> <a class="selected"
-                                        href="/ResidentialCase?areaid=929">
-                    最热<i class="iconfont icon-xia"></i>
-                </a>|<a class="" href="/ResidentialCase?areaid=929&amp;orderby=date"> 最新<i class="iconfont icon-shang"></i></a>
+                    <span>排序：</span>
+                    <a class="selected" href="/ResidentialCase?areaid=929">最热<i class="iconfont icon-xia"></i></a>|
+                    <a class="" href="/ResidentialCase?areaid=929&amp;orderby=date"> 最新<i class="iconfont icon-shang"></i></a>
                 </div>
                 <div class="case-list-wrap">
-
                     <ul class="case-list">
+                        {volist name="list" id="vo"}
                         <li>
                             <a href="/ResidentialCase/Detail/64865?areaid=929" class="img-box">
                                 <img src="http://picfw3.yzf.com.cn/100007/2018/7/29/2075085536942.jpg" alt="天润尚院">
                             </a>
-                            <a href="/Designer/Detail/4141" class="user-img">
+                            <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img">
                                 <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="user">
                             </a>
                             <dl>
@@ -104,12 +103,13 @@
                                 <dd><span>四居</span> | <span>230㎡</span> | <span>新中式风格</span></dd>
                             </dl>
                         </li>
+                        {/volist}
                     </ul>
 
 
                 </div>
                 <div class="web-adv">
-                    <img src="/images/web-adv.jpg" alt="">
+                    <img src="__STATIC__/index/images/web-adv.jpg" alt="">
                 </div>
             </div>
         </div>

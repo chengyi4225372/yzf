@@ -28,6 +28,12 @@ class Residential extends Common{
      案例面积 mid
    */
     public function areaid(){
+
+
+
+
+        $list = Db::name('lou_anli')->select();
+        $this->assign('list',$list);
         return $this->fetch();
     }
 
