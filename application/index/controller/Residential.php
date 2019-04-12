@@ -152,6 +152,7 @@ class Residential extends Common{
     //热门小区详情
     public function detail(){
         $id = input('get.id');
+        $page = input('get.PageIndex');
         $result = Db::name('remen_lou')->where('id',$id)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
@@ -167,12 +168,16 @@ class Residential extends Common{
                      ->join('huxing c','c.id =a.h_id')
                      ->join('style d','d.id=a.s_id')
                      ->where('re_id',$id)
-                     ->paginate(16);
+                     ->page($page,$size='12')
+                     ->select();
+        //分页数量
+        $pagesize = $count/$size;
         $this->assign('result',$result);
         $this->assign('info',$info);
         $this->assign('count',$count);
         $this->assign('gcount',$gcount);
         $this->assign('hcount',$hcount);
+        $this->assign('pagesize',$pagesize);
         return $this->fetch();
     }
 
@@ -261,9 +266,8 @@ class Residential extends Common{
 
     //楼盘户型 详情展示
     public function  detail_hall_two(){
-
-        $id = input('get.id'); //
-        $reid = input('get.rid');
+        $id = input('get.id');  //当前户型案例 id
+        $reid = input('get.rid'); //热门小区id
         $result = Db::name('remen_lou')->where('id',$reid)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$reid)->count();
