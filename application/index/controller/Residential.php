@@ -157,6 +157,8 @@ class Residential extends Common{
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
         //楼盘工地 总数
         $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        //楼盘户型总数
+        $hcount = Db::name('lou_huxing')->where('re_id',$id)->count();
         //楼盘案例 关联 设计师
         $info = Db::name('lou_anli')
                      ->alias('a')
@@ -170,6 +172,7 @@ class Residential extends Common{
         $this->assign('info',$info);
         $this->assign('count',$count);
         $this->assign('gcount',$gcount);
+        $this->assign('hcount',$hcount);
         return $this->fetch();
     }
 
@@ -197,6 +200,8 @@ class Residential extends Common{
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
         //楼盘工地 总数
         $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        //楼盘户型总数
+        $hcount = Db::name('lou_huxing')->where('re_id',$id)->count();
         //楼盘 工地 展示
         $info = Db::name('lou_gongdi')->where('re_id',$result['id'])->find();
         $info['q_img'] = explode('|',$info['q_img']);
@@ -208,6 +213,7 @@ class Residential extends Common{
         $this->assign('count',$count);
         $this->assign('info',$info);
         $this->assign('gcount',$gcount);
+        $this->assign('hcount',$hcount);
         return  $this->fetch();
     }
 
@@ -219,23 +225,36 @@ class Residential extends Common{
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
         //楼盘工地 总数
         $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        //楼盘户型总数
+        $hcount = Db::name('lou_huxing')->where('re_id',$id)->count();
         $this->assign('result',$result);
         $this->assign('count',$count);
         $this->assign('gcount',$gcount);
+        $this->assign('hcount',$hcount);
         return $this->fetch();
     }
 
-    //楼盘户型 todo 未完成
+    //楼盘户型
     public function detail_hall(){
         $id = input('get.id');
+        $page = input('get.PageIndex');
         $result = Db::name('remen_lou')->where('id',$id)->find();
         //楼盘案例总数
         $count = Db::name('lou_anli')->where('re_id',$id)->count();
         //楼盘工地 总数
         $gcount = Db::name('lou_gongdi')->where('re_id',$id)->count();
+        //楼盘户型总数
+        $hcount = Db::name('lou_huxing')->where('re_id',$id)->count();
+        //楼盘户型列表 分页
+        $hlist = Db::name('lou_huxing')->where('re_id',$id)->page($page,$size='12')->select();
+        //总页数
+        $pages =ceil($hcount/$size);
         $this->assign('result',$result);
         $this->assign('count',$count);
         $this->assign('gcount',$gcount);
+        $this->assign('hcount',$hcount);
+        $this->assign('hlist',$hlist);
+        $this->assign('pages',$pages);
         return $this->fetch();
     }
 }

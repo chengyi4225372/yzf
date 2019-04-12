@@ -48,149 +48,44 @@
                 <li class=""><a href="{:url('residential/detail')}?id={$Think.get.id}">楼盘案例（{$count}）</a></li>
                 <li class=""><a href="{:url('residential/detail_fay')}?id={$Think.get.id}">看工地（{$gcount}）</a></li>
                 <li class=""><a href="{:url('residential/detail_fayOver')}?id={$Think.get.id}">竣工实景图（0）</a></li>
-                <li class="active"><a href="{:url('residential/detail_hall')}?id={$Think.get.id}">楼盘户型（0）</a></li>
+                <li class="active"><a href="{:url('residential/detail_hall')}?id={$Think.get.id}">楼盘户型（{$hcount}）</a></li>
             </ul>
         </div>
     </div>
 
     <div class="content">
         <div class="auto-box">
-
             <div class="hot-filter">
-
+                <!--
                 <a class="active" href="/Residential/Detail_hall/8245">全部（35）</a>
                 <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%BA%8C%E5%B1%85">二居（8）</a>
                 <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%B8%89%E5%B1%85">三居（15）</a>
                 <a class="" href="/Residential/Detail_hall/8245?halltype=%E5%9B%9B%E5%B1%85">四居（8）</a>
                 <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%BA%94%E5%B1%85">五居（4）</a>
+                 -->
             </div>
             <div class="house-list-wrap">
                 <ul class="house-list">
+                    {volist name="hlist" id="vo" }
                     <li>
                         <a href="/Residential/Detail_hall_2/8245?rid=46219">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\0022bcc22357451e83a258ef9cac4fee.jpg" alt="">
+                            <img src="{$vo.h_img|default=''}" alt="">
                             <dl>
-                                <dt>联排别墅L2户型三层 </dt>
-                                <dd>5室2厅4卫1厨  298㎡</dd>
+                                <dt>{$vo.h_title|default=''}</dt>
+                                <dd>{$vo.h_size|default=''}</dd>
                             </dl>
                         </a>
                     </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46218">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\e2196bf0a4f34aeaad5d1d2aca6e307f.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L2户型二层 </dt>
-                                <dd>5室2厅4卫1厨  298㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46217">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\5813c58392e440cd8e643c8472be3304.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L2户型一层 </dt>
-                                <dd>5室2厅4卫1厨  298㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46216">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\3f499e4811434f68960814dfc9bcf4bc.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L2户型地下层 </dt>
-                                <dd>5室2厅4卫1厨  298㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46215">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\5c53002391424aebbaa71c412b7cff36.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L1户型三层 </dt>
-                                <dd>4室2厅4卫1厨  335㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46214">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\3d4bb8237756482faf40592d9f7da8f4.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L1户型二层 </dt>
-                                <dd>4室2厅4卫1厨  335㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46213">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\661e351d25fa42078df1ec517e6b7696.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L1户型一层 </dt>
-                                <dd>4室2厅4卫1厨  335㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46212">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\155ababbeb114a10a6834e764232fdfe.jpg" alt="">
-                            <dl>
-                                <dt>联排别墅L1户型地下层 </dt>
-                                <dd>4室2厅4卫1厨  335㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46211">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\98746658c8db4bec91d234f3a4a0bf07.jpg" alt="">
-                            <dl>
-                                <dt>88#标准层C户型 </dt>
-                                <dd>4室2厅2卫1厨  140㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46210">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\bb4ea7826dbe43cca74275dcc2e4eeaa.jpg" alt="">
-                            <dl>
-                                <dt>88#标准层B2户型 </dt>
-                                <dd>4室2厅2卫1厨  140㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46209">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\3611c8b59c8d41f0805080146e7a3fc4.jpg" alt="">
-                            <dl>
-                                <dt>高层C户型标准层 </dt>
-                                <dd>4室2厅2卫1厨  136㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Residential/Detail_hall_2/8245?rid=46208">
-                            <img src="http://picfw.yzf.com.cn/201712f/Download\05748b80f55948138f2a7d9d8e7e3e0a.jpg" alt="">
-                            <dl>
-                                <dt>二期22#标准层F户型 </dt>
-                                <dd>3室2厅2卫1厨  195㎡</dd>
-                            </dl>
-                        </a>
-                    </li>
-
+                    {/volist}
                 </ul>
 
                 <nav class="text-center">
                     <ul class="pagination">
-                        <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                        <li class="active"><a data-pjax="" href="/Residential/Detail_hall/8245?PageIndex=1">1</a></li>
-                        <li class=""><a data-pjax="" href="/Residential/Detail_hall/8245?PageIndex=2">2</a></li>
-                        <li class=""><a data-pjax="" href="/Residential/Detail_hall/8245?PageIndex=3">3</a></li>
-
-                        <li><a data-pjax="" href="/Residential/Detail_hall/8245?PageIndex=2">下一页</a></li>
-
+                        {for start="0" end="$pages"}
+                        <li {if condition="$Think.get.PageIndex eq ($i+1)"}class="active" {else /} class=""{/if}><a data-pjax="" href="{:url('residential/detail_hall')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
+                         {/for}
                     </ul>
                 </nav>
-
-
             </div>
         </div>
     </div>
@@ -814,9 +709,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
@@ -860,9 +752,6 @@
         </div>
     </div>
 </div>
-
-
-
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>

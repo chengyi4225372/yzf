@@ -1,0 +1,71 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联热门楼盘</label>
+        <div class="layui-input-inline">
+            <select name="re_id">
+                <option value=""></option>
+                {volist name="remen" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.re_id"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">户型案例图</label>
+        <div class="layui-input-block">
+            <input type="text" name="h_img" value='{$vo.h_img|default=""}'   class="layui-input">
+            <span style="color: red"></span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">户型案例简介</label>
+        <div class="layui-input-block">
+            <input type="text" name="h_title" value='{$vo.h_title|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">户型尺寸大小简介</label>
+        <div class="layui-input-block">
+            <input type="text" name="h_size" value='{$vo.h_size|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例内容</label>
+        <div class="layui-input-block">
+            <textarea name="content" class="layui-textarea">{if isset($vo['id'])}{$vo.content}{/if}</textarea>
+        </div>
+    </div>
+
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="h_img"]').uploadOneImage();
+        $('form [name="zansimg"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+
