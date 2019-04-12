@@ -1,12 +1,11 @@
 {include file="public/header-two" /}
 
 {include file="public/location-two" /}
-
 <div class="header">
     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
-
+    <script src="__STATIC__/home/assets/plugins/jquery-pjax/jquery.pjax.js"></script>
     <div class="hot-case-banner">
         <div class="auto-box">
             <ol class="breadcrumb normal">
@@ -15,10 +14,10 @@
                 <li><a href="{:url('residential/index')}">热装楼盘</a></li>
                 <li class="active">{$result.title}</li>
             </ol>
-            <dl class="banner-disc" title="">
+            <dl class="banner-disc" title="{$result.content|raw}">
                 <dt>{$result.title}</dt>
                 <dd><i class="iconfont icon-dibiao1"></i><span>{$result.location}</span></dd>
-                <dd><i class="iconfont icon-fangzi"></i><span> {$result.content|raw}</span></dd>
+                <dd><i class="iconfont icon-fangzi"></i><span>{$result.content|raw}</span></dd>
             </dl>
             <div class="banner-form">
                 <h2>获取您的专属优惠</h2>
@@ -41,7 +40,6 @@
     </div>
 
 
-    <!-- todo 户型图-->
     <div class="hot-tab-nav">
         <div class="auto-box">
             <ul>
@@ -52,48 +50,109 @@
             </ul>
         </div>
     </div>
-
-    <div class="content">
+    <div class="hot-slide-wrap">
         <div class="auto-box">
-            <div class="hot-filter">
-                <!--
-                <a class="active" href="/Residential/Detail_hall/8245">全部（35）</a>
-                <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%BA%8C%E5%B1%85">二居（8）</a>
-                <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%B8%89%E5%B1%85">三居（15）</a>
-                <a class="" href="/Residential/Detail_hall/8245?halltype=%E5%9B%9B%E5%B1%85">四居（8）</a>
-                <a class="" href="/Residential/Detail_hall/8245?halltype=%E4%BA%94%E5%B1%85">五居（4）</a>
-                 -->
-            </div>
-            <div class="house-list-wrap">
-                <ul class="house-list">
-                    {volist name="hlist" id="vo" }
-                    <li>
-                        <a href="{:url('residential/detail_hall_two')}?id={$vo.id}&rid={$vo.re_id}">
-                            <img src="{$vo.h_img|default=''}" alt="">
-                            <dl>
-                                <dt>{$vo.h_title|default=''}</dt>
-                                <dd>{$vo.h_size|default=''}</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    {/volist}
-                </ul>
-
-                <nav class="text-center">
-                    <ul class="pagination">
-                        {for start="0" end="$pages"}
-                        <li {if condition="$Think.get.PageIndex eq ($i+1)"}class="active" {else /} class=""{/if}><a data-pjax="" href="{:url('residential/detail_hall')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
-                         {/for}
+            <div class="hot-slide">
+                <div class="hot-hd">
+                    <a class="iconfont icon-jiantou-right hot-next"></a>
+                    <a class="iconfont icon-jiantou-left hot-prev"></a>
+                </div>
+                <div class="hot-bd">
+                    <ul class="hot-List">
+                        {volist name="info" id="vo" }
+                        <li  {if condition="$Think.get.id eq $vo.id"} class="selected " {else /} class=''{/if}>
+                            <a data-pjax=""  onclick="show_url('{$vo.id}','{$vo.re_id}')">
+                                <div class="img-box">
+                                    <img src="{$vo.h_img}" alt="">
+                                    <div class="drop">{$vo.h_size|default=''}</div>
+                                </div>
+                                <div class="hot-type">{$vo.h_title|default=""}</div>
+                            </a>
+                        </li>
+                       {/volist}
                     </ul>
-                </nav>
+                </div>
             </div>
         </div>
     </div>
+    <div class="content">
+        <div class="hot-type-detail">
+            <div class="hot-type-box">
+                <div class="ht-main">
+                    <span class="ht-tag">{$detail.h_title}</span>
+                    <img src="{$detail.h_img}" alt="">
+                    <div class="page-msg">
+                        <!--1<small>/15</small>-->
+                    </div>
+                </div>
+                <div class="ht-side">
+                    <div class="ht-side-inner">
+                        <div class="ht-side-a">
+                            <h4>{$detail.h_title}</h4>
+                            <div class="ht-disc"><span>{$detail.h_size|default=""}</span></div>
+                        </div>
+                        <div class="ht-side-b">
+                            <h4>查看此小区五居：</h4>
+                            <div class="b-disc">
+                                <a href="{:url('residential/detail')}?id={$result.id}"><i class="iconfont icon-fangwuxinxi"></i><span>案例></span></a>
+                                <a href="{:url('residential/detail_fay')}?id={$result.id}"><i class="iconfont icon-zhuangxiu"></i><span>工地></span></a>
+                                <a href="{:url('Residential/detail_fayover')}?id={$result.id}"><i class="iconfont icon-jungong"></i><span>竣工></span></a>
+                            </div>
+                        </div>
+                        <div class="ht-side-c">
+                            <h4>户型解析：</h4>
+                            <div class="c-disc">
+                                {$detail.content|raw}
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="__STATIC__/home/assets/plugins/jquery.slimscroll.min.js"></script>
+    <script src="__STATIC__/home/assets/plugins/jquery.SuperSlide.2.1.1.js"></script>
+    <script>
+        $(function () {
+            //if ($.support.pjax) {
+            //    $(document).on('click', 'a[data-pjax]', function (event) {
+
+            //        $.pjax.click(event, { container: containerSelector })
+            //    })
+            //}
+
+            $(document).pjax('a[data-pjax]', '.content', {
+                scrollTo: false,
+                replace:true
+            });
+            $(document).on('pjax:send', function (data, status, xhr, options) {
+                //$(".hot-List").children().removeClass("selected");
+                //alert();
+                $(data.relatedTarget).parent().siblings().removeClass("selected");
+                $(data.relatedTarget).parent().addClass("selected");
+
+            })
+            $(".hot-slide").slide({
+                prevCell: ".hot-prev",
+                nextCell: ".hot-next",
+                mainCell: ".hot-bd ul",
+                autoPage: true,
+                effect: "left",
+                vis: 7
+            });
+            $('.ht-side-inner').slimScroll({
+                height: 600 ,
+                railVisible: true,
+                alwaysVisible: true
+            });
+        })
+    </script>
 </div>
+
 {include file="public/footer" /}
 
-
 {include file="public/menu_right" /}
+
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
     <div class="modal-dialog yzf-modal">
@@ -264,7 +323,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1055位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有670位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -709,6 +768,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
@@ -752,6 +812,7 @@
         </div>
     </div>
 </div>
+
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -768,6 +829,15 @@
 
 <input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
 <script src="__STATIC__/home/js/yzf_city.js"></script>
+
+<script>
+
+function show_url(id,reid){
+    window.location.href="{:url('residential/detail_hall_two')}?id="+id+"&rid="+reid;
+}
+
+</script>
+
 
 
 <script>

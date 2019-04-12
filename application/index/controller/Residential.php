@@ -257,4 +257,30 @@ class Residential extends Common{
         $this->assign('pages',$pages);
         return $this->fetch();
     }
+
+
+    //楼盘户型 详情展示
+    public function  detail_hall_two(){
+
+        $id = input('get.id'); //
+        $reid = input('get.rid');
+        $result = Db::name('remen_lou')->where('id',$reid)->find();
+        //楼盘案例总数
+        $count = Db::name('lou_anli')->where('re_id',$reid)->count();
+        //楼盘工地 总数
+        $gcount = Db::name('lou_gongdi')->where('re_id',$reid)->count();
+        //楼盘户型总数
+        $hcount = Db::name('lou_huxing')->where('re_id',$reid)->count();
+        //楼盘户型列表
+        $info =Db::name('lou_huxing')->where('re_id',$reid)->select();
+        //点击获取详细信息
+        $detail = Db::name('lou_huxing')->where('id',$id)->where('re_id',$reid)->find();
+        $this->assign('result',$result);
+        $this->assign('count',$count);
+        $this->assign('gcount',$gcount);
+        $this->assign('hcount',$hcount);
+        $this->assign('info',$info);
+        $this->assign('detail',$detail);
+        return $this->fetch();
+    }
 }
