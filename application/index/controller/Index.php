@@ -11,6 +11,10 @@ class Index extends Common {
 
     //首页
     public function index() {
+        //本周人气设计师
+        $designer =Db::name('designer')->where('huo',1)->select();
+
+      $this->assign('designer',$designer);
       return $this->view->fetch();
     }
 

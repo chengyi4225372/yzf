@@ -184,7 +184,8 @@
                 <div class="bd">
                     <div class="program-row row">
                         <div class="col-xs-4">
-                            <a class="program-link" href="/SpecialTopics3/HeartSaving" target="_blank">
+                             <!-- 原地址 /SpecialTopics3/HeartSaving-->
+                            <a class="program-link" href="{:url('special/index')}" target="_blank">
                                 <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2099915948238.jpg" alt="">
                                 <div class="hover">
                                     <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2099915989352.jpg" alt="">
@@ -192,7 +193,7 @@
                             </a>
                         </div>
                         <div class="col-xs-4">
-                            <a class="program-link" href="/SpecialTopics3/PrivateCustom" target="_blank">
+                            <a class="program-link" href="{:url('special/private')}" target="_blank">
                                 <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2100058870685.jpg" alt="">
                                 <div class="hover">
                                     <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2100058903703.jpg" alt="">
@@ -200,7 +201,7 @@
                             </a>
                         </div>
                         <div class="col-xs-4">
-                            <a class="program-link" href="/SpecialTopics3/VillaMansion" target="_blank">
+                            <a class="program-link" href="{:url('special/index')}" target="_blank">
                                 <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2100060354771.jpg" alt="">
                                 <div class="hover">
                                     <img src="http://picfw3.yzf.com.cn/100005/2018/8/27/2100060390486.jpg" alt="">
@@ -230,97 +231,41 @@
 
                 <div class="normal-wrap">
                     <div class="normal-body" style="display: block;">
-                        <a href="/Designer?goodRoom=一居">一居</a>
-                        <a href="/Designer?goodRoom=二居">二居</a>
-                        <a href="/Designer?goodRoom=三居">三居</a>
-                        <a href="/Designer?goodRoom=四居">四居</a>
-                        <a href="/Designer?goodRoom=五居">五居</a>
-                        <a href="/Designer?goodRoom=平层">平层</a>
-                        <a href="/Designer?goodRoom=跃层">跃层</a>
-                        <a href="/Designer?goodRoom=复式">复式</a>
-                        <a href="/Designer?goodRoom=Townhouse">Townhouse</a>
-                        <a href="/Designer?goodRoom=别墅">别墅</a>
-                        <a href="/Designer?goodRoom=办公空间">办公空间</a>
-
-                        <a href="/Designer">更多>></a>
+                        {volist name="huxing" id="vo"}
+                        <a   {if condition="$Think.get.hid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$vo.id}">{$vo.title}</a>
+                        {/volist}
+                        <a href="{:url('designer/index')}">更多>></a>
                     </div>
                     <div class="normal-body">
                         <a href="/Designer?goodstyle=现代简约">现代简约</a>
-                        <a href="/Designer?goodstyle=新中式">新中式</a>
-                        <a href="/Designer?goodstyle=新古典">新古典</a>
-                        <a href="/Designer?goodstyle=简欧风格">简欧风格</a>
-                        <a href="/Designer?goodstyle=美式风格">美式风格</a>
-                        <a href="/Designer?goodstyle=混搭风格">混搭风格</a>
-                        <a href="/Designer?goodstyle=东南亚">东南亚</a>
-                        <a href="/Designer?goodstyle=北欧风格">北欧风格</a>
-                        <a href="/Designer">更多>></a>
+                        {volist name="style" id="vo"}
+                        <a {if condition="$Think.get.sid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid={$vo.id}">{$vo.title}</a>
+                        {/volist}
+                        <a href="{:url('designer/index')}">更多>></a>
                     </div>
                     <div class="normal-body">
-                        <a href="/Designer?designerLevelId=43">优秀设计师</a>
-                        <a href="/Designer?designerLevelId=52">资深设计师</a>
-                        <a href="/Designer?designerLevelId=39">副主任设计师</a>
-                        <a href="/Designer?designerLevelId=38">主任设计师</a>
-                        <a href="/Designer?designerLevelId=40">高级设计师</a>
-                        <a href="/Designer?designerLevelId=51">主案设计师</a>
-                        <a href="/Designer?designerLevelId=41">首席设计师</a>
-                        <a href="/Designer?designerLevelId=42">设计总监</a>
+                        {volist name="jibie" id="vo" }
+                        <a {if condition="$Think.get.jid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid={$Think.get.sid}&jid={$vo.id}">{$vo.title}</a>
+                        {/volist}
                     </div>
                 </div>
             </div>
-            <a href="/Designer" class="btn btn-gold pull-right">全部+</a>
+            <a href="{:url('designer/index')}" class="btn btn-gold pull-right">全部+</a>
         </div>
         <div class="index-normal-bd">
             <div class="team-list">
+                {volist name="designer" id="vo" }
                 <div class="team-item">
-                    <a href="/Designer/Detail/1056" class="img-box">
-                        <img src="http://picfw.yzf.com.cn/2016/7/29/1444134106287.jpg_325x485.jpg" alt="">
+                    <a href="{:url('designer/detail')}?id={$vo.id}" class="img-box">
+                        <img src="{$vo.img}" alt="">
                     </a>
                     <dl>
-                        <dt>梁侠</dt>
-                        <dd>设计源于生活、设计... </dd>
+                        <dt>{$vo.names}</dt>
+                        <dd>{$vo.linian|mb_substr='0','20'}</dd>
                     </dl>
-                    <a href="/Designer/Detail/1056" class="btn btn-line">预约设计></a>
+                    <a href="{:url('designer/detail')}?id={$vo.id}" class="btn btn-line">预约设计></a>
                 </div>
-                <div class="team-item">
-                    <a href="/Designer/Detail/836" class="img-box">
-                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_325x485.jpg" alt="">
-                    </a>
-                    <dl>
-                        <dt>吴文</dt>
-                        <dd>运用专业的设计眼光... </dd>
-                    </dl>
-                    <a href="/Designer/Detail/836" class="btn btn-line">预约设计></a>
-                </div>
-                <div class="team-item">
-                    <a href="/Designer/Detail/3301" class="img-box">
-                        <img src="http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_325x485.jpg" alt="">
-                    </a>
-                    <dl>
-                        <dt>陈晓龙</dt>
-                        <dd>设计是一种爱与恨的... </dd>
-                    </dl>
-                    <a href="/Designer/Detail/3301" class="btn btn-line">预约设计></a>
-                </div>
-                <div class="team-item">
-                    <a href="/Designer/Detail/1639" class="img-box">
-                        <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_325x485.jpg" alt="">
-                    </a>
-                    <dl>
-                        <dt>张超</dt>
-                        <dd>给您最舒适的家！ </dd>
-                    </dl>
-                    <a href="/Designer/Detail/1639" class="btn btn-line">预约设计></a>
-                </div>
-                <div class="team-item">
-                    <a href="/Designer/Detail/3926" class="img-box">
-                        <img src="http://picfw.yzf.com.cn/100058/2018/2/3/1922855260251.jpg_300x400.jpg" alt="家装设计师 周佳">
-                    </a>
-                    <dl>
-                        <dt>周佳</dt>
-                        <dd>空间自有生命，设计... </dd>
-                    </dl>
-                    <a href="/Designer/Detail/3926" class="btn btn-line">预约设计></a>
-                </div>
+                {/volist}
             </div>
         </div>
     </div>
@@ -330,7 +275,7 @@
     <div class="index-auto-box">
         <div class="index-normal-hd">
             <dl class="normal-hd-tit">
-                <dt>苏州装修案例</dt>
+                <dt>装修案例</dt>
                 <dd>DECORATION CASE</dd>
             </dl>
             <div class="normal-tab-wrap">
@@ -342,52 +287,30 @@
                 </ul>
                 <div class="normal-wrap">
                     <div class="normal-body" style="display: block;">
-                        <a href="/ResidentialCase/Index?areaid=930">太仓市</a>
-                        <a href="/ResidentialCase/Index?areaid=929">昆山市</a>
-                        <a href="/ResidentialCase/Index?areaid=928">张家港市</a>
-                        <a href="/ResidentialCase/Index?areaid=927">常熟市</a>
-                        <a href="/ResidentialCase/Index?areaid=926">吴江区</a>
-                        <a href="/ResidentialCase/Index?areaid=925">姑苏区</a>
-                        <a href="/ResidentialCase/Index?areaid=924">相城区</a>
-                        <a href="/ResidentialCase/Index?areaid=923">吴中区</a>
-                        <a href="/ResidentialCase/Index?areaid=922">虎丘区</a>
-                        <a href="/ResidentialCase/Index?areaid=921">市辖区</a>
+                        {volist name="region" id="vo"}
+                        <a   {if condition="$Think.get.rid eq $vo.id"}  class="selected" {else /} class=""{/if} href="{:url('residential/areaid')}?rid={$vo.id}">{$vo.title}</a>
+                        {/volist}
                     </div>
                     <div class="normal-body">
-                        <a href="/ResidentialCase/Index?styleId=1">现代简约</a>
-                        <a href="/ResidentialCase/Index?styleId=11">新中式</a>
-                        <a href="/ResidentialCase/Index?styleId=3">新古典</a>
-                        <a href="/ResidentialCase/Index?styleId=400">简欧风格</a>
-                        <a href="/ResidentialCase/Index?styleId=415">美式风格</a>
-                        <a href="/ResidentialCase/Index?styleId=14">混搭风格</a>
-                        <a href="/ResidentialCase/Index?styleId=20">东南亚</a>
-                        <a href="/ResidentialCase/Index?styleId=403">北欧风格</a>
-                        <a href="/ResidentialCase/Index">更多</a>
+                        {volist name="style" id="vo" offset='0' length='8'}
+                        <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
+                        {/volist}
+                        <a href="{:url('residential/index')}">更多</a>
                     </div>
                     <div class="normal-body">
-                        <a href="/ResidentialCase/Index?roomHallId=532">一居</a>
-                        <a href="/ResidentialCase/Index?roomHallId=535">二居</a>
-                        <a href="/ResidentialCase/Index?roomHallId=549">三居</a>
-                        <a href="/ResidentialCase/Index?roomHallId=551">四居</a>
-                        <a href="/ResidentialCase/Index?roomHallId=552">五居</a>
-                        <a href="/ResidentialCase/Index?roomHallId=548">平层</a>
-                        <a href="/ResidentialCase/Index?roomHallId=554">跃层</a>
-                        <a href="/ResidentialCase/Index?roomHallId=543">复式</a>
-                        <a href="/ResidentialCase/Index?roomHallId=550">Townhouse</a>
-                        <a href="/ResidentialCase/Index?roomHallId=530">别墅</a>
-                        <a href="/ResidentialCase/Index?roomHallId=553">办公空间</a>
+                        {volist name="style" id="vo" offset='0' length='8'}
+                        <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
+                        {/volist}
+                        <a href="{:url('residential/index')}">更多</a>
                     </div>
                     <div class="normal-body">
-                        <a href="/ResidentialCase/Index?squares=s90">90㎡以下</a>
-                        <a href="/ResidentialCase/Index?squares=s90_120">90-120㎡</a>
-                        <a href="/ResidentialCase/Index?squares=s121_180">121-180㎡</a>
-                        <a href="/ResidentialCase/Index?squares=s181_320">181-320㎡</a>
-                        <a href="/ResidentialCase/Index?squares=s321_500">321-500㎡</a>
-                        <a href="/ResidentialCase/Index?squares=s500">500㎡以上</a>
+                        {volist name="mianji" id="vo" }
+                        <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$Think.get.hid}&mid={$vo.id}" {if condition="$Think.get.mid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                        {/volist}
                     </div>
                 </div>
             </div>
-            <a href="/ResidentialCase/Index" class="btn btn-gold pull-right">全部+</a>
+            <a href="{:url('residential/index')}" class="btn btn-gold pull-right">全部+</a>
         </div>
     </div>
 
@@ -408,6 +331,7 @@
                     </div>
                 </a>
             </div>
+            <!--
             <div class="index-case-item">
                 <a href="/ResidentialCase/Detail/69423" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/27/2283090663533.jpg);">
                     <dl class="index-case-info">
@@ -506,6 +430,7 @@
                     </div>
                 </a>
             </div>
+              -->
         </div>
     </div>
 
