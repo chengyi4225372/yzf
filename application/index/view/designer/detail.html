@@ -118,121 +118,33 @@
                     <div class="designer-panel-body">
                         <div class="case-list-wrap">
                             <ul class="case-list">
+                                {notempty name="anlist" }
+                                {volist name="anlist" id="vo" }
                                 <li>
-                                    <a href="/ResidentialCase/Detail/69424?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283094978076.jpg" alt="现代园墅">
+                                    <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box">
+                                        <img src="{$vo.logo}" alt="{$vo.ctitle}">
                                     </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                                    <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img">
+                                        <img src="{$vo.bimg}" alt="user">
                                     </a>
                                     <dl>
-                                        <dt><a title="现代园墅" href="/ResidentialCase/Detail/69424?designerId=836">现代园墅</a></dt>
-                                        <dd><span>别墅</span> | <span>360㎡</span> | <span>北欧风格</span></dd>
+                                        <dt><a title="{$vo.ctitle}" href="{:url('residential/goodroom')}?id={$vo.id}">{$vo.ctitle}</a></dt>
+                                        <dd><span>{$vo.ctitle}</span> | <span>{$vo.s_mianji?$vo.s_mianji:''}㎡</span> | <span>{$vo.dtitle}</span></dd>
                                     </dl>
                                 </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/69423?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283090663533.jpg" alt="狮山原著">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="狮山原著" href="/ResidentialCase/Detail/69423?designerId=836">狮山原著</a></dt>
-                                        <dd><span>四居</span> | <span>143㎡</span> | <span>新中式风格</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/68581?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg" alt="中航樾园">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="中航樾园" href="/ResidentialCase/Detail/68581?designerId=836">中航樾园</a></dt>
-                                        <dd><span>别墅</span> | <span>270㎡</span> | <span>美式风格</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/66337?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164885802285.jpg" alt="中南世纪城">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="中南世纪城" href="/ResidentialCase/Detail/66337?designerId=836">中南世纪城</a></dt>
-                                        <dd><span>复式</span> | <span>300㎡</span> | <span>新中式风格</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/66336?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164884691892.jpg" alt="中南锦苑">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="中南锦苑" href="/ResidentialCase/Detail/66336?designerId=836">中南锦苑</a></dt>
-                                        <dd><span>三居</span> | <span>140㎡</span> | <span>简美</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/66335?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164883832237.jpg" alt="苏州御园">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="苏州御园" href="/ResidentialCase/Detail/66335?designerId=836">苏州御园</a></dt>
-                                        <dd><span>别墅</span> | <span>600㎡</span> | <span>简美</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/66334?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164881447970.jpg" alt="世贸御珑墅">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="世贸御珑墅" href="/ResidentialCase/Detail/66334?designerId=836">世贸御珑墅</a></dt>
-                                        <dd><span>三居</span> | <span>139㎡</span> | <span>简欧风格</span></dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <a href="/ResidentialCase/Detail/66333?designerId=836" class="img-box">
-                                        <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164880403533.jpg" alt="明珠城">
-                                    </a>
-                                    <a href="/Designer/Detail/836" class="user-img">
-                                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                                    </a>
-                                    <dl>
-                                        <dt><a title="明珠城" href="/ResidentialCase/Detail/66333?designerId=836">明珠城</a></dt>
-                                        <dd><span>别墅</span> | <span>400㎡</span> | <span>简美</span></dd>
-                                    </dl>
-                                </li>
+                                {/volist}
                             </ul>
 
                             <nav class="text-center">
                                 <ul class="pagination">
-                                    <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                                    <li class="active"><a data-pjax="" href="/Designer/detail/836?PageIndex=1">1</a></li>
-                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=2">2</a></li>
-                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=3">3</a></li>
-                                    <li class=""><a data-pjax="" href="/Designer/detail/836?PageIndex=4">4</a></li>
-
-                                    <li><a data-pjax="" href="/Designer/detail/836?PageIndex=2">下一页</a></li>
-
+                                    {for start="0" end="$pages"}
+                                    <li {if condition="$Think.get.PageIndex eq ($i+1) or $Think.get.PageIndex eq 0"}class="active" {else /} class=""{/if} ><a data-pjax="" href="{:url('designer/detail')}id={$Think.get.id}&PageIndex={$i <=0?'1':$i+1}">{$i+1}</a></li>
+                                     {/for}
                                 </ul>
                             </nav>
+                            {else /}
 
-
-
-
+                            {/notempty}
 
                         </div>
                     </div>

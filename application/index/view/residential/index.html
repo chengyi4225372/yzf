@@ -22,9 +22,7 @@
                 </div>
                 <div class="case-search-right">
                     <div class="search-group">
-                        <form method="get" action="/ResidentialCase">
-
-
+                        <form method="get" action="{:url('residential/index')}">
                             <input type="text" name="residential" class="form-control" placeholder="搜索我家小区">
                             <button class="btn" type="submit"><i class="iconfont icon-fangdajing"></i></button>
                         </form>
@@ -38,118 +36,45 @@
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li class="active"><a href="/ResidentialCase">苏州案例</a></li>
-                <li class="nav-type-select">
-
-
-
-                </li>
+                <li class="active"><a href="{:url('residential/index')}">案例列表</a></li>
+                <li class="nav-type-select"></li>
             </ol>
             <div class="content-body">
                 <table class="table table-bordered table-filer">
                     <tr>
                         <th>市区:</th>
                         <td>
-                            <a href="/ResidentialCase" class="selected">不限</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=930">太仓市</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=929">昆山市</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=928">张家港市</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=927">常熟市</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=926">吴江区</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=925">姑苏区</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=924">相城区</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=923">吴中区</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=922">虎丘区</a>
-                            <a class=""
-                               href="/ResidentialCase?areaid=921">市辖区</a>
+                            <a  href="{:url('residential/areaid')}?rid=" {if condition="$Think.get.rid eq null"}  class="selected" {/if}>不限</a>
+                            {volist name="region" id="vo"}
+                            <a   {if condition="$Think.get.rid eq $vo.id"}  class="selected" {else /} class=""{/if} href="{:url('residential/areaid')}?rid={$vo.id}">{$vo.title}</a>
+                            {/volist}
                         </td>
                     </tr>
                     <tr>
                         <th>风格:</th>
                         <td>
-                            <a href="/ResidentialCase"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?styleId=1"
-                               class="">现代简约风格</a>
-                            <a href="/ResidentialCase?styleId=3"
-                               class="">新古典风格</a>
-                            <a href="/ResidentialCase?styleId=11"
-                               class="">新中式风格</a>
-                            <a href="/ResidentialCase?styleId=20"
-                               class="">东南亚风格</a>
-                            <a href="/ResidentialCase?styleId=402"
-                               class="">地中海风格</a>
-                            <a href="/ResidentialCase?styleId=403"
-                               class="">北欧风格</a>
-                            <a href="/ResidentialCase?styleId=400"
-                               class="">简欧风格</a>
-                            <a href="/ResidentialCase?styleId=14"
-                               class="">混搭风格</a>
-                            <a href="/ResidentialCase?styleId=4"
-                               class="">其他</a>
-                            <a href="/ResidentialCase?styleId=404"
-                               class="">法式风格</a>
-                            <a href="/ResidentialCase?styleId=405"
-                               class="">港式风格</a>
-                            <a href="/ResidentialCase?styleId=415"
-                               class="">美式风格</a>
-                            <a href="/ResidentialCase?styleId=417"
-                               class="">欧式</a>
-
+                            <a href="{:url('residential/areaid')}?sid=" {if condition="$Think.get.sid eq null"}  class="selected" {/if}>不限</a>
+                            {volist name="style" id="vo" }
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}"  {if condition="$Think.get.sid eq $vo.id"}  class="selected" {else /} class=""{/if} >{$vo.title}</a>
+                            {/volist}
                         </td>
                     </tr>
                     <tr>
                         <th>户型:</th>
                         <td>
-                            <a href="/ResidentialCase"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?roomHallId=532"
-                               class="">一居</a>
-                            <a href="/ResidentialCase?roomHallId=535"
-                               class="">二居</a>
-                            <a href="/ResidentialCase?roomHallId=549"
-                               class="">三居</a>
-                            <a href="/ResidentialCase?roomHallId=551"
-                               class="">四居</a>
-                            <a href="/ResidentialCase?roomHallId=552"
-                               class="">五居</a>
-                            <a href="/ResidentialCase?roomHallId=548"
-                               class="">平层</a>
-                            <a href="/ResidentialCase?roomHallId=543"
-                               class="">复式</a>
-                            <a href="/ResidentialCase?roomHallId=530"
-                               class="">别墅</a>
-                            <a href="/ResidentialCase?roomHallId=553"
-                               class="">办公空间</a>
+                            <a href="{:url('residential/areaid')}?hid=" {if condition="$Think.get.hid eq null"}  class="selected" {/if}>不限</a>
+                            {volist name="huxing" id="vo"}
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$vo.id}" {if condition="$Think.get.hid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                            {/volist}
                         </td>
                     </tr>
                     <tr>
                         <th>面积:</th>
                         <td>
-
-                            <a href="/ResidentialCase"
-                               class="selected">不限</a>
-                            <a href="/ResidentialCase?squares=s90"
-                               class="">90㎡以下</a>
-                            <a href="/ResidentialCase?squares=s90_120"
-                               class="">90-120㎡</a>
-                            <a href="/ResidentialCase?squares=s121_180"
-                               class="">121-180㎡</a>
-                            <a href="/ResidentialCase?squares=s181_320"
-                               class="">181-320㎡</a>
-                            <a href="/ResidentialCase?squares=s321_500"
-                               class="">321-500㎡</a>
-                            <a href="/ResidentialCase?squares=s500"
-                               class="">500㎡以上</a>
+                            <a href="{:url('residential/areaid')}?mid="{if condition="$Think.get.mid eq null"}  class="selected" {/if}>不限</a>
+                            {volist name="mianji" id="vo" }
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$Think.get.hid}&mid={$vo.id}" {if condition="$Think.get.mid eq $vo.id"}  class="selected" {else /} class=""{/if}>{$vo.title}</a>
+                            {/volist}
                         </td>
                     </tr>
                 </table>
@@ -162,219 +87,31 @@
                 <div class="case-list-wrap">
 
                     <ul class="case-list">
+                        {empty name='list'}
+
+                        {else /}
+                        {volist name="list" id="vo"}
                         <li>
-                            <a href="/ResidentialCase/Detail/69424" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283094978076.jpg" alt="现代园墅">
+                            <a href="{:url('residential/goodroom')}?id={$vo.id}" class="img-box">
+                                <img src="{$vo.logo}" alt="{$vo.ctitle}">
                             </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
+                            <a href="{:url('designer/detail')}?id={$vo.she_id}" class="user-img">
+                                <img src="{$vo.bimg}" alt="user">
                             </a>
                             <dl>
-                                <dt><a title="现代园墅" href="/ResidentialCase/Detail/69424">现代园墅</a></dt>
-                                <dd><span>别墅</span> | <span>360㎡</span> | <span>北欧风格</span></dd>
+                                <dt><a title="{$vo.ctitle}" href="{:url('residential/goodroom')}?id={$vo.id}">{$vo.ctitle}</a></dt>
+                                <dd><span>{$vo.htitle}</span> | <span>{$vo.s_mianji?$vo.s_mianji:'不明确'}㎡</span> | <span>{$vo.stitle}</span></dd>
                             </dl>
                         </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69423" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/27/2283090663533.jpg" alt="狮山原著">
-                            </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="狮山原著" href="/ResidentialCase/Detail/69423">狮山原著</a></dt>
-                                <dd><span>四居</span> | <span>143㎡</span> | <span>新中式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69377" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/24/2280463621018.jpg" alt="水漾花城">
-                            </a>
-                            <a href="/Designer/Detail/4119" class="user-img">
-                                <img src="http://picfw3.yzf.com.cn/999999/2018/7/7/2055965897992.png" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="水漾花城" href="/ResidentialCase/Detail/69377">水漾花城</a></dt>
-                                <dd><span>五居</span> | <span>170㎡</span> | <span>现代简约风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69376" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/24/2280431871232.jpg" alt="中航樾园">
-                            </a>
-                            <a href="/Designer/Detail/4119" class="user-img">
-                                <img src="http://picfw3.yzf.com.cn/999999/2018/7/7/2055965897992.png" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中航樾园" href="/ResidentialCase/Detail/69376">中航樾园</a></dt>
-                                <dd><span>四居</span> | <span>170㎡</span> | <span>新中式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69201" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/17/2274403609783.jpg" alt="苏州西山自建房">
-                            </a>
-                            <a href="/Designer/Detail/4141" class="user-img">
-                                <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="苏州西山自建房" href="/ResidentialCase/Detail/69201">苏州西山自建房</a></dt>
-                                <dd><span>四居</span> | <span>260㎡</span> | <span>其他</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69200" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/17/2274394786118.jpg" alt="中航樾园">
-                            </a>
-                            <a href="/Designer/Detail/4141" class="user-img">
-                                <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中航樾园" href="/ResidentialCase/Detail/69200">中航樾园</a></dt>
-                                <dd><span>别墅</span> | <span>300㎡</span> | <span>现代简约风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69101" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/13/2270993616647.jpg" alt="姑苏铭著">
-                            </a>
-                            <a href="/Designer/Detail/1639" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="姑苏铭著" href="/ResidentialCase/Detail/69101">姑苏铭著</a></dt>
-                                <dd><span>三居</span> | <span>0㎡</span> | <span>轻奢风</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/69100" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/13/2270990832157.jpg" alt="正荣华府">
-                            </a>
-                            <a href="/Designer/Detail/1639" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="正荣华府" href="/ResidentialCase/Detail/69100">正荣华府</a></dt>
-                                <dd><span>三居</span> | <span>140㎡</span> | <span>美式轻奢</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/68938" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/3/1/2260593688675.jpg" alt="中航樾园">
-                            </a>
-                            <a href="/Designer/Detail/3926" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/999999/2018/2/3/1922855190166.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中航樾园" href="/ResidentialCase/Detail/68938">中航樾园</a></dt>
-                                <dd><span>复式</span> | <span>208㎡</span> | <span>现代简约风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/68871" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/2/26/2258273250446.png" alt="荷澜庭">
-                            </a>
-                            <a href="/Designer/Detail/3403" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/999999/2018/2/2/1921914207571.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="荷澜庭" href="/ResidentialCase/Detail/68871">荷澜庭</a></dt>
-                                <dd><span>平层</span> | <span>143㎡</span> | <span>新中式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/68865" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/2/26/2258227657692.jpg" alt="新创大河山">
-                            </a>
-                            <a href="/Designer/Detail/3403" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/999999/2018/2/2/1921914207571.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="新创大河山" href="/ResidentialCase/Detail/68865">新创大河山</a></dt>
-                                <dd><span>别墅</span> | <span>260㎡</span> | <span>新中式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/68581" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg" alt="中航樾园">
-                            </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中航樾园" href="/ResidentialCase/Detail/68581">中航樾园</a></dt>
-                                <dd><span>别墅</span> | <span>270㎡</span> | <span>美式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/67596" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2018/12/19/2198636202356.jpg" alt="姑苏世家">
-                            </a>
-                            <a href="/Designer/Detail/1639" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="姑苏世家" href="/ResidentialCase/Detail/67596">姑苏世家</a></dt>
-                                <dd><span>四居</span> | <span>160㎡</span> | <span>欧式</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/66337" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164885802285.jpg" alt="中南世纪城">
-                            </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中南世纪城" href="/ResidentialCase/Detail/66337">中南世纪城</a></dt>
-                                <dd><span>复式</span> | <span>300㎡</span> | <span>新中式风格</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/66336" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164884691892.jpg" alt="中南锦苑">
-                            </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="中南锦苑" href="/ResidentialCase/Detail/66336">中南锦苑</a></dt>
-                                <dd><span>三居</span> | <span>140㎡</span> | <span>简美</span></dd>
-                            </dl>
-                        </li>
-                        <li>
-                            <a href="/ResidentialCase/Detail/66335" class="img-box">
-                                <img src="http://picfwoss.yzf.com.cn/100007/2018/11/10/2164883832237.jpg" alt="苏州御园">
-                            </a>
-                            <a href="/Designer/Detail/836" class="user-img">
-                                <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="user">
-                            </a>
-                            <dl>
-                                <dt><a title="苏州御园" href="/ResidentialCase/Detail/66335">苏州御园</a></dt>
-                                <dd><span>别墅</span> | <span>600㎡</span> | <span>简美</span></dd>
-                            </dl>
-                        </li>
+                        {/volist}
+                        {/empty}
                     </ul>
 
                     <nav class="text-center">
                         <ul class="pagination">
-                            <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                            <li class="active"><a data-pjax="" href="/ResidentialCase?PageIndex=1">1</a></li>
-                            <li class=""><a data-pjax="" href="/ResidentialCase?PageIndex=2">2</a></li>
-                            <li class=""><a data-pjax="" href="/ResidentialCase?PageIndex=3">3</a></li>
-                            <li class=""><a data-pjax="" href="/ResidentialCase?PageIndex=4">4</a></li>
-                            <li class=""><a data-pjax="" href="/ResidentialCase?PageIndex=5">5</a></li>
-
-                            <li><a data-pjax="" id="spanMax" Max="26" href="/ResidentialCase?PageIndex=26">共 26 页</a></li>
-                            <li><a data-pjax="" href="/ResidentialCase?PageIndex=2">下一页</a></li>
-
+                            <li class="active">{$list|raw}</li>
                         </ul>
                     </nav>
-
-
-
-
 
                 </div>
                 <div class="web-adv">

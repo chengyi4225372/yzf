@@ -7,7 +7,6 @@
     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
-
     <div class="designer-banner" style="">
         <div class="auto-box">
             <div class="msg-form row">
@@ -73,8 +72,8 @@
                 </table>
                 <div class="case-sort-wrap">
                     <span>排序：</span>
-                    <a class="selected" href="/Designer?orderby=CaseCount">人气 <i class="iconfont icon-shang"></i></a>|
-                    <a class="" href="/Designer?orderby=StartWorkingTime">从业经验<i class="iconfont icon-xia"></i></a>
+                    <a   {if condition="$Think.get.orderby eq null " }class="selected" {else /}class="" {/if} href="{:url('designer/index')}?orderby=">人气<i class="iconfont icon-shang"></i></a>|
+                    <a {if condition="$Think.get.orderby eq 'job_year' " }class="selected" {else /}class="" {/if} href="{:url('designer/index')}?orderby=job_year">从业经验<i class="iconfont icon-xia"></i></a>
                 </div>
                 <div class="designer-list-wrap">
                     <ul class="designer-list">
@@ -86,10 +85,10 @@
                                     <img src="{$vo.img}" alt="" />
                                 </div>
                                 <div class="designer-info">
-                                    <h3>{$vo.names}<small>首席设计师</small></h3>
+                                    <h3>{$vo.names}<small>{$vo.jtitle|default=''}</small></h3>
                                     <div class="item-wrap">
-                                        <span>案例数：32套</span>
-                                        <span>从业经验：{$vo.job_year}</span>
+                                        <span>案例数：{$vo.count|default=''}</span>
+                                        <span>从业经验：{$vo.job_year}年</span>
                                     </div>
                                     <p>{$vo.rongyu|mb_substr='0','10'} </p>
                                 </div>
@@ -101,9 +100,14 @@
                             </a>
                         </li>
                         {/volist}
-
                     </ul>
-
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            {for start="0" end="$pages"}
+                            <li {if condition="$Think.get.PageIndex eq ($i+1) or $Think.get.PageIndex eq 0 "}class="active" {else /} class=""{/if}><a data-pjax="" href="{:url('designer/index')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
+                            {/for}
+                        </ul>
+                    </nav>
 
 
                 </div>

@@ -18,6 +18,107 @@ class Residential extends Common{
 
     //装修案例列表
     public function index(){
+        //搜索
+        $key = input('get.residential');
+        $r_id = input('get.rid');
+        $s_id = input('get.sid');
+        $h_id = input('get.hid');
+        $m_id = input('get.mid');
+        if(!empty($r_id) && (empty($h_id) && empty($s_id) && empty($m_id))){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.r_id'=>$r_id))
+                ->paginate(16);
+        }else if(!empty($s_id) && (empty($r_id) && empty($h_id) && empty($m_id))){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.s_id'=>$s_id))
+                ->paginate(16);
+        }else if(!empty($h_id)&&(empty($r_id) && empty($s_id) && empty($m_id))){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.h_id'=>$h_id))
+                ->paginate(16);
+        }else if(!empty($m_id)&&(empty($r_id) && empty($s_id) && empty($h_id))){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.m_id'=>$m_id))
+                ->paginate(16);
+        }else if(!empty($r_id) && !empty($s_id) && empty($h_id) && empty($m_id) ){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.r_id'=>$r_id))
+                ->where(array('a.s_id'=>$s_id))
+                ->paginate(16);
+        }else if(!empty($r_id) && !empty($s_id) && !empty($h_id)){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.r_id'=>$r_id,'a.s_id'=>$s_id,'a.h_id'=>$h_id))
+                ->paginate(16);
+        }else if(!empty($r_id) && !empty($s_id) && !empty($h_id)&&!empty($m_id)){
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->where(array('a.r_id'=>$r_id))
+                ->where(array('a.s_id'=>$s_id))
+                ->where(array('a.h_id'=>$h_id))
+                ->where(array('a.m_id'=>$m_id))
+                ->paginate(16);
+        }else{
+            $list = Db::name('lou_anli')
+                ->alias('a')
+                ->field('a.*,b.img as bimg,b.names,c.title as ctitle,s.title as stitle ,h.title as htitle')
+                ->join('designer b','b.id = a.she_id')
+                ->join('remen_lou c','c.id = a.re_id')
+                ->join('style s','s.id =a.s_id')
+                ->join('huxing h ','h.id=a.h_id')
+                ->wherelike('c.title','%'.$key.'%')
+                ->paginate(16);
+        }
+
+        $this->assign('list',$list);
+        return $this->fetch();
         return $this->view->fetch();
     }
 
