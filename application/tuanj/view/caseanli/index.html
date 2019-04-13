@@ -32,6 +32,7 @@
             <th class='text-left nowrap'>所属热门楼盘</th>
             <th class='text-left nowrap'>所属户型</th>
             <th class='text-left nowrap'>所属面积</th>
+            <th class='text-left nowrap'>是否推荐为首页展示</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -60,7 +61,14 @@
                 {$vo.h_id}
             </td>
             <td class='text-left nowrap'>
-                {$vo.m_id}
+            {$vo.m_id}
+             </td>
+            <td class='text-left nowrap'>
+                {eq name="vo.tuijian" value='1'}
+                  推荐为首页展示
+                 {else /}
+                  不推荐首页展示
+                 {/eq}
             </td>
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}

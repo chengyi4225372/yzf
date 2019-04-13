@@ -317,120 +317,23 @@
 
     <div class="index-case-content">
         <div class="index-case-row">
+            {volist name="zhuangxiu" id="vo" }
             <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69424" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/27/2283094978076.jpg);">
+                <a href="{:url('residential/goodroom')}?id={$vo.id}" class="index-case-link" style="background-image: url({$vo.logo});">
                     <dl class="index-case-info">
-                        <dt>现代园墅 </dt>
-                        <dd>别墅 | 360㎡ | 北欧风格</dd>
+                        <dt>{$vo.btitle|default=''} </dt>
+                        <dd>{$vo.htitle|default=''} | {$vo.s_mianji?$vo.s_mianji:''}㎡ | {$vo.stitle|default=''}</dd>
                     </dl>
                     <div class="case-info-box">
-                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="" class="author">
-                        <h4>现代园墅</h4>
-                        <div class="disc">别墅 | 360㎡ | 北欧风格</div>
+                        <img src="{$vo.dimg}" alt="" class="author">
+                        <h4>{$vo.btitle|default=''}</h4>
+                        <div class="disc">{$vo.htitle|default=''} | {$vo.s_mianji?$vo.s_mianji:''}㎡ | {$vo.stitle|default=''}</div>
                         <p> </p>
                     </div>
                 </a>
             </div>
-            <!--
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69423" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/27/2283090663533.jpg);">
-                    <dl class="index-case-info">
-                        <dt>狮山原著 </dt>
-                        <dd>四居 | 143㎡ | 新中式风格</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_100x100.jpg" alt="" class="author">
-                        <h4>狮山原著</h4>
-                        <div class="disc">四居 | 143㎡ | 新中式风格</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69377" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/24/2280463621018.jpg);">
-                    <dl class="index-case-info">
-                        <dt>恒基水漾花城 </dt>
-                        <dd>五居 | 170㎡ | 现代简约风格</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw3.yzf.com.cn/999999/2018/7/7/2055965897992.png" alt="" class="author">
-                        <h4>恒基水漾花城</h4>
-                        <div class="disc">五居 | 170㎡ | 现代简约风格</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69376" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/24/2280431871232.jpg);">
-                    <dl class="index-case-info">
-                        <dt>中航樾园 </dt>
-                        <dd>四居 | 170㎡ | 新中式风格</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw3.yzf.com.cn/999999/2018/7/7/2055965897992.png" alt="" class="author">
-                        <h4>中航樾园</h4>
-                        <div class="disc">四居 | 170㎡ | 新中式风格</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69201" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/17/2274403609783.jpg);">
-                    <dl class="index-case-info">
-                        <dt> </dt>
-                        <dd>四居 | 260㎡ | 其他</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="" class="author">
-                        <h4></h4>
-                        <div class="disc">四居 | 260㎡ | 其他</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69200" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/17/2274394786118.jpg);">
-                    <dl class="index-case-info">
-                        <dt>中航樾园 </dt>
-                        <dd>别墅 | 300㎡ | 现代简约风格</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw3.yzf.com.cn/999999/2018/7/29/2075072262275.jpg" alt="" class="author">
-                        <h4>中航樾园</h4>
-                        <div class="disc">别墅 | 300㎡ | 现代简约风格</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69101" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/13/2270993616647.jpg);">
-                    <dl class="index-case-info">
-                        <dt>姑苏铭著 </dt>
-                        <dd>三居 | 0㎡ | 轻奢风</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="" class="author">
-                        <h4>姑苏铭著</h4>
-                        <div class="disc">三居 | 0㎡ | 轻奢风</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-            <div class="index-case-item">
-                <a href="/ResidentialCase/Detail/69100" class="index-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/13/2270990832157.jpg);">
-                    <dl class="index-case-info">
-                        <dt>正荣华府 </dt>
-                        <dd>三居 | 140㎡ | 美式轻奢</dd>
-                    </dl>
-                    <div class="case-info-box">
-                        <img src="http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_100x100.jpg" alt="" class="author">
-                        <h4>正荣华府</h4>
-                        <div class="disc">三居 | 140㎡ | 美式轻奢</div>
-                        <p> </p>
-                    </div>
-                </a>
-            </div>
-              -->
+            {/volist}
+
         </div>
     </div>
 
@@ -469,58 +372,65 @@
                     </div>
                 </div>
             </div>
-            <a href="/Fabricatingyard" class="btn btn-gold pull-right">全部+</a>
+            <a href="{:url('site/index')}" class="btn btn-gold pull-right">全部+</a>
         </div>
         <div class="index-construction-bd">
             <div class="construction-main">
+                {volist name="gongdi" id="vo" key="k" }
+                <div   {eq name="k" value="1"} style="display: block" {else /} style="" {/eq} class="construction-main-inner">
+                    <span class="construction-tag"><img src="__STATIC__/home/image/construction-tag-1.png" alt=""></span>
+                    <div class="construction-top-media">
+                        <div class="top-media-hd">
+                            {if condition="$vo.q_title neq null "}
+                              {volist name="$vo.q_img" id="vv" offset ='0' length='1'}
+                            <img src="{$vv}" alt="">
+                              {/volist}
+                            {elseif condition="$vo.z_title neq null" /}
+                              {volist name="$vo.z_img" id="vv" offset ='0' length='1'}
+                            <img src="{$vv}" alt="">
+                              {/volist}
+                            {else /}
+                              {volist name="$vo.h_img" id="vv" offset ='0' length='1'}
+                            <img src="{$vv}" alt="">
+                              {/volist}
+                            {/if}
 
-                <div style="display: block" class="construction-main-inner">
-                    <span class="construction-tag"><img src="__STATIC__/home/image/construction-tag-1.png" alt=""></span>
-                    <div class="construction-top-media">
-                        <div class="top-media-hd">
-                            <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271190568572.png" alt="">
                         </div>
                         <div class="top-media-bd">
-                            <h4><a href="/Fabricatingyard/detail/700">狮山原著 · 狮山原著</a></h4>
+                            <h4><a href="{:url('site/detail')}?id={$vo.id}">{$vo.rtitle} · {$vo.rtitle}</a></h4>
                             <ul class="disc">
-                                <li><i class="iconfont icon-dibiao"></i>狮山原著 </li>
-                                <li><i class="iconfont icon-fangwuxinxi"></i>三居  0平</li>
-                                <li><i class="iconfont icon-gongren"></i>木工工程 </li>
+                                <li><i class="iconfont icon-dibiao"></i>{$vo.rtitle} </li>
+                                <li><i class="iconfont icon-fangwuxinxi"></i>{$vo.s_mianji?$vo.s_mianji:'0'}平</li>
+                                  {if condition="$vo.q_title neq null "}
+                                <li><i class="iconfont icon-gongren"></i>{$vo.q_title}</li>
+                                  {elseif condition="$vo.z_title neq null" /}
+                                <li><i class="iconfont icon-gongren"></i>{$vo.z_title}</li>
+                                  {else}
+                                <li><i class="iconfont icon-gongren"></i>{$vo.h_title}</li>
+                                 {/if}
                             </ul>
                         </div>
                     </div>
                     <div class="construction-center-show">
-                        <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890746745.jpg" alt=""></a>
-                        <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890749623.jpg" alt=""></a>
-                        <a href="/Fabricatingyard/detail/700"><img src="http://picfwoss.yzf.com.cn/100019/2018/11/10/2164890751100.jpg" alt=""></a>
-                    </div>
-                    <div class="construction-center-ft">
-                        木工施工                                <a class="more" href="/Fabricatingyard/detail/700">[详情]</a>
-                    </div>
-                </div>
-                <div style="" class="construction-main-inner">
-                    <span class="construction-tag"><img src="__STATIC__/home/image/construction-tag-1.png" alt=""></span>
-                    <div class="construction-top-media">
-                        <div class="top-media-hd">
-                            <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271195660270.png" alt="">
-                        </div>
-                        <div class="top-media-bd">
-                            <h4><a href="/Fabricatingyard/detail/654">中航樾园 · 中航樾园</a></h4>
-                            <ul class="disc">
-                                <li><i class="iconfont icon-dibiao"></i>中航樾园 </li>
-                                <li><i class="iconfont icon-fangwuxinxi"></i>三居  0平</li>
-                                <li><i class="iconfont icon-gongren"></i>水电工程 </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="construction-center-show">
-                        <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552131.jpg" alt=""></a>
-                        <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552327.jpg" alt=""></a>
-                        <a href="/Fabricatingyard/detail/654"><img src="http://picfw3.yzf.com.cn/100019/2018/10/17/2143977552644.jpg" alt=""></a>
+                        {if condition="$vo.q_title neq null "}
+                                  {volist name="$vo.q_img" id="vv" offset ='0' length='3'}
+                        <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
+                                   {/volist}
+                        {elseif condition="$vo.z_title neq null" /}
+                                 {volist name="$vo.z_img" id="vv" offset ='0' length='3'}
+                        <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
+                                 {/volist}
+                        {else /}
+                                 {volist name="$vo.h_img" id="vv" offset ='0' length='3'}
+                        <a href="{:url('site/detail')}?id={$vo.id}"><img src="{$vv}" alt=""></a>
+                                 {/volist}
+                        {/if}
                     </div>
                     <div class="construction-center-ft">
                     </div>
                 </div>
+                {/volist}
+               <!--
                 <div style="" class="construction-main-inner">
                     <span class="construction-tag"><img src="__STATIC__/home/image/construction-tag-1.png" alt=""></span>
                     <div class="construction-top-media">
@@ -613,32 +523,29 @@
                     <div class="construction-center-ft">
                     </div>
                 </div>
-
-
+                -->
             </div>
             <div class="construction-side">
                 <p>好工艺看得见，环保家装全程分享，实时查看装修进度</p>
                 <ul class="construction-user">
-
+                     {volist name="gongdi" id="vo" }
                     <li class="control active">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271190568572.png" alt="">
+                          {if condition="$vo.q_title neq null" }
+                           {volist name="$vo.q_img" id="vv" offset='0' length='1' }
+                        <img src="{$vv}" alt="">
+                            {/volist}
+                        {elseif  condition="$vo.z_title neq null"}
+                           {volist name="$vo.z_img" id="vv" offset='0' length='1' }
+                            <img src="{$vv}" alt="">
+                            {/volist}
+                        {else /}
+                           {volist name="$vo.h_img" id="vv" offset='0' length='1' }
+                           <img src="{$vv}" alt="">
+                           {/volist}
+                        {/if}
                     </li>
-                    <li class="control ">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271195660270.png" alt="">
-                    </li>
-                    <li class="control ">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271194160520.png" alt="">
-                    </li>
-                    <li class="control ">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271192481270.png" alt="">
-                    </li>
-                    <li class="control ">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271205602599.png" alt="">
-                    </li>
-                    <li class="control ">
-                        <img src="http://picfwoss.yzf.com.cn/999999/2019/3/13/2271198377435.png" alt="">
-                    </li>
-                    <li><a href="/Fabricatingyard" class="iconfont icon-gengduo"></a></li>
+                    {/volist}
+                    <li><a href="{:url('site/index')}" class="iconfont icon-gengduo"></a></li>
                 </ul>
             </div>
 
@@ -657,69 +564,48 @@
                     <dl>
                         <dt><a href="JavaScript:;">按风格 ></a></dt>
                         <dd>
-                            <a href="/ResidentialCase/Index?styleId=1">现代简约</a>
-                            <a href="/ResidentialCase/Index?styleId=11">新中式</a>
-                            <a href="/ResidentialCase/Index?styleId=3">新古典</a>
-                            <a href="/ResidentialCase/Index?styleId=400">简欧风格</a>
-                            <a href="/ResidentialCase/Index?styleId=415">美式风格</a>
-                            <a href="/ResidentialCase/Index?styleId=14">混搭风格</a>
-                            <a href="/ResidentialCase/Index?styleId=20">东南亚</a>
-                            <a href="/ResidentialCase/Index?styleId=403">北欧风格</a>
-                            <a href="/ResidentialCase/Index">更多</a>
+                            {volist name="style" id="vo"  offset='0' length='7'}
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}"  >{$vo.title}</a>
+                            {/volist}
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$vo.id}">更多</a>
                         </dd>
                     </dl>
                     <dl>
                         <dt><a href="JavaScript:;">按户型 ></a></dt>
                         <dd>
-                            <a href="/ResidentialCase/Index?roomHallId=532">一居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=535">二居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=549">三居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=551">四居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=552">五居</a>
-                            <a href="/ResidentialCase/Index?roomHallId=548">平层</a>
-                            <a href="/ResidentialCase/Index?roomHallId=554">跃层</a>
-                            <a href="/ResidentialCase/Index?roomHallId=543">复式</a>
-                            <a href="/ResidentialCase/Index?roomHallId=550">Townhouse</a>
-                            <a href="/ResidentialCase/Index?roomHallId=530">别墅</a>
-                            <a href="/ResidentialCase/Index?roomHallId=553">办公空间</a>
+                            {volist name="huxing" id="vo"}
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$vo.id}">{$vo.title}</a>
+                            {/volist}
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$vo.id}">更多</a>
                         </dd>
                     </dl>
                     <dl>
                         <dt><a href="JavaScript:;">按面积 ></a></dt>
                         <dd>
-                            <a href="/ResidentialCase/Index?squares=s90">90㎡以下</a>
-                            <a href="/ResidentialCase/Index?squares=s90_120">90-120㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s121_180">121-180㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s181_320">181-320㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s321_500">321-500㎡</a>
-                            <a href="/ResidentialCase/Index?squares=s500">500㎡以上</a>
+                            {volist name="mianji" id="vo" }
+                            <a href="{:url('residential/areaid')}?rid={$Think.get.rid}&sid={$Think.get.sid}&hid={$Think.get.hid}&mid={$vo.id}">{$vo.title}</a>
+                            {/volist}
                         </dd>
                     </dl>
                 </div>
-                <a href="/ResidentialCase/Detail/68938" class="construction-case-link"
-                   style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/1/2260593688675.jpg);">
+                <a href="/ResidentialCase/Detail/68938" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/1/2260593688675.jpg);">
                     <dl>
                         <dt>现代简约风格复式装修效果图</dt>
                         <dd>共4张</dd>
                     </dl>
                 </a>
-
-
             </div>
             <div class="case-left-b">
                 <div class="con-col-4">
-                    <a href="/ResidentialCase/Detail/68871" class="construction-case-link"
-                       style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258273250446.png);">
+                    <a href="/ResidentialCase/Detail/68871" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258273250446.png);">
                         <dl>
                             <dt>新中式风格平层装修效果图</dt>
                             <dd>共4张</dd>
                         </dl>
                     </a>
-
                 </div>
                 <div class="con-col-6">
-                    <a href="/ResidentialCase/Detail/68865" class="construction-case-link"
-                       style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258227657692.jpg);">
+                    <a href="/ResidentialCase/Detail/68865" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258227657692.jpg);">
                         <dl>
                             <dt>新中式风格别墅装修效果图</dt>
                             <dd>共7张</dd>
@@ -731,8 +617,7 @@
         </div>
         <div class="construction-case-right">
             <div class="con-col-5">
-                <a href="/ResidentialCase/Detail/68581" class="construction-case-link"
-                   style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg);">
+                <a href="/ResidentialCase/Detail/68581" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg);">
                     <dl>
                         <dt>美式风格别墅装修效果图</dt>
                         <dd>共6张</dd>
@@ -741,8 +626,7 @@
 
             </div>
             <div class="con-col-5">
-                <a href="/ResidentialCase/Detail/67596" class="construction-case-link"
-                   style="background-image: url(http://picfwoss.yzf.com.cn/100007/2018/12/19/2198636202356.jpg);">
+                <a href="/ResidentialCase/Detail/67596" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2018/12/19/2198636202356.jpg);">
                     <dl>
                         <dt>欧式四居装修效果图</dt>
                         <dd>共3张</dd>
@@ -1043,81 +927,30 @@
         </div>
         <div class="index-last-b">
 
-
             <div class="last-b-l">
                 <div class="last-panel">
                     <div class="last-panel-header">
-                        <a href="/CompanyNews" target="_blank" class="more">MORE</a>
+                        <a href="{:url('news/index')}" target="_blank" class="more">MORE</a>
                         <strong>企业新闻</strong>
                     </div>
                     <div class="last-panel-body">
                         <ul class="last-news">
+                            {volist name="new" id="vo" }
                             <li>
                                 <div class="last-date">
-                                    <strong>13</strong>
-                                    <span>Mar</span>
+                                    <strong>{$vo.time|date='d'}</strong>
+                                    <span>{$vo.time|date='m'}月</span>
                                 </div>
                                 <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7463" target="_blank" title="再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！">再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</a></h4>
-                                    <p title="再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！">再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</p>
+                                    <h4><a href="{:url('news/detail')}?id={$vo.id}" target="_blank" title="{$vo.title|default=''}">{$vo.title|default=''}</a></h4>
+                                    <p title="">{$vo.content|mb_substr='3','30'|html_entity_decode}</p>
                                 </div>
                             </li>
-                            <li>
-                                <div class="last-date">
-                                    <strong>26</strong>
-                                    <span>Jan</span>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7451" target="_blank" title="有榜样&#183;不一样！CCTV-2《空间榜样》与业之峰独家战略合作伙伴签约仪式在京举行!">有榜样&#183;不一样！CCTV-2《空间榜样》与业之峰独家战略合作伙伴签约仪式在京举行!</a></h4>
-                                    <p title="有榜样&#183;不一样！1月20日，CCTV-2《空间榜样》|业之峰独家战略合作伙伴签约仪式暨“榜样设计天团”发布会在北京举行。">有榜样&#183;不一样！1月20日，CCTV-2《空间榜样》|业之峰独家战略合作伙伴签约仪式暨“...</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="last-date">
-                                    <strong>27</strong>
-                                    <span>Feb</span>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7793" target="_blank" title="汇巢">汇巢</a></h4>
-                                    <p title="汇巢">汇巢</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="last-date">
-                                    <strong>1</strong>
-                                    <span>Aug</span>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7384" target="_blank" title="庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆">庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆</a></h4>
-                                    <p title="2017年8月1日，第五届庆八一“业之峰将军杯”中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。
-">2017年8月1日，第五届庆八一“业之峰将军杯”中国将军队高尔夫邀请赛圆满结束，活动...</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="last-date">
-                                    <strong>27</strong>
-                                    <span>Jul</span>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7383" target="_blank" title="业之峰20周年庆张钧致辞：六箭齐发剑指百亿">业之峰20周年庆张钧致辞：六箭齐发剑指百亿</a></h4>
-                                    <p title="2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京九华山庄隆重举行。">2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京...</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="last-date">
-                                    <strong>21</strong>
-                                    <span>Jul</span>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7382" target="_blank" title="匠心筑梦！业之峰20周年庆典暨第二届英雄大会颁奖典礼圆满落幕">匠心筑梦！业之峰20周年庆典暨第二届英雄大会颁奖典礼圆满落幕</a></h4>
-                                    <p title="2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京九华山庄隆重举行，业之峰集团领导、北京建筑装饰协会领导、全国工商联家具装饰业商会领导、老客户代表、合作商代表，以及远道而来的业之峰各分公司代表参加了本次20周年庆典暨第二届英雄大会颁奖典礼活动。">2017年7月21日，“匠心筑梦”——业之峰20周年庆典暨第二届英雄大会颁奖典礼在北京...</p>
-                                </div>
-                            </li>
+                            {/volist}
                         </ul>
                     </div>
                 </div>
             </div>
-
 
             <div class="last-b-r">
                 <div class="last-panel">

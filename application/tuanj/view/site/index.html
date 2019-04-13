@@ -29,6 +29,7 @@
             <th class='text-left nowrap'>关联小区</th>
             <th class='text-left nowrap'>关联户型</th>
             <th class='text-left nowrap'>时间面积</th>
+            <th class='text-left nowrap'>是否推荐为首页展示</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -46,6 +47,13 @@
             </td>
             <td class='text-left nowrap'>
                 {$vo.s_mianji|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                {eq name="vo.tuijian" value='1'}
+                  推荐为首页展示
+                {else /}
+                 不推荐为首页展示
+                {/eq}
             </td>
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
