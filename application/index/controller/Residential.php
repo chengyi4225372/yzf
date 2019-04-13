@@ -121,7 +121,6 @@ class Residential extends Common{
         return $this->fetch();
         return $this->view->fetch();
     }
-
     /*
      案例地区 rid
      案例风格 sid
@@ -297,7 +296,6 @@ class Residential extends Common{
         return $this->fetch();
     }
 
-
     //工地
     public function detail_fay(){
         $id = input('get.id');
@@ -388,4 +386,6 @@ class Residential extends Common{
         $this->assign('detail',$detail);
         return $this->fetch();
     }
+
+
 }

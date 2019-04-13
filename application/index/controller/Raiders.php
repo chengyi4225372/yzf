@@ -20,4 +20,19 @@ class Raiders extends Common {
         return  $this->fetch();
     }
 
+    //空间榜样视屏
+    public function lists(){
+        return $this->fetch();
+    }
+
+    //空间榜样视屏详情
+    public function detail(){
+        return $this->fetch();
+    }
+
+    //装修报价
+    public function sp(){
+        return $this->fetch();
+    }
+
 }

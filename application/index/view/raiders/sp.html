@@ -1,491 +1,271 @@
 {include file="public/header-two" /}
-
 {include file="public/location-two" /}
-
 <div class="header">
-    {include file="public/menu" /}
+     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
+    <style>
+        .bj-a {
+            position: relative;
+        }
 
-
-    <link rel="stylesheet" href="__STATIC__/home/css_/topic-about.css" />
-    <ul id="nav" class="ab-b-tab">
-        <li class="active"><a href="#ab-1">董事长寄语</a></li>
-        <li><a href="#ab-2">品牌故事</a></li>
-        <li><a href="#ab-3">品牌大事记</a></li>
-        <li><a href="#ab-4">品牌荣誉</a></li>
-        <li><a href="#ab-5">业之峰中国</a></li>
-        <li><a href="#ab-6">品牌文化</a></li>
-        <li><a href="#ab-7">社会责任</a></li>
-    </ul>
-    <div class="ab-a"></div>
-    <div class="ab-b" id="ab-1">
+        .bt-bm2 {
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 280px;
+        }
+    </style>
+    <link rel="stylesheet" href="__STATIC__/home/css_/topic-pmbj5.css" />
+    <div class="bj-a">
+        <a class="bt-bm2" href="#b-a">
+        </a>
+    </div>
+    <div class="bj-b">
         <div class="auto-box">
-            <div class="ab-b-content">
-                <div class="ab-b-tab-body">
-                    <div class="about-l"><img src="/images/about-l.jpg" alt=""></div>
-                    <div class="about-r">
-                        <h3>尺渡公司简介</h3>
-                        <small>Chairman message</small>
-                        <p>
-                            尺渡（苏州）空间设计工程有限公司（Chidu (Suzhou) Space Design Engineering Co., Ltd.），是一家专注于室内装饰设计、工程施工、建材整合、软装搭配的整装公司，致力于为品质生活追求者提供一站式家居解决方案。
-                        </p>
-                        <p>
-                            用心设计：空间设计就是在设计生活，我们正在做的和将要做的，永远都是聆听客户最真实的声音，无限接近客户内心的渴望。知所好，知所适，知所需，准确把握客户心理，满足客户需求。
-                        </p>
-                        <p>
-                            高品质的工程质量：凡事皆有度，我们追求的不单单是做人的尺度，还有对品质严格要求的态度。
-                            依托于强大的别墅装修施工管理体系，尺渡空间设计培养了一批高职业水准的工程管理人员和技术施工人员，塑造了高品质工程质量的基本规范。
-                            同时，在核心团队强势资源整合的帮助下，供应链整合更加高效高能，在注重环保个性的同时也能保障采购价的最优。
-                        </p>
-                        <p>
-                            极致的装修体验：以人为本，以生活机能为导向，以文化内涵支撑设计精神，注重生活理念的表达和空间情感的塑造。用有内涵的设计，规划无限的美好生活。
-                            尺渡空间设计，采用一站式服务模式，所有问题只需要对接尺渡，专人负责到底，足不出户即可快速了解装修进程，真正跨入省时省心省力的极致装修时代。
-                        </p>
-                        <p>
-                            方寸皆宜：每一寸空间都饱含了对生活的感知，每一个细节都极尽细腻。我们不辜负客户赋予我们的信任，一方一寸之间，皆不长不短，不多不少，不大不小，一切只是刚刚好。
-                        </p>
-                        <p>尺渡空间设计，专注城市精英住宅，设计理想生活！</p>
-                        <div class="about-ft">
-                            <!--董事长：<img src="/images/qianming.jpg" alt="">-->
+            <video id="myvideo" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" poster="/Images/topic-pmbj5/bj-video.jpg" data-setup="{}">
+
+                <source src="http://picfwoss.yzf.com.cn/zt/spaceExample2018_11_16.mp4" type="video/mp4">
+                <p class="vjs-no-js"> 这个浏览器不支持打开 HTML5 video,建议复制链接到手机默认浏览器打开</p>
+            </video>
+            <a name="b-a" id="b-a"></a>
+            <div class="bj-b-tit">环保装修价格高？担心超预算？立即算一算</div>
+
+            <div class="calculate-box">
+                <div class="js-wrap">
+                    <div class="js-a">
+                        <div class="js-value" id="zong">8888888888</div>
+                        <span>总价格</span>
+                    </div>
+                    <div class="js-b">
+                        <table class="js-table">
+                            <tr>
+                                <th>基础工程明细</th>
+                                <th>主材明细</th>
+                                <th>家具家电</th>
+                            </tr>
+                            <tr>
+                                <td>水路：<span id="count-1">168146</span></td>
+                                <td>瓷砖：<span id="count-2">168146</span></td>
+                                <td>移动家具：<span id="count-3">168146</span></td>
+                            </tr>
+                            <tr>
+                                <td>电路：<span id="count-4">168146</span></td>
+                                <td>地板：<span id="count-5">168146</span></td>
+                                <td>定制家具：<span id="count-6">168146</span></td>
+                            </tr>
+                            <tr>
+                                <td>木工：<span id="count-7">168146</span></td>
+                                <td>木门：<span id="count-8">168146</span></td>
+                                <td>家电：<span id="count-9">168146</span></td>
+                            </tr>
+                            <tr>
+                                <td>瓦工：<span id="count-10">168146</span></td>
+                                <td>橱柜：<span id="count-11">168146</span></td>
+                                <td>灯具：<span id="count-12">168146</span></td>
+                            </tr>
+                            <tr>
+                                <td>油工：<span id="count-13">168146</span></td>
+                                <td>洁具：<span id="count-14">168146</span></td>
+                                <td>软装配饰：<span id="count-15">168146</span></td>
+                            </tr>
+                        </table>
+                        <div class="table-dis">最新优惠活动：<span id="hd">0</span>元</div>
+                    </div>
+                </div>
+                <form class="js-form">
+
+                    <input type="hidden" name="Channel" value="算算我家房子装修花多少钱" />
+                    <div class="js-group">
+                        <div class="js-input area required">
+                            <input type="text" name="SquareMeters" placeholder="输入面积">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ab-c" id="ab-2">
-        <div class="auto-box">
-            <div class="ab-c-content">
-                <dl class="normal-tit-dl">
-                    <dt>品牌故事</dt>
-                    <dd>Brand story</dd>
-                </dl>
-                <div class="ab-c-disc">
-                    业之峰诺华家居装饰集团股份有限公司，前身为北京业之峰装饰有限公司，成立于1997年，主要从事住宅及大型公用建筑的设计、施工和建材供应等相关业务，系中
-                    国建筑装饰协会副会长单位。一直以来，业之峰始终以创新带动行业发展，且每一次创新都带动家装业的变革。尤其是2008年创立的“峰格汇家居”，集设计研
-                    发、主材直销、工程施工和家居配饰为一体，将传统的主材代销改为直销，成就了家装行业全新的商业模式，更为客户带来了高性价比的一站式家装体验。业之峰的分支机构，遍及全国各地：23家直营分公司、百余家加盟分公司、200余个店面、2000余名设计师和20000余名专业施工人员，构成了覆盖全国的家装服务网络。
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ab-d" id="ab-3">
-
-    </div>
-    <div class="ab-e" id="ab-4">
-        <div class="auto-box">
-            <dl class="normal-tit-dl">
-                <dt>品牌荣誉</dt>
-                <dd>Brand honor</dd>
-            </dl>
-            <div class="year-slide">
-                <div class="year-hd">
-                    <a class="iconfont icon-jiantou-right year-next"></a>
-                    <a class="iconfont icon-jiantou-left year-prev"></a>
-                </div>
-                <div class="year-bd">
-                    <ul id="year-List" class="year-List">
-                        <li class="selected"><span>2017</span></li>
-                        <li><span>2016</span></li>
-                        <li><span>2015</span></li>
-                        <li><span>2014</span></li>
-                        <li><span>2013</span></li>
-                        <li><span>2012</span></li>
-                        <li><span>2011</span></li>
-                        <li><span>2010</span></li>
-                        <li><span>2009</span></li>
-                        <li><span>2008</span></li>
-                        <li><span>2007</span></li>
-                        <li><span>2006</span></li>
-                        <li><span>2005</span></li>
-                        <li><span>2004</span></li>
-                        <li><span>2003</span></li>
-                        <li><span>2002</span></li>
-                        <li><span>2001</span></li>
-                        <li><span>2000</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="year-slide-content">
-                <ul class="year-slide-list" style="display: block">
-                    <li>荣获中国质量协会颁发“中国质量信誉登记注册企业”；</li>
-                    <li>荣获中国新闻社评价中心授予的“全国百姓放心装饰装修十佳企业”；</li>
-                    <li>成为“中国建筑装饰协会会员单位”；</li>
-                    <li>荣获中国全国工商联合会家具装饰业商会授予“优秀装饰装修标榜企业”；</li>
-                    <li>荣获由中国质量诚信促进会颁发“AAA级质量诚信会员单位、质量诚信消费者（用户）信得过单位”；</li>
-                    <li>荣获中华全国工商联合会家具装饰业商会颁发的2004年度“优秀品牌”和“优秀设计奖”。</li>
-                    <li>由中国家装影响力品牌媒体宣传联盟授予“2005中国家装影响力品牌家装企业”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>获得北京商报评选的中国家居产业“十大家装品牌”；</li>
-                    <li>中国社会福利基金会全球暖流计划公益基金授予“暖心企业”</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>国际空间设计大赛艾特奖别墅设计奖；</li>
-                    <li>获得中国建筑装饰协会颁发的全国建筑工程装饰奖；</li>
-                    <li>获得中国建筑装饰协会颁发全国住宅装饰装修行业明星标杆企业</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>获得北京市建筑装饰协会颁发2014年度美化家居设计大赛一等奖；</li>
-                    <li>由中国建筑装饰协会授予全国住宅装饰装修行业百强企业；</li>
-                    <li>由北京建筑装饰协会授予3A级信用企业；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>由北京市建筑装饰协会授予“开拓创新奖”和“绿色贡献奖”；</li>
-                    <li>由中国建筑装饰协会授予全国住宅装饰装修行业质量、服务、诚信“五星级企业”；</li>
-                    <li>由北京建筑装饰协会授予“社会公益贡献奖”、“设计企业”、“影响力企业”；</li>
-                    <li>为国家网球中心钻石球场球员休息区部分公共区域装装修被授予“欧盟-中国可持续装饰装修项目”；</li>
-                </ul>
-                <!-- 2012 -->
-                <ul class="year-slide-list">
-                    <li>1荣获“国家标准五星级服务认证”，也是家装行业乃至家居行业一家通过五星级服务认证的企业；</li>
-                    <li>荣获“2012中国家居产业优秀品牌企业”第一名；</li>
-                    <li>业之峰装饰问鼎PIN UP中国区设计大奖；</li>
-                    <li>由中国环境科学学会的审议，业之峰装饰正式成为“中国环境科学学会理事单位”；</li>
-                    <li>由中共北京市委授予“思想政治工作优秀单位”；</li>
-                    <li>由北京市工商业联合会、北京市商会授予“先进会员企业”；</li>
-                    <li>由中国建筑装饰协会授予“全国住宅装饰装修行业百强企业”；</li>
-                    <li>中国影视娱乐营销论坛和广告主杂志社授予业之峰微电影《妈妈的一封信》“口碑传播力大奖”；</li>
-                    <li>由中国指数研究院颁发“2012中国房地产百强企业工程装饰装修品牌”和“2012中装指数系统装饰装修行业典型样本企业”。</li>
-                    <li>由中国商业联合会、中国保护消费者基金会、全国商品售后服务评价委员会授予“全国售后服务特殊贡献单位”；</li>
-                </ul>
-                <!-- 2011 -->
-                <ul class="year-slide-list">
-                    <li>由中华人民共和国环境保护部授权颁发的“十环认证”；</li>
-                    <li>由中国网球公开赛组委会授予“中国网球公开赛供应商特殊贡献奖”；</li>
-                    <li>由中国连锁经营协会授予“中国特许奖”；</li>
-                    <li>由中家居产业TOP10研究组授予“2011中国家居产业百强企业”；</li>
-                    <li>由中国工商业家具装饰业商会授予中国家居业09-10双年总评榜“十大家装品牌”；</li>
-                    <li>由中国联合报社、品牌杂志社、中国管理科学研究院、中国国际品牌学会等机构联合授予“中国环保家装领跑者”。</li>
-                    <li>由中国商业联合会、中国保护消费者基金会、全国商品售后服务评价委员会授予“全国售后服务特殊贡献单位”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>由中国建筑材料企业管理协会授予“中国家居装修低碳环保领先企业”；</li>
-                    <li>由中国建筑装饰协会颁发全国住宅装饰装修行业质量、服务、诚信“五星级企业”；</li>
-                    <li>由中国建筑装饰协会授予全国住宅装饰装修行业“知名品牌企业”</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>由新浪装饰和业之峰装饰联手打造的“全国家装案例库”，获得“09年家居九大创新营销事件”家装网销类入选事件、“易观2009第二届新媒体营销案例”中家装网销类入选案例、“金鼠标网络营销大赛互动类银奖”、“第3种人金投赏媒介应用类金奖提名奖”；</li>
-                    <li>由北京市建筑装饰协会授予“家装十年影响力企业奖”；</li>
-                    <li>由中国建筑装饰协会授予全国住宅装饰装修行业质量、服务、诚信“五星企业”；</li>
-                    <li>由中国装饰装修及材料指数系统授予“2009中国家居产业百强企业”；</li>
-                    <li>由中国连锁经营协会授予“2008-2009年度中国特许经营管理创新奖”。</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获北京商报社颁发的“2007-2008年度北京家居行业景气品牌”全国消费者放心品牌；</li>
-                    <li>荣获中国建筑装饰协会颁发改革开放30年建筑装饰行业发展“突出贡献企业”；</li>
-                    <li>荣获中国连锁经营协会颁发2007-2008年度“中国服务业十大优秀特许加盟品牌”；</li>
-                    <li>由北京商报授予“2007-2008年度北京家居行业景气品牌”；</li>
-                    <li>张钧董事长荣获由中国十大标志性品牌推举组委会颁发的“改革开放三十年共和国杰出企业家”；</li>
-                    <li>张钧董事长荣获由中国建筑装饰协会颁发的改革开放30年建筑装饰行业发展“突出贡献企业家”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获中国连锁经营协会颁发“2006-2007年度中国服务业十大优秀特许加盟品牌”；</li>
-                    <li>荣获中国连锁经营协会颁发“企业信用评价AA级信用企业”由中国住宅装饰装修产业国际博览会授予；</li>
-                    <li>荣获中国建筑装饰协会颁发的“1997-2007中国住宅装饰装修产业十年影响力家装企业”；</li>
-                    <li>荣获中国建筑装饰协会颁发的“2007年度全国住宅装饰装修行业百强企业”；</li>
-                    <li>荣获北京晚报、北京市场协会家居市场分会颁发“2007年度京城百姓信赖的十大品牌装饰公司”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获中国建筑装饰协会颁发的全国建筑装饰行业“信息化先进单位”和“知名品牌企业”；</li>
-                    <li>荣获消费者报颁发的“全国消费者放心品牌”；</li>
-                    <li>荣获中国保护消费者基金会授予“全国消费者放心单位”；</li>
-                    <li>荣获北京市建筑装饰协会颁发的“2005-2006诚信达标优秀企业”；</li>
-                    <li>荣获中国建筑装饰协会授予全国住宅装饰装修行业“企业创新奖”；</li>
-                    <li>荣获全国工商联家具装饰业商会颁发的中国家居业（05-06）年度“十大装饰装修品牌”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获中国质量协会颁发“中国质量信誉登记注册企业”；</li>
-                    <li>成为“中国建筑装饰协会会员单位”；</li>
-                    <li>荣获由中国质量诚信促进会颁发“AAA级质量诚信会员单位、质量诚信消费者（用户）信得过单位”；</li>
-                    <li>由中国家装影响力品牌媒体宣传联盟授予“2005中国家装影响力品牌家装企业”；</li>
-                    <li>荣获中国新闻社评价中心授予的“全国百姓放心装饰装修十佳企业”；</li>
-                    <li>荣获中国全国工商联合会家具装饰业商会授予“优秀装饰装修标榜企业”；</li>
-                    <li>荣获中华全国工商联合会家具装饰业商会颁发的2004年度“优秀品牌”和“优秀设计奖”。</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>由中国建筑装饰协会材料委员会授予“全国绿色装饰装修达标企业”；</li>
-                    <li>荣获中国建筑装饰协会颁发的“全国住宅装饰行业质量服务诚信企业”；</li>
-                    <li>荣获中国品牌管理研究院、中国品牌管理师协会联合颁发的“中国企业十佳品牌”；</li>
-                    <li>荣获北京市建筑装饰协会颁发的“2003年度家庭装饰装修优秀企业奖”；</li>
-                    <li>荣获北京室内装饰协会颁发“百家‘诚信.维权’承诺企业”；</li>
-                    <li>全国住宅装饰装修行业自律诚信宣言“500家发起单位”。</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获北京市建设委员会和北京市人事局颁发的“北京市建委系统优秀建筑装饰企业”；</li>
-                    <li>荣获北京室内装饰协会颁发的“2002年度优秀企业”；</li>
-                    <li>荣获北京市建筑装饰协会颁发的“2002年度家庭装饰装修优秀企业”。</li>
-                    <li>荣获北京市建筑装饰协会和北京勘察设计协会颁发的“2003北京第四届美化家居展览会优质工程奖”。</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获北京室内装饰协会颁发的“百家质量信得过企业”和“优秀企业”；</li>
-                    <li>荣获中国建筑装饰协会工程委员会颁发的“质量、服务双优企业”；</li>
-                    <li>荣获北京市建筑装饰协会、北京勘察设计协会联合颁发的“2002年北京美化家居展优质工程奖”；</li>
-                    <li>荣获北京市连锁经营协会及北京市商业联合会联合颁发的“北京市名优特许经营品牌”；</li>
-                    <li>荣获由北京建筑装饰协会颁发的北京美化家居展“优秀设计奖”和“优质工程奖”。</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获北京市建筑装饰协会、北京勘察设计协会联合颁发的“2001年北京第二届美化家居展优质家装工程奖”；</li>
-                    <li>荣获北京市建筑装饰协会颁发的“优秀家庭居室装饰装修企业”和“优秀标兵企业”。</li>
-                    <li>荣获中国建筑装饰协会颁发的“全国首届家居装饰设计大奖赛设计银奖”；</li>
-                </ul>
-                <ul class="year-slide-list">
-                    <li>荣获中国建筑装饰协会颁发的“首届中国家庭装饰博览会优秀设计奖”；</li>
-                    <li>荣获北京市建委颁发的“北京市优秀建筑装饰企业”。</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="ab-f">
-        <div class="auto-box">
-            <div class="honor-slide">
-                <div class="honor-hd">
-                    <a class="iconfont icon-jiantou-right honor-next"></a>
-                    <a class="iconfont icon-jiantou-left honor-prev"></a>
-                </div>
-                <div class="honor-bd">
-                    <ul class="honor-List">
-
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img2.jpg" alt="">
-                            </div>
-                            <div class="honor-type">欧盟SWITCH-Asia可持续装饰装修示范项目</div>
-                        </li>
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img3.jpg" alt="">
-                            </div>
-                            <div class="honor-type">2014未来之星装修设计设计企业奖</div>
-                        </li>
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img4.jpg" alt="">
-                            </div>
-                            <div class="honor-type">全国住宅装饰装修行业百强企业</div>
-                        </li>
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img5.jpg" alt="">
-                            </div>
-                            <div class="honor-type">欧盟-中国可持续装饰装修示范项目</div>
-                        </li>
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img6.jpg" alt="">
-                            </div>
-                            <div class="honor-type">2014年诚信金鼎奖</div>
-                        </li>
-                        <li>
-                            <div class="img-box">
-                                <img src="/images/honor-img7.jpg" alt="">
-                            </div>
-                            <div class="honor-type">2015年第六届筑巢奖</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ab-g" id="ab-5">
-        <div class="auto-box">
-            <div class="ab-g-l">
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>华东</dt>
-                    <dd>
-                        <a href="http://nb.yzf.com.cn">宁波</a> <a href="http://nj.yzf.com.cn">南京</a> <a href="http://nc.yzf.com.cn">南昌</a> <a href="http://qd.yzf.com.cn">青岛</a>
-                        <a href="http://jn.yzf.com.cn">济南</a>
-
-                        <a href="http://wf.yzf.com.cn">潍坊</a><br />
-                        <a href="http://suzhou.yzf.com.cn">苏州</a>
-
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>华北</dt>
-                    <dd>
-                        <a href="http://bj.yzf.com.cn">北京</a> <a href="http://sjz.yzf.com.cn">石家庄</a> <a href="http://tj.yzf.com.cn">天津</a> <a href="http://ty.yzf.com.cn">太原</a>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>西南</dt>
-                    <dd>
-                        <a href="http://cq.yzf.com.cn">重庆</a> <a href="http://cd.yzf.com.cn">成都</a> <a href="http://gy.yzf.com.cn">贵阳</a>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>华中</dt>
-                    <dd>
-                        <a href="http://wh.yzf.com.cn">武汉</a> <a href="http://zz.yzf.com.cn">郑州</a>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>东北</dt>
-                    <dd>
-                        <a href="http://dl.yzf.com.cn">大连</a> <a href="http://heb.yzf.com.cn">哈尔滨</a> <a href="http://sy.yzf.com.cn">沈阳</a>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><i class="iconfont icon-dibiao"></i>西北</dt>
-                    <dd>
-                        <a href="http://lz.yzf.com.cn">兰州</a>  <a href="http://xa.yzf.com.cn">西安</a>
-                    </dd>
-                </dl>
-            </div>
-            <div class="ab-g-r">
-                <p>
-                    业之峰诺华家居装饰集团股份有限公司一直以来，业之峰始终以变革带动行业发展，且每一次改变都带动家装业的变革。尤其是2008年创立的“峰格汇家居”，集设计研
-                    发、主材直销、工程施工和家居配饰为一体，将传统的主材代销改为直销，成就了家装行业全新的商业模式，更为客户带来了高性价比的一站式家装体验。业之峰的分支机构，遍及全国各地：23家直营分公司、百余家加盟分公司、200余个店面、2000余名设计师和20000余名专业施工人员，构成了覆盖全国的家装服务网络。
-                </p>
-                <img src="/images/ab-g-r.jpg" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="ab-h" id="ab-6">
-        <div class="auto-box">
-            <dl class="normal-tit-dl">
-                <dt>品牌文化</dt>
-                <dd>Brand culture</dd>
-            </dl>
-            <ul class="ab-culture">
-                <li>
-                    <i class="iconfont icon-icon-test"></i>
-                    <div class="ab-culture-bd">
-                        <h4>品牌宗旨</h4>
-                        <p>做受人尊重的企业品牌</p>
+                    <div class="js-group">
+                        <div id="select-hx" class="js-input select">
+                            <input type="text" name="remark" value="2室 1室 1卫 1阳台" readonly>
+                        </div>
                     </div>
-                </li>
-                <li>
-                    <i class="iconfont icon-pinpaituan"></i>
-                    <div class="ab-culture-bd">
-                        <h4>服务理念</h4>
-                        <p>为难自己，成全客户</p>
+                    <div class="js-group">
+                        <div class="js-input required">
+                            <input type="text" name="PhoneNumber" placeholder="输入接收报价手机号码">
+                        </div>
                     </div>
-                </li>
-                <li>
-                    <i class="iconfont icon-paper-airplane"></i>
-                    <div class="ab-culture-bd">
-                        <h4>品牌愿景</h4>
-                        <p>持续创新，推动装修行业发展</p>
+                    <div class="js-btn-wrap submit">
+                        <button class="js-btn">立即计算</button>
+                        <div class="btn-disc">计算结果将发送至手机</div>
                     </div>
-                </li>
-                <li>
-                    <i class="iconfont icon-zhiyeshengyamubiao"></i>
-                    <div class="ab-culture-bd">
-                        <h4>品牌标语</h4>
-                        <p>更环保的高端装饰</p>
-                    </div>
-                </li>
-            </ul>
-            <div class="culture-slide">
-                <!--<div class="culture-hd">
-                    <a class="iconfont icon-jiantou-right culture-next"></a>
-                    <a class="iconfont icon-jiantou-left culture-prev"></a>
-                </div>-->
-                <div class="culture-bd">
-                    <ul class="culture-List">
-                        <li>
-                            <img src="/images/culture-slide-img.jpg" alt="">
-                            <h4>“业之峰冠军杯“中国将军队高尔夫邀请赛</h4>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ab-i" id="ab-7">
-        <div class="auto-box">
-            <dl class="normal-tit-dl">
-                <dt>社会责任</dt>
-                <dd>social responsibility</dd>
-            </dl>
-            <div class="h-disc">
-                20年公益路，不忘初心继续前行，业之峰作为一家富有社会责任感、热衷于慈善事业的企业。 <br>
-                多次组织帮扶贫困小学/助力环保项目、支援灾区建设、支持公益基金 ······ <br>
-                坚持为社会奉献温暖与爱心。
-            </div>
-            <div class="culture-slide">
-                <!--<div class="culture-hd">
-                    <a class="iconfont icon-jiantou-right culture-next"></a>
-                    <a class="iconfont icon-jiantou-left culture-prev"></a>
-                </div>-->
-                <div class="culture-bd">
-                    <ul class="culture-List">
-                        <li>
-                            <img src="/images/h-img.jpg" alt="">
+                </form>
 
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
-    <script src="__STATIC__/home/assets/plugins/jquery.nav.js"></script>
+    <div class="bj-c">
+        <img src="/Images/topic-pmbj5/bj-c.gif" />
+    </div>
+    <div class="bj-d"></div>
+    <div id="hx-model" class="drop-model">
+        <div class="hx-box">
+            <div class="hx-header"><strong>选择您的户型</strong></div>
+            <div class="hx-body">
+                <ul class="hx-list">
+                    <li>
+                        <a href="JavaScript:;">1室</a>
+                        <a class="active" href="JavaScript:;">2室</a>
+                        <a href="JavaScript:;">3室</a>
+                        <a href="JavaScript:;">4室</a>
+                        <a href="JavaScript:;">5室</a>
+                    </li>
+                    <li>
+                        <a class="active" href="JavaScript:;">1厅</a>
+                        <a href="JavaScript:;">2厅</a>
+                        <a href="JavaScript:;">3厅</a>
+                        <a href="JavaScript:;">4厅</a>
+                        <a href="JavaScript:;">5厅</a>
+                    </li>
+                    <li>
+                        <a class="active" href="JavaScript:;">1卫</a>
+                        <a href="JavaScript:;">2卫</a>
+                        <a href="JavaScript:;">3卫</a>
+                        <a href="JavaScript:;">4卫</a>
+                        <a href="JavaScript:;">5卫</a>
+                    </li>
+                    <li>
+                        <a class="active" href="JavaScript:;">1阳台</a>
+                        <a href="JavaScript:;">2阳台</a>
+                        <a href="JavaScript:;">3阳台</a>
+                        <a href="JavaScript:;">4阳台</a>
+                        <a href="JavaScript:;">5阳台</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hx-footer">
+                <button id="closed-hx" class="js-btn">确定</button>
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="https://dsp.yzf.com.cn/assets/plugins/vide7.1.0/css/video-js.min.css">
+    <script src="https://dsp.yzf.com.cn/assets/plugins/vide7.1.0/js/video.min.js"></script>
     <script src="__STATIC__/home/assets/plugins/jquery.SuperSlide.2.1.1.js"></script>
     <script>
         $(function () {
-            //暂时添加边距2018/11/1
-            $('.year-slide-list li').css('padding-right', '10px');
-            $(".year-slide").slide({
-                prevCell: ".year-prev",
-                nextCell: ".year-next",
-                mainCell: ".year-bd ul",
-                autoPage: true,
-                effect: "left",
-                vis: 14
+            var myPlayer = videojs('myvideo');
+            videojs("myvideo").ready(function () {
+                var myPlayer = this;
+                myPlayer.currentTime(0);
+
             });
-            $(".honor-slide").slide({
-                prevCell: ".honor-prev",
-                nextCell: ".honor-next",
-                mainCell: ".honor-bd ul",
-                autoPage: true,
-                effect: "left",
-                vis: 4
+
+            myPlayer.on("play", function () {
+                myPlayer.currentTime(0);
             });
-            $(".culture-slide").slide({
-                prevCell: ".culture-prev",
-                nextCell: ".culture-next",
-                mainCell: ".culture-bd ul",
-                autoPage: true,
-                effect: "left",
-                vis: 1
-            });
-            $('#year-List li').hover(function () {
-                $(this).addClass('selected').siblings('li').removeClass('selected');
-                $('.year-slide-content .year-slide-list').eq($(this).index()).show().siblings().hide();
-            });
-            $(window).scroll(function () {
-                var scrollTop = $(window).scrollTop();
-                scrollTop > 600 ? $("#nav").fadeIn(200) : $("#nav").fadeOut(200);
-            });
-            $('#nav').onePageNav({
-                currentClass: 'active',
-                changeHash: false,
-                scrollSpeed: 750,
-                scrollThreshold: 0.5,
-                filter: '',
-                easing: 'swing',
-                begin: function () {
-                    //I get fired when the animation is starting
-                },
-                end: function () {
-                    //I get fired when the animation is ending
-                },
-                scrollChange: function ($currentListItem) {
-                    //I get fired when you enter a section and I pass the list item of the section
+
+
+            var zong = $('#zong');
+            var count1 = $('#count-1');
+            var count2 = $('#count-2');
+            var count3 = $('#count-3');
+            var count4 = $('#count-4');
+            var count5 = $('#count-5');
+            var count6 = $('#count-6');
+            var count7 = $('#count-7');
+            var count8 = $('#count-8');
+            var count9 = $('#count-9');
+            var count10 = $('#count-10');
+            var count11 = $('#count-11');
+            var count12 = $('#count-12');
+            var count13 = $('#count-13');
+            var count14 = $('#count-14');
+            var count15 = $('#count-15');
+            var myArray = [[81459, 5365, 5497, 8218, 4379, 3660, 15320, 4500, 4556, 7500, 6007, 5373, 3445, 9660, 5230, 8513],
+                [65424, 9322, 7284, 5373, 3445, 9660, 5230, 8513, 9320, 7003, 9203, 9207, 11769, 6483, 5373, 3445],
+                [70289, 7732, 1309, 1583, 1665, 4379, 3660, 15320, 4500, 4556, 7500, 5240, 9717, 4985, 1665, 4379],
+                [136859, 11580, 9207, 11769, 6483, 5373, 3445, 9660, 5230, 8513, 9320, 7732, 1309, 1583, 1665, 4379],
+                [242826, 5720, 5240, 9717, 4985, 1665, 4379, 3660, 15320, 4500, 4556, 5365, 5497, 8218, 4379, 3660]];
+
+            var i = 0;
+            var timer = setInterval(function () {
+                if (i > 4) {
+                    i = 0;
                 }
+                var arraySon = myArray[i];
+                zong.text(arraySon[0]);
+                count1.text(arraySon[1]);
+                count2.text(arraySon[2]);
+                count3.text(arraySon[3]);
+                count4.text(arraySon[4]);
+                count5.text(arraySon[5]);
+                count6.text(arraySon[6]);
+                count7.text(arraySon[7]);
+                count8.text(arraySon[8]);
+                count9.text(arraySon[9]);
+                count10.text(arraySon[10]);
+                count11.text(arraySon[11]);
+                count12.text(arraySon[12]);
+                count13.text(arraySon[13]);
+                count14.text(arraySon[14]);
+                count15.text(arraySon[15]);
+                i++
+            }, 200);
+
+
+            var ran = 100;
+            var range = 50000;
+            var myNumber;
+
+            /*将产生随机数的方法进行封装*/
+            function sjs(range) {
+                ran = Math.random() * range;//[0,range)的随机数
+                var result = parseInt(ran);//将数字转换成整数
+                return result;
+            }
+
+            /*对显示随机数的方法进行封装*/
+            function showRandomNum() {
+                var figure = sjs(range);
+                $("#hd").text(figure);
+            }
+
+            myNumber = setInterval(showRandomNum, 100);//多长时间运行一次
+
+
+            $('#select-hx').click(function () {
+                $('#hx-model').stop(true, true).fadeIn(100);
             });
+            $('#closed-hx').click(function () {
+                $('#hx-model').stop(true, true).fadeOut(100);
+
+                selectHX();
+            });
+
+            // 户型选择
+            function selectHX() {
+                var str = '';
+                $('.hx-list .active').each(function () {
+                    str += $(this).text() + ' ';
+                });
+                $('#select-hx input').val(str);
+            }
+            $('.hx-list a').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+            $('.city-list li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+
         })
     </script>
-
-
 </div>
-
 
 {include file="public/footer" /}
 
-{include file="public/menu_right"  /}
-
+{include file="public/menu_right" /}
 <!-- 右侧悬浮：免费报价 -->
 <div class="modal fade" id="priceModal">
     <div class="modal-dialog yzf-modal">
@@ -656,7 +436,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1073位业主获取费用计算</small></h4>
+                <h4 class="modal-title">装修费用比例<small>今天已有701位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
@@ -1146,8 +926,6 @@
     </div>
 </div>
 
-
-
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -1171,7 +949,9 @@
         $('#consultation').trigger('click');
     });
 </script>
-<script src="__STATIC__/home/js/tj.js"></script>
+
 <script src="__STATIC__/home/js/customer-common.js"></script>
 </body>
 </html>
+
+<script src="__STATIC__/home/js/tj.js"></script>
