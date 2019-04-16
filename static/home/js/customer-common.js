@@ -251,7 +251,6 @@ let customerInit = {
         //url参数处理
         customer.url = location.href;
         customer.bid = $('#body-branchId').val();
-
         let kvs = aboutUrl.getCurrentRequestObject();
         for (let k in kvs) {
             if (kvs[k]) {
@@ -316,6 +315,7 @@ let customerInit = {
     },
 
     //初始化元素
+    /*
     initElement: function () {
         if (customer.ms === 'bdocpc' || customer.ck === 'bdpz-tpzq') {
             //百度ocpc模式代码
@@ -331,6 +331,7 @@ let customerInit = {
             $("form").append("<p style='text-align: center;color: #fff;padding-top: 10px;'>最终解释权归业之峰所有</p>");
         }
     }
+    */
 };
 
 /* 通用处理js原型扩展 */
@@ -378,10 +379,11 @@ $(".submit").click(function () {
     }
     console.log('ajax请求参数');
     console.log(customer);
-    let urlHead = document.location.protocol === 'http:' ? 'http:' : 'https:';
+   // let urlHead = document.location.protocol === 'http:' ? 'http:' : 'https:';
     $.ajax({
         type: 'post',
-        url: urlHead + '//admin.yzf.com.cn/api/RegistrationAPI/Insert',
+       // url: urlHead + '//admin.yzf.com.cn/api/RegistrationAPI/Insert',
+        url:"{:url('index/api/sendmail')}",
         data: {
             'name': customer.name,
             'phoneNumber': customer.phoneNumber,
