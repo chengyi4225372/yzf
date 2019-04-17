@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-11 18:18:14
+Date: 2019-04-17 17:52:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,14 +59,13 @@ CREATE TABLE `banner` (
   `status` tinyint(1) unsigned DEFAULT '1',
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banner
 -- ----------------------------
-INSERT INTO `banner` VALUES ('7', '趣味运动会', '/static/upload/82b560edee121c35/e2524b816d5c4ae5.jpg', '#', '0', '1', '2018-12-21 09:15:31');
-INSERT INTO `banner` VALUES ('8', '花样年会', '/static/upload/4c923f43273acb62/fb477fd3366624e2.jpg', '#', '0', '1', '2018-12-21 09:19:50');
-INSERT INTO `banner` VALUES ('9', '年会', '/static/upload/7618a48d0835a945/0f930458400dd3bb.jpg', '#', '0', '1', '2018-12-24 15:45:21');
+INSERT INTO `banner` VALUES ('13', '装修头条', '/static/upload/85dc8a127eddfc83/89ca25cb32f7d1ce.jpg', '/index/designer/index.html', '0', '1', '2019-04-17 15:56:09');
+INSERT INTO `banner` VALUES ('9', '看案例找灵感', '/static/upload/11abcf3941dfb6de/d2a1d0e502ce9f1a.jpg', '/index/residential/index.html', '0', '1', '2018-12-24 15:45:21');
 INSERT INTO `banner` VALUES ('10', '关于我们标题', '', 'http://www.baidu.com', '0', '2', '2018-12-28 11:28:21');
 INSERT INTO `banner` VALUES ('11', '标题2', '', 'http://www.baidu.com', '0', '2', '2018-12-28 11:28:35');
 INSERT INTO `banner` VALUES ('12', '百度', '', 'http://www.baidu.com', '0', '3', '2018-12-28 11:28:48');
@@ -150,14 +149,14 @@ CREATE TABLE `designer` (
 -- ----------------------------
 -- Records of designer
 -- ----------------------------
-INSERT INTO `designer` VALUES ('0000000001', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴文', '2007年工作至今', '江西科技师范学院', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...', '2011年    荣获新浪家居设计之星； 2012年    荣获集团设计大赛金奖； 2013年    荣获苏州“先锋木业杯”三等奖； 2014年    荣获苏州首届室内设计大赛“优秀设计作品奖”； 2015年    “美涂士漆”杯业之峰全国室内设计精英奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,5,9', '3,4', '7', '13年', '1');
-INSERT INTO `designer` VALUES ('0000000002', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '张超', '2010年工作至今', '湖北武汉工业大学', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '给您最舒适的家！', '玫瑰园、尊园、海尚壹品、蝴蝶湾、保利国际、雅戈尔太阳城、绿地华尔道、路劲主场、中海国际社区、置地悦湖、海德公园、世茂运河城...', '2010年    湖北省室内装饰协会最佳创意奖； 2014年    苏州芒果杯最佳新人奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5', '1,2', '2', '10年', '1');
-INSERT INTO `designer` VALUES ('0000000003', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '李静波', '2007年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '第三方的', '大幅度丰富的仿的房东', '的地方放的地方的方法大幅度发东方大道辅导费', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5,6', '1,2,3', '1', '10年', '0');
-INSERT INTO `designer` VALUES ('0000000005', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '东方时尚', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '4,5', '7', '10年', '0');
-INSERT INTO `designer` VALUES ('0000000006', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '你是谁', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '辅导费大V', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3', '2,3', '6', '10年', '0');
-INSERT INTO `designer` VALUES ('0000000007', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴秀波', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4', '4,5', '7', '10年', '0');
-INSERT INTO `designer` VALUES ('0000000008', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '张无忌', '2010年工作至今', '江西科技师范学院', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6,7,8,9', '3,4,5', '7', '10年', '0');
-INSERT INTO `designer` VALUES ('0000000009', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '李四光', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,5,9', '3,4,5', '7', '10年', '0');
+INSERT INTO `designer` VALUES ('0000000001', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴文', '2007年工作至今', '江西科技师范学院', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '狮山原著、狮山御园、苏州御园、龙湖时代天街、荷澜庭、香港时光、九龙仓、繁华里、七里香都、国宾一号、海尚壹品、绿地华尔道、碧提半岛、正荣国领、保利居上、新湖明珠城、现代园墅、依云水岸别墅、阿卡迪亚别墅...', '2011年    荣获新浪家居设计之星； 2012年    荣获集团设计大赛金奖； 2013年    荣获苏州“先锋木业杯”三等奖； 2014年    荣获苏州首届室内设计大赛“优秀设计作品奖”； 2015年    “美涂士漆”杯业之峰全国室内设计精英奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,5,9', '3,4', '7', '13', '1');
+INSERT INTO `designer` VALUES ('0000000002', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '张超', '2010年工作至今', '湖北武汉工业大学', '在业之峰装修，保证“零增项、零延迟、零污染、零回扣、零假货”，五大承诺，不爽就赔！', '给您最舒适的家！', '玫瑰园、尊园、海尚壹品、蝴蝶湾、保利国际、雅戈尔太阳城、绿地华尔道、路劲主场、中海国际社区、置地悦湖、海德公园、世茂运河城...', '2010年    湖北省室内装饰协会最佳创意奖； 2014年    苏州芒果杯最佳新人奖', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5', '1,2', '2', '10', '1');
+INSERT INTO `designer` VALUES ('0000000003', '/static/upload/34e0df44fd75ad0e/00efeea6433e595b.png', '李静波', '2007年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '第三方的', '大幅度丰富的仿的房东', '的地方放的地方的方法大幅度发东方大道辅导费', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '2,3,4,5,6', '1,2,3', '1', '10', '1');
+INSERT INTO `designer` VALUES ('0000000005', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '东方时尚', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6', '4,5', '7', '10', '0');
+INSERT INTO `designer` VALUES ('0000000006', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '你是谁', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '辅导费大V', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3', '2,3', '6', '10', '0');
+INSERT INTO `designer` VALUES ('0000000007', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '吴秀波', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '运用专业的设计眼光来对待家居的空间策划，设计风格背后是满足功能的需求，提升生活品质为最终目的！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4', '4,5', '7', '10', '0');
+INSERT INTO `designer` VALUES ('0000000008', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '张无忌', '2010年工作至今', '江西科技师范学院', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,2,3,4,5,6,7,8,9', '3,4,5', '7', '10', '0');
+INSERT INTO `designer` VALUES ('0000000009', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '李四光', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,5,9', '3,4,5', '7', '10', '0');
 
 -- ----------------------------
 -- Table structure for `dingzhi`
@@ -334,14 +333,15 @@ CREATE TABLE `lou_anli` (
   `logo` varchar(255) NOT NULL COMMENT '封面图',
   `s_mianji` int(10) unsigned NOT NULL COMMENT '实际面积',
   `loupan` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '同楼盘的新的一期',
+  `tuijian` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '是否推荐首页展示 0=》不 1=》是',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lou_anli
 -- ----------------------------
-INSERT INTO `lou_anli` VALUES ('0000000001', '/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '1', '1', '10', '1', '8', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '120', '');
-INSERT INTO `lou_anli` VALUES ('0000000002', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '2', '3', '10', '1', '9', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '115', '');
+INSERT INTO `lou_anli` VALUES ('0000000001', '/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '1', '1', '10', '1', '8', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '120', '', '1');
+INSERT INTO `lou_anli` VALUES ('0000000002', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '2', '3', '10', '1', '9', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '115', '', '1');
 
 -- ----------------------------
 -- Table structure for `lou_gongdi`
@@ -358,15 +358,38 @@ CREATE TABLE `lou_gongdi` (
   `q_img` text NOT NULL COMMENT '前期进度图',
   `z_img` text NOT NULL COMMENT '中期进度图',
   `h_img` text NOT NULL COMMENT '后期进度图',
+  `tuijian` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '是否推荐为首页展示 0=》不 1=》是',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of lou_gongdi
 -- ----------------------------
-INSERT INTO `lou_gongdi` VALUES ('0000000001', '1', '1', '120', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '');
-INSERT INTO `lou_gongdi` VALUES ('0000000002', '2', '2', '150', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '');
-INSERT INTO `lou_gongdi` VALUES ('0000000003', '3', '3', '150', '竣工工程', '', '', '/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/76391228433df16c/cf0e29a6d2a3432a.jpg', '', '');
+INSERT INTO `lou_gongdi` VALUES ('0000000001', '1', '1', '120', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '', '1');
+INSERT INTO `lou_gongdi` VALUES ('0000000002', '2', '2', '150', '', '水电工程', '', '', '/static/upload/b777d4a78ce4b247/eb7657691cff4755.jpg|/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/27b45a020b06ba35/6f0527f2ef9b2e62.jpg', '', '1');
+INSERT INTO `lou_gongdi` VALUES ('0000000003', '3', '3', '150', '竣工工程', '', '', '/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/76391228433df16c/cf0e29a6d2a3432a.jpg', '', '', '1');
+
+-- ----------------------------
+-- Table structure for `lou_huxing`
+-- ----------------------------
+DROP TABLE IF EXISTS `lou_huxing`;
+CREATE TABLE `lou_huxing` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `re_id` int(10) unsigned NOT NULL COMMENT '关联热门小区id',
+  `h_title` varchar(255) NOT NULL COMMENT '户型名称',
+  `h_size` varchar(255) NOT NULL COMMENT '户型尺寸大小面积',
+  `h_img` varchar(255) NOT NULL COMMENT '户型展示图',
+  `content` text NOT NULL COMMENT '户型解析',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of lou_huxing
+-- ----------------------------
+INSERT INTO `lou_huxing` VALUES ('0000000001', '1', '二期22#标准层F户型', '3室2厅2卫1厨  195㎡', '/static/upload/77d6c74928d41104/5b605c7a7f893f8b.jpg', '<p>整体户型方正，活动区域开阔，居住舒适度高；全明户型，各部分空间均有窗，可保证整体空间采光和通风，居住舒适度好；卫生间门朝向主要活动区域；。卧室厨卫等各个功能区的面积大小都比较合理，居住体验便利，整体舒适度高；公摊高于15%且低于25%，符合住宅公摊正常范围。</p>');
+INSERT INTO `lou_huxing` VALUES ('0000000002', '1', '二期22#标准层F户型', '3室2厅2卫1厨  195㎡', '/static/upload/77d6c74928d41104/5b605c7a7f893f8b.jpg', '<p>整体户型方正，活动区域开阔，居住舒适度高；全明户型，各部分空间均有窗，可保证整体空间采光和通风，居住舒适度好；卫生间门朝向主要活动区域；。卧室厨卫等各个功能区的面积大小都比较合理，居住体验便利，整体舒适度高；公摊高于15%且低于25%，符合住宅公摊正常范围。</p>');
+INSERT INTO `lou_huxing` VALUES ('0000000003', '1', '二期22#标准层D户型', '3室2厅2卫1厨  165㎡', '/static/upload/73a148a864d38b84/14705b3bd3162009.jpg', '<p>整体户型方正，活动区域开阔，居住舒适度高；全明通透户型，居住舒适度较高，整个空间采光充足，利于后期居住；居室布局合理，通风良好，动静分离，兼顾到了卧室和卫生间的私密性；客厅、卧室、卫生间和厨房等主要功能间的尺寸以及比例适中，有利于采光和通风，居住起来舒适、方便；公摊高于15%且低于25%，符合住宅公摊正常范围。</p>');
+INSERT INTO `lou_huxing` VALUES ('0000000004', '1', '标准层150平', '3室2厅2卫1厨  150㎡', '/static/upload/556cbe1dab7aea02/584659c02e90f1fd.jpg', '<p>各个空间户型方正，方便室内家具布置；整个空间全明通透，采光良好，同时利于居住空间通风；整体空间布局合理，能够保证动静分离和居室通风，方便使用；卧室厨卫等各个功能区的面积大小都比较合理，居住体验便利，整体舒适度高；公摊高于15%且低于25%，符合住宅公摊正常范围。</p>');
 
 -- ----------------------------
 -- Table structure for `mianji`
@@ -400,17 +423,35 @@ CREATE TABLE `new` (
   `laiyuan` varchar(255) NOT NULL COMMENT '新闻来源',
   `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `tuijian` int(10) unsigned DEFAULT NULL COMMENT '是否推荐为热门',
+  `jian` varchar(255) NOT NULL COMMENT '内容简介',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of new
 -- ----------------------------
-INSERT INTO `new` VALUES ('1', '这是标题这是标题这是标题这是标题这是标题', '/static/upload/380896beff3e3854/6e5852b248f4834d.png', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-22 09:58:21', '0');
-INSERT INTO `new` VALUES ('2', '这是标题这是标题这是标题这是标题', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:13:11', '0');
-INSERT INTO `new` VALUES ('3', '新闻二', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:14:44', '0');
-INSERT INTO `new` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a35ed0db2a16.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:15:24', '0');
-INSERT INTO `new` VALUES ('5', '庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆', '/static/upload/c00e92f99cc70c8d/50ecc20d043f42d5.jpg', '<p>　　2017年8月1日，第五届庆八一&ldquo;业之峰将军杯&rdquo;中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。<br />\r\n<br />\r\n　　今年是中国人民解放军建军90周年，中共中央总书记、国家主席、中央军委主席习近平在发表重要讲话时强调，人民军队的历史辉煌，是鲜血生命铸就的，永远值得我们铭记。人民军队的历史经验，是艰辛探索得来的，永远需要我们弘扬。人民军队的历史发展，是忠诚担当推动的，永远激励我们向前。中华民族实现伟大复兴，中国人民实现更加美好生活，必须加快把人民军队建设成为世界一流军队。我们要不忘初心、继续前进，坚定不移走中国特色强军之路，把强军事业不断推向前进，努力实现党在新形势下的强军目标。<br />\r\n<br />\r\n本次比赛的主办方邀请了多位中国人民解放军的老将军和国家部委老领导参加，业之峰集团董事长张钧发表了精彩的致辞。他表示，90年来，伟大的人民军队历经硝烟战火，一路披荆斩棘，付出巨大牺牲，取得一个又一个辉煌胜利，为党和人民建立了伟大的历史功勋。业之峰集团成立20年来，也一直把军民共建活动作为精神文明工作的重要内容，不断发扬军民团结、鱼水情深的光荣传统，深入持久地开展军民共建活动，这充分展示了&ldquo;和谐共建&rdquo;的新型军民关系，也进一步融洽了心连心、同呼吸、共命运的军民关系。</p>\r\n\r\n<p>&nbsp;<img alt=\"_O4A9668.jpg\" src=\"http://picfw.yzf.com.cn/2017/8/2/1763045531588.jpg\" title=\"_O4A9668.jpg\" /></p>\r\n\r\n<p>业之峰装饰董事长张钧讲话</p>\r\n\r\n<p>　　据了解，业之峰装饰已经连续五年主办高尔夫邀请赛，比赛旨在为众多注重居住品质的高球爱好者提供高端、广阔的交流平台。张钧表示，高尔夫运动所体现出的尊贵气质和优雅时尚的生活态度与业之峰装饰一直以来倡导的健康、高品质的生活方式相得益彰，高尔夫运动能完美传达出业之峰的品牌价值与理念。业之峰作为一家家装企业，重视通过建立和谐的互动关系来创造良好的社会环境。通过对高尔夫等体育赛事的支持，业之峰将健康、积极向上的精神融入企业文化，并通过比赛平台将业之峰的企业文化与更多的人分享，而这也是业之峰赞助体育赛事的初衷。<br />\r\n<br />\r\n　　经过有趣而又紧张激烈的角逐，当天的各个奖项尘埃落定。最终，将军队获得了团队冠军的最高荣誉。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '集团企划中心', '2019-04-01 15:57:08', '1');
+INSERT INTO `new` VALUES ('1', '这是标题这是标题这是标题这是标题这是标题', '/static/upload/380896beff3e3854/6e5852b248f4834d.png', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-22 09:58:21', '0', '');
+INSERT INTO `new` VALUES ('2', '这是标题这是标题这是标题这是标题', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:13:11', '0', '');
+INSERT INTO `new` VALUES ('3', '新闻二', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:14:44', '1', '');
+INSERT INTO `new` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a35ed0db2a16.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:15:24', '1', '');
+INSERT INTO `new` VALUES ('5', '庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆', '/static/upload/c00e92f99cc70c8d/50ecc20d043f42d5.jpg', '<p>　　2017年8月1日，第五届庆八一&ldquo;业之峰将军杯&rdquo;中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。<br />\r\n<br />\r\n　　今年是中国人民解放军建军90周年，中共中央总书记、国家主席、中央军委主席习近平在发表重要讲话时强调，人民军队的历史辉煌，是鲜血生命铸就的，永远值得我们铭记。人民军队的历史经验，是艰辛探索得来的，永远需要我们弘扬。人民军队的历史发展，是忠诚担当推动的，永远激励我们向前。中华民族实现伟大复兴，中国人民实现更加美好生活，必须加快把人民军队建设成为世界一流军队。我们要不忘初心、继续前进，坚定不移走中国特色强军之路，把强军事业不断推向前进，努力实现党在新形势下的强军目标。<br />\r\n<br />\r\n本次比赛的主办方邀请了多位中国人民解放军的老将军和国家部委老领导参加，业之峰集团董事长张钧发表了精彩的致辞。他表示，90年来，伟大的人民军队历经硝烟战火，一路披荆斩棘，付出巨大牺牲，取得一个又一个辉煌胜利，为党和人民建立了伟大的历史功勋。业之峰集团成立20年来，也一直把军民共建活动作为精神文明工作的重要内容，不断发扬军民团结、鱼水情深的光荣传统，深入持久地开展军民共建活动，这充分展示了&ldquo;和谐共建&rdquo;的新型军民关系，也进一步融洽了心连心、同呼吸、共命运的军民关系。</p>\r\n\r\n<p>&nbsp;<img alt=\"_O4A9668.jpg\" src=\"http://picfw.yzf.com.cn/2017/8/2/1763045531588.jpg\" title=\"_O4A9668.jpg\" /></p>\r\n\r\n<p>业之峰装饰董事长张钧讲话</p>\r\n\r\n<p>　　据了解，业之峰装饰已经连续五年主办高尔夫邀请赛，比赛旨在为众多注重居住品质的高球爱好者提供高端、广阔的交流平台。张钧表示，高尔夫运动所体现出的尊贵气质和优雅时尚的生活态度与业之峰装饰一直以来倡导的健康、高品质的生活方式相得益彰，高尔夫运动能完美传达出业之峰的品牌价值与理念。业之峰作为一家家装企业，重视通过建立和谐的互动关系来创造良好的社会环境。通过对高尔夫等体育赛事的支持，业之峰将健康、积极向上的精神融入企业文化，并通过比赛平台将业之峰的企业文化与更多的人分享，而这也是业之峰赞助体育赛事的初衷。<br />\r\n<br />\r\n　　经过有趣而又紧张激烈的角逐，当天的各个奖项尘埃落定。最终，将军队获得了团队冠军的最高荣誉。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '集团企划中心', '2019-04-01 15:57:08', '1', '');
+
+-- ----------------------------
+-- Table structure for `new_cates`
+-- ----------------------------
+DROP TABLE IF EXISTS `new_cates`;
+CREATE TABLE `new_cates` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL COMMENT '装修类型 ',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='装修头条分类表';
+
+-- ----------------------------
+-- Records of new_cates
+-- ----------------------------
+INSERT INTO `new_cates` VALUES ('0000000001', '装修前');
+INSERT INTO `new_cates` VALUES ('0000000002', '装修中');
+INSERT INTO `new_cates` VALUES ('0000000003', '装修后');
 
 -- ----------------------------
 -- Table structure for `partner`
@@ -625,7 +666,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=253 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -882,6 +923,12 @@ INSERT INTO `system_log` VALUES ('249', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('250', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-08 13:34:09');
 INSERT INTO `system_log` VALUES ('251', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-11 09:20:24');
 INSERT INTO `system_log` VALUES ('252', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-11 09:52:50');
+INSERT INTO `system_log` VALUES ('253', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-12 09:21:16');
+INSERT INTO `system_log` VALUES ('254', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-12 17:46:48');
+INSERT INTO `system_log` VALUES ('255', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-16 14:42:48');
+INSERT INTO `system_log` VALUES ('256', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-17 09:07:44');
+INSERT INTO `system_log` VALUES ('257', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-17 09:52:35');
+INSERT INTO `system_log` VALUES ('258', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-04-17 17:10:47');
 
 -- ----------------------------
 -- Table structure for `system_menu`
@@ -902,7 +949,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -917,8 +964,8 @@ INSERT INTO `system_menu` VALUES ('11', '1', '访问权限', '', 'fa fa-anchor',
 INSERT INTO `system_menu` VALUES ('115', '11', '访问授权', '', 'fa fa-group', 'admin/auth/index', '', '_self', '0', '1', '0', '2018-12-18 15:57:58');
 INSERT INTO `system_menu` VALUES ('116', '11', '访问节点', '', 'fa fa-fort-awesome', 'admin/node/index', '', '_self', '0', '1', '0', '2018-12-18 16:00:05');
 INSERT INTO `system_menu` VALUES ('117', '0', '页面编辑', '', '', '#', '', '_self', '3000', '1', '0', '2018-12-18 16:28:55');
-INSERT INTO `system_menu` VALUES ('118', '117', '轮播图管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-18 16:29:19');
-INSERT INTO `system_menu` VALUES ('119', '118', '轮播图列表', '', '', 'tuanj/banner/index', '', '_self', '0', '0', '0', '2018-12-18 16:29:59');
+INSERT INTO `system_menu` VALUES ('118', '117', '首页轮播管理', '', 'fa fa-instagram', '#', '', '_self', '0', '1', '0', '2018-12-18 16:29:19');
+INSERT INTO `system_menu` VALUES ('119', '118', '轮播图列表', '', 'fa fa-square', 'tuanj/banner/index', '', '_self', '0', '1', '0', '2018-12-18 16:29:59');
 INSERT INTO `system_menu` VALUES ('120', '117', '分类管理', '', '', '#', '', '_self', '0', '0', '0', '2018-12-18 16:35:51');
 INSERT INTO `system_menu` VALUES ('121', '120', '菜单栏', '', '', 'tuanj/lists/index', '', '_self', '0', '0', '0', '2018-12-18 16:36:01');
 INSERT INTO `system_menu` VALUES ('122', '120', '场地分类', '', '', 'tuanj/categorys/index', '', '_self', '0', '0', '0', '2018-12-18 16:37:10');
@@ -949,7 +996,6 @@ INSERT INTO `system_menu` VALUES ('146', '117', '装修案例', '', 'fa fa-shopp
 INSERT INTO `system_menu` VALUES ('147', '146', '案例地区', '', 'fa fa-credit-card-alt', '/tuanj/region/index', '', '_self', '0', '1', '0', '2019-04-03 16:40:35');
 INSERT INTO `system_menu` VALUES ('148', '146', '案例面积', '', 'fa fa-archive', '/tuanj/mianji/index', '', '_self', '0', '1', '0', '2019-04-03 16:41:55');
 INSERT INTO `system_menu` VALUES ('149', '117', '装修头条', '', 'fa fa-fort-awesome', '#', '', '_self', '0', '1', '0', '2019-04-03 17:13:41');
-INSERT INTO `system_menu` VALUES ('150', '149', '装修进度', '', 'fa fa-modx', '/tuanj/jingdu/index', '', '_self', '0', '1', '0', '2019-04-03 17:16:42');
 INSERT INTO `system_menu` VALUES ('151', '117', '热门楼盘', '', 'fa fa-institution', '#', '', '_self', '0', '1', '0', '2019-04-03 17:25:58');
 INSERT INTO `system_menu` VALUES ('152', '151', '热门小区', '', 'fa fa-dot-circle-o', '/tuanj/remen/index', '', '_self', '0', '1', '0', '2019-04-03 17:30:13');
 INSERT INTO `system_menu` VALUES ('153', '151', '楼盘案例', '', 'fa fa-hashtag', '/tuanj/caseanli/index', '', '_self', '0', '1', '0', '2019-04-08 09:43:14');
@@ -957,6 +1003,10 @@ INSERT INTO `system_menu` VALUES ('154', '151', '看工地', '', 'fa fa-cloud', 
 INSERT INTO `system_menu` VALUES ('155', '151', '竣工实景图', '', 'fa fa-area-chart', '/tuanj/picture/index', '', '_self', '0', '1', '0', '2019-04-08 09:45:38');
 INSERT INTO `system_menu` VALUES ('156', '151', '楼盘户型', '', 'fa fa-paypal', '/tuanj/apartment/index', '', '_self', '0', '1', '0', '2019-04-08 09:46:48');
 INSERT INTO `system_menu` VALUES ('157', '139', '预约平面设计', '', 'fa fa-paper-plane', '/tuanj/sheji/index', '', '_self', '0', '1', '0', '2019-04-08 10:18:04');
+INSERT INTO `system_menu` VALUES ('158', '117', '装修头条', '', 'fa fa-file-pdf-o', '#', '', '_self', '0', '1', '0', '2019-04-17 10:21:54');
+INSERT INTO `system_menu` VALUES ('159', '158', '头条分类', '', 'fa fa-lightbulb-o', 'tuanj/newcate/index', '', '_self', '0', '1', '0', '2019-04-17 10:22:38');
+INSERT INTO `system_menu` VALUES ('160', '158', '装修新闻', '', 'fa fa-pencil', 'tuanj/znews/index', '', '_self', '0', '1', '0', '2019-04-17 10:25:35');
+INSERT INTO `system_menu` VALUES ('161', '132', '业主感言', '', 'fa fa-heart', 'tuanj/thank/index', '', '_self', '0', '1', '0', '2019-04-17 14:23:11');
 
 -- ----------------------------
 -- Table structure for `system_node`
@@ -1068,6 +1118,32 @@ CREATE TABLE `system_user` (
 INSERT INTO `system_user` VALUES ('10000', 'admin', '超级管理员', '21232f297a57a5a743894a0e4a801fc3', '', '', null, '', '', '23296', '2018-03-23 17:05:40', '1', '1', '0', null, '2015-11-13 15:14:22');
 
 -- ----------------------------
+-- Table structure for `thank`
+-- ----------------------------
+DROP TABLE IF EXISTS `thank`;
+CREATE TABLE `thank` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL COMMENT '标题',
+  `img` varchar(255) DEFAULT NULL COMMENT '预览图',
+  `content` text COMMENT '内容',
+  `laiyuan` varchar(255) NOT NULL COMMENT '新闻来源',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `tuijian` int(10) unsigned DEFAULT NULL COMMENT '是否推荐首页展示',
+  `jian` varchar(255) DEFAULT NULL COMMENT '内容简介',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of thank
+-- ----------------------------
+INSERT INTO `thank` VALUES ('1', '这是标题这是标题这是标题这是标题这是标题', '/static/upload/380896beff3e3854/6e5852b248f4834d.png', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-22 09:58:21', '0', null);
+INSERT INTO `thank` VALUES ('2', '这是标题这是标题这是标题这是标题', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:13:11', '0', null);
+INSERT INTO `thank` VALUES ('3', '新闻二', '/static/upload/c2ffc38238c06cab/b10d01de88776db9.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:14:44', '0', null);
+INSERT INTO `thank` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a35ed0db2a16.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '', '2018-12-25 15:15:24', '1', null);
+INSERT INTO `thank` VALUES ('5', '庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆', '/static/upload/c00e92f99cc70c8d/50ecc20d043f42d5.jpg', '<p><img border=\"0\" src=\"/static/upload/8330e1387572d0ed/1ece4328228c4002.jpg\" style=\"max-width:880px\" title=\"image\" /></p>\r\n\r\n<p>　　2017年8月1日，第五届庆八一&ldquo;业之峰将军杯&rdquo;中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。<br />\r\n<br />\r\n　　今年是中国人民解放军建军90周年，中共中央总书记、国家主席、中央军委主席习近平在发表重要讲话时强调，人民军队的历史辉煌，是鲜血生命铸就的，永远值得我们铭记。人民军队的历史经验，是艰辛探索得来的，永远需要我们弘扬。人民军队的历史发展，是忠诚担当推动的，永远激励我们向前。中华民族实现伟大复兴，中国人民实现更加美好生活，必须加快把人民军队建设成为世界一流军队。我们要不忘初心、继续前进，坚定不移走中国特色强军之路，把强军事业不断推向前进，努力实现党在新形势下的强军目标。<br />\r\n<br />\r\n本次比赛的主办方邀请了多位中国人民解放军的老将军和国家部委老领导参加，业之峰集团董事长张钧发表了精彩的致辞。他表示，90年来，伟大的人民军队历经硝烟战火，一路披荆斩棘，付出巨大牺牲，取得一个又一个辉煌胜利，为党和人民建立了伟大的历史功勋。业之峰集团成立20年来，也一直把军民共建活动作为精神文明工作的重要内容，不断发扬军民团结、鱼水情深的光荣传统，深入持久地开展军民共建活动，这充分展示了&ldquo;和谐共建&rdquo;的新型军民关系，也进一步融洽了心连心、同呼吸、共命运的军民关系。</p>\r\n\r\n<p>&nbsp;<img alt=\"_O4A9668.jpg\" src=\"http://picfw.yzf.com.cn/2017/8/2/1763045531588.jpg\" title=\"_O4A9668.jpg\" /></p>\r\n\r\n<p>业之峰装饰董事长张钧讲话</p>\r\n\r\n<p>　　据了解，业之峰装饰已经连续五年主办高尔夫邀请赛，比赛旨在为众多注重居住品质的高球爱好者提供高端、广阔的交流平台。张钧表示，高尔夫运动所体现出的尊贵气质和优雅时尚的生活态度与业之峰装饰一直以来倡导的健康、高品质的生活方式相得益彰，高尔夫运动能完美传达出业之峰的品牌价值与理念。业之峰作为一家家装企业，重视通过建立和谐的互动关系来创造良好的社会环境。通过对高尔夫等体育赛事的支持，业之峰将健康、积极向上的精神融入企业文化，并通过比赛平台将业之峰的企业文化与更多的人分享，而这也是业之峰赞助体育赛事的初衷。<br />\r\n<br />\r\n　　经过有趣而又紧张激烈的角逐，当天的各个奖项尘埃落定。最终，将军队获得了团队冠军的最高荣誉。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '集团企划中心', '2019-04-01 15:57:08', '1', null);
+INSERT INTO `thank` VALUES ('6', '业主感谢信', '/static/upload/a07f5574e0ff7899/e200669297b93c81.jpg', '<p><img border=\"0\" src=\"/static/upload/c1b7ec8a217d7cc1/f456ac2de7de2225.jpg\" style=\"max-width:880px\" title=\"image\" /></p>', '哈哈哈', '2019-04-17 15:13:00', '0', null);
+
+-- ----------------------------
 -- Table structure for `tousu`
 -- ----------------------------
 DROP TABLE IF EXISTS `tousu`;
@@ -1129,3 +1205,29 @@ INSERT INTO `tuandui` VALUES ('8', '0', '范·迪塞尔', '/static/upload/f9d8d6
 INSERT INTO `tuandui` VALUES ('7', '0', '吴亦凡', '/static/upload/0084f13e38c93b8b/fdcc5e53510792a8.jpg', '团建教练', '吴亦凡（Kris），1990年11月6日出生于广东省广州市，华语影视男演员、流行乐歌手。2007年，吴亦凡加入了韩国SM娱乐公司。2012年作为EXO组合成员正式出道，担任EXO/EXO-M队长、主Rapper、门面。2014年5月15日，吴亦凡正式向首尔中央地方法院请求判决与SM娱乐公司专属合同无效。之后吴亦凡回归中国发展，出演个人首部电影，担任徐静蕾执导的电影《有一个地方只有我们知道》男主角', '#', '2018-12-25 15:48:08');
 INSERT INTO `tuandui` VALUES ('9', '0', '汤姆•克鲁斯', '/static/upload/1998af7148d5e65e/22320bb137e754df.jpg', '团建教练', '汤姆·克鲁斯（Tom Cruise），1962年7月3日出生于美国纽约州，美国电影演员、电影制片人。 1981年，汤姆·克鲁斯进入演艺圈。1983年凭借《乖仔也疯狂》首获金球奖最佳男主角提名。1986年凭借《壮志凌云》成名，并于同年10月16日留名好莱坞星光大道。1988年与达斯汀·霍夫曼合作电影《雨人》。1990年，汤姆·克鲁斯主演电影《生于七月四日》，首次获得奥斯卡金像奖最佳男主角提名。', '#', '2018-12-25 15:54:18');
 INSERT INTO `tuandui` VALUES ('10', '0', '尼古拉斯·凯奇', '/static/upload/efde1ce2a23c4d26/1a12ec0ec2ccba97.jpg', '团建教练', '1982年，17岁的尼古拉斯·凯奇进入电影行业，出演影片《开放的美国学府》。1984年，凯奇主演了影片《鸟人》。1988年，他出演了《吸血鬼之吻》。1992年，他凭借影片《我心狂野》中的表演，获得了第43届戛纳电影节金棕榈大奖。1996年，他主演的动作片《勇闯夺命岛》，并凭借《离开拉斯维加斯》中的酒鬼一角获得当年奥斯卡最佳男主角奖。而后出演《变脸》、《空中监狱》等动作片。', '#', '2018-12-25 15:55:30');
+
+-- ----------------------------
+-- Table structure for `z_news`
+-- ----------------------------
+DROP TABLE IF EXISTS `z_news`;
+CREATE TABLE `z_news` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `nid` int(10) unsigned NOT NULL COMMENT '关联头条分类id',
+  `title` varchar(200) NOT NULL COMMENT '新闻标题',
+  `img` varchar(255) NOT NULL COMMENT '新闻展示图',
+  `content` text NOT NULL,
+  `laiyuan` varchar(200) DEFAULT NULL COMMENT '新闻来源',
+  `liulan` int(10) unsigned DEFAULT NULL COMMENT '浏览量',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tuijian` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '是否推荐为热门文章 0=》否 1=》是',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of z_news
+-- ----------------------------
+INSERT INTO `z_news` VALUES ('0000000001', '1', '厨具买什么的比较好', '/static/upload/8204b5f3caaaf434/348d86a97f423fac.jpg', '<p>双立人:德国，一线品牌。主打生产刀具，近年来也跟着别的品牌开始做做炒锅、汤锅之类的。线下的一套刀具可以买几款好的不锈钢锅了。<br />\r\nWMF&nbsp;:德国，一线品牌。主打汤锅，种类比较齐全。价格线和双立人差不多，各自设计不一样。<br />\r\n菲仕乐:德国，一线品牌，线上好像没有卖，线下和双立人、WMF等竞争。但前段时间由于伪造生产产地而被工商整顿。<br />\r\n国外餐厨具品牌高端的大概就这些，其实说是国外的牌子，其实很多也是国内的厂家代工一部分的。譬如在德国生产个手柄，拿到国内配个锅身等等就贴上国外生产，菲仕乐就是最好的例子。</p>\r\n\r\n<p><img alt=\"厨具.jpg\" src=\"http://picfw3.yzf.com.cn/zt/2018/5/11/2006757107629.jpg\" title=\"厨具.jpg\" />国内品牌<br />\r\n爱仕达:&nbsp;各种材料的厨具的做，比较杂。纯不锈钢产品很少，手柄之类的很多用了电木/硅胶，所以质保、工艺和感观上令到价格大打折扣，比较低端。<br />\r\nLINKFAIR&nbsp;:就是你说的品牌，中文名是凌丰，国际上与WMF、双立人、菲仕乐等一线品牌竞争。因为这个企业才20<br />\r\n多年的历史且主要是出口,国内知名度比较低。但在行业内比较盛名，出口连年都是第一，由于在广交会很瞩目，很多大品牌都找其代工和贴牌近年来在国内开始打市场比较有潜力的企业。LINKMATH好像也是它的系列品牌，<br />\r\nLINKLIFE好像是人家仿冒的。<br />\r\n主打炒锅，7层不锈钢炒锅全球首家，但较贵。不锈钢产品比较齐全，价格线稍比双立人等低一点，工艺差不多的。如果喜欢其设计不妨支持一下国内牌子。<br />\r\n康宁:&nbsp;多为玻璃锅具比较有特色耐久度有待甚酌，也是不错的企业。<br />\r\n还有其它杂牌的:譬如涂层的不粘锅。涂了工业漆的不粘锅是真的不粘，但一般用几个月到一年就好了用久了健康会有问题。<br />\r\n其实不锈钢餐厨具价格高低不一的主要反映在其产品的重亮和厚度有的可能虽然同为304材料，但其用材的量就决定了价格高低。</p>', '', '0', '2019-04-17 11:32:11', '0');
+INSERT INTO `z_news` VALUES ('0000000002', '1', '厨具买什么的比较好', '/static/upload/8204b5f3caaaf434/348d86a97f423fac.jpg', '<p>双立人:德国，一线品牌。主打生产刀具，近年来也跟着别的品牌开始做做炒锅、汤锅之类的。线下的一套刀具可以买几款好的不锈钢锅了。<br />\r\nWMF&nbsp;:德国，一线品牌。主打汤锅，种类比较齐全。价格线和双立人差不多，各自设计不一样。<br />\r\n菲仕乐:德国，一线品牌，线上好像没有卖，线下和双立人、WMF等竞争。但前段时间由于伪造生产产地而被工商整顿。<br />\r\n国外餐厨具品牌高端的大概就这些，其实说是国外的牌子，其实很多也是国内的厂家代工一部分的。譬如在德国生产个手柄，拿到国内配个锅身等等就贴上国外生产，菲仕乐就是最好的例子。</p>\r\n\r\n<p><img alt=\"厨具.jpg\" src=\"http://picfw3.yzf.com.cn/zt/2018/5/11/2006757107629.jpg\" title=\"厨具.jpg\" />国内品牌<br />\r\n爱仕达:&nbsp;各种材料的厨具的做，比较杂。纯不锈钢产品很少，手柄之类的很多用了电木/硅胶，所以质保、工艺和感观上令到价格大打折扣，比较低端。<br />\r\nLINKFAIR&nbsp;:就是你说的品牌，中文名是凌丰，国际上与WMF、双立人、菲仕乐等一线品牌竞争。因为这个企业才20<br />\r\n多年的历史且主要是出口,国内知名度比较低。但在行业内比较盛名，出口连年都是第一，由于在广交会很瞩目，很多大品牌都找其代工和贴牌近年来在国内开始打市场比较有潜力的企业。LINKMATH好像也是它的系列品牌，<br />\r\nLINKLIFE好像是人家仿冒的。<br />\r\n主打炒锅，7层不锈钢炒锅全球首家，但较贵。不锈钢产品比较齐全，价格线稍比双立人等低一点，工艺差不多的。如果喜欢其设计不妨支持一下国内牌子。<br />\r\n康宁:&nbsp;多为玻璃锅具比较有特色耐久度有待甚酌，也是不错的企业。<br />\r\n还有其它杂牌的:譬如涂层的不粘锅。涂了工业漆的不粘锅是真的不粘，但一般用几个月到一年就好了用久了健康会有问题。<br />\r\n其实不锈钢餐厨具价格高低不一的主要反映在其产品的重亮和厚度有的可能虽然同为304材料，但其用材的量就决定了价格高低。</p>', '哈哈哈', '0', '2019-04-17 10:59:33', '0');
+INSERT INTO `z_news` VALUES ('0000000003', '2', '买了精装房该怎么验房？小心别被坑哭了', '/static/upload/85dc8a127eddfc83/89ca25cb32f7d1ce.jpg', '<h1>&nbsp;</h1>\r\n\r\n<p>&nbsp; &nbsp;精装房初衷是给业主带来方便与省心。但是，部分装修质量不符合验收标准的情况，比如地板平整度超标、踢脚板松动、涂装毛糙，这些问题在精装修楼盘中比比皆是。没了装修的麻烦，不代表完全没有装修漏洞的困扰，精装房也有很多验收要注意的点，大家赶紧一起来看看。</p>\r\n\r\n<p><img src=\"http://picfw.yzf.com.cn/2018/3/12/1954744707465.jpg\" /></p>\r\n\r\n<p>一、准备工作</p>\r\n\r\n<p>验房是件辛苦的事情，开始前准备工作一定要做好，这样验房才能心里有个底。购房合同一定要具备，合同附件也不能大意，比如小区分布图，约定细则等。带尺寸的房型图纸在验房前都应准备好，不仅是房子的平面布置图，电路、水路图纸也应当齐全。材料确认单也是验收时不可缺少的，材料的品牌、款式和型号，验收时需要核对。</p>\r\n\r\n<p>二、结构验收</p>\r\n\r\n<p>看房屋结构是否与合同相符，如发现不符一定要在入住前提出，如果只是非结构性问题，交接时可如实做好书面记录，要求房地产商书面承诺在一定时限内进行维修。要对房子整体进行检查，核对面积、位置朝向、测公用面积，有差错及时交涉。</p>\r\n\r\n<p>三、水电煤验收</p>\r\n\r\n<p>1.、的上下道要仔细检查。看排水管道是否顺畅，上水管是否存在渗漏现象。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>2.检查配路和。可直接打开所有的灯，看是否全亮。带个检查插座是否都有电。</p>\r\n\r\n<p><img src=\"http://picfw.yzf.com.cn/2018/3/12/1954744709169.jpg\" /></p>\r\n\r\n<p>3.检查墙砖和是否空鼓。随意敲敲、地砖，听声音就可以了。如果出现很多空鼓，说明存在质量问题。4.检查木工制品以及油漆工制品。观察木制品是否变形、接缝处是否开裂、五金件安装是否端正牢固、墙壁是否出现开裂现象。</p>\r\n\r\n<p>5.边角和隐蔽的地方仔细检查。注意卫生间口是否有挡水条、窗户是否有雨水流入、插座面板是否存在划痕、五金安装位置是否合理。</p>\r\n\r\n<p>6.检查煤气管道。一般情况下煤气管道走明管，这样一旦有煤气泄露能及时发现，便于维修，不留安全隐患，验房时顺便检验水、电、的度数是否为零。</p>\r\n\r\n<p>7.煤气设备验收。通常精装房都会选择相对质量有保证的品牌产品，本身质量不会有大问题，施工这时就显得重要了。我们不仅要验收产品质量，还要验收安装。检查安装是否牢固，煤气连接是否通畅，点燃后是否有异味等等。</p>\r\n\r\n<p>四、门窗验收验</p>\r\n\r\n<p>收门、窗、梯门、窗、梯是室内装修的重点组成部分，除了美观，实用也很重要。要注意检验门框贴面板与墙面是否平行，门扇合叶要灵活，关闭后应当严密。门安装好后，可以拉住把手摇动来检测。铝合金材质的窗要求安装必须牢固，端正。</p>', '', '0', '2019-04-17 13:29:47', '1');
+INSERT INTO `z_news` VALUES ('0000000004', '3', '装修过程中业主应做哪些工作?', '/static/upload/8330e1387572d0ed/1ece4328228c4002.jpg', '<h1>&nbsp;</h1>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; 业主在装修过程中需要做的工作比较少，主要是配合装修公司施工。比如在装修过程的过程中不可避免地会给邻里的正常生活造成一定影响，协调好邻里关系就是业主应该做的工作了。还有，涉及到和物业公司协调的一些事务也应该属于业主的责任范围。除了这些，一般正规的装修公司会在施工现场派驻施工监理人员，业主需要注意的是装修公司的监理人员是否真正起到了应有的监理作用，下面简单介绍一下监理人员应做的施工管理工作内容，以便你查看监理人员是否切实负起了责任。</p>\r\n\r\n<p><img alt=\"01.jpg\" src=\"http://picfw.yzf.com.cn/zt/2018/2/5/1924681022747.jpg\" title=\"01.jpg\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(1)装修施工日期的控制及施工的顺序安排。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(2)注意施工现场的卫生情况，工地需及时判扫、清洁施工垃圾应当天清运。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(3)妥当处理水泥浆，以免造成装修后排水管道的堵塞或不畅。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(4)注意施工现场安全、油漆等易燃物是否妥善堆放，要有&ldquo;防患于末然&rdquo;的意识。</p>\r\n\r\n<p>&nbsp; &nbsp;(5)是否做好已经就位的材料的保护工作，不应在木地板或石材面上进行切割作业。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(6)注意油漆过程中的通风问题及施工中废气、灰尘的排放。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;(7)施工中应检测水电设施及相关容量，以防发生水管爆裂、电线短路等现象。</p>', '尺渡装饰', '0', '2019-04-17 13:39:28', '1');
+INSERT INTO `z_news` VALUES ('0000000005', '2', '沙发怎么挑选，有哪些禁忌', '/static/upload/a07f5574e0ff7899/e200669297b93c81.jpg', '<article data-author=\"Wxeditor\" id=\"m48\">\r\n<p>&nbsp;沙发是人们生活中的第二张床，盘腿坐、斜躺着、趴着、歪着坐怎样都可以，这是我们的一方净土，这可是家中不可取代的第二天堂啊！如果沙发挑得不好，可是会影响自己的舒服程度与幸福度的。来了解了解什么样的沙发适合自己吧。沙发类型的选择</p>\r\n</article>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>1、皮革沙发是最受中国家庭欢迎的一款沙发，它能带来的长久舒适不会因为时间流逝而消失。</p>\r\n\r\n<p>2、亚麻布艺沙发，透气性好，能够吸收潮气，而且越用越软。</p>\r\n\r\n<p>3、高靠背沙发的海绵层贴合身体轮廓，让腰椎和颈部得到充分舒适的承托，坐久了也不觉得累。</p>\r\n\r\n<p>&nbsp;沙发毯和靠枕的魅力</p>\r\n\r\n<p>1、这些纺织配件不仅能增加你的舒适体验度，还能为沙发增加柔软温暖的感觉。</p>\r\n\r\n<p>2、混合几种不同颜色、材质、形状的配件，装饰了空间的整体氛围，营造出带新意的沙发角落。</p>\r\n\r\n<p><br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p><img alt=\"446.jpg\" height=\"475\" src=\"http://picfw4.yzf.com.cn/zt/2018/4/10/1979794933644.jpg\" title=\"446.jpg\" width=\"678\" />&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<article data-author=\"Wxeditor\" id=\"m48\">\r\n<p>其它小贴士</p>\r\n</article>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>1、不一定要大沙发，单人沙发和双人沙发的组合灵活轻巧，更适合多人聚会。</p>\r\n\r\n<p>2、把沙发换成扶手椅也可以，只要自己坐得舒服，就OK了。</p>\r\n\r\n<p>3、带有强大收纳功能的榻榻米沙发是小户型房子的不错选择。</p>\r\n\r\n<p><br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p><img alt=\"5ae-c.jpg\" src=\"http://picfw4.yzf.com.cn/zt/2018/4/10/1979795310966.jpg\" title=\"5ae-c.jpg\" />&nbsp;</p>\r\n\r\n<p>4、配合方便移动的边桌，让沙发的功能更丰满，坐在那里什么都随手可得，懒人就有懒人的聪明生活法。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<article data-author=\"Wxeditor\" id=\"m48\">\r\n<p>摆设宜弯不宜直</p>\r\n</article>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;沙发在客厅中的重要地位，犹如国家的重要港口，必须能尽量多纳水，才可兴旺起来。优良的港口必定两旁有伸出的弯位，形如英文字母的&ldquo;U&rdquo;字。伸出的弯位犹如两臂左右护持兜抱，而中心凹陷之处正是风水的纳气位，能藏风聚气，以达致丁财两旺。</p>\r\n\r\n<p><br data-filtered=\"filtered\" />\r\n<br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p><img alt=\"22(2).jpg\" src=\"http://picfw4.yzf.com.cn/zt/2018/4/10/1979796516262.jpg\" title=\"22(2).jpg\" />&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<article data-author=\"Wxeditor\" id=\"m48\">\r\n<p>沙发背后有可靠墙</p>\r\n</article>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;所谓有靠，亦即靠山，是指沙发背后有实墙可靠。如果沙发背后是窗、门或通道，亦等于背后无靠山，从心理学方面来说，沙发背后空荡荡，缺少安全感。倘若沙发背后确实没有实墙可靠，较为有效的改善方法是，把矮柜或屏风摆放在沙发背后，这称为&ldquo;人造靠山&rdquo;，亦会起到补救作用。<br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"1636267212066790c-d.jpg\" src=\"http://picfw4.yzf.com.cn/zt/2018/4/10/1979797517002.jpg\" title=\"1636267212066790c-d.jpg\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 但有一点必须注意，沙发背后不宜有水，因此把鱼缸摆放在沙发背后也不利。同理，在沙发背后的矮柜上摆放鱼缸等有水的装饰摆设也不好。当然，背后无靠的沙发，若用长绿植物来填补背后的空间则有益无害。<br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<article data-author=\"Wxeditor\" id=\"m48\">\r\n<p>沙发背后不宜有镜子</p>\r\n</article>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 沙发背后不宜有大镜，人坐在沙发上，旁人从镜子中可清楚看到坐者的后脑，便大为不妙。而若是镜子在旁不在后，后脑不会从镜子中反照出来便无妨。<br data-filtered=\"filtered\" />\r\n&nbsp;</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;要远离喧嚣，不一定要行走至千里之外，选择一件合适的家具，让自己在家能享受安宁与舒适。家居风水，卧室是重中之重，但是客厅也不能含糊，客厅最显眼，最主要的家具便是沙发了，所以沙发风水也不得不讲究。客厅搭配好沙发，可比卧室，因为沙发承载着一家人生活，一家人在沙发上看看电视，聊聊生活琐事，这是人们的调味剂，调味品。也是人们休息的禁区，人们下班回家的依靠。</p>', '', '0', '2019-04-17 13:32:27', '1');
