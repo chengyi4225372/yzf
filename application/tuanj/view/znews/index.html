@@ -81,9 +81,9 @@
             </td>
             <td class='text-left nowrap'>
                 {eq name="vo.tuijian" value="1"}
-                  推荐为热门文章
+                <a data-href="{:url('tuanj/znews/tui_status')}?id={$vo.id}&tui={$vo.tuijian}">推荐为热门文章 </a>
                 {else /}
-                  不推荐为热门文章
+                <a data-href="{:url('tuanj/znews/tui_status')}?id={$vo.id}&tui={$vo.tuijian}">不推荐为热门文章</a>
                 {/eq}
             </td>
             <td class='text-left nowrap'>

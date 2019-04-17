@@ -63,6 +63,11 @@ class Common extends Controller {
         $this->assign('header',$header);
     }
 
+    //热门文章排行榜
+    function remen (){
+        $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->select();
+        return $arr;
+    }
 
 
 

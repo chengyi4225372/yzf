@@ -39,10 +39,18 @@ class Raiders extends Common {
     public function zlist(){
         $id = input('get.id');
         $page = input('get.PageIndex');
+        $order = input('get.order');
         $size = 10;
         $count = Db::name('z_news')->where('nid',$id)->count();
         $pages = $count/$size;
-        $infos = Db::name('z_news')->where('nid',$id)->page($page,$size)->select();
+        if($order ='time'){
+            $infos = Db::name('z_news')->where('nid',$id)->order('time desc')->page($page,$size)->select();
+        }else{
+            $infos = Db::name('z_news')->where('nid',$id)->order('liulan desc')->page($page,$size)->select();
+        }
+        //热门文章
+        $re= $this->remen();
+        $this->assign('re',$re);
         $this->assign('infos',$infos);
         $this->assign('pages',$pages);
         return $this->fetch();
@@ -52,6 +60,9 @@ class Raiders extends Common {
     public function z_detail(){
         $id = input('id');
         $info = Db::name('z_news')->where('id',$id)->find();
+        //热门文章
+        $re= $this->remen();
+        $this->assign('re',$re);
         $this->assign('info',$info);
         return $this->fetch();
     }

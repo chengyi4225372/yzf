@@ -27,11 +27,22 @@ class Znews extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+    //关联装修头条
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
             $data[$key]['cate_id'] = Db::name('new_cates')->where('id', '=', $val['nid'])->value('title');
         }
     }
+
+
+    //修改推荐文章状态
+    public function tui_status(){
+        $id = input('get.id');
+        $tuijian = input('get.tui');
+        $res = Db::name('z_news')->where('id',$id)->update(array('tuijian'=>$tuijian > 0?0:1));
+        $this->_form_result($res);
+    }
+
 
     /**
      * 添加

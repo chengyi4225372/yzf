@@ -103,36 +103,14 @@
                         </div>
                         <div class="side-panel-body">
                             <ul class="side-media">
+                                {volist name="re" id="vo"}
                                 <li>
-                                    <a href="/DecorationRaiders/Detail/188" title="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <span>感受设计情怀，简美风格案例赏析 龙源国际城</span>
+                                    <a href="{:url('raiders/z_detail')}?id={$vo.id}" title="{$vo.title}">
+                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="{$vo.title}">
+                                        <span>{$vo.title}</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/258" title="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914377488611.png_360x255.png" alt="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <span>暗香留心！业之峰，于岁月流转中不负芳华！</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/275" title="油漆后的家具为何会泛黄?怎样预防?">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="油漆后的家具为何会泛黄?怎样预防?">
-                                        <span>油漆后的家具为何会泛黄?怎样预防?</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/288" title="买房风水禁忌 最宜居住的家居风水布局">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="买房风水禁忌 最宜居住的家居风水布局">
-                                        <span>买房风水禁忌 最宜居住的家居风水布局</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/1356" title="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <img src="http://picfw3.yzf.com.cn/wx/9e8402efb8bb4b5c80260b531fb2f931.jpg" alt="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <span>【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》</span>
-                                    </a>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
