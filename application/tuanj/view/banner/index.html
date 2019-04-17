@@ -38,9 +38,9 @@
 <!-- 表单搜索 结束 -->
 
 <form onsubmit="return false;" data-auto="true" method="post">
-    <!--{empty name='list'}-->
+    {empty name='list'}
     <p class="help-block text-center well">没 有 记 录 哦！</p>
-    <!--{else}-->
+    {else}
     <input type="hidden" value="resort" name="action">
     <table class="layui-table" lay-skin="line">
         <thead>
@@ -48,25 +48,18 @@
                 <th class='list-table-check-td'>
                     <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
                 </th>
-                <th class='list-table-sort-td'>
-                    <button type="submit" class="layui-btn layui-btn-normal layui-btn-xs">排 序</button>
-                </th>
                 <th class='text-left nowrap'>标题</th>
                 <th class='text-left nowrap'>图片</th>
-                <th class='text-left nowrap'>url链接</th>
+                <th class='text-left nowrap'>轮播图跳转链接地址</th>
                 <th class='text-left nowrap'>创建时间</th>
-<!--                <th class='text-left nowrap'>状态</th>-->
                 <th class='text-left nowrap'></th>
             </tr>
         </thead>
         <tbody>
-            <!--{foreach $list as $key=>$vo}-->
+            {foreach $list as $key=>$vo}
             <tr>
                 <td class='list-table-check-td'>
                     <input class="list-check-box" value='{$vo.id}' type='checkbox'>
-                </td>
-                <td class='list-table-sort-td'>
-                    <input name="_{$vo.id}" value="{$vo.sort}" class="list-sort-input">
                 </td>
                 <td class='text-left nowrap'>
                     {$vo.title|default=''}
@@ -90,25 +83,17 @@
                     <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
                     {/if}
 
-<!--                    {if $vo.status eq 1 and auth("$classuri/forbid")}
-                    <span class="text-explode">|</span>
-                    <a data-update="{$vo.id}" data-field='status' data-value='0' data-action='{:url("$classuri/forbid")}'>禁用</a>
-                    {elseif auth("$classuri/resume")}
-                    <span class="text-explode">|</span>
-                    <a data-update="{$vo.id}" data-field='status' data-value='1' data-action='{:url("$classuri/resume")}'>启用</a>
-                    {/if}-->
-
                     {if auth("$classuri/del")}
                     <span class="text-explode">|</span>
                     <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'>删除</a>
                     {/if}
                 </td>
             </tr>
-            <!--{/foreach}-->
+            {/foreach}
         </tbody>
     </table>
     {if isset($page)}<p>{$page|raw}</p>{/if}
-    <!--{/empty}-->
+    {/empty}
 </form>
 <script>
     (function() {

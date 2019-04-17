@@ -11,6 +11,9 @@ class Index extends Common {
 
     //首页
     public function index() {
+        //首页轮播图
+        $banner =Db::name('banner')->where('status',1)->order('id asc')->select();
+
         //本周人气设计师
         $designer =Db::name('designer')->where('huo',1)->select();
         //装修案例 推荐列表
@@ -40,7 +43,6 @@ class Index extends Common {
 
      //企业新闻
       $new =Db::name('new')->select();
-
       //业主感言
       $thank = Db::name('thank')->field('id,img,title,jian')->where('tuijian',1)->order('id desc')->limit(3)->select();
 
@@ -49,6 +51,7 @@ class Index extends Common {
       $this->assign('zhuangxiu',$zhuangxiu);
       $this->assign('gongdi',$gongdi);
       $this->assign('new',$new);
+      $this->assign('banner',$banner);
       return $this->view->fetch();
     }
 
