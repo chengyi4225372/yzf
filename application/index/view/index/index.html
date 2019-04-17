@@ -943,7 +943,7 @@
                                 </div>
                                 <div class="last-media">
                                     <h4><a href="{:url('news/detail')}?id={$vo.id}" target="_blank" title="{$vo.title|default=''}">{$vo.title|default=''}</a></h4>
-                                    <p title="">{$vo.content|mb_substr='3','30'|html_entity_decode}</p>
+                                    <p title="">{$vo.jian?$vo.jian:'暂无简介'}</p>
                                 </div>
                             </li>
                             {/volist}
@@ -955,45 +955,24 @@
             <div class="last-b-r">
                 <div class="last-panel">
                     <div class="last-panel-header">
-                        <a href="/CompanyNews/TestimonialHome" target="_blank" class="more">MORE</a>
+                        <a href="{:url('news/testimonial')}" target="_blank" class="more">MORE</a>
                         <strong>业主感言</strong>
                     </div>
                     <div class="last-panel-body">
                         <ul class="last-news">
+                            {volist name="thank" id="vo"}
                             <li>
                                 <div class="last-img">
-                                    <a href="/CompanyNews/Detail/7792" target="_blank">
-                                        <img src="http://picfwoss.yzf.com.cn/999999/2019/2/27/2258879415983.jpg " />
+                                    <a href="{:url('news/t_detail')}?id={$vo.id}" target="_blank">
+                                        <img src="{$vo.img} " />
                                     </a>
                                 </div>
                                 <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7792" target="_blank" title="成都业之峰装饰：一封来自“成都理工大学教师”的手写感谢信">成都业之峰装饰：一封来自“成都理工大学教师”的手写感谢信</a></h4>
-                                    <p title="业主刘姐是“成都理工大学/心理学课程”的一名教师，2017年年底，开始准备装修事宜，于是接下来的两个月，刘姐和他的先生便开始忙着确定装修公司。最后通过身边多位朋友的力荐和考察，才签订了业之峰​。">业主刘姐是“成都理工大学/心理学课程”的一名教师，2017年年底，开始准备装修事宜...</p>
+                                    <h4><a href="{:url('news/t_detail')}?id={$vo.id}" target="_blank" title="{$vo.title}">{$vo.title}</a></h4>
+                                    <p title="{$vo.jian}">{$vo.jian}</p>
                                 </div>
                             </li>
-                            <li>
-                                <div class="last-img">
-                                    <a href="/CompanyNews/Detail/7768" target="_blank">
-                                        <img src="http://picfwoss.yzf.com.cn/zt/2019/1/24/2229619537947.jpg " />
-                                    </a>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7768" target="_blank" title="感谢城南逸居业主对业之峰的肯定">感谢城南逸居业主对业之峰的肯定</a></h4>
-                                    <p title="非常感谢石先生对业之峰的认可，服务就是我们的使命，服务从细节做起，细节决定成败，您对美满家庭的向往，就是我们的奋斗目标。">非常感谢石先生对业之峰的认可，服务就是我们的使命，服务从细节做起，细节决定成败...</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="last-img">
-                                    <a href="/CompanyNews/Detail/7581" target="_blank">
-                                        <img src="http://picfw3.yzf.com.cn/999999/2018/9/11/2112989654717.jpg " />
-                                    </a>
-                                </div>
-                                <div class="last-media">
-                                    <h4><a href="/CompanyNews/Detail/7581" target="_blank" title="感谢太原公园美地业主对业之峰的肯定">感谢太原公园美地业主对业之峰的肯定</a></h4>
-                                    <p title="2018年9月9日下午5.30，公园美地业主延女士/刘先生为业之峰再添一面锦旗，赞业之峰“工程尽心尽责，服务客户至上”，同时延女士对业之峰每个工作环节服务的人员表示高度认可和表扬！服务就是我们的使命，服务从细节做起，细节决定成败，感谢延女士对业之峰的认可，业之峰收到这面锦旗也深感荣幸。">2018年9月9日下午5.30，公园美地业主延女士/刘先生为业之峰再添一面锦旗，赞业之峰...</p>
-                                </div>
-                            </li>
-
+                            {/volist}
                         </ul>
                     </div>
                 </div>

@@ -41,6 +41,10 @@ class Index extends Common {
      //企业新闻
       $new =Db::name('new')->select();
 
+      //业主感言
+      $thank = Db::name('thank')->field('id,img,title,jian')->where('tuijian',1)->order('id desc')->limit(3)->select();
+
+      $this->assign('thank',$thank);
       $this->assign('designer',$designer);
       $this->assign('zhuangxiu',$zhuangxiu);
       $this->assign('gongdi',$gongdi);
