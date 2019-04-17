@@ -58,6 +58,12 @@ class Common extends Controller {
         //面积
         $mianji = Db::name('mianji')->select();
         $this->assign('mianji',$mianji);
+        //装修头条类型
+        $header = Db::name('new_cates')->select();
+        $this->assign('header',$header);
     }
-  
+
+
+
+
 }

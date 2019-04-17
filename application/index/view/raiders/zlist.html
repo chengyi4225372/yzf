@@ -1,194 +1,273 @@
 {include file="public/header-two" /}
-
 {include file="public/location-two" /}
-
-
 <div class="header">
     {include file="public/menu" /}
 </div>
 <div id="RenderBody">
-    <div class="designer-banner" style="">
-        <div class="auto-box">
-            <div class="msg-form row">
-                <!--
-                <form  >
-                    <div class="col-xs-2 col-xs-offset-1 required">
-                        <input type="text" name="Name" class="form-control" value="" placeholder="您的称呼" />
-                    </div>
-                    <div class="col-xs-2 required">
-                        <input type="text" name="PhoneNumber" class="form-control" value="" placeholder="您的电话" />
-                    </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="ResidentialName" class="form-control"  value="" placeholder="小区" />
-                    </div>
-                    <div class="col-xs-2">
-                        <input type="text" name="SquareMeters" class="form-control"  value="" placeholder="面积" />
-                    </div>
-                    <div class="col-xs-2 submit" >
-                        <button class="btn btn-block btn-gold">预约免费平面设计</button>
-                    </div>
-                </form>
-                -->
-            </div>
-        </div>
-    </div>
 
-    <div class="content bg-dark">
+
+    <div class="content">
         <div class="auto-box">
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li class="active"><a href="{:url('designer/index')}"></a></li>
+                <li><a href="{:url('raiders/index')}">装修攻略</a></li>
+                <!--<li>装修知识</li>-->
+                <!--<li class="active">拆改</li>-->
             </ol>
+            <div class="list-filter">
+                <ul>
+                    <li class=""><a href="/DecorationRaiders/List/138?orderby=sortid">按浏览热度 <i class="iconfont icon-shang"></i></a></li>
+                    <li class="active"><a href="/DecorationRaiders/List/138?orderby=DateCreated">按时间顺序 <i class="iconfont icon-xia"></i></a></li>
+                </ul>
+            </div>
             <div class="content-body">
-                <table class="table table-bordered table-filer">
-                    <tr>
-                        <th>擅长户型：</th>
-                        <td>
-                            <a {if condition="$Think.get.hid eq 0 " }class="selected"  {else /} class=""  {/if}= href="{:url('designer/index')}">全部</a>
-                            {volist name="huxing" id="vo"}
-                            <a   {if condition="$Think.get.hid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$vo.id}">{$vo.title}</a>
-                            {/volist}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>擅长风格：</th>
-                        <td>
-                            <a {if condition="$Think.get.sid eq null"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid=">不限</a>
-                            {volist name="style" id="vo"}
-                            <a {if condition="$Think.get.sid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid={$vo.id}">{$vo.title}</a>
-                            {/volist}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>设计师级别：</th>
-                        <td>
-                            <a {if condition="$Think.get.jid eq null" }class="selected"  {else /} class=""  {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid={$Think.get.sid}&jid=">全部</a>
-                            {volist name="jibie" id="vo" }
-                            <a {if condition="$Think.get.jid eq $vo.id"} class="selected" {else /} class="" {/if} href="{:url('designer/index')}?hid={$Think.get.hid}&sid={$Think.get.sid}&jid={$vo.id}">{$vo.title}</a>
-                            {/volist}
-                        </td>
-                    </tr>
-                </table>
-                <div class="case-sort-wrap">
-                    <span>排序：</span>
-                    <a   {if condition="$Think.get.orderby eq null " }class="selected" {else /}class="" {/if} href="{:url('designer/index')}?orderby=">人气<i class="iconfont icon-shang"></i></a>|
-                    <a {if condition="$Think.get.orderby eq 'job_year' " }class="selected" {else /}class="" {/if} href="{:url('designer/index')}?orderby=job_year">从业经验<i class="iconfont icon-xia"></i></a>
+                <div class="side-left">
+                    {volist name="header" id="vo"}
+                    <div class="side-panel">
+                        <div class="side-panel-header">{$vo.title}</div>
+                    </div>
+                    {/volist}
+                    <div class="side-calculator">
+                        <dl>
+                            <dt>我家装修要花多少钱？</dt>
+                            <dd>超精准计算，一步解决预算问题</dd>
+                        </dl>
+                        <div class="calculator-screen"></div>
+                        <form class="form-horizontal calculator-form">
+                            <input name="Channel" value="攻略站报价计算器" type="hidden" />
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="SquareMeters" placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="PhoneNumber" placeholder="报价结果将发送到您的手机上">
+                                </div>
+                            </div>
+                            <div class="form-group btn-box submit">
+                                <div class="col-xs-12">
+                                    <a class="btn btn-block">发送至手机</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="side-adv">
+                        <a target="_blank" href="http://wh.yzf.com.cn/s2017/qgkjby0901"><img src="/images/side-adv.jpg" alt=""></a>
+                    </div>
+                    <div class="side-adv">
+                        <a><img src="/images/side-advlr.png" alt=""></a>
+                    </div>
+
+                    <div class="side-panel">
+                        <div class="side-panel-header">
+
+                            热门文章排行榜
+                        </div>
+                        <div class="side-panel-body">
+                            <ul class="side-media">
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/188" title="感受设计情怀，简美风格案例赏析 龙源国际城">
+                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="感受设计情怀，简美风格案例赏析 龙源国际城">
+                                        <span>感受设计情怀，简美风格案例赏析 龙源国际城</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/258" title="暗香留心！业之峰，于岁月流转中不负芳华！">
+                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914377488611.png_360x255.png" alt="暗香留心！业之峰，于岁月流转中不负芳华！">
+                                        <span>暗香留心！业之峰，于岁月流转中不负芳华！</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/275" title="油漆后的家具为何会泛黄?怎样预防?">
+                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="油漆后的家具为何会泛黄?怎样预防?">
+                                        <span>油漆后的家具为何会泛黄?怎样预防?</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/288" title="买房风水禁忌 最宜居住的家居风水布局">
+                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="买房风水禁忌 最宜居住的家居风水布局">
+                                        <span>买房风水禁忌 最宜居住的家居风水布局</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/1356" title="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
+                                        <img src="http://picfw3.yzf.com.cn/wx/9e8402efb8bb4b5c80260b531fb2f931.jpg" alt="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
+                                        <span>【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="designer-list-wrap">
-                    <ul class="designer-list">
-                       {volist name="list" id="vo" }
+                <div class="main">
+                    <ul class="strategy-list">
+                        {volist name="infos" id="vo"}
                         <li>
-                            <!--<img class="designer-level" src="{$vo.img}" alt="">-->
-                            <a href="{:url('designer/detail')}?id={$vo.id}">
-                                <div class="img-view">
-                                    <img src="{$vo.img}" alt="" />
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="{:url('raiders/z_detail')}?id={$vo.id}">
+                                    <img src="{$vo.img}" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="{:url('raiders/z_detail')}?id={$vo.id}">{$vo.title}</a></h3>
+                                <p>{$vo.content|mb_substr='3','40'|raw}</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">{$vo.time|date='Y-m-d,h:i:s'}</span>
                                 </div>
-                                <div class="designer-info">
-                                    <h3>{$vo.names}<small>{$vo.jtitle|default=''}</small></h3>
-                                    <div class="item-wrap">
-                                        <span>案例数：{$vo.count|default=''}</span>
-                                        <span>从业经验：{$vo.job_year}年</span>
-                                    </div>
-                                    <p>{$vo.rongyu|mb_substr='0','10'} </p>
-                                </div>
-                                <ul class="designer-control">
-                                    <li><a href="javascript:void(0)" onclick="doyoo.util.openChat(&#39;g=10064078&#39;);return false;"><i class="iconfont icon-iconjiudianzhuanqu28"></i>我要咨询</a></li>
-                                    <li><a href="{:url('designer/detail')}?id={$vo.id}">
-                                        <i class="iconfont icon-pingmianx"></i>免费平面规划</a></li>
-                                </ul>
-                            </a>
+                            </div>
                         </li>
                         {/volist}
                     </ul>
+
                     <nav class="text-center">
                         <ul class="pagination">
-                            {for start="0" end="$pages"}
-                            <li {if condition="$Think.get.PageIndex eq ($i+1) or $Think.get.PageIndex eq 0 "}class="active" {else /} class=""{/if}><a data-pjax="" href="{:url('designer/index')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
+                             {for start='0' end='$pages'}
+                            <li  {if condition="$Think.get.PageIndex eq $i+1 or $Think.get.PageIndex eq 0"}class="active" {else /} class="" {/if}>
+                            <a data-pjax="" href="{:url('raiders/zlist')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i<0?:$i+1}</a>
+                            </li>
                             {/for}
                         </ul>
                     </nav>
-
-
-                </div>
-                <div class="web-adv">
-                    <img src="__STATIC__/home/images/web-adv.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="modal_apply">
-        <div class="modal-dialog yzf-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">免费平面规划<small></small></h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <input name="Channel" value="免费平面规划" type="hidden" />
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">姓名</label>
-                            <div class="col-xs-10">
-                                <input name="Name" type="text" class="form-control" placeholder="输入姓名">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">手机</label>
-                            <div class="col-xs-10">
-                                <input name="PhoneNumber" type="text" class="form-control" placeholder="输入手机号">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-xs-2 control-label">小区</label>
-                            <div class="col-xs-4">
-                                <input name="ResidentialName" type="text" class="form-control" placeholder="输入小区名">
-                            </div>
-                            <label class="col-xs-2 control-label">面积</label>
-                            <div class="col-xs-4">
-                                <input name="SquareMeters" type="text" class="form-control" placeholder="输入面积">
-                            </div>
-                        </div>
-                        <div class="form-group submit">
-                            <div class="btn-wrap">
-                                <button type="submit" class="btn btn-gold btn-block">立即报名</button>
-                            </div>
-                        </div>
-                        <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        $(function () {
-            $('.designer-list li').hover(function () {
-                $(this).toggleClass('hover');
-            });
-        })
-
-    </script>
-    <!--  "我要咨询"绑定“母版页2018”悬浮框“在线咨询” -->
-    <script>
-        //$('.consult').click(function () {
-        //    $('#consultation').trigger('click');
-        //});
-        $('.a_apply').click(function () {
-            $('#modal_apply').modal('show');
-        });
-    </script>
 </div>
 
 {include file="public/footer" /}
 
-{include file="public/menu_right"  /}
+{include file="public/menu_right" /}
+<div class="modal fade" id="zhuanshulibao" style="display: none;">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">官网专属礼包<small></small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="Channel" value="上门量房" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input name="Name" type="text" class="form-control" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input name="PhoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                        </div>
+                    </div>
+
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="submit" class="btn btn-gold btn-block">立即领取</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="shangmenliangfang" style="display: none;">
+    <div class="modal-dialog yzf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">上门量房<small></small></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <input name="Channel" value="上门量房" type="hidden" />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input name="Name" type="text" class="form-control" placeholder="输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">手机</label>
+                        <div class="col-xs-10">
+                            <input name="PhoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">小区</label>
+                        <div class="col-xs-4">
+                            <input name="ResidentialName" type="text" class="form-control" placeholder="输入小区名">
+                        </div>
+                        <label class="col-xs-2 control-label">面积</label>
+                        <div class="col-xs-4">
+                            <input name="SquareMeters" type="text" class="form-control" placeholder="输入面积">
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <div class="btn-wrap">
+                            <button type="submit" class="btn btn-gold btn-block">立即报名</button>
+                        </div>
+                    </div>
+                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {include file="public/price" /}
-
 {include file="public/yuyue" /}
-
-<!-- 主页 / 装修工具箱 / 装修计算器 -->
 <div class="modal fade" id="calculateModal" style="display: none;">
     <div class="modal-dialog yzf-modal lg">
         <div class="modal-content">
@@ -201,106 +280,7 @@
                     <div class="fixed-white-l">
                         <div class="fixed-panel-body">
                             <form class="form-horizontal calculator-form">
-                                <input name="channel" value="装修计算器" type="hidden" />
-                                <div class="form-group">
-                                    <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
-                                    <div class="col-xs-9">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <select class="form-control  remark">
-                                                    <option value="1室">1室</option>
-                                                    <option value="2室">2室</option>
-                                                    <option value="3室" selected>3室</option>
-                                                    <option value="4室">4室</option>
-                                                    <option value="5室">5室</option>
-                                                    <option value="6室">6室</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <select class="form-control remark">
-                                                    <option value="1厅" selected>1厅</option>
-                                                    <option value="2厅">2厅</option>
-                                                    <option value="3厅">3厅</option>
-                                                    <option value="4厅">4厅</option>
-                                                    <option value="5厅">5厅</option>
-                                                    <option value="6厅">6厅</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <select class="form-control remark">
-                                                    <option value="1厨" selected>1厨</option>
-                                                    <option value="2厨">2厨</option>
-                                                    <option value="3厨">3厨</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <select class="form-control remark">
-                                                    <option value="1卫" selected>1卫</option>
-                                                    <option value="2卫">2卫</option>
-                                                    <option value="3卫">3卫</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <select class="form-control remark">
-                                                    <option value="1阳台" selected>1阳台</option>
-                                                    <option value="2阳台">2阳台</option>
-                                                    <option value="3阳台">3阳台</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
-                                    <div class="col-xs-9">
-                                        <div class="row">
-                                            <div class="col-xs-12 area">
-                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积"><span class="m2">㎡</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
-                                    <div class="col-xs-9">
-                                        <div class="row">
-                                            <div class="col-xs-12"><input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group group-disc">
-                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
-                                </div>
-                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
-                                <span class="circle-animate"></span>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="fixed-white-r">
-                        <h3>超精准计算，一步解决预算难题</h3>
-                        <div class="fixed-disc">您的装修预算  <strong>132569</strong> 元</div>
-                        <div class="calculate-img"><img src="/images/calculate-icon.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 主页 / 装修工具箱 / 装修费用比例 -->
-<div class="modal fade" id="percentModal" style="display: none;">
-    <div class="modal-dialog yzf-modal lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">装修费用比例<small>今天已有1053位业主获取费用计算</small></h4>
-            </div>
-            <div class="modal-body">
-                <div class="fixed-white-box modal-white-box">
-                    <div class="fixed-white-l">
-                        <div class="fixed-panel-body">
-                            <form class="form-horizontal calculator-form">
-                                <input name="channel" value="装修费用比例" type="hidden" />
+                                <input name="Channel" value="装修计算器" type="hidden" />
                                 <div class="form-group">
                                     <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
                                     <div class="col-xs-9">
@@ -354,7 +334,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12 area">
-                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <input  name="SquareMeters"  type="text" class="form-control" placeholder="输入您的房屋面积">
                                                 <span class="m2">㎡</span>
                                             </div>
                                         </div>
@@ -365,7 +345,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                                <input  name="PhoneNumber"  type="text" class="form-control" placeholder="报价结果将发送到您的手机">
                                             </div>
                                         </div>
                                     </div>
@@ -373,7 +353,112 @@
                                 <div class="form-group group-disc">
                                     *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
-                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <button type="submit" class="btn submit-label-btn submit">开始计算</button>
+                                <span class="circle-animate"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="fixed-white-r">
+                        <h3>超精准计算，一步解决预算难题</h3>
+                        <div class="fixed-disc">
+                            您的装修预算  <strong>132569</strong> 元
+                        </div>
+                        <div class="calculate-img">
+                            <img src="images/calculate-icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="percentModal" style="display: none;">
+    <div class="modal-dialog yzf-modal lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">装修费用比例<small>今天已有606位业主获取费用计算</small></h4>
+            </div>
+            <div class="modal-body">
+                <div class="fixed-white-box modal-white-box">
+                    <div class="fixed-white-l">
+                        <div class="fixed-panel-body">
+                            <form class="form-horizontal calculator-form">
+                                <input name="Channel" value="装修费用比例" type="hidden" />
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <select class="form-control  remark">
+                                                    <option value="1室">1室</option>
+                                                    <option value="2室">2室</option>
+                                                    <option value="3室" selected="">3室</option>
+                                                    <option value="4室">4室</option>
+                                                    <option value="5室">5室</option>
+                                                    <option value="6室">6室</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厅" selected="">1厅</option>
+                                                    <option value="2厅">2厅</option>
+                                                    <option value="3厅">3厅</option>
+                                                    <option value="4厅">4厅</option>
+                                                    <option value="5厅">5厅</option>
+                                                    <option value="6厅">6厅</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select class="form-control remark">
+                                                    <option value="1厨" selected="">1厨</option>
+                                                    <option value="2厨">2厨</option>
+                                                    <option value="3厨">3厨</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1卫" selected="">1卫</option>
+                                                    <option value="2卫">2卫</option>
+                                                    <option value="3卫">3卫</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <select class="form-control remark">
+                                                    <option value="1阳台" selected="">1阳台</option>
+                                                    <option value="2阳台">2阳台</option>
+                                                    <option value="3阳台">3阳台</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">房屋面积：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12 area">
+                                                <input name="SquareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <span class="m2">㎡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
+                                    <div class="col-xs-9">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input name="PhoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group group-disc">
+                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                </div>
+                                <button type="submit" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
                             </form>
                         </div>
@@ -394,31 +479,31 @@
     </div>
 </div>
 
-<!-- 主页 / 装修工具箱 / 工期计算器 -->
 <div class="modal fade" id="timeModal">
     <div class="modal-dialog yzf-modal lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">工期计算器<small>今天已有2269位业主获取工程进度</small></h4>
+                <h4 class="modal-title">工期计算器<small>今天已有2269位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <div class="fixed-white-box modal-white-box">
                     <div class="fixed-white-l">
                         <div class="fixed-panel-body">
                             <form class="form-horizontal calculator-form">
-                                <input name="channel" value="工期计算器" type="hidden" />
+                                <input name="Channel" value="工期计算器" type="hidden" />
                                 <div class="form-group">
                                     <label class="col-xs-3 control-label">开工日期：</label>
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-4">
                                                 <select class="form-control remark">
-                                                    <option value="2018年">2018</option>
-                                                    <option value="2019年">2019</option>
-                                                    <option value="2020年">2020</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
                                                 </select>
                                             </div>
+
                                             <div class="col-xs-4">
                                                 <select class="form-control remark">
                                                     <option value="1月">1月</option>
@@ -470,6 +555,7 @@
                                                     <option value="31日">31日</option>
                                                 </select>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +612,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12 area">
-                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <input name="SquareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
                                                 <span class="m2">㎡</span>
                                             </div>
                                         </div>
@@ -537,7 +623,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                                <input name="PhoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
                                             </div>
                                         </div>
                                     </div>
@@ -545,7 +631,7 @@
                                 <div class="form-group group-disc">
                                     *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
-                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <button type="submit" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
                             </form>
                         </div>
@@ -564,37 +650,36 @@
     </div>
 </div>
 
-<!-- 主页 / 装修工具箱 / 2018装修吉日 -->
 <div class="modal fade" id="luckyModal">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">查询2019装修吉日<small>今天已有2269位业主获取装修吉日</small></h4>
+                <h4 class="modal-title">查询2019装修吉日<small>今天已有2269位业主获取费用计算</small></h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
-                    <input name="channel" value="查询装修吉日" type="hidden" />
+                    <input name="Channel" value="查询装修吉日" type="hidden" />
                     <div class="form-group">
                         <label class="col-xs-2 control-label">姓名</label>
                         <div class="col-xs-10">
-                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
+                            <input name="Name" type="text" class="form-control" placeholder="输入姓名">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-2 control-label">手机</label>
                         <div class="col-xs-10">
-                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
+                            <input   name="PhoneNumber"  type="text" class="form-control" placeholder="输入手机号">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-2 control-label">小区</label>
                         <div class="col-xs-4">
-                            <input name="residentialName" type="text" class="form-control" placeholder="输入小区名">
+                            <input name="ResidentialName" type="text" class="form-control" placeholder="输入小区名">
                         </div>
                         <label class="col-xs-2 control-label">面积</label>
                         <div class="col-xs-4">
-                            <input name="squareMeters" type="text" class="form-control" placeholder="输入面积">
+                            <input name="SquareMeters"  type="text" class="form-control" placeholder="输入面积">
                         </div>
                     </div>
                     <div class="form-group">
@@ -654,7 +739,7 @@
                     </div>
                     <div class="form-group submit">
                         <div class="btn-wrap">
-                            <button type="button" class="btn btn-gold btn-block">查询结果发送至手机</button>
+                            <button type="submit" class="btn btn-gold btn-block">查询结果发送至手机</button>
                         </div>
                     </div>
                     <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
@@ -663,125 +748,80 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var Mask = false;
+    $(".submit").on("click", function () {
+        var $form = $(this).parent("form");
 
-<!-- 主页 / 环保三防体系 / 官网专属礼包 -->
-<div class="modal fade" id="exclusiveModal">
-    <div class="modal-dialog yzf-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">
-                    官网专属礼包
-                    <small>The exclusive gift bag</small>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <input name="channel" value="官网专属礼包" type="hidden" />
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">姓名</label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" name="name" placeholder="输入姓名">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">手机</label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" name="phoneNumber" placeholder="输入手机号">
-                        </div>
-                    </div>
-                    <div class="form-group submit">
-                        <div class="btn-wrap">
-                            <button type="button" class="btn btn-gold btn-block">立即领取</button>
-                        </div>
-                    </div>
-                    <div class="form-disc">*可与线下活动同时享用</div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+        if (!Mask) {
+            Mask = true;
+            var Phone = $form.find("[name='PhoneNumber']").val();
+            if (RegPhone(Phone)) {
 
-<!-- 主页 / 看工地 / 服务流程 / 领官网礼包 -->
-<div class="modal fade" id="guanwangzhuanshulibao">
-    <div class="modal-dialog yzf-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">官网专属礼包<small></small></h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <input name="channel" value="官网专属礼包" type="hidden" />
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">姓名</label>
-                        <div class="col-xs-10">
-                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">手机</label>
-                        <div class="col-xs-10">
-                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
-                        </div>
-                    </div>
-                    <div class="form-group submit">
-                        <div class="btn-wrap">
-                            <button type="button" class="btn btn-gold btn-block">立即领取</button>
-                        </div>
-                    </div>
-                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="shangmenliangfang" style="display: none;">
-    <div class="modal-dialog yzf-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">上门量房<small></small></h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <input name="Channel" value="上门量房" type="hidden" />
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">姓名</label>
-                        <div class="col-xs-10">
-                            <input name="name" type="text" class="form-control" placeholder="输入姓名">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">手机</label>
-                        <div class="col-xs-10">
-                            <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label">小区</label>
-                        <div class="col-xs-4">
-                            <input name="residentialName" type="text" class="form-control" placeholder="输入小区名">
-                        </div>
-                        <label class="col-xs-2 control-label">面积</label>
-                        <div class="col-xs-4">
-                            <input name="squareMeters" type="text" class="form-control" placeholder="输入面积">
-                        </div>
-                    </div>
-                    <div class="form-group submit">
-                        <div class="btn-wrap">
-                            <button type="button" class="btn btn-gold btn-block">立即报名</button>
-                        </div>
-                    </div>
-                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
+                var $remark = $form.find(".remark");
+                if ($remark.length > 0) {
+                    var remarkval = '';
+                    $remark.each(function () {
+                        remarkval += $(this).val();
+                    });
+                    var $remark = $form.find("[name='remark']");
+                    if ($remark.length > 0) {
+                        $remark.val(remarkval);
+                    }
+                    else {
+                        $form.append("<input type='hidden' value='" + remarkval + "' name='remark' />");
+                    }
+                }
+
+                $.ajax({
+                    type: "post",
+                    url: "/Registration/Insert",
+                    data: $form.serialize(),
+                    success: function (json) {
+                        //debugger;
+                        //var json = eval("(" + json + ")");
+                        if (json.MessageType == 1) {
+                            $('form')[0].reset();
+                            alert("恭喜您，报名成功");
+                        }
+                        else {
+                            alert("同一手机号码只能领取一次！");
+                        }
+                        Mask = false;
+                    }
+                });
+            }
+            else {
+                alert("请输入正确的电话号码");
+                Mask = false;
+            }
+        }
+        return false;
+    });
+
+    function RegPhone(Phone) {
+
+        /*验证电话号码
+            验证规则：区号+号码，区号以0开头，3位或4位号码由7位或8位数字组成
+            区号与号码之间可以无连接符，也可以“-”连接
+            如01088888888,010-88888888,0955-7777777 */
+        var isPhone = /^0\d{2,3}-?\d{7,8}$/;
+        /*验证手机号码
+        移动：134(1349除外）135 136 137 138 139 147 150 151 152 157 158 159 182 183 184 187 188
+        联通：130 131 132 155 156 185 186 145
+        电信：133 153 177 180 181 189*/
+        //var isMob = /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
+
+        var isMob = /^1\d{10}$/;
+        if (isMob.test(Phone) || isPhone.test(Phone)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+<script src="__STATIC__/home/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
     // Slideshow 2
@@ -794,17 +834,6 @@
         $(".gl-kn-ul li").removeClass('active');
     })
 </script>
-<input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
-<script src="__STATIC__/home/js/yzf_city.js"></script>
-<script>
-    $('#a_qq').click(function () {
-        $('#consultation').trigger('click');
-    });
-</script>
-
-
-<script src="__STATIC__/home/js/customer-common.js"></script>
-
 
 </body>
 </html>

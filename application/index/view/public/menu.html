@@ -161,39 +161,11 @@
         </div>
         <div class="drop-nav">
             <div class="auto-box">
+                {volist name="header" id="vo" }
                 <dl class="drop-dl">
-                    <dt><a href="JavaScript:;">装修前 <i class="iconfont icon-jiantou-right"></i></a></dt>
-                    <dd>
-                        <!-- todo 暂时注释
-                        <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/129">收房</a></span>
-                        <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/49">设计</a></span> <br>
-                        <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/130">预算</a></span>
-                        <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/131">合同</a></span>
-                          -->
-                    </dd>
+                    <dt><a href="JavaScript:window.location.href='{:url('raiders/zlist')}?id={$vo.id}'">{$vo.title} <i class="iconfont icon-jiantou-right"></i></a></dt>
                 </dl>
-                <dl class="drop-dl">
-                    <dt><a href="JavaScript:;">装修中 <i class="iconfont icon-jiantou-right"></i></a></dt>
-                    <dd>
-                        <!-- todo 暂时注释
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/138">拆改</a></span>
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/137">水电</a></span>
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/136">防水</a></span>
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/135">泥瓦</a></span>
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/134">木工</a></span>
-                     <span><a href="http://www.yzf.com.cn/DecorationRaiders/">更多>></a></span>
-                      -->
-                 </dd>
-             </dl>
-             <dl class="drop-dl">
-                 <dt><a href="JavaScript:;">装修后 <i class="iconfont icon-jiantou-right"></i></a></dt>
-                 <dd>
-                     <!-- todo 暂时注释
-                  <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/141">软装</a></span>
-                  <span><a href="http://www.yzf.com.cn/DecorationRaiders/list/140">入住</a></span>
-                   -->
-              </dd>
-          </dl>
+                {/volist}
           <div class="drop-last-item">
               <a href="{:url('raiders/lists')}">
                   <i class="iconfont icon-kongjianbangyang"></i>

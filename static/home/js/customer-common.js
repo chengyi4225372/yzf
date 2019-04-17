@@ -379,11 +379,10 @@ $(".submit").click(function () {
     }
     console.log('ajax请求参数');
     console.log(customer);
-   // let urlHead = document.location.protocol === 'http:' ? 'http:' : 'https:';
+    let urlHead = document.location.protocol === 'http:' ? 'http:' : 'https:';
     $.ajax({
         type: 'post',
-       // url: urlHead + '//admin.yzf.com.cn/api/RegistrationAPI/Insert',
-        url:"{:url('index/api/sendmail')}",
+        url: urlHead + '//admin.yzf.com.cn/api/RegistrationAPI/Insert',
         data: {
             'name': customer.name,
             'phoneNumber': customer.phoneNumber,

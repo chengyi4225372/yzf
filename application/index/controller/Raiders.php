@@ -35,4 +35,25 @@ class Raiders extends Common {
         return $this->fetch();
     }
 
+    //装修头条列表
+    public function zlist(){
+        $id = input('get.id');
+        $page = input('get.PageIndex');
+        $size = 10;
+        $count = Db::name('z_news')->where('nid',$id)->count();
+        $pages = $count/$size;
+        $infos = Db::name('z_news')->where('nid',$id)->page($page,$size)->select();
+        $this->assign('infos',$infos);
+        $this->assign('pages',$pages);
+        return $this->fetch();
+    }
+
+    //装修头条详情
+    public function z_detail(){
+        $id = input('id');
+        $info = Db::name('z_news')->where('id',$id)->find();
+        $this->assign('info',$info);
+        return $this->fetch();
+    }
+
 }
