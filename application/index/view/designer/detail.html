@@ -26,7 +26,8 @@
                     <dd>首席设计师 / {$res.school} <i class="iconfont icon-jiantou2"></i></dd>
                 </dl>
                 <form>
-                    <input type="hidden" name="channel" value="设计师" />
+                     <!--设计师 iD-->
+                    <input type="hidden" name="channel" value="{$Think.get.id}" />
                     <div class="form-group">
                         <input type="text" name="mame" class="form-control" placeholder="您的称呼">
                     </div>
@@ -43,7 +44,7 @@
                         <a class="wx-code" href="javascript:;">
                             <i class="iconfont icon-weixin"></i>获取优秀案例解析 >
                             <div class="drop-on">
-                                <img src="__STATIC__/home/Images/ecode.jpg" alt="" />
+                                <img src="__STATIC__/home/Images/chidu.jpg" alt="" />
                             </div>
                         </a>
                     </div>
@@ -92,7 +93,8 @@
                         </div>
                         <div>
                             <a class="btn btn-dark" href="javascript:void(0)" onclick="doyoo.util.openChat('g=10064078');return false;">咨询TA报价</a>
-                            <script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001829/10063849.js"></script>
+                              <!-- 注释 客服聊天-->
+                            <!--<script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001829/10063849.js"></script>-->
                         </div>
                     </div>
                     <div class="designer-tab-r">
@@ -164,8 +166,8 @@
                                     <div class="designer-info">
                                         <h3>{$vo.names} <small>首席设计师</small></h3>
                                         <div class="item-wrap">
-                                            <span>案例数：44套</span>
-                                            <span>从业经验：{$vo.job_year}</span>
+                                            <span>案例数：{$vo.counts|default=''}套</span>
+                                            <span>从业经验：{$vo.job_year}年</span>
                                         </div>
                                         <p>{$vo.rongyu|mb_substr='0','15'}</p></div>
                                     <ul class="designer-control">
@@ -216,7 +218,7 @@
 
 {include file="public/footer" /}
 
-{include file="public/menu_right" /}
+{include file="public/menu_right"/}
 
 {include file="public/price" /}
 
@@ -820,7 +822,6 @@
 </div>
 
 
-
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -844,9 +845,6 @@
         $('#consultation').trigger('click');
     });
 </script>
-
-<script src="__STATIC__/home/js/customer-common.js"></script>
 </body>
 </html>
 
-<script src="__STATIC__/home/js/tj.js"></script>

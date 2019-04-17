@@ -99,8 +99,17 @@ class Designer extends Common {
         $id = input('get.id');
         $page = input('get.PageIndex');
         $size ='1';
+        if($id <=0 || empty($id)){
+            $this->redirect('designer/index');
+        }
          //推荐四名 同类型
-        $list = Db::name('designer')->field('id,img,job_year,rongyu,names')->limit(4)->select();
+        $list = Db::name('designer')
+                        ->field('id,img,job_year,rongyu,names')
+                        ->limit(4)
+                        ->select();
+         foreach($list as $k =>$val){
+             $list[$k]['counts'] = Db::name('lou_anli')->where('she_id',$list[$k]['id'])->count();
+         }
         //查询设计师信息
         $res= Db::name('designer')->where('id',$id)->find();
         //设计师关联 案例

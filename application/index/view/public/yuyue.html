@@ -8,10 +8,10 @@
                 <h4 class="modal-title">预约设计<small></small></h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="yuyue">
                     <input name="channel" value="预约设计" type="hidden" />
                     <div class="form-group">
-                        <label class="col-xs-2 control-label">姓名</label><div class="col-xs-10"><input name="name" type="text" class="form-control" placeholder="输入姓名"></div>
+                        <label class="col-xs-2 control-label">姓名</label><div class="col-xs-10"><input name="names" type="text" class="form-control" placeholder="输入姓名"></div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-2 control-label">手机</label><div class="col-xs-10"><input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号"></div>
@@ -29,3 +29,27 @@
         </div>
     </div>
 </div>
+
+<script>
+    $("#yuyue").click(function(){
+         var channel  = $("input[name='channel']").val();
+         var names  = $("input[name='names']").val();
+         var phone  = $("input[name='phoneNumber']").val();
+         var xiaoqu  = $("input[name='residentialName']").val();
+         var square  = $("input[name='squareMeters']").val();
+
+           if(names == '' || phone==''){
+               alert(11);
+               return false;
+           }else{
+               $.ajax({
+                   url:"{:url('api/send/sheji')}",
+                   type:'post',
+                   data:{channel:channel,names:names,phone:phone,xiaoqu:xiaoqu,square:square},
+                   success:function(res){
+                       console.log(111)
+                   }
+               })
+           }
+    })
+</script>
