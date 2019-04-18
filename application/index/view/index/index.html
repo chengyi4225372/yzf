@@ -1,6 +1,4 @@
 {include file="public/header-two" /}
-
-
 <!-- 所在位置 -->
 {include file="public/location-two" /}
 
@@ -589,52 +587,49 @@
                         </dd>
                     </dl>
                 </div>
-                <a href="/ResidentialCase/Detail/68938" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/3/1/2260593688675.jpg);">
+                {volist name="lingan" id="vo" offset='0' length='1' }
+                <a href="{:url('residential/goodroom')}?id={$vo.id}" class="construction-case-link" style="background-image: url({$vo.logo});">
                     <dl>
-                        <dt>现代简约风格复式装修效果图</dt>
-                        <dd>共4张</dd>
+                        <dt>{$vo.title|default=''}</dt>
+                        <!--<dd>共4张</dd>-->
                     </dl>
                 </a>
+                {/volist}
             </div>
             <div class="case-left-b">
                 <div class="con-col-4">
-                    <a href="/ResidentialCase/Detail/68871" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258273250446.png);">
+                    {volist name="lingan" id="vo" offset='1' length='2' }
+                    <a href="{:url('residential/goodroom')}?id={$vo.id}" class="construction-case-link" style="background-image: url({$vo.logo});">
                         <dl>
-                            <dt>新中式风格平层装修效果图</dt>
-                            <dd>共4张</dd>
+                            <dt>{$vo.title|default=''}</dt>
+                            <!--<dd>共4张</dd>-->
                         </dl>
                     </a>
                 </div>
+                {/volist}
+                {volist name="lingan" id="vo" offset='2' length='3' }
                 <div class="con-col-6">
-                    <a href="/ResidentialCase/Detail/68865" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/26/2258227657692.jpg);">
+                    <a href="{:url('residential/goodroom')}?id={$vo.id}" class="construction-case-link" style="background-image: url({$vo.logo});">
                         <dl>
-                            <dt>新中式风格别墅装修效果图</dt>
-                            <dd>共7张</dd>
+                            <dt>{$vo.title|default=''}</dt>
+                            <!--<dd>共7张</dd>-->
                         </dl>
                     </a>
-
                 </div>
+                {/volist}
             </div>
         </div>
         <div class="construction-case-right">
+            {volist name="lingan" id="vo" offset='3' length='5' }
             <div class="con-col-5">
-                <a href="/ResidentialCase/Detail/68581" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2019/2/14/2247839778364.jpg);">
+                <a href="{:url('residential/goodroom')}?id={$vo.id}" class="construction-case-link" style="background-image: url({$vo.logo});">
                     <dl>
-                        <dt>美式风格别墅装修效果图</dt>
-                        <dd>共6张</dd>
+                        <dt>{$vo.title|default=''}</dt>
+                        <!--<dd>共6张</dd>-->
                     </dl>
                 </a>
-
             </div>
-            <div class="con-col-5">
-                <a href="/ResidentialCase/Detail/67596" class="construction-case-link" style="background-image: url(http://picfwoss.yzf.com.cn/100007/2018/12/19/2198636202356.jpg);">
-                    <dl>
-                        <dt>欧式四居装修效果图</dt>
-                        <dd>共3张</dd>
-                    </dl>
-                </a>
-
-            </div>
+            {/volist}
         </div>
     </div>
 </div>

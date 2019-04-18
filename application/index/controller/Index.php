@@ -13,7 +13,6 @@ class Index extends Common {
     public function index() {
         //首页轮播图
         $banner =Db::name('banner')->where('status',1)->order('id asc')->select();
-
         //本周人气设计师
         $designer =Db::name('designer')->where('huo',1)->select();
         //装修案例 推荐列表
@@ -39,13 +38,18 @@ class Index extends Common {
           $gongdi[$k]['z_img'] = $gongdi[$k]['z_img']?explode('|', $gongdi[$k]['z_img']):'';
           $gongdi[$k]['h_img'] = $gongdi[$k]['h_img']?explode('|', $gongdi[$k]['h_img']):'';
       }
-      //找灵感
-
+      //找灵感 案例图
+      $lingan = Db::name('lou_anli')->alias('a')
+                    ->field('a.*,b.title')
+                    ->rightJoin('style b','b.id=a.s_id')
+                    ->where('a.tuijian',1)
+                    ->limit(5)->select();
      //企业新闻
       $new =Db::name('new')->select();
       //业主感言
       $thank = Db::name('thank')->field('id,img,title,jian')->where('tuijian',1)->order('id desc')->limit(3)->select();
 
+      $this->assign('lingan',$lingan);
       $this->assign('thank',$thank);
       $this->assign('designer',$designer);
       $this->assign('zhuangxiu',$zhuangxiu);
