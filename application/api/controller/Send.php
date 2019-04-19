@@ -35,7 +35,7 @@ class  Send extends Controller
         }
     }
 
-    //预约设计
+    //预约设计 装修报价
     public function yu(){
         $data = input('post.');
         $res = Db::name('yuyue')->insert(
@@ -51,10 +51,52 @@ class  Send extends Controller
             )
         );
         if($res){
-            $this->result('','200','提交成功！','json');
+            $this->result('','200','恭喜你，提交成功！','json');
         }else{
             $this->result('','400','提交失败！','json');
         }
+
+    }
+
+    //装修计算器
+    public function zhuang(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insert(
+            array(
+                'channel'=>$data['channel'],
+                'phone'=>$data['phone'],
+                'square'=>$data['square'],
+                'shi'=>isset($data['shi'])?$data['shi']:'',
+                'ting'=>isset($data['ting'])?$data['ting']:'',
+                'wei'=>isset($data['wei'])?$data['wei']:'',
+                'chu'=>isset($data['chu'])?$data['chu']:'',
+                'tai'=>isset($data['tai'])?$data['tai']:'',
+            )
+        );
+        if($res){
+            if($res){
+                $this->result('','200','恭喜你，报名成功！','json');
+            }else{
+                $this->result('','400','sorry,请刷新下网页再报名！','json');
+            }
+        }
+    }
+
+   //礼包
+    public function libao(){
+        $data = input('post.');
+        $tel = Db::name('yuyue')->where('phone',$data['phone'])->value('status');
+        if($tel ==1){
+           $this->result('','4001','您已经领取了，不能重复领取了！','json');
+        }else{
+            $res = Db::name('yuyue')->data($data)->insert();
+            if($res){
+                $this->result('','200','','json');
+            }else{
+                $this->result('','400','sorry,您没有领取成功，请重新填写，可以再次领取！','json');
+            }
+        }
+
 
     }
 

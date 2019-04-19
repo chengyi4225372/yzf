@@ -1,0 +1,93 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">预约类型</label>
+        <div class="layui-input-block">
+            <input type="text" name="channel" value='{$vo.channel|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="names" value='{$vo.names|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="phone" value='{$vo.phone|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">小区地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="xiao" value='{$vo.xiao|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">户型面积</label>
+        <div class="layui-input-block">
+            <input type="text" name="square" value='{$vo.square|default=""}'  class="layui-input">㎡
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">室</label>
+        <div class="layui-input-block">
+            <input type="text" name="shi" value='{$vo.shi|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">厅</label>
+        <div class="layui-input-block">
+            <input type="text" name="ting" value='{$vo.ting|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">卫生间</label>
+        <div class="layui-input-block">
+            <input type="text" name="wei" value='{$vo.wei|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">厨房</label>
+    <div class="layui-input-block">
+        <input type="text" name="chu" value='{$vo.chu|default=""}'  class="layui-input">
+    </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">阳台</label>
+        <div class="layui-input-block">
+            <input type="text" name="tai" value='{$vo.tai|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+

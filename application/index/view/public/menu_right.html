@@ -64,6 +64,8 @@
     </div>
 </div>
 -->
+
+<!--装修计算器-->
 <div id="fixed-bar-wrap" class="fixed-bar-wrap open" style="z-index: 20;">
     <div id="control-bar" class="control-bar"></div>
     <div class="fixed-white-box">
@@ -74,13 +76,13 @@
             </div>
             <div class="fixed-panel-body">
                 <form class="form-horizontal calculator-form">
-                    <input name="channel" value="设计师报价计算器" type="hidden">
+                    <input name="z_channel" value="设计师报价计算器" type="hidden">
                     <div class="form-group">
                         <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <select class="form-control  remark">
+                                    <select class="form-control  remark" name="z_shi">
                                         <option value="1室">1室</option>
                                         <option value="2室">2室</option>
                                         <option value="3室" selected="">3室</option>
@@ -90,7 +92,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="z_ting">
                                         <option value="1厅" selected="">1厅</option>
                                         <option value="2厅">2厅</option>
                                         <option value="3厅">3厅</option>
@@ -100,21 +102,21 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="z_chu">
                                         <option value="1厨" selected="">1厨</option>
                                         <option value="2厨">2厨</option>
                                         <option value="3厨">3厨</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="z_wei">
                                         <option value="1卫" selected="">1卫</option>
                                         <option value="2卫">2卫</option>
                                         <option value="3卫">3卫</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="z_tai">
                                         <option value="1阳台" selected="">1阳台</option>
                                         <option value="2阳台">2阳台</option>
                                         <option value="3阳台">3阳台</option>
@@ -128,7 +130,7 @@
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-12 area">
-                                    <input type="text" class="form-control" name="squareMeters" placeholder="输入您的房屋面积">
+                                    <input type="text" class="form-control" name="z_square" placeholder="输入您的房屋面积">
                                     <span class="m2">㎡</span>
                                 </div>
                             </div>
@@ -139,13 +141,13 @@
                         <div class="col-xs-9">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <input type="text" class="form-control" name="phoneNumber" placeholder="报价结果将发送到您的手机">
+                                    <input type="text" class="form-control" name="z_phone" placeholder="报价结果将发送到您的手机">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="submit">
-                        <button class="btn submit-label-btn">开始计算</button>
+                        <button type="button" class="btn submit-label-btn" id="zhuangxiu">开始计算</button>
                         <span class="circle-animate"></span>
                     </div>
                 </form>
@@ -192,4 +194,47 @@
             i++
         }, 200);
     })
+</script>
+
+<script>
+    //手机号正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    //装修计算器
+    $("#zhuangxiu").click(function(){
+        var channel = $("input[name='z_channel']").val();
+        var shi = $("select[select='z_shi']").val();
+        var ting = $("select[select='z_ting']").val();
+        var chu = $("select[select='z_chu']").val();
+        var wei = $("select[select='z_wei']").val();
+        var tai = $("select[select='z_tai']").val();
+        var square = $("input[name='z_square']").val();
+        var phone = $("input[name='z_phone']").val();
+
+        if(square=='' || square==undefined){
+            alert('请填写户型面积大小！');
+        }else if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+        }else{
+            $.ajax({
+                url:"{:url('api/send/zhuang')}",
+                type:'post',
+                data:{'channel':channel,'square':square,'phone':phone,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
 </script>
