@@ -139,10 +139,8 @@
                     </form>
                 </div>
             </div>
-
             <script>
-                //我的户型 
-                $(document).ready(function(){
+                //我的户型
                      $("p.btn-gold").click(function(){
                          var square =$("input[name='square']").val();
                          var xiao =$("input[name='xiaoqu']").val();
@@ -169,14 +167,15 @@
                                    console.log(res);
                                    if(res.code == 200){
                                        alert(res.msg);
+                                       window.location.reload();
                                    }else{
                                        alert(res.msg);
+                                       window.location.reload();
                                    }
                                  }
                              })
                          }
                      })
-                })
                 //正则
                 function isPhoneNo(phones) {
                     var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
@@ -185,7 +184,6 @@
 
 
             </script>
-
             <div class="a-sec-r">
                 <a target="_blank" href="/s2017/qgkjby0901"><img src="__STATIC__/home/image/a-sec-r.jpg" alt=""></a>
             </div>
