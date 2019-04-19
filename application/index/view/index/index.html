@@ -64,20 +64,22 @@
                     <i class="text"><small>￥</small>500</i>
                     <span>官网专属礼包</span>
                 </a>
-                <a href="javascript:void(0);" class="sec-link-b" data-toggle="modal" data-target="#yuyuesheji">
+                <a href="#" class="sec-link-b" data-toggle="modal" data-target="#yuyuesheji">
                     <i class="iconfont icon-icon4"></i>
                     <span>预约设计</span>
                 </a>
 
             </div>
+            <!-- 免费预约-->
             <div class="a-sec-c">
                 <div class="sec-form">
-                    <form>
+                    <form >
+                        <input type="hidden" name="channel" value="您的户型">
                         <div class="sec-row">
                             <label>您的户型</label>
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <select class="form-control  remark">
+                                    <select class="form-control  remark" name="shi">
                                         <option value="1室">1室</option>
                                         <option value="2室">2室</option>
                                         <option value="3室" selected="">3室</option>
@@ -87,7 +89,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="ting">
                                         <option value="1厅" selected="">1厅</option>
                                         <option value="2厅">2厅</option>
                                         <option value="3厅">3厅</option>
@@ -97,7 +99,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="wei">
                                         <option value="1卫" selected="">1卫</option>
                                         <option value="2卫">2卫</option>
                                         <option value="3卫">3卫</option>
@@ -109,11 +111,11 @@
                             <label>小区面积</label>
                             <div class="row">
                                 <div class="col-xs-4 area">
-                                    <input type="text" class="form-control" name="squareMeters" placeholder="输入您的房屋面积">
+                                    <input type="text" class="form-control" name="square" placeholder="输入您的房屋面积">
                                     <span class="m2">㎡</span>
                                 </div>
                                 <div class="col-xs-8">
-                                    <input name="residentialName" type="text" class="form-control" placeholder="输入小区名称">
+                                    <input name="xiaoqu" type="text" class="form-control" placeholder="输入小区名称">
                                 </div>
                             </div>
                         </div>
@@ -121,11 +123,11 @@
                             <label>联系方式</label>
                             <div class="row">
                                 <div class="col-xs-4 area">
-                                    <input name="name" type="text" class="form-control" placeholder="输入您的称呼">
+                                    <input name="names" type="text" class="form-control" placeholder="输入您的称呼">
                                     <span class="mast">*</span>
                                 </div>
                                 <div class="col-xs-8 area">
-                                    <input name="phoneNumber" type="text" class="form-control" placeholder="输入手机号码">
+                                    <input name="phone" type="text" class="form-control" placeholder="输入手机号码">
                                     <span class="mast">*</span>
                                 </div>
                             </div>
@@ -137,6 +139,53 @@
                     </form>
                 </div>
             </div>
+
+            <script>
+                //我的户型 
+                $(document).ready(function(){
+                     $("p.btn-gold").click(function(){
+                         var square =$("input[name='square']").val();
+                         var xiao =$("input[name='xiaoqu']").val();
+                         var names =$("input[name='names']").val();
+                         var phone =$("input[name='phone']").val();
+                         var shi =$("select[name='shi']").val();
+                         var ting =$("select[name='ting']").val();
+                         var wei =$("select[name='wei']").val();
+                         var channel =$("input[name='channel']").val();
+                         if(names == ''||names==undefined){
+                             alert('请填写用户名！');
+                         }else if(isPhoneNo(phone) == false||phone==undefined){
+                             alert('手机号码不合法！');
+                         }else if(xiao == ''||xiao==undefined){
+                             alert('请填写小区名！');
+                         }else if(square==''||square==undefined){
+                             alert('请填写户型面积！')
+                         }else{
+                             $.ajax({
+                                 url:"{:url('api/send/sheji')}",
+                                 type:'post',
+                                 data:{'channel':channel,'square':square,'xiao':xiao,'names':names,'phone':phone,'shi':shi,'wei':wei,'ting':ting},
+                                 success:function(res){
+                                   console.log(res);
+                                   if(res.code == 200){
+                                       alert(res.msg);
+                                   }else{
+                                       alert(res.msg);
+                                   }
+                                 }
+                             })
+                         }
+                     })
+                })
+                //正则
+                function isPhoneNo(phones) {
+                    var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+                    return  isPhone.test(phones);
+                }
+
+
+            </script>
+
             <div class="a-sec-r">
                 <a target="_blank" href="/s2017/qgkjby0901"><img src="__STATIC__/home/image/a-sec-r.jpg" alt=""></a>
             </div>
@@ -1601,6 +1650,7 @@
         interTime: 5000
     });
 </script>
-<input id="yzf_city" type="hidden" value="54,suzhou,苏州 " />
+
+
 </body>
 </html>
