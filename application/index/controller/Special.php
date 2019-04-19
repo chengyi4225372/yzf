@@ -26,6 +26,12 @@ class Special extends Common {
         return $this->view->fetch();
     }
 
+    //整装优势
+    public function heart(){
+        return $this->fetch();
+    }
+
+
     //蓝钻工程
     public function blue(){
         return $this->fetch();
