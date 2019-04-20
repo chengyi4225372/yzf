@@ -61,6 +61,9 @@ class Common extends Controller {
         //装修头条类型
         $header = Db::name('new_cates')->select();
         $this->assign('header',$header);
+        //menu 热门搜索
+        $hot = Db::name('remen_lou')->field('id,title')->where('search',1)->order('id desc')->limit(8)->select();
+        $this->assign('hot',$hot);
     }
 
     //热门文章排行榜
@@ -68,12 +71,5 @@ class Common extends Controller {
         $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->select();
         return $arr;
     }
-
-    //menu 热门搜索
-    public function  hot_lou(){
-     $hot = Db::name('remen_lou')->field('id,title')->where('search',1)->order('id desc')->limit(8)->select();
-      $this->assign('hot',$hot);
-     }
-
 
 }

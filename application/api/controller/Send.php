@@ -35,7 +35,7 @@ class  Send extends Controller
         }
     }
 
-    //预约设计 装修报价
+    //预约设计 装修报价 别墅大宅 私人订制 申请五零靠谱工程特权
     public function yu(){
         $data = input('post.');
         $res = Db::name('yuyue')->insert(
@@ -44,7 +44,7 @@ class  Send extends Controller
                 'names'=>$data['names'],
                 'phone'=>$data['phone'],
                 'xiao'=>$data['xiao'],
-                'square'=>$data['square'],
+                'square'=>isset($data['square'])?$data['square']:'',
                 'shi'=>isset($data['shi'])?$data['shi']:'',
                 'ting'=>isset($data['ting'])?$data['ting']:'',
                 'wei'=>isset($data['wei'])?$data['wei']:'',
@@ -58,7 +58,7 @@ class  Send extends Controller
 
     }
 
-    //装修计算器
+    //装修计算器 整装优势
     public function zhuang(){
         $data = input('post.');
         $res = Db::name('yuyue')->insert(
@@ -73,14 +73,12 @@ class  Send extends Controller
                 'tai'=>isset($data['tai'])?$data['tai']:'',
             )
         );
-        if($res){
             if($res){
                 $this->result('','200','恭喜你，报名成功！','json');
             }else{
                 $this->result('','400','sorry,请刷新下网页再报名！','json');
             }
         }
-    }
 
    //礼包 + 热门楼盘  获取楼盘专属优惠
     //todo 怎么触发短信 接果 未知
