@@ -42,6 +42,7 @@
     <p class="help-block text-center well">没 有 记 录 哦！</p>
     {else}
     <input type="hidden" value="resort" name="action">
+
     <table class="layui-table" lay-skin="line">
         <thead>
         <tr>
@@ -52,8 +53,8 @@
             <th class='text-left nowrap'>楼盘展示图</th>
             <th class='text-left nowrap'>楼盘地理位置</th>
             <th class='text-left nowrap'>所属案例地区</th>
-            <th class='text-left nowrap'>设置为最新楼盘</th>
-            <th class='text-left nowrap'>设置为最热销楼盘</th>
+            <th class='text-left nowrap'>最新楼盘排序</th>
+            <th class='text-left nowrap'>最火销售楼盘排序</th>
             <th class='text-left nowrap'>创建时间</th>
             <!--                <th class='text-left nowrap'>状态</th>-->
             <th class='text-left nowrap'></th>
@@ -78,21 +79,13 @@
                {$vo.region}
             </td>
 
-            <td class='text-left nowrap'>
-                 {eq name="vo.hot" value='1'}
-                  最新楼盘
-                   {else /}
-                 普通楼盘
-                 {/eq}
-            </td>
-            <td class='text-left nowrap'>
-                {eq name="vo.new" value='1'}
-                最热销楼盘
-                {else /}
-                普通楼盘
-                {/eq}
+            <td class='list-table-sort-td'>
+                <input name="news" value="{$vo.news|default=''}"  onchange="news_status('{$vo.id}',$(this).val())" class="list-sort-input">
             </td>
 
+            <td class='list-table-sort-td'>
+                <input name="hot" value="{$vo.hot|default=''}"  onchange="hots_status('{$vo.id}',$(this).val())" class="list-sort-input">
+            </td>
             <td class='text-left nowrap'>
                 {$vo.time|date='Y-m-d H:i:s'|default=''}
             </td>
@@ -120,4 +113,49 @@
         window.laydate.render({range: true, elem: '#create_at'});
     })();
 </script>
+<script>
+    //修改最火状态
+         function hots_status(id,value){
+             $.ajax({
+                 url:"{:url('tuanj/remen/hot')}",
+                 type:'post',
+                 data:{'id':id,'hot':value},
+                 success:function(res){
+                     if(res.code == 200){
+                         alert(res.msg);
+                         return false;
+                     }else{
+                         alert(res.msg);
+                     }
+                 }
+             })
+
+         }
+
+
+
+</script>
+<script>
+    //修改最新状态
+    function news_status(id,value){
+        var news  = $("input[name='news']").val();
+        $.ajax({
+            url:"{:url('tuanj/remen/news')}",
+            type:'post',
+            data:{'id':id,'news':value},
+            success:function(res){
+                if(res.code == 200){
+                    alert(res.msg);
+                    return  false;
+                }else{
+                    alert(res.msg);
+                }
+            }
+        });
+    }
+
+</script>
+
+
+
 {/block}

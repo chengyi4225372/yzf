@@ -23,7 +23,6 @@ class Remen extends BasicAdmin {
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-
             $db->whereBetween('create_at', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
@@ -36,6 +35,29 @@ class Remen extends BasicAdmin {
     }
 
 
+   //最火楼盘排序
+    public function hot(){
+        $id = input('post.id');
+        $hot = input('post.hot');
+        $result= Db::name($this->dataform)->where('id',$id)->update(array('hot'=>$hot));
+        if($result){
+            $this->result('','200','修改成功！','json');
+        }else{
+            $this->result('','400','修改失败！','json');
+        }
+    }
+
+    //最新楼盘排序
+    public function news(){
+        $id = input('post.id');
+        $new = input('post.news');
+        $result= Db::name($this->dataform)->where('id',$id)->update(array('news'=>$new));
+        if($result){
+            $this->result('','200','修改成功！','json');
+        }else{
+            $this->result('','400','修改失败！','json');
+        }
+    }
 
 
     /**

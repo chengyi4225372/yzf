@@ -41,33 +41,15 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">是否设置为最火销售楼盘</label>
-        {if isset($vo['id'])}
-        <div class="layui-input-block">
-            <input type="radio" name="hot" value="普通" title="普通" {eq name="vo.hot" value="0"} checked="" {/eq}  />
-            <input type="radio" name="hot" value="最火" title="最火" {eq name="vo.hot" value="1"} checked="" {/eq} />
-        </div>
-        {else /}
-        <div class="layui-input-block">
-            <input type="radio" name="hot" value="普通" title="普通" checked=""   />
-            <input type="radio" name="hot" value="最火" title="最火"   />
-        </div>
-        {/if}
+        <label class="layui-form-label">最火销售楼盘排序</label>
+        <input type="num" name="hot" value='{$vo.hot|default=""}'  class="layui-input-inline">
+        <span style="color:#ff2600;">*注意这里只填写数字，数字越大排越靠前!</span>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">是否设置为最新销售楼盘</label>
-        {if isset($vo['id'])}
-        <div class="layui-input-block">
-            <input type="radio" name="new" value="普通" title="普通" {eq name="vo.new" value="0"} checked="" {/eq}/>
-            <input type="radio" name="new" value="最新" title="最新" {eq name="vo.new" value="1"} checked="" {/eq} />
-        </div>
-        {else /}
-        <div class="layui-input-block">
-            <input type="radio" name="new" value="普通" title="普通"  checked="" />
-            <input type="radio" name="new" value="最新" title="最新" />
-        </div>
-        {/if}
+        <label class="layui-form-label">最新销售楼盘排序</label>
+        <input type="num" name="news" value='{$vo.news|default=""}'  class="layui-input-inline">
+        <span style="color:#ff2600;">*注意这里只填写数字，数字越大排越靠前!</span>
     </div>
 
 
@@ -93,5 +75,7 @@
         window.createEditor('[name="content"]', {height: 500});
     });
 </script>
+
+
 {/block}
 
