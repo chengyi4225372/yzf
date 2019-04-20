@@ -236,14 +236,26 @@ class Residential extends Common{
         //搜索
         //小区名称搜索
         $names = input('get.searchkey');
+        //页数
+        $page = input('get.PageIndex');
+        //分页数
+        $size =15;
+        //总数目
+        $count = Db::name('remen_lou')->count();
+        $pages =$count/$size;
         //小区地区搜索
         $d_id = input('get.id');
         if(!empty($d_id)){
-            $info = Db::name('remen_lou')->where('d_id',$d_id)->paginate(15);
+            $info = Db::name('remen_lou')->field('id,title,location,img,')->where('d_id',$d_id)->page($page,$size)->select();
         }else if(!empty($names)){
-            $info = Db::name('remen_lou')->where('title','like','%'.$names.'%')->paginate(15);
+            $info = Db::name('remen_lou')->where('title','like','%'.$names.'%')->page($page,$size)->select();
         }else{
-            $info = Db::name('remen_lou')->paginate(15);
+            $info = Db::name('remen_lou')->field('id,title,location,img')->order('id desc')->page($page,$size)->select();
+        }
+        //todo 关联楼盘户型 案例 以及未完成的
+        foreach($info as $k=>$val){
+            $info[$k]['anli'] = Db::name('lou_anli')->where('re_id',$info[$k]['id'])->count();
+            $info[$k]['huxing'] = Db::name('lou_huxing')->where('re_id',$info[$k]['id'])->count();
         }
         //最新楼盘
         $hot = Db::name('remen_lou')
@@ -263,6 +275,7 @@ class Residential extends Common{
         $this->assign('hot',$hot);
         $this->assign('news',$news);
         $this->assign('info',$info);
+        $this->assign('pages',$pages);
         return $this->fetch();
     }
 

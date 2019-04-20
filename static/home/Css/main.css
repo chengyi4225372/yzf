@@ -556,7 +556,8 @@ img {
       color: #ffffff; }
 
 .side-adv {
-  margin: 20px 0; }
+  margin: 20px 0;
+}
   .side-adv:first-child {
     margin-top: 0; }
   .side-adv img {

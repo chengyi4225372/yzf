@@ -59,9 +59,10 @@
 
                                         </p>
                                         <div class="hpt-disc">
-                                            <span>案例数：17  </span>
-                                            <span>实景工地：2  </span>
-                                            <span>户型：0  </span>
+                                            <span>案例数：{$vo.anli} </span>
+                                            <!-- todo 实景工地 未知-->
+                                            <span>实景工地：0 </span>
+                                            <span>户型：{$vo.huxing}  </span>
                                         </div>
                                     </div>
                                 </li>
@@ -69,7 +70,15 @@
                             </ul>
                             <nav class="text-center">
                                 <ul class="pagination">
-                                    <li class="active">{$info|raw}</li>
+                                    {for start="0" end="$pages"}
+                                    {empty name="Think.get.name"}
+                                    <li {if condition="$Think.get.PageIndex eq ($i+1) or $Think.get.PageIndex eq 0"}class="active" {else /} class=""{/if}>
+                                    <a data-pjax="" href="{:url('residential/popular')}?name={$Think.get.name}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
+                                    {else /}
+                                    <li {if condition="$Think.get.PageIndex eq ($i+1) or $Think.get.PageIndex eq 0"}class="active" {else /} class=""{/if}>
+                                    <a data-pjax="" href="{:url('residential/popular')}?id={$Think.get.id}&PageIndex={$i<0?:$i+1}">{$i+1}</a></li>
+                                    {/empty}
+                                    {/for}
                                 </ul>
                             </nav>
 
@@ -739,6 +748,7 @@
         $('#consultation').trigger('click');
     });
 </script>
+<!--    获取楼盘专属优惠 提交-->
 <script>
     //获取楼盘专属优惠 提交
     //手机正则
@@ -786,7 +796,6 @@
 
 
 </script>
-
 
 </body>
 </html>
