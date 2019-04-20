@@ -84,25 +84,25 @@
                                 <dt>获取楼盘专属优惠</dt>
                             </dl>
                             <form class="form-horizontal calculator-form">
-                                <input name="Channel" value="获取楼盘专属优惠" type="hidden" />
+                                <input name="channel" value="获取楼盘专属优惠" type="hidden" />
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="您的称呼">
+                                        <input type="text" name="names"  value='' class="form-control" placeholder="您的称呼">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="接收短信号码">
+                                        <input type="text" name="phone"  value='' class="form-control" placeholder="接收短信号码">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="输入楼盘名称">
+                                        <input type="text"  name="xiao"  value=''  class="form-control" placeholder="输入楼盘名称">
                                     </div>
                                 </div>
                                 <div class="form-group btn-box submit">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-block">发送至手机</button>
+                                        <button class="btn btn-block" id="loupan">发送至手机</button>
                                     </div>
                                 </div>
                             </form>
@@ -114,76 +114,15 @@
                             </div>
                             <div class="side-panel-body">
                                 <ul class="phb-list">
+                                    {volist name="news" id="vo"}
                                     <li>
-                                        <a href="/Residential/Detail/22241" title="中南世纪城">
-                                            <b> 市区</b>
+                                        <a href="{:url('residential/detail')}?id={$vo.id}" title="{$vo.title}">
+                                            <b> {$vo.btitle|default=''}</b>
                                             <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中南世纪城</span>
+                                            <span>{$vo.title}</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22240" title="苏州御园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏州御园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22239" title="世贸御珑墅">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世贸御珑墅</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22162" title="万科精品家园">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>万科精品家园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22109" title="金都城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>金都城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22108" title="桦林彩云城">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>桦林彩云城</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22107" title="南山檀郡">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>南山檀郡</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22077" title="新未来花园潇邦">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新未来花园潇邦</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22076" title="绿地精粹">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>绿地精粹</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/22059" title="新创大河山">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新创大河山</span>
-                                        </a>
-                                    </li>
+                                    {/volist}
                                 </ul>
                             </div>
                         </div>
@@ -194,76 +133,15 @@
                             </div>
                             <div class="side-panel-body">
                                 <ul class="phb-list">
+                                    {volist name="hot" id="vo"}
                                     <li>
-                                        <a href="/Residential/Detail/12522" title="新湖明珠城">
-                                            <b> 吴江区</b>
+                                        <a href="{:url('residential/detail')}?id={$vo.id}" title="{$vo.title}">
+                                            <b> {$vo.btitle|default=''}</b>
                                             <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>新湖明珠城</span>
+                                            <span>{$vo.title}</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15696" title="东方之门">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>东方之门</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/8245" title="白塘壹号">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>白塘壹号</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15597" title="胥江城市花园">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>胥江城市花园</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15700" title="苏高新天之运">
-                                            <b> 市区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>苏高新天之运</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15605" title="中粮祥云国际">
-                                            <b> 相城区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>中粮祥云国际</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7674" title="世茂石湖湾">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>世茂石湖湾</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/18921" title="和昌熙溪里">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>和昌熙溪里</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/15730" title="红星国际生活广场">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>红星国际生活广场</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Residential/Detail/7991" title="九龙仓碧堤半岛">
-                                            <b> 吴中区</b>
-                                            <i class="iconfont icon-rexiaoloupan"></i>
-                                            <span>九龙仓碧堤半岛</span>
-                                        </a>
-                                    </li>
+                                    {/volist}
                                 </ul>
                             </div>
                         </div>
@@ -843,9 +721,6 @@
         </div>
     </div>
 </div>
-
-
-
 <script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
@@ -859,12 +734,59 @@
         $(".gl-kn-ul li").removeClass('active');
     })
 </script>
-
 <script>
     $('#a_qq').click(function () {
         $('#consultation').trigger('click');
     });
 </script>
+<script>
+    //获取楼盘专属优惠 提交
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //预约提交
+    $("#loupan").click(function(){
+        var channel = $("input[name='channel']").val();
+        var names = $("input[name='names']").val();
+        var phone = $("input[name='phone']").val();
+        var xiao = $("input[name='xiao']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+            return false;
+        }else if (names == '' ||names == undefined ){
+            alert('用户名不能为空！');
+            return false;
+        }else if(xiao==''||xiao==undefined){
+            alert('楼盘名称不能为空！');
+            return false;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'names':names,'phone':phone,'xiao':xiao},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        //todo 未知短信触发
+                        alert(res.msg);
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+
+
+</script>
+
 
 </body>
 </html>

@@ -245,6 +245,23 @@ class Residential extends Common{
         }else{
             $info = Db::name('remen_lou')->paginate(15);
         }
+        //最新楼盘
+        $hot = Db::name('remen_lou')
+                ->alias('a')
+                ->field('a.id,a.title,a.hot,b.title as btitle')
+                ->join('region b','b.id = a.d_id')
+                ->order('a.hot desc')
+                ->select();
+
+        //最热楼盘
+        $news = Db::name('remen_lou')
+            ->alias('a')
+            ->field('a.id,a.title,a.news,b.title as btitle')
+            ->join('region b','b.id = a.d_id')
+            ->order('a.news desc')
+            ->select();
+        $this->assign('hot',$hot);
+        $this->assign('news',$news);
         $this->assign('info',$info);
         return $this->fetch();
     }

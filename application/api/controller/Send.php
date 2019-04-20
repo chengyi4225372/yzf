@@ -82,7 +82,8 @@ class  Send extends Controller
         }
     }
 
-   //礼包
+   //礼包 + 热门楼盘  获取楼盘专属优惠
+    //todo 怎么触发短信 接果 未知
     public function libao(){
         $data = input('post.');
         $tel = Db::name('yuyue')->where('phone',$data['phone'])->value('status');

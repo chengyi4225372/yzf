@@ -57,6 +57,7 @@
                 success:function(res){
                     console.log(res);
                     if(res.code == 200){
+                        //todo 未知短信触发
                         window.location.reload();
                     }else if(res.code==4001){
                         alert(res.code);
