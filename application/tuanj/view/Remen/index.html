@@ -55,6 +55,7 @@
             <th class='text-left nowrap'>所属案例地区</th>
             <th class='text-left nowrap'>最新楼盘排序</th>
             <th class='text-left nowrap'>最火销售楼盘排序</th>
+            <th class='text-left nowrap'>推荐为热门搜索</th>
             <th class='text-left nowrap'>创建时间</th>
             <!--                <th class='text-left nowrap'>状态</th>-->
             <th class='text-left nowrap'></th>
@@ -86,6 +87,16 @@
             <td class='list-table-sort-td'>
                 <input name="hot" value="{$vo.hot|default=''}"  onchange="hots_status('{$vo.id}',$(this).val())" class="list-sort-input">
             </td>
+
+            <td class='text-left nowrap'>
+                {eq name="vo.search" value="1"}
+                <a onclick="search_url('{$vo.id}','{$vo.search}')">热门搜索</a>
+                {else /}
+                <a onclick="search_url('{$vo.id}','{$vo.search}')">非热门搜索</a>
+                {/eq}
+
+            </td>
+
             <td class='text-left nowrap'>
                 {$vo.time|date='Y-m-d H:i:s'|default=''}
             </td>
@@ -154,6 +165,24 @@
         });
     }
 
+</script>
+<script>
+    //修改热门搜索
+    function search_url(id,val){
+        $.ajax({
+            url:"{:url('tuanj/remen/search')}",
+            type:'post',
+            data:{'id':id,'val':val},
+            success:function(res){
+                if(res.code == 200){
+                    alert(res.msg);
+                    window.location.reload();
+                }else{
+                    alert(res.msg);
+                }
+            }
+        })
+    }
 </script>
 
 

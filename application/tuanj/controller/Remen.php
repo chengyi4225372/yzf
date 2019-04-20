@@ -59,6 +59,18 @@ class Remen extends BasicAdmin {
         }
     }
 
+    //推荐为热门搜索列表
+    public function search(){
+        $id = input('post.id');
+        $search = input('post.val');
+        $result= Db::name($this->dataform)->where('id',$id)->update(array('search'=>$search >0?0:1));
+        if($result){
+            $this->result('','200','修改成功！','json');
+        }else{
+            $this->result('','400','修改失败！','json');
+        }
+    }
+
 
     /**
      * 添加

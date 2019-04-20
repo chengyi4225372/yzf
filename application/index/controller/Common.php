@@ -64,11 +64,16 @@ class Common extends Controller {
     }
 
     //热门文章排行榜
-    function remen (){
+  public  function remen (){
         $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->select();
         return $arr;
     }
 
+    //menu 热门搜索
+    public function  hot_lou(){
+     $hot = Db::name('remen_lou')->field('id,title')->where('search',1)->order('id desc')->limit(8)->select();
+      $this->assign('hot',$hot);
+     }
 
 
 }

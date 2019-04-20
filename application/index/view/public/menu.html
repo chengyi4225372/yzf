@@ -99,11 +99,9 @@
                         </div>
                         <div class="search-txt">
                             <span>热门搜索:</span>
-                            <a href="/Residential?searchKey=太阳城 ">太阳城</a>
-                            <a href="/Residential?searchKey=荷澜庭 ">荷澜庭</a>
-                            <a href="/Residential?searchKey=龙湖时代天街 ">龙湖时代天街</a>
-                            <a href="/Residential?searchKey=禧悦 ">禧悦</a>
-                            <a href="/Residential?searchKey=狮山御园 ">狮山御园</a>
+                            {volist name="hot" id="vo"}
+                            <a href="{:url('residential/popular')}?searchkey={$vo.title}">{$vo.title}</a>
+                            {/volist}
                         </div>
                     </div>
                 </div>

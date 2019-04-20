@@ -41,6 +41,17 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label">推荐热门搜索</label>
+         {if isset($vo.search)}
+        <input type="radio" name="search" value="0" title="No" {eq name="vo.search" value="0"}checked="" {/eq}>
+        <input type="radio" name="search" value="1" title="Yes" {eq name="vo.search" value="1"}checked="" {/eq}>
+         {else /}
+        <input type="radio" name="search" value="0" title="No" checked="">
+        <input type="radio" name="search" value="1" title="Yes">
+        {/if}
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label">最火销售楼盘排序</label>
         <input type="num" name="hot" value='{$vo.hot|default=""}'  class="layui-input-inline">
         <span style="color:#ff2600;">*注意这里只填写数字，数字越大排越靠前!</span>
