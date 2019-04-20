@@ -80,7 +80,7 @@ class  Send extends Controller
             }
         }
 
-   //礼包 + 热门楼盘  获取楼盘专属优惠
+   //礼包 + 热门楼盘  获取楼盘专属优惠 攻略站报价计算器
     //todo 怎么触发短信 接果 未知
     public function libao(){
         $data = input('post.');
