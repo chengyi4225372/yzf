@@ -100,4 +100,17 @@ class  Send extends Controller
     }
 
 
+
+    //预约设计师
+    public function designer(){
+        $data = input('post.');
+        $res = Db::name('yu_designer')->data($data)->insert();
+        if($res){
+           $this->result('','200','恭喜你，预约成功！','json');
+        }else{
+            $this->result('','400','sorry,请尝试刷新网页重新提交预约申请！','json');
+        }
+
+    }
+
 }
