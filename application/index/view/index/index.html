@@ -1046,13 +1046,13 @@
                     <div class="fixed-white-l">
                         <div class="fixed-panel-body">
                             <form class="form-horizontal calculator-form">
-                                <input name="channel" value="装修计算器" type="hidden" />
+                                <input name="zx_channel" value="装修计算器" type="hidden" />
                                 <div class="form-group">
                                     <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <select class="form-control  remark">
+                                                <select class="form-control  remark" name="zx_shi" >
                                                     <option value="1室">1室</option>
                                                     <option value="2室">2室</option>
                                                     <option value="3室" selected>3室</option>
@@ -1062,7 +1062,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="zx_ting">
                                                     <option value="1厅" selected>1厅</option>
                                                     <option value="2厅">2厅</option>
                                                     <option value="3厅">3厅</option>
@@ -1072,21 +1072,21 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="zx_chu">
                                                     <option value="1厨" selected>1厨</option>
                                                     <option value="2厨">2厨</option>
                                                     <option value="3厨">3厨</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="zx_wei">
                                                     <option value="1卫" selected>1卫</option>
                                                     <option value="2卫">2卫</option>
                                                     <option value="3卫">3卫</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="zx_tai">
                                                     <option value="1阳台" selected>1阳台</option>
                                                     <option value="2阳台">2阳台</option>
                                                     <option value="3阳台">3阳台</option>
@@ -1100,7 +1100,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12 area">
-                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积"><span class="m2">㎡</span>
+                                                <input name="zx_square" type="text" class="form-control" placeholder="输入您的房屋面积"><span class="m2">㎡</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1109,14 +1109,14 @@
                                     <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
                                     <div class="col-xs-9">
                                         <div class="row">
-                                            <div class="col-xs-12"><input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机"></div>
+                                            <div class="col-xs-12"><input name="zx_phone" type="text" class="form-control" placeholder="报价结果将发送到您的手机"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group group-disc">
-                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                    *尺渡装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
-                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <button type="button"  id="jisuan" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
                             </form>
                         </div>
@@ -1131,6 +1131,50 @@
         </div>
     </div>
 </div>
+<script>
+    //手机号正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    //装修计算器
+    $("#jisuan").click(function(){
+        var channel = $("input[name='zx_channel']").val();
+        var shi = $("select[name='zx_shi']").val();
+        var ting = $("select[name='zx_ting']").val();
+        var chu = $("select[name='zx_chu']").val();
+        var wei = $("select[name='zx_wei']").val();
+        var tai = $("select[name='zx_tai']").val();
+        var square = $("input[name='zx_square']").val();
+        var phone = $("input[name='zx_phone']").val();
+
+        if(square=='' || square==undefined){
+            alert('请填写户型面积大小！');
+        }else if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+        }else{
+            $.ajax({
+                url:"{:url('api/send/zhuang')}",
+                type:'post',
+                data:{'channel':channel,'square':square,'phone':phone,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+</script>
+
+
 <!-- 主页 / 装修工具箱 / 装修费用比例 -->
 <div class="modal fade" id="percentModal" style="display: none;">
     <div class="modal-dialog yzf-modal lg">
@@ -1144,13 +1188,13 @@
                     <div class="fixed-white-l">
                         <div class="fixed-panel-body">
                             <form class="form-horizontal calculator-form">
-                                <input name="channel" value="装修费用比例" type="hidden" />
+                                <input name="f_channel" value="装修费用比例" type="hidden" />
                                 <div class="form-group">
                                     <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <select class="form-control  remark">
+                                                <select class="form-control  remark" name="f_shi">
                                                     <option value="1室">1室</option>
                                                     <option value="2室">2室</option>
                                                     <option value="3室" selected="">3室</option>
@@ -1160,7 +1204,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="f_ting">
                                                     <option value="1厅" selected="">1厅</option>
                                                     <option value="2厅">2厅</option>
                                                     <option value="3厅">3厅</option>
@@ -1170,21 +1214,21 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="f_chu">
                                                     <option value="1厨" selected="">1厨</option>
                                                     <option value="2厨">2厨</option>
                                                     <option value="3厨">3厨</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="f_wei">
                                                     <option value="1卫" selected="">1卫</option>
                                                     <option value="2卫">2卫</option>
                                                     <option value="3卫">3卫</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
+                                                <select class="form-control remark" name="f_tai">
                                                     <option value="1阳台" selected="">1阳台</option>
                                                     <option value="2阳台">2阳台</option>
                                                     <option value="3阳台">3阳台</option>
@@ -1198,7 +1242,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12 area">
-                                                <input name="squareMeters" type="text" class="form-control" placeholder="输入您的房屋面积">
+                                                <input name="f_square" type="text" class="form-control" placeholder="输入您的房屋面积">
                                                 <span class="m2">㎡</span>
                                             </div>
                                         </div>
@@ -1209,15 +1253,15 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <input name="phoneNumber" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
+                                                <input name="f_phone" type="text" class="form-control" placeholder="报价结果将发送到您的手机">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group group-disc">
-                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                    *尺渡装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
-                                <button type="button" class="btn submit-label-btn submit">开始计算</button>
+                                <button type="button" id="feiyong" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
                             </form>
                         </div>
@@ -1237,6 +1281,50 @@
         </div>
     </div>
 </div>
+<script>
+    //手机号正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    //装修计算器
+    $("#feiyong").click(function(){
+        var channel = $("input[name='f_channel']").val();
+        var shi = $("select[name='f_shi']").val();
+        var ting = $("select[name='f_ting']").val();
+        var chu = $("select[name='f_chu']").val();
+        var wei = $("select[name='f_wei']").val();
+        var tai = $("select[name='f_tai']").val();
+        var square = $("input[name='f_square']").val();
+        var phone = $("input[name='f_phone']").val();
+
+        if(square=='' || square==undefined){
+            alert('请填写户型面积大小！');
+        }else if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+        }else{
+            $.ajax({
+                url:"{:url('api/send/zhuang')}",
+                type:'post',
+                data:{'channel':channel,'square':square,'phone':phone,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+</script>
+
+
 <!-- 主页 / 装修工具箱 / 工期计算器 -->
 <div class="modal fade" id="timeModal">
     <div class="modal-dialog yzf-modal lg">
@@ -1386,7 +1474,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group group-disc">
-                                    *业之峰装饰向您承诺，您的个人隐私我们会严格保密！
+                                    *尺渡装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
                                 <button type="button" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
@@ -1499,12 +1587,15 @@
                             <button type="button" class="btn btn-gold btn-block">查询结果发送至手机</button>
                         </div>
                     </div>
-                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                    <div class="form-disc">*尺渡装饰向您承诺，您的个人隐私我们会严格保密！</div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+
 <!-- 主页 / 环保三防体系 / 官网专属礼包 -->
 <div class="modal fade" id="exclusiveModal">
     <div class="modal-dialog yzf-modal">
@@ -1544,7 +1635,6 @@
         </div>
     </div>
 </div>
-
 {inlcude file="public/libao" /}
 
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
@@ -1584,7 +1674,7 @@
                             <button type="button" class="btn btn-gold btn-block">立即报名</button>
                         </div>
                     </div>
-                    <div class="form-disc">*业之峰装饰向您承诺，您的个人隐私我们会严格保密！</div>
+                    <div class="form-disc">*尺渡装饰向您承诺，您的个人隐私我们会严格保密！</div>
                 </form>
             </div>
         </div>
