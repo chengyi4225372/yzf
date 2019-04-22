@@ -95,11 +95,7 @@ class  Send extends Controller
                 $this->result('','400','sorry,您没有领取成功，请重新填写，可以再次领取！','json');
             }
         }
-
-
     }
-
-
 
     //预约设计师
     public function designer(){
@@ -110,6 +106,30 @@ class  Send extends Controller
         }else{
             $this->result('','400','sorry,请尝试刷新网页重新提交预约申请！','json');
         }
+    }
+
+
+    //算算我家房子装修花多少钱 sp.html todo 需要连接短信接口
+    public function jisuan(){
+        $data = input('post.');
+        $arr = explode(' ',$data['remark']);
+        unset($arr['4']);
+        $res = Db::name('yuyue')->insert(
+            array(
+                'channel'=>$data['channel'],
+                'square'=>$data['square'],
+                'phone'=>$data['phone'],
+                'shi'=>$arr['0'],
+                'ting'=>$arr['1'],
+                'wei'=>$arr['2'],
+                'tai'=>$arr['3'],
+            )
+        );
+     if($res){
+         $this->result('','200','恭喜你,稍后结果会发送到您的手机！','json');
+     }else {
+         $this->result('','400','对不起，提交失败！','json');
+     }
 
     }
 
