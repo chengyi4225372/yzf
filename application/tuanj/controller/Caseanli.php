@@ -27,7 +27,7 @@ class  Caseanli extends  BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
-
+   //关联查询
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
                 $data[$key]['r_id'] = Db::name('region')->where('id', '=', $val['r_id'])->value('title');
@@ -38,6 +38,20 @@ class  Caseanli extends  BasicAdmin {
                 $data[$key]['she_id'] = Db::name('designer')->where('id', '=', $val['she_id'])->value('names');
         }
     }
+
+
+    //热门楼盘排序
+    public  function sort(){
+       $id = input('post.id');
+       $sort = input('post.val');
+       $res = Db::name('lou_anli')->where('id',$id)->update(array('sort'=>$sort));
+       if($res){
+           $this->result('','200','更新成功！','json');
+       }else{
+           $this->result('','400','更新失败！','json');
+       }
+    }
+
 
 
 

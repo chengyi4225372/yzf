@@ -42,8 +42,13 @@ class Special extends Common {
         return $this->fetch();
     }
 
-    //武灵靠谱承诺
+    //五零靠谱承诺
     public function fivezero(){
+        return $this->fetch();
+    }
+
+    //空间榜样
+    public function  kjby(){
         return $this->fetch();
     }
 }

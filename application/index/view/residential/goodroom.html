@@ -126,10 +126,10 @@
                     </dl>
                     <div class="calculator-screen"></div>
                     <form class="form-horizontal calculator-form">
-                        <input name="Channel" value="攻略站报价计算器" type="hidden" />
+                        <input name="gn_channel" value="攻略站报价计算器" type="hidden" />
                         <div class="form-group">
                             <div class="col-xs-4">
-                                <select class="form-control  remark">
+                                <select class="form-control  remark" name="gn_shi">
                                     <option value="1室">1室</option>
                                     <option value="2室">2室</option>
                                     <option value="3室" selected="">3室</option>
@@ -139,7 +139,7 @@
                                 </select>
                             </div>
                             <div class="col-xs-4">
-                                <select class="form-control remark">
+                                <select class="form-control remark" name="gn_ting">
                                     <option value="1厅" selected="">1厅</option>
                                     <option value="2厅">2厅</option>
                                     <option value="3厅">3厅</option>
@@ -149,7 +149,7 @@
                                 </select>
                             </div>
                             <div class="col-xs-4">
-                                <select class="form-control remark">
+                                <select class="form-control remark" name="gn_chu">
                                     <option value="1厨" selected="">1厨</option>
                                     <option value="2厨">2厨</option>
                                     <option value="3厨">3厨</option>
@@ -158,14 +158,14 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <select class="form-control remark">
+                                <select class="form-control remark" name="gn_wei">
                                     <option value="1卫" selected="">1卫</option>
                                     <option value="2卫">2卫</option>
                                     <option value="3卫">3卫</option>
                                 </select>
                             </div>
                             <div class="col-xs-6">
-                                <select class="form-control remark">
+                                <select class="form-control remark" name="gn_tai">
                                     <option value="1阳台" selected="">1阳台</option>
                                     <option value="2阳台">2阳台</option>
                                     <option value="3阳台">3阳台</option>
@@ -174,22 +174,23 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12 area">
-                                <input type="text" class="form-control" name="SquareMeters" placeholder="输入您的房屋面积">
+                                <input type="text" class="form-control" name="gn_square" placeholder="输入您的房屋面积">
                                 <span class="m2">㎡</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="text" class="form-control" name="PhoneNumber" placeholder="报价结果将发送到您的手机上">
+                                <input type="text" class="form-control" name="gn_phone" placeholder="报价结果将发送到您的手机上">
                             </div>
                         </div>
                         <div class="form-group btn-box submit">
                             <div class="col-xs-12">
-                                <a class="btn btn-block">发送至手机</a>
+                                <a class="btn btn-block" id="gongnue">发送至手机</a>
                             </div>
                         </div>
                     </form>
                 </div>
+                 <!--   装修常识-->
                 <div class="side-panel">
                     <div class="side-panel-header">
                         <a href="http://www.yzf.com.cn/DecorationRaiders/List/50" class="more">更多》</a>
@@ -211,46 +212,19 @@
                     </div>
                 </div>
 
+               <!-- 热门案例-->
                 <div class="side-panel">
                     <div class="side-panel-header">热门案例</div>
                     <div class="side-panel-body">
                         <ul class="hot-list">
+                            {volist name="hot" id="vv"}
                             <li>
-                                <a href="/ResidentialCase/detail/65709" title="狮山原著">
-                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138141143318.png" alt="">
-                                    <span>狮山原著 </span>
+                                <a href="{:url('residential/goodroom')}?id={$vv.id}" title="{$vv.title}">
+                                    <img src="{$vv.logo}" alt="">
+                                    <span>{$vv.title|default=''} </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="/ResidentialCase/detail/65708" title="狮山原著">
-                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138140546339.png" alt="">
-                                    <span>狮山原著 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ResidentialCase/detail/65707" title="狮山原著">
-                                    <img src="http://picfw3.yzf.com.cn/100007/2018/10/10/2138140351724.png" alt="">
-                                    <span>狮山原著 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ResidentialCase/detail/64944" title="小石城">
-                                    <img src="http://picfw3.yzf.com.cn/100007/2018/8/2/2078569030193.jpg" alt="">
-                                    <span>小石城 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ResidentialCase/detail/58253" title="荷澜庭 ">
-                                    <img src="http://picfw.yzf.com.cn/2017/7/15/1747607599999.jpg_306x210.jpg" alt="">
-                                    <span>荷澜庭  </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ResidentialCase/detail/69101" title="姑苏铭著">
-                                    <img src="http://picfwoss.yzf.com.cn/100007/2019/3/13/2270993616647.jpg" alt="">
-                                    <span>姑苏铭著 </span>
-                                </a>
-                            </li>
+                            {/volist}
                         </ul>
                     </div>
                 </div>
@@ -389,6 +363,50 @@
     $('#a_qq').click(function () {
         $('#consultation').trigger('click');
     });
+</script>
+
+<script>
+    //装修攻略
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //攻略
+    $("#gongnue").click(function(){
+        var shi = $("select[name='gn_shi']").val();
+        var ting = $("select[name='gn_ting']").val();
+        var chu = $("select[name='gn_chu']").val();
+        var wei = $("select[name='gn_wei']").val();
+        var tai = $("select[name='gn_tai']").val();
+        var channel = $("input[name='gn_channel']").val();
+        var phone = $("input[name='gn_phone']").val();
+        var square = $("input[name='gn_square']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+        }else if (square == '' ||square == undefined ){
+            alert('请填写户型大小！');;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        //todo 未知短信触发
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
 </script>
 
 </body>

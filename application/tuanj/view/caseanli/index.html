@@ -33,6 +33,7 @@
             <th class='text-left nowrap'>所属户型</th>
             <th class='text-left nowrap'>所属面积</th>
             <th class='text-left nowrap'>是否推荐为首页展示</th>
+            <th class='text-left nowrap'>热门楼盘排序</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -70,6 +71,10 @@
                   不推荐首页展示
                  {/eq}
             </td>
+            <td class='list-table-sort-td'>
+                <input name="sort" value="{$vo.sort|default=''}"  onchange="news_sort('{$vo.id}',$(this).val())" class="list-sort-input">
+            </td>
+
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>
@@ -93,5 +98,23 @@
         window.form.render();
         window.laydate.render({range: true, elem: '#create_at'});
     })();
+</script>
+<script>
+    function news_sort(id,val){
+        $.ajax({
+            url:"{:url('tuanj/caseanli/sort')}",
+            type:'post',
+            data:{'id':id,'val':val},
+            success:function(res){
+                if(res.code == 200){
+                    alert(res.msg);
+                    window.location.reload();
+                }else{
+                    alert(res.msg);
+                    window.location.reload();
+                }
+            }
+        })
+    }
 </script>
 {/block}

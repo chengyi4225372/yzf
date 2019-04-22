@@ -323,6 +323,14 @@ class Residential extends Common{
         $info['jibie'] = Db::name('jibie')->where('id',$info['designer']['j_id'])->value('title');
         $info['img'] = explode('|',$info['img']);
         $this->assign('info',$info);
+        //热门楼盘 关联楼盘 名称
+        $hot = Db::name('lou_anli')
+            ->alias('a')
+            ->field('a.id,a.logo,a.sort,b.title')
+            ->leftJoin('remen_lou b','b.id =a.re_id')
+            ->order('a.sort desc')
+            ->select();
+        $this->assign('hot',$hot);
         return $this->fetch();
     }
 

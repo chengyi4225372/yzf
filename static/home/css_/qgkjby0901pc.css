@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/*定义工具类mixin*/
+.wrap {
+  background: url(/static/home/Images/pcb1.jpg) no-repeat center top;
+  max-width: 1920px;
+  min-width: 1200px;
+  height: 3744px;
+  width: 100%;
+}
+.wrap .content {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.wrap .content .s1 {
+  height: 1341px;
+  position: relative;
+}
+.wrap .content .s1 .b1 {
+  position: absolute;
+  top: 748px;
+  width: 100%;
+}
+.wrap .content .s1 .b1 .l {
+  color: #f5eaca;
+  width: 515px;
+  float: left;
+  padding-top: 322px;
+  padding-left: 123px;
+}
+.wrap .content .s1 .b1 .l .p1 {
+  font-size: 41px;
+}
+.wrap .content .s1 .b1 .l .p2 {
+  font-size: 36.6px;
+  vertical-align: middle;
+}
+.wrap .content .s1 .b1 .l .p2 span {
+  font-size: 45px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+}
+.wrap .content .s1 .b1 .r {
+  padding-top: 150px;
+  width: 520px;
+  color: #bcbcbc;
+  position: relative;
+  float: left;
+}
+.wrap .content .s1 .b1 .r .t h3 {
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  font-size: 40px;
+}
+.wrap .content .s1 .b1 .r .t .p1 {
+  position: absolute;
+  top: 77px;
+  left: 23px;
+  font-size: 24.6px;
+}
+.wrap .content .s1 .b1 .r .t .p3 {
+  vertical-align: middle;
+  position: absolute;
+  top: 5px;
+  left: 300px;
+}
+.wrap .content .s1 .b1 .r .t .p3 span {
+  font-size: 70px;
+  font-weight: bolder;
+}
+.wrap .content .s1 .b1 .r .t .p3 small {
+  font-size: 30px;
+  font-weight: bolder;
+  position: relative;
+  top: -5px;
+}
+.wrap .content .s1 .b1 .r .t .p2 {
+  position: absolute;
+  top: 70px;
+  left: 266px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.wrap .content .s1 .b1 .r .b {
+  width: 504px;
+  position: relative;
+}
+.wrap .content .s1 .b1 .r .b .submit {
+  position: absolute;
+  height: 64px;
+  top: 266px;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.wrap .content .s1 .b1 .r .b .submit p {
+  position: absolute;
+  top: 16px;
+  left: 150px;
+}
+.wrap .content form .req, .wrap .content form .m2 {
+  position: relative;
+}
+.wrap .content form input, .wrap .content form select {
+  width: 100%;
+  font-size: 18px;
+  line-height: 50px;
+  color: #FFF;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+  border: 1px solid #ffffff;
+  outline: none;
+  /*color: #f8cd48;*/
+}
+.wrap .content form .req::before {
+  content: '*';
+  position: absolute;
+  color: #ff0000;
+  right: 15px;
+  z-index: 8;
+  line-height: 52px;
+}
+.wrap .content form .m2::before {
+  content: 'm²';
+  position: absolute;
+  color: #333333;
+  right: 15px;
+  z-index: 8;
+  line-height: 52px;
+}
+.wrap .content form input::-webkit-input-placeholder {
+  color: #fff;
+  opacity: .5;
+}
+.wrap .content .s2 {
+  height: 774px;
+  position: relative;
+}
+.wrap .content .s2 .p1 {
+  position: absolute;
+  top: 273px;
+  left: 968px;
+  color: #604105;
+  font-size: 30px;
+}
+.wrap .content .s2 form {
+  position: absolute;
+  top: 490px;
+  left: 32px;
+  width: 430px;
+}
+.wrap .content .s2 form .submit {
+  width: 100%;
+  height: 60px;
+  padding-top: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.wrap .content .s2 form .submit p {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+  line-height: 60px;
+  position: relative;
+  left: -16px;
+}
+.wrap .content .s2 form small {
+  font-size: 18px;
+  color: #fff;
+}
+.wrap .content #company {
+  color: #fff;
+  position: absolute;
+  top: 3551px;
+  left: 462px;
+}
