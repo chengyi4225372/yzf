@@ -11,9 +11,77 @@ use think\Controller;
 use service\FileService;
 use think\Db;
 use think\Request;
+use think\Exception;
+use think\facade\Config;
+
 class  Send extends Controller
 {
-   //我的户型
+
+
+
+    /**
+     * 请求接口返回内容
+     * @param  string $url [请求的URL地址]
+     * @param  string $params [请求的参数]
+     * @param  int $ipost [是否采用POST形式]
+     * @return  string
+     */
+    protected function juhe_curl($url, $params = false, $ispost = 0)
+    {
+        $httpInfo = array();
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'JuheData');
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        if ($ispost) {
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+            curl_setopt($ch, CURLOPT_URL, $url);
+        } else {
+            if ($params) {
+                curl_setopt($ch, CURLOPT_URL, $url.'?'.$params);
+            } else {
+                curl_setopt($ch, CURLOPT_URL, $url);
+            }
+        }
+        $response = curl_exec($ch);
+        if ($response === FALSE) {
+            //echo "cURL Error: " . curl_error($ch);
+            return false;
+        }
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $httpInfo = array_merge($httpInfo, curl_getinfo($ch));
+        curl_close($ch);
+        return $response;
+    }
+
+
+    //聚合 发送短信方法
+    protected  function send_sms($phone){
+        $rand = mt_rand(0000,9999);
+        $url = "http://v.juhe.cn/sms/send";
+        $params = array(
+            'key'   => config('sms.key'), //您申请的APPKEY
+            'mobile'    => $phone, //接受短信的用户手机号码
+            'tpl_id'    => config('sms.tpl_id'), //您申请的短信模板ID，根据实际情况修改
+            'tpl_value' =>'%23code%23%3d'.$rand.'&#company#='.config('sms.company') ,//您设置的模板变量，根据实际情况修改
+        );
+        $paramstring = http_build_query($params);
+        $content = $this->juhe_curl($url, $paramstring);
+        $result = json_decode($content, true);
+        if ($result) {
+            //var_dump($result);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //我的户型
     public function sheji(){
         $data = input('post.');
         $res = Db::name('yuyue')->insert(
@@ -81,7 +149,7 @@ class  Send extends Controller
         }
 
    //礼包 + 热门楼盘  获取楼盘专属优惠 攻略站报价计算器
-    //todo 怎么触发短信 接果 未知
+    // 怎么触发短信 接果 未知
     public function libao(){
         $data = input('post.');
         $tel = Db::name('yuyue')->where('phone',$data['phone'])->value('status');
@@ -90,9 +158,15 @@ class  Send extends Controller
         }else{
             $res = Db::name('yuyue')->data($data)->insert();
             if($res){
-                $this->result('','200','','json');
+                  //接入聚合短信
+                 $sms =  $this->send_sms($data['phone']);
+                 if($sms ==true){
+                     $this->result('','2000','短信发送成功！','json');
+                 }else{
+                     $this->result('','4002','短信发送失败！','json');
+                 }
             }else{
-                $this->result('','400','sorry,您没有领取成功，请重新填写，可以再次领取！','json');
+                $this->result('','4000','sorry,您没有领取成功，请重新填写，可以再次领取！','json');
             }
         }
     }
@@ -132,5 +206,11 @@ class  Send extends Controller
      }
 
     }
+
+
+
+
+
+
 
 }

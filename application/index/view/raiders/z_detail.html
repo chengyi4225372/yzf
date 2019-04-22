@@ -89,10 +89,10 @@
                     </div>
 
                     <div class="side-adv">
-                        <a target="_blank" href="http://wh.yzf.com.cn/s2017/qgkjby0901"><img src="/images/side-adv.jpg" alt=""></a>
+                        <a target="_blank" href="{:url('special/kjby')}"><img src="__STATIC__/home/images/side-adv.jpg" alt=""></a>
                     </div>
                     <div class="side-adv">
-                        <a><img src="/images/side-advlr.png" alt=""></a>
+                        <a><img src="__STATIC__/home/images/side-advlr.png" alt=""></a>
                     </div>
 
 
@@ -315,10 +315,12 @@
                 data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
                 success:function(res){
                     console.log(res);
-                    if(res.code == 200){
-                        //todo 未知短信触发
+                    if(res.code == 2000){
+                        alert(res.msg);
                         window.location.reload();
                     }else if(res.code==4001){
+                        alert(res.code);
+                    }else if(res.code== 4002){
                         alert(res.code);
                     }else{
                         alert(res.msg);

@@ -1609,22 +1609,22 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
-                    <input name="channel" value="官网专属礼包" type="hidden" />
+                    <input name="zs_channel" value="官网专属礼包" type="hidden" />
                     <div class="form-group">
                         <label class="col-xs-2 control-label">姓名</label>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="name" placeholder="输入姓名">
+                            <input type="text" class="form-control" name="zs_names" placeholder="输入姓名">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-2 control-label">手机</label>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="phoneNumber" placeholder="输入手机号">
+                            <input type="text" class="form-control" name="zs_phone" placeholder="输入手机号">
                         </div>
                     </div>
                     <div class="form-group submit">
                         <div class="btn-wrap">
-                            <button type="button"  class="btn btn-gold btn-block">立即领取</button>
+                            <button type="button"  id="zslibao" class="btn btn-gold btn-block">立即领取</button>
                         </div>
                     </div>
                     <div class="form-disc">*可与线下活动同时享用</div>
@@ -1633,6 +1633,48 @@
         </div>
     </div>
 </div>
+<script>
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //预约提交
+    $("#zslibao").click(function(){
+        var channel = $("input[name='zs_channel']").val();
+        var names = $("input[name='zs_names']").val();
+        var phone = $("input[name='zs_phone']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+        }else if (names == '' ||names == undefined ){
+            alert('用户名不能为空！');;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'names':names,'phone':phone},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 2000){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else if(res.code== 4002){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+
+
+</script>
+
 {inlcude file="public/libao" /}
 
 <div class="modal fade" id="shangmenliangfang" style="display: none;">
