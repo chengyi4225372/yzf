@@ -329,10 +329,45 @@ class Residential extends Common{
             ->field('a.id,a.logo,a.sort,b.title')
             ->leftJoin('remen_lou b','b.id =a.re_id')
             ->order('a.sort desc')
+            ->limit(10) //默认10条
             ->select();
         $this->assign('hot',$hot);
         return $this->fetch();
     }
+
+    //楼盘案例详情 上一套 下一套
+    public function nextprev(){
+        $max = Db::name('lou_anli')->max('id');
+        $min = Db::name('lou_anli')->min('id');
+        $obj = input('post.obj');
+        $id  = input('post.id');
+        if($obj=='true'){
+            //下一套
+            if($id == $max){
+                $data = Db::name('lou_anli')->field('id,logo')->where('id',$max)->find();
+                $this->result($data,'4001','已经是最后一页！','json');
+            }else{
+                $data = Db::name('lou_anli')->field('id,logo')->where('id',$id+1)->find();
+                if(empty($data)){
+                    $this->result('','3003','下一套数据为空！','json');
+                }
+                $this->result($data,'2001','下一套！','json');
+            }
+        }else{
+            //上一套
+             if($id == $min){
+               $data = Db::name('lou_anli')->field('id,logo')->where('id',$min)->find();
+               $this->result($data,'4002','已经是首页！','json');
+               }else{
+                 $data = Db::name('lou_anli')->field('id,logo')->where('id',$id-1)->find();
+                 if(empty($data)){
+                     $this->result('','3004','上一套数据为空！','json');
+                 }
+                 $this->result($data,'2002','上一套！','json');
+           }
+        }
+    }
+
 
     //工地
     public function detail_fay(){
