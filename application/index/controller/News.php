@@ -36,6 +36,9 @@ class News extends Common {
         }
         $res = Db::name('new')->where('id',$id)->find();
         $this->assign('res',$res);
+        //热门文章列表
+        $re= $this->remen();
+        $this->assign('re',$re);
         return  $this->fetch();
     }
 
