@@ -67,4 +67,19 @@ class Raiders extends Common {
         return $this->fetch();
     }
 
+    //装修材料
+    public function cai(){
+        return $this->fetch();
+    }
+
+
+    //装修风水
+    public function water(){
+        return $this->fetch();
+    }
+
+   //装修百科
+    public function bai(){
+        return $this->fetch();
+    }
 }
