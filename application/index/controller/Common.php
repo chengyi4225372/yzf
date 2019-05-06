@@ -71,7 +71,7 @@ class Common extends Controller {
     }
 
     //热门文章排行榜
-  public  function remen (){
+    public  function remen (){
         $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->select();
         return $arr;
     }
