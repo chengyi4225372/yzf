@@ -8,9 +8,10 @@
 namespace  app\mobile\controller;
 
 use think\Db;
+use think\Controller;
 use app\index\controller\Common;
 
-class Index extends Common{
+class Index extends controller{
     //手机端 首页
     public function index(){
        return  $this->fetch();

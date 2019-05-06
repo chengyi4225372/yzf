@@ -27,6 +27,7 @@ class Common extends Controller {
     public $problem = 'news_problem';
     
     public function initialize() {
+
        //菜单栏
         $lists = Db::name('list')->select();
         $this->assign('lists',$lists);
@@ -64,6 +65,9 @@ class Common extends Controller {
         //menu 热门搜索
         $hot = Db::name('remen_lou')->field('id,title')->where('search',1)->order('id desc')->limit(8)->select();
         $this->assign('hot',$hot);
+        if(isMobile()){
+            $this->redirect('@mobile/index/index');
+        }
     }
 
     //热门文章排行榜
