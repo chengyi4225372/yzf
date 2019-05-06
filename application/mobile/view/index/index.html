@@ -1,13 +1,3217 @@
-<!doctype html>
-<html lang="en">
+<html lang="zh-cn" style="font-size:48px!important" data-dpr="1" class="pixel-ratio-3 retina android android-5 android-5-0">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <style type="text/css">
+        .swal-icon--error {
+        border-color: #f27474;
+        -webkit-animation: animateErrorIcon .5s;
+        animation: animateErrorIcon .5s
+    }
+
+    .swal-icon--error__x-mark {
+        position: relative;
+        display: block;
+        -webkit-animation: animateXMark .5s;
+        animation: animateXMark .5s
+    }
+
+    .swal-icon--error__line {
+        position: absolute;
+        height: 5px;
+        width: 47px;
+        background-color: #f27474;
+        display: block;
+        top: 37px;
+        border-radius: 2px
+    }
+
+    .swal-icon--error__line--left {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        left: 17px
+    }
+
+    .swal-icon--error__line--right {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        right: 16px
+    }
+
+    @-webkit-keyframes animateErrorIcon {
+        0% {
+            -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+            opacity: 0
+        }
+        to {
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            opacity: 1
+        }
+    }
+
+    @keyframes animateErrorIcon {
+        0% {
+            -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+            opacity: 0
+        }
+        to {
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes animateXMark {
+        0% {
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            margin-top: 26px;
+            opacity: 0
+        }
+        50% {
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            margin-top: 26px;
+            opacity: 0
+        }
+        80% {
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+            margin-top: -6px
+        }
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            margin-top: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes animateXMark {
+        0% {
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            margin-top: 26px;
+            opacity: 0
+        }
+        50% {
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            margin-top: 26px;
+            opacity: 0
+        }
+        80% {
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+            margin-top: -6px
+        }
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            margin-top: 0;
+            opacity: 1
+        }
+    }
+
+    .swal-icon--warning {
+        border-color: #f8bb86;
+        -webkit-animation: pulseWarning .75s infinite alternate;
+        animation: pulseWarning .75s infinite alternate
+    }
+
+    .swal-icon--warning__body {
+        width: 5px;
+        height: 47px;
+        top: 10px;
+        border-radius: 2px;
+        margin-left: -2px
+    }
+
+    .swal-icon--warning__body, .swal-icon--warning__dot {
+        position: absolute;
+        left: 50%;
+        background-color: #f8bb86
+    }
+
+    .swal-icon--warning__dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-left: -4px;
+        bottom: -11px
+    }
+
+    @-webkit-keyframes pulseWarning {
+        0% {
+            border-color: #f8d486
+        }
+        to {
+            border-color: #f8bb86
+        }
+    }
+
+    @keyframes pulseWarning {
+        0% {
+            border-color: #f8d486
+        }
+        to {
+            border-color: #f8bb86
+        }
+    }
+
+    .swal-icon--success {
+        border-color: #a5dc86
+    }
+
+    .swal-icon--success:after, .swal-icon--success:before {
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        width: 60px;
+        height: 120px;
+        background: #fff;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+
+    .swal-icon--success:before {
+        border-radius: 120px 0 0 120px;
+        top: -7px;
+        left: -33px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 60px 60px;
+        transform-origin: 60px 60px
+    }
+
+    .swal-icon--success:after {
+        border-radius: 0 120px 120px 0;
+        top: -11px;
+        left: 30px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 60px;
+        transform-origin: 0 60px;
+        -webkit-animation: rotatePlaceholder 4.25s ease-in;
+        animation: rotatePlaceholder 4.25s ease-in
+    }
+
+    .swal-icon--success__ring {
+        width: 80px;
+        height: 80px;
+        border: 4px solid hsla(98, 55%, 69%, .2);
+        border-radius: 50%;
+        box-sizing: content-box;
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        z-index: 2
+    }
+
+    .swal-icon--success__hide-corners {
+        width: 5px;
+        height: 90px;
+        background-color: #fff;
+        padding: 1px;
+        position: absolute;
+        left: 28px;
+        top: 8px;
+        z-index: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+
+    .swal-icon--success__line {
+        height: 5px;
+        background-color: #a5dc86;
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 2
+    }
+
+    .swal-icon--success__line--tip {
+        width: 25px;
+        left: 14px;
+        top: 46px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-animation: animateSuccessTip .75s;
+        animation: animateSuccessTip .75s
+    }
+
+    .swal-icon--success__line--long {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: animateSuccessLong .75s;
+        animation: animateSuccessLong .75s
+    }
+
+    @-webkit-keyframes rotatePlaceholder {
+        0% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        5% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        12% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+        to {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+    }
+
+    @keyframes rotatePlaceholder {
+        0% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        5% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        12% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+        to {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+    }
+
+    @-webkit-keyframes animateSuccessTip {
+        0% {
+            width: 0;
+            left: 1px;
+            top: 19px
+        }
+        54% {
+            width: 0;
+            left: 1px;
+            top: 19px
+        }
+        70% {
+            width: 50px;
+            left: -8px;
+            top: 37px
+        }
+        84% {
+            width: 17px;
+            left: 21px;
+            top: 48px
+        }
+        to {
+            width: 25px;
+            left: 14px;
+            top: 45px
+        }
+    }
+
+    @keyframes animateSuccessTip {
+        0% {
+            width: 0;
+            left: 1px;
+            top: 19px
+        }
+        54% {
+            width: 0;
+            left: 1px;
+            top: 19px
+        }
+        70% {
+            width: 50px;
+            left: -8px;
+            top: 37px
+        }
+        84% {
+            width: 17px;
+            left: 21px;
+            top: 48px
+        }
+        to {
+            width: 25px;
+            left: 14px;
+            top: 45px
+        }
+    }
+
+    @-webkit-keyframes animateSuccessLong {
+        0% {
+            width: 0;
+            right: 46px;
+            top: 54px
+        }
+        65% {
+            width: 0;
+            right: 46px;
+            top: 54px
+        }
+        84% {
+            width: 55px;
+            right: 0;
+            top: 35px
+        }
+        to {
+            width: 47px;
+            right: 8px;
+            top: 38px
+        }
+    }
+
+    @keyframes animateSuccessLong {
+        0% {
+            width: 0;
+            right: 46px;
+            top: 54px
+        }
+        65% {
+            width: 0;
+            right: 46px;
+            top: 54px
+        }
+        84% {
+            width: 55px;
+            right: 0;
+            top: 35px
+        }
+        to {
+            width: 47px;
+            right: 8px;
+            top: 38px
+        }
+    }
+
+    .swal-icon--info {
+        border-color: #c9dae1
+    }
+
+    .swal-icon--info:before {
+        width: 5px;
+        height: 29px;
+        bottom: 17px;
+        border-radius: 2px;
+        margin-left: -2px
+    }
+
+    .swal-icon--info:after, .swal-icon--info:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        background-color: #c9dae1
+    }
+
+    .swal-icon--info:after {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-left: -3px;
+        top: 19px
+    }
+
+    .swal-icon {
+        width: 80px;
+        height: 80px;
+        border-width: 4px;
+        border-style: solid;
+        border-radius: 50%;
+        padding: 0;
+        position: relative;
+        box-sizing: content-box;
+        margin: 20px auto
+    }
+
+    .swal-icon:first-child {
+        margin-top: 32px
+    }
+
+    .swal-icon--custom {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        border: none;
+        border-radius: 0
+    }
+
+    .swal-icon img {
+        max-width: 100%;
+        max-height: 100%
+    }
+
+    .swal-title {
+        color: rgba(0, 0, 0, .65);
+        font-weight: 600;
+        text-transform: none;
+        position: relative;
+        display: block;
+        padding: 13px 16px;
+        font-size: 27px;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 0
+    }
+
+    .swal-title:first-child {
+        margin-top: 26px
+    }
+
+    .swal-title:not(:first-child) {
+        padding-bottom: 0
+    }
+
+    .swal-title:not(:last-child) {
+        margin-bottom: 13px
+    }
+
+    .swal-text {
+        font-size: 16px;
+        position: relative;
+        float: none;
+        line-height: normal;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .64);
+        max-width: calc(100% - 20px);
+        overflow-wrap: break-word;
+        box-sizing: border-box
+    }
+
+    .swal-text:first-child {
+        margin-top: 45px
+    }
+
+    .swal-text:last-child {
+        margin-bottom: 45px
+    }
+
+    .swal-footer {
+        text-align: right;
+        padding-top: 13px;
+        margin-top: 13px;
+        padding: 13px 16px;
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+    .swal-button-container {
+        margin: 5px;
+        display: inline-block;
+        position: relative
+    }
+
+    .swal-button {
+        background-color: #7cd1f9;
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 24px;
+        margin: 0;
+        cursor: pointer
+    }
+
+    .swal-button[not:disabled
+
+    ]
+    :hover {
+        background-color: #78cbf2
+    }
+
+    .swal-button:active {
+        background-color: #70bce0
+    }
+
+    .swal-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(43, 114, 165, .29)
+    }
+
+    .swal-button[disabled] {
+        opacity: .5;
+        cursor: default
+    }
+
+    .swal-button::-moz-focus-inner {
+        border: 0
+    }
+
+    .swal-button--cancel {
+        color: #555;
+        background-color: #efefef
+    }
+
+    .swal-button--cancel[not:disabled
+
+    ]
+    :hover {
+        background-color: #e8e8e8
+    }
+
+    .swal-button--cancel:active {
+        background-color: #d7d7d7
+    }
+
+    .swal-button--cancel:focus {
+        box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, .29)
+    }
+
+    .swal-button--danger {
+        background-color: #e64942
+    }
+
+    .swal-button--danger[not:disabled
+
+    ]
+    :hover {
+        background-color: #df4740
+    }
+
+    .swal-button--danger:active {
+        background-color: #cf423b
+    }
+
+    .swal-button--danger:focus {
+        box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(165, 43, 43, .29)
+    }
+
+    .swal-content {
+        padding: 0 20px;
+        margin-top: 20px;
+        font-size: medium
+    }
+
+    .swal-content:last-child {
+        margin-bottom: 20px
+    }
+
+    .swal-content__input, .swal-content__textarea {
+        -webkit-appearance: none;
+        background-color: #fff;
+        border: none;
+        font-size: 14px;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, .14);
+        padding: 10px 13px;
+        border-radius: 2px;
+        transition: border-color .2s
+    }
+
+    .swal-content__input:focus, .swal-content__textarea:focus {
+        outline: none;
+        border-color: #6db8ff
+    }
+
+    .swal-content__textarea {
+        resize: vertical
+    }
+
+    .swal-button--loading {
+        color: transparent
+    }
+
+    .swal-button--loading ~ .swal-button__loader {
+        opacity: 1
+    }
+
+    .swal-button__loader {
+        position: absolute;
+        height: auto;
+        width: 43px;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        pointer-events: none;
+        opacity: 0
+    }
+
+    .swal-button__loader div {
+        display: inline-block;
+        float: none;
+        vertical-align: baseline;
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        border: none;
+        margin: 2px;
+        opacity: .4;
+        border-radius: 7px;
+        background-color: hsla(0, 0%, 100%, .9);
+        transition: background .2s;
+        -webkit-animation: swal-loading-anim 1s infinite;
+        animation: swal-loading-anim 1s infinite
+    }
+
+    .swal-button__loader div:nth-child(3n+2) {
+        -webkit-animation-delay: .15s;
+        animation-delay: .15s
+    }
+
+    .swal-button__loader div:nth-child(3n+3) {
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s
+    }
+
+    @-webkit-keyframes swal-loading-anim {
+        0% {
+            opacity: .4
+        }
+        20% {
+            opacity: .4
+        }
+        50% {
+            opacity: 1
+        }
+        to {
+            opacity: .4
+        }
+    }
+
+    @keyframes swal-loading-anim {
+        0% {
+            opacity: .4
+        }
+        20% {
+            opacity: .4
+        }
+        50% {
+            opacity: 1
+        }
+        to {
+            opacity: .4
+        }
+    }
+
+    .swal-overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 10000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .3s
+    }
+
+    .swal-overlay:before {
+        content: " ";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%
+    }
+
+    .swal-overlay--show-modal {
+        opacity: 1;
+        pointer-events: auto
+    }
+
+    .swal-overlay--show-modal .swal-modal {
+        opacity: 1;
+        pointer-events: auto;
+        box-sizing: border-box;
+        -webkit-animation: showSweetAlert .3s;
+        animation: showSweetAlert .3s;
+        will-change: transform
+    }
+
+    .swal-modal {
+        width: 478px;
+        opacity: 0;
+        pointer-events: none;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        position: static;
+        margin: 20px auto;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        z-index: 10001;
+        transition: opacity .2s, -webkit-transform .3s;
+        transition: transform .3s, opacity .2s;
+        transition: transform .3s, opacity .2s, -webkit-transform .3s
+    }
+
+    @media (max-width: 500px) {
+        .swal-modal {
+            width: calc(100% - 20px)
+        }
+    }
+
+    @-webkit-keyframes showSweetAlert {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+        1% {
+            -webkit-transform: scale(.5);
+            transform: scale(.5)
+        }
+        45% {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05)
+        }
+        80% {
+            -webkit-transform: scale(.95);
+            transform: scale(.95)
+        }
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+    }
+
+    @keyframes showSweetAlert {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+        1% {
+            -webkit-transform: scale(.5);
+            transform: scale(.5)
+        }
+        45% {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05)
+        }
+        80% {
+            -webkit-transform: scale(.95);
+            transform: scale(.95)
+        }
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+    }</style>
+    <meta name="fragment" content="!">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no,target-densitydpi=device-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>苏州装修_苏州装修公司_苏州业之峰装饰公司</title>
+    <meta name="keywords" content="苏州装修，苏州装修公司，苏州业之峰装饰，苏州别墅装修，苏州办公室装修，苏州老房翻新，苏州装修报价">
+    <meta name="description" content="苏州业之峰装饰，老牌装修公司，一线品牌主材，德系施工工艺，千套案例鉴赏，大牌设计量身定制装修方案，致力于提供更环保的高端装饰服务。">
+    <base href="/">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_286882_y3ozy1xxlob.css">
+    <style>
+        #doyoo_panel {
+        display: none !important;
+    }
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>window.prerenderReady = false;</script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="https://player.youku.com/jsapi"></script>
+    <link href="https://player.youku.com/unifull/css/unifull.min.css?v=20190124" rel="stylesheet" type="text/css">
+    <link href="styles.ed01bc6a200428ed5195.bundle.css" rel="stylesheet">
+    <style type="text/css"></style>
+    <script type="text/javascript" charset="utf-8" src="http://api.map.baidu.com/?qt=verify&amp;ak=OpqLAedMGONFbBGVarRqSGCS&amp;callback=BMap._rd._cbk51218"></script>
+    <style></style>
+    <script src="https://hm.baidu.com/hm.js?52e27d95c6d248f59f587f498f930c2c" title="seo自然流量统计"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="0.41aae72a02e437f55295.chunk.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="1.cc0749ed4efc1bdce22b.chunk.js"></script>
+    <style>
+        .fixed-info[_ngcontent-c2] {
+        position: fixed;
+        left: .1rem;
+        bottom: 3rem;
+        padding: .1rem;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, .5);
+        color: #fff
+    }
+
+    .fixed-info[_ngcontent-c2] dt[_ngcontent-c2] {
+        font-size: .28rem
+    }
+
+    .fixed-info[_ngcontent-c2] dd[_ngcontent-c2] {
+        font-size: .2rem
+    }
+
+    .fixed-info[_ngcontent-c2] + .fixed-info[_ngcontent-c2] {
+        bottom: 1.5rem
+    }</style>
+    <style>
+        .m-shadow[_ngcontent-c3] {
+        position: fixed;
+        bottom: 1.92rem;
+        left: .13rem;
+        width: 1.75rem;
+        height: 3.68rem;
+        z-index: 10
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_back[_ngcontent-c3] {
+        opacity: .6;
+        background: #4d525b;
+        border-radius: .2rem
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_back[_ngcontent-c3], .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] a[_ngcontent-c3] {
+        margin-bottom: -.15rem
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] img[_ngcontent-c3] {
+        width: .66rem;
+        height: .66rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: .15rem
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] {
+        width: 1.42rem;
+        height: .52rem;
+        border-radius: .52rem;
+        background: #fff;
+        font-size: .19rem;
+        color: #414757;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3]:last-child {
+        margin-bottom: .15rem
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] .shadow_icon[_ngcontent-c3] {
+        width: .25rem;
+        height: .25rem;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        margin-left: .09rem;
+        margin-right: .02rem
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] .shadow_icon.shadow_icon_back[_ngcontent-c3] {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RkNGOUU3QjY0Q0IxMUU5QkI1Mjg2NkRDRTM0OUY4QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RkNGOUU3QzY0Q0IxMUU5QkI1Mjg2NkRDRTM0OUY4QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRGQ0Y5RTc5NjRDQjExRTlCQjUyODY2RENFMzQ5RjhCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRGQ0Y5RTdBNjRDQjExRTlCQjUyODY2RENFMzQ5RjhCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Lhx38gAAApNJREFUeNqclkloVEEQhidxMK5xAzE6Iy4HcUEUl4MIZlzQEVTQi5k4IeBF0YMLgoj3IEj0IHoRhIjGU2SIqCHigl6MoqKIN+NCUOKCmii4JX4F/8D4fN3vjQUf7zFvuv/uquqqrqjNbk14bAxshrWwANIwAr7Ba3gAHXDxxuXWL65JKhwiNvlh2Akj4St0wXPoh1EwE5bou/12AprCxMJEVsFZqIHrcEyr/RmymKGQhb2wAnqgHqFbpX+qDAyq14RDYKMELzkEzH4wYQFqed8CVdCZWV+Xc4lsgBZ4BouhPVGGIdSmca/MEwitCYpMlsBbWKeglm0IveSRgXdwAaGJpSJHYSzk5VefDYsQsgU2wng4UhSZDhb9ggLtMovTdjgOoyOErvIw8uwmZSLbLMug2TMuCTtgKdxRykZZsxaWSyqD3mtwwpGmdl7mwE3zNQzGEDGvfIbVtpP5OrkDDv/vloCldmtMAXPZbx6PYJ7tZBy8cfzXYjBLE88Vfxk+L752MXFH4LMl0fJkzOwcUL3ymWuHgybyUSUkzE7DLu2mG9pC3OITngK9FpMnsCikxJh9V+F7qkqcUyZGGm60zFpoY23iazDBfOeqT3ASHqsI5mMKWdZWWy0zkXPy5z7PgF9wCu7CMg2OMpvPMux8pXxtub8JVkYE/wwcUP77XJWVe1uIWU8xDvvhk/pIKiKD+iIE0lrMBzhYWiDtnDTAJNWc9P9UYQSmWcIpxnXsojfYT9olZOl6X02rHAFrWvdgqs2DQKev/WaUDDValVXdK47uWKX2u6ek/doObger6z/nC2bDIR3Egi4StsoXCrpdNGboIjFccWrSRaIv7m2laNWBK1FKN5V+tdmHKpwF35XojwADAIpRwNJaNSsSAAAAAElFTkSuQmCC)
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] .shadow_icon.shadow_icon_link[_ngcontent-c3] {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1ODlFREUzQjY0Q0IxMUU5ODcxNEIzODE2NzUxNzhGRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1ODlFREUzQzY0Q0IxMUU5ODcxNEIzODE2NzUxNzhGRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU4OUVERTM5NjRDQjExRTk4NzE0QjM4MTY3NTE3OEZGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU4OUVERTNBNjRDQjExRTk4NzE0QjM4MTY3NTE3OEZGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+mSDlyQAAAcdJREFUeNqklcsrBVEYwN1hYWehEBYkUTbyKkIsLNyVJO+ElSxEKf4DKTaUlFKukOSxsvVMkUhYeaXYSGEn799X39Q0Zszc69SvM3POzO9+9zvfOROoqG6MirDVQR/kwzccwujG+sKaTBoRCKNhCpagBB7hCUphtTLYNCQPBcKMWKQhaIZ76YlwWyYQVtDNQTLUGP+QimjbnOQHNuka9HbAiEB6BWVwaX8I+S7dLRTE+JAaNqlEevfH81+SYj8R5/uVkudCunQ48SM+gnYo95Cm0i3q7ZhbKgKQA+fwCTOWOXnnw0G6qdGGyHXIcJFOwCk02hZQ7vsh1kGaAfPQ6bRBTGmXltSORVoP2fAC7zpul7YR7af5t9yk5kIZKs3S8VlNT7yb1Cp2Kn6zTuNs0lcdD7pJrVt6Gjq0pKrgxpaiBHiGN1t950nVIP1yKv4Wld5qpDcOC/qg0kSJTt8T2aGT1ExFr17Xe+wo60KdaX3/uV1z4QIOfEolp8d+zgGv9quk9GD3FMvJnwlFHtJJaNVS83Vyjej1ChRb5op0g5jSbj+RWsXLMAwpsAfXyj6kwXi4UmuOB+VzAluQpMihXQs94Uql/QgwANoCkM3HuM6HAAAAAElFTkSuQmCC)
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] .shadow_icon.shadow_icon_code[_ngcontent-c3] {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NjkwQTk2QjY0Q0IxMUU5QUREN0FFRDFCRTdEOEY3NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NjkwQTk2QzY0Q0IxMUU5QUREN0FFRDFCRTdEOEY3NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY2OTBBOTY5NjRDQjExRTlBREQ3QUVEMUJFN0Q4Rjc1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY2OTBBOTZBNjRDQjExRTlBREQ3QUVEMUJFN0Q4Rjc1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8++wsINQAAAglJREFUeNqslcsrxFEUx+9MP6/xmj9AKVZKsReRLEiDSXmFspWN10qRJBYWZGGlpojEhmYoCySPUhZCeaw8Eqsxo/EevqfOT9f1u4M49Zm59zfnfu/9nXvOGVt+cXW3EKITOMRXC4Nz0A5m+VkycwuCIAXYlXV3Bj7awChYtBB+Ay7gloRzQSY4BZugyWLdOQknsuiqsLYEZbEPLINneqMV31SP1SJDmReBHB4vgW1NeB7FN0bCr9K8GZTx2KkRLuVQxNCpC0pqBvDdym9m2gUJh8TvbB3s8YU9IRRhiE/yRqYF1VDsg2weH2mEb5kPg/jVdzHuYv5sBt9uQgSfeGBTLjgDXIINhKFO+Z3sjIS3wAy40WQACY9Lz3bAId9NAExbCIdIuBZUgBd+6JAcqUD8wCst8jNmfC91oaBdPeKfzYZeQZVXDuI0Pndgnr/JokG+kl6y0ZtvGNwDyPFe40ihmQM1PB/jItH5x5rCeaASLGgcG0CvNC/kSpvgGH9yRpbQph477xCMEK6Aku9OKSy60EWpBVIFBnm8BhotFj5L/deFE46YpY7T1+sqLx2k8jhLc6IHkMTjNMnfLzupnT+kNPk/lbRQmriTx7s/WO+V/A8iCR+Dnl8c7ETzD2I3uAW6pZ1VK1ZyNsB57+f0Uv3zTGG61Q7QohG+Bn3SfBj0azJGcOoOvQswAMffg7RDquHtAAAAAElFTkSuQmCC)
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] .shadow_icon.shadow_icon_favr[_ngcontent-c3] {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3MDVCMzkxQjY0Q0IxMUU5ODFDMDg3NDJFRkU2ODk4NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3MDVCMzkxQzY0Q0IxMUU5ODFDMDg3NDJFRkU2ODk4NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjcwNUIzOTE5NjRDQjExRTk4MUMwODc0MkVGRTY4OTg1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjcwNUIzOTFBNjRDQjExRTk4MUMwODc0MkVGRTY4OTg1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+psElyQAAAm9JREFUeNqslVuITlEUx8+nz11owkgalzyIMTeMPIiRBzMvUyIzL4x5IOaSkhkikgeXUCKXpET6XEthKIXmYR6GkXGbhEK8yGQkchkzfqv+ajudc77zYdev9X3n7P1fe+211j6JeaUVXsyxGdbp9w7YbT9uNaUiF/WJKV4J26HVNGEXzI+zMBljTgI2QScsgh/wEjbCzXSL40RQBlNhL3yG7zqeBVD0Pxw0wkc47Dw7pojW/6uDWTAHDkCX89wi2QNLSsoqJ0Seb0gVjYZC2ADTYTy8980Zrlw0wyF4REW9CUtyqXZaKLL1/KdK0sT7wzdnrUVUB9VwGrKIxo7yATyGJhxetgis5BqgG55Am0M7jIOlimofPHN3+LsPEB+LKYA8mAHlsM0iWAvnYRl89UWYCzXKVZfOPnDoeIwrcnjciiCpY+gMEE+owUz8BlxSlGkH4v20uYQtPgkrYZVv3igYoZ1fzEB8EOY6FFtpWwT1SuoR6AsHNXeA7FvozUDcjqhEeg1JdeZiRWL1PgR2wis4Cq//UnwNeelNOuVoSf6kshwIW+FeTPGhytEf4v5ONier4Sxsgcle/JEt8VOueNBVYS8+qKKeZ+DgBXyxgnDFw+6iAjVYd1x1RHvUvbnpLjv7Pw3ue5kPuyKmpHMwCQbrmgi6t5bDwhAHDy0XJDwrykG+bJtvToWO4ARc0w06NyACTycQ6mCM7FPZcjlLqcrs6qiCHLhtHcuOZ2ruO9mcqG9yi+wFu37V7h0SPgc9ep9SSdu3uhUnV7Ej9e5uVAR39DGfDcNghSrjjCPuqfv3w0Q1ZLF2XktFdbiCvwQYAOiJsFsj5ZFgAAAAAElFTkSuQmCC)
+    }
+
+    .m-shadow[_ngcontent-c3] .shadow_con[_ngcontent-c3] .item[_ngcontent-c3] span[_ngcontent-c3] {
+        margin-right: .09rem;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: inline-block;
+        text-align: justify;
+        text-align-last: justify;
+        word-break: keep-all
+    }
+
+    .m-shadow[_ngcontent-c3] .code_shadow[_ngcontent-c3] {
+        background: rgba(0, 0, 0, .6)
+    }
+
+    .m-shadow[_ngcontent-c3] .code_con[_ngcontent-c3], .m-shadow[_ngcontent-c3] .code_shadow[_ngcontent-c3] {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20
+    }
+
+    .m-shadow[_ngcontent-c3] .code_con[_ngcontent-c3] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .m-shadow[_ngcontent-c3] .code_con[_ngcontent-c3] .code[_ngcontent-c3] {
+        overflow: hidden;
+        padding: .1rem;
+        border-radius: .1rem;
+        background: #fff
+    }</style>
+    <style>
+        .view[_ngcontent-c4] {
+        background-color: #f4f4f4
+    }
+
+    .navbar[_ngcontent-c4] .city-link[_ngcontent-c4] {
+        padding: 0 .3rem
+    }
+
+    .navbar[_ngcontent-c4] .city-link[_ngcontent-c4] i[_ngcontent-c4] {
+        font-size: inherit;
+        color: #b2b5b8
+    }
+
+    .navbar[_ngcontent-c4] .city-link[_ngcontent-c4] i.icon-icon_positioning-[_ngcontent-c4] {
+        color: #b69454
+    }
+
+    .navbar[_ngcontent-c4] .logo[_ngcontent-c4] {
+        height: .9rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAAsCAYAAAAU0WE/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ODlBNjUyM0IzNDFFNzExODdEMTkyNzhBOEI4M0VBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1ODREMTk0RjcwNDQxMUU4QTY0QTgyMTlBMUMxNjQ4MCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1ODREMTk0RTcwNDQxMUU4QTY0QTgyMTlBMUMxNjQ4MCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZGRjYTYwNGYtYjc1Ny04NjQ2LThlMzEtZDA3MTM2ZDg4ZTI4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjc4OUE2NTIzQjM0MUU3MTE4N0QxOTI3OEE4QjgzRUEwIi8+IDwvcmRmOkRlc2Ny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) 50% no-repeat;
+        background-size: 3.2rem
+    }
+
+    .swiper-banner[_ngcontent-c4] {
+        height: 3.9rem
+    }
+
+    .swiper-banner[_ngcontent-c4] .slide-link[_ngcontent-c4] {
+        display: block;
+        height: 3.9rem;
+        background: 50% no-repeat;
+        background-size: cover
+    }
+
+    .discounts-panel[_ngcontent-c4] {
+        background-color: #fff;
+        height: .97rem;
+        padding: .17rem .3rem;
+        -webkit-box-shadow: 0 .01rem .03rem 0 hsla(0, 0%, 54%, .3);
+        box-shadow: 0 .01rem .03rem 0 hsla(0, 0%, 54%, .3)
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .weui-input[_ngcontent-c4] {
+        height: .62rem;
+        padding: 0 .15rem;
+        font-size: .22rem;
+        color: #737373
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .name[_ngcontent-c4] {
+        position: relative;
+        margin-right: .08rem;
+        width: 1.42rem;
+        height: .62rem;
+        line-height: .62rem
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .name[_ngcontent-c4]:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: .3rem;
+        height: .18rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAASCAYAAABM8m7ZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ODlBNjUyM0IzNDFFNzExODdEMTkyNzhBOEI4M0VBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1N0YwOUU3QTdDRDcxMUU4OERDQjkzNkFGQkIzOTMyOCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1N0YwOUU3OTdDRDcxMUU4OERDQjkzNkFGQkIzOTMyOCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY5NjRCRTkwMTU4NEU4MTFCQjUwQzE2MTU5NEJBRUNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjc4OUE2NTIzQjM0MUU3MTE4N0QxOTI3OEE4QjgzRUEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kid+xgAAAZtJREFUeNq8Vb9Lw1AQfilFhLoEXV2yuJvFPyCCorj1T7AoODgU0v/Alo4W1PwJOjuZXZcsboI6u2VoBYdi/Q7uyuvxEn8Qc/A16b3LfffdPd7z7k1rxxizB7ybeqwF3Dbxsw+c/DXL1mzy628evJVRA8+xqd/GDeXoAG3lC9gv77GFDqoPgFgpigjKtxCjiYn0mgls4rajCGn1Kx59RSSFzQvBY6GQpqMNCXAFbBe0iYgGyncDhEDK/0O1bq85FUsS42h5mWVCxuqIJLW6EHDBpcRkPVbtO9aI4I4hbU8tlSEXklm+6CeKRUFiz8nR6oEkw5wp3odC3yIhROzLEZN/N2MxSvxCHyl/rqu3VBNpwIVQ20PXfMsUC0GvQLUpII4VCe2Xvp6vEHslyRJuu22kambBqDlnjk2nFXsezupLPjKndRyZaD+Nd0TEG3g5Bj54bRU4VPEUfAqsVXBcLgMXlPCJk4qdqcBNLuwceKzikija1Z88+yWgC0yYeGoqNBcx3Va7wAEwBJ7/43pyEb8B68CR2rWV2pcAAwCOaG/u1mbHpAAAAABJRU5ErkJggg==) 0 0 no-repeat;
+        background-size: contain
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .phone[_ngcontent-c4] {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin-right: .08rem
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .phone[_ngcontent-c4]:before {
+        border-color: #a0a0a0;
+        border-radius: 2px
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .btn[_ngcontent-c4] {
+        width: 1.39rem;
+        height: .62rem;
+        line-height: .62rem;
+        font-size: .22rem;
+        color: #fff;
+        text-align: center;
+        background-color: #3f4852;
+        border-radius: .04rem
+    }
+
+    .discounts-panel[_ngcontent-c4] .discounts-panel-body[_ngcontent-c4] .btn[_ngcontent-c4]:active {
+        background-color: #292f35
+    }
+
+    .nav-wrap[_ngcontent-c4] {
+        padding: .25rem;
+        height: 3.92rem
+    }
+
+    .nav-wrap[_ngcontent-c4] .row[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    .nav-wrap[_ngcontent-c4] .item[_ngcontent-c4] {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: center;
+        padding: .16rem 0
+    }
+
+    .nav-wrap[_ngcontent-c4] .item[_ngcontent-c4] i[_ngcontent-c4] {
+        display: block;
+        margin: 0 auto .1rem;
+        width: 1.03rem;
+        height: 1.03rem;
+        line-height: 1.03rem;
+        font-size: .6rem;
+        background-color: #bfa46f;
+        color: #fff;
+        border-radius: 50%
+    }
+
+    .nav-wrap[_ngcontent-c4] .item[_ngcontent-c4] span[_ngcontent-c4] {
+        display: block;
+        line-height: 1;
+        font-size: .23rem;
+        color: #333
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] {
+        width: 2.87rem !important
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] + .swiper-slide[_ngcontent-c4] {
+        margin-left: .13rem
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] {
+        position: relative;
+        display: block;
+        width: 2.87rem;
+        height: 4.38rem;
+        background: 50% no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        border-radius: .04rem
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] dl[_ngcontent-c4] {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        height: .9rem;
+        background-color: rgba(34, 38, 43, .7);
+        line-height: 1;
+        padding-top: .1rem
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] dl[_ngcontent-c4] dt[_ngcontent-c4] {
+        color: #fff;
+        font-size: .28rem;
+        font-weight: 400;
+        margin-bottom: .13rem
+    }
+
+    .project-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] dl[_ngcontent-c4] dd[_ngcontent-c4] {
+        color: #d4d4d2;
+        font-size: .22rem
+    }
+
+    .index-panel[_ngcontent-c4] {
+        background-color: #fff;
+        -webkit-box-shadow: 0 .01rem .03rem 0 hsla(0, 0%, 54%, .3);
+        box-shadow: 0 .01rem .03rem 0 hsla(0, 0%, 54%, .3)
+    }
+
+    .index-panel[_ngcontent-c4] + .index-panel[_ngcontent-c4] {
+        margin-top: .2rem
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-header[_ngcontent-c4] {
+        padding: .36rem .3rem;
+        line-height: 1
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-header[_ngcontent-c4] strong[_ngcontent-c4] {
+        font-size: .32rem;
+        font-weight: 400
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-header[_ngcontent-c4] small[_ngcontent-c4] {
+        color: #707070;
+        font-size: .22rem
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-header[_ngcontent-c4] .pull-right[_ngcontent-c4] {
+        float: right;
+        color: #737373;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-header[_ngcontent-c4] .pull-right[_ngcontent-c4] i[_ngcontent-c4] {
+        margin-left: .06rem;
+        font-size: .14rem;
+        vertical-align: middle
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-body[_ngcontent-c4] {
+        padding: 0 .3rem .3rem
+    }
+
+    .index-panel[_ngcontent-c4] .index-panel-body.pdr-none[_ngcontent-c4] {
+        padding-right: 0
+    }
+
+    .index-panel[_ngcontent-c4] .btn-wrap[_ngcontent-c4] {
+        text-align: center;
+        padding-top: .3rem;
+        padding-right: .3rem
+    }
+
+    .index-panel[_ngcontent-c4] .btn-wrap[_ngcontent-c4] .weui-btn_default[_ngcontent-c4] {
+        vertical-align: top;
+        color: #a3a3a3;
+        font-size: .24rem;
+        display: inline-block;
+        width: auto;
+        height: .5rem;
+        line-height: .5rem;
+        border-radius: 2px;
+        background-color: transparent;
+        padding: 0 .18rem
+    }
+
+    .index-panel[_ngcontent-c4] .btn-wrap[_ngcontent-c4] .weui-btn_default[_ngcontent-c4]:after {
+        border-radius: 4px;
+        border-color: #999
+    }
+
+    .designer-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] {
+        width: 2.14rem !important
+    }
+
+    .designer-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] + .swiper-slide[_ngcontent-c4] {
+        margin-left: .13rem
+    }
+
+    .designer-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] {
+        position: relative;
+        display: block;
+        width: 2.14rem;
+        height: 2.91rem;
+        background: 50% no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        border-radius: .04rem
+    }
+
+    .designer-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] span[_ngcontent-c4] {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        height: .38rem;
+        background-color: rgba(34, 38, 43, .7);
+        line-height: .38rem;
+        color: #fff;
+        font-size: .2rem
+    }
+
+    .yy-form[_ngcontent-c4] {
+        margin-top: .3rem;
+        margin-right: .3rem;
+        background-color: #3f4852;
+        border-radius: .05rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-header[_ngcontent-c4] {
+        padding: .4rem .4rem .35rem .3rem;
+        line-height: 1;
+        overflow: hidden
+    }
+
+    .yy-form[_ngcontent-c4] .form-header[_ngcontent-c4] strong[_ngcontent-c4] {
+        position: relative;
+        font-size: .28rem;
+        font-weight: 400;
+        color: #bfa46f
+    }
+
+    .yy-form[_ngcontent-c4] .form-header[_ngcontent-c4] strong[_ngcontent-c4] span[_ngcontent-c4] {
+        position: absolute;
+        top: -.25rem;
+        margin-left: .14rem;
+        width: .35rem;
+        height: .45rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAtCAYAAAAk09IpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ODlBNjUyM0IzNDFFNzExODdEMTkyNzhBOEI4M0VBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyODdEMUU3Njc3QzMxMUU4OUI2NUU5QTkyMjhFOEExNyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyODdEMUU3NTc3QzMxMUU4OUI2NUU5QTkyMjhFOEExNyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZGRjYTYwNGYtYjc1Ny04NjQ2LThlMzEtZDA3MTM2ZDg4ZTI4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjc4OUE2NTIzQjM0MUU3MTE4N0QxOTI3OEE4QjgzRUEwIi8+IDwvcmRmOkRlc2Ny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) 0 0 no-repeat;
+        background-size: contain
+    }
+
+    .yy-form[_ngcontent-c4] .form-header[_ngcontent-c4] .pull-right[_ngcontent-c4] {
+        float: right;
+        font-size: .2rem;
+        color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .yy-form[_ngcontent-c4] .form-header[_ngcontent-c4] .pull-right[_ngcontent-c4] b[_ngcontent-c4] {
+        font-size: .28rem;
+        color: #c8161d;
+        font-weight: 400;
+        vertical-align: middle;
+        margin: 0 .06rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0 .3rem .3rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .yy-btn[_ngcontent-c4] {
+        position: relative;
+        background-color: #bfa46f;
+        width: 1.4rem;
+        height: 1.88rem;
+        border-radius: 1px;
+        font-size: .34rem;
+        color: #fff;
+        text-align: center;
+        line-height: .56rem;
+        padding-top: .35rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .yy-btn[_ngcontent-c4]:before {
+        position: absolute;
+        left: 50%;
+        top: -.1rem;
+        margin-left: -.08rem;
+        width: 0;
+        height: 0;
+        border-bottom: .1rem solid #bfa46f;
+        border-left: .08rem solid transparent;
+        border-right: .08rem solid transparent;
+        content: ""
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .form-list[_ngcontent-c4] {
+        margin-right: .05rem;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        list-style: none
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .form-list[_ngcontent-c4] li[_ngcontent-c4] .weui-input[_ngcontent-c4] {
+        height: .57rem;
+        background-color: #fff;
+        font-size: .2rem;
+        color: #737373;
+        padding: 0 .18rem;
+        border-radius: .05rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .form-list[_ngcontent-c4] li[_ngcontent-c4] .weui-btn[_ngcontent-c4] {
+        height: .57rem;
+        line-height: .57rem;
+        font-size: .28rem;
+        background-color: #bfa46f;
+        border-radius: .05rem
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .form-list[_ngcontent-c4] li[_ngcontent-c4] .weui-btn[_ngcontent-c4]:after {
+        display: none
+    }
+
+    .yy-form[_ngcontent-c4] .form-body[_ngcontent-c4] .form-list[_ngcontent-c4] li[_ngcontent-c4] + li[_ngcontent-c4] {
+        margin-top: .08rem
+    }
+
+    .tags-wrap[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 .3rem .1rem
+    }
+
+    .tags-wrap[_ngcontent-c4] .tag[_ngcontent-c4] {
+        line-height: .34rem;
+        font-size: .2rem;
+        color: #595757;
+        white-space: nowrap;
+        margin-bottom: .16rem;
+        padding: 0 .15rem;
+        margin-right: 5px
+    }
+
+    .tags-wrap[_ngcontent-c4] .tag[_ngcontent-c4]:before {
+        border-color: #a3a3a3;
+        border-radius: .08rem
+    }
+
+    .tags-wrap[_ngcontent-c4] .tag[_ngcontent-c4] i[_ngcontent-c4] {
+        font-size: inherit;
+        margin-right: .08rem;
+        color: #b69454
+    }
+
+    .case-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] {
+        width: 6rem !important
+    }
+
+    .case-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] + .swiper-slide[_ngcontent-c4] {
+        margin-left: .13rem
+    }
+
+    .case-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] {
+        position: relative;
+        display: block;
+        width: 6rem;
+        height: 4rem;
+        background: 50% no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        border-radius: .04rem
+    }
+
+    .case-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] span[_ngcontent-c4] {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        height: .6rem;
+        background-color: rgba(34, 38, 43, .5);
+        line-height: .6rem;
+        color: #fff;
+        font-size: .24rem;
+        overflow: hidden
+    }
+
+    .case-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] span[_ngcontent-c4] small[_ngcontent-c4] {
+        margin-left: .1rem;
+        color: #dbd8d2;
+        font-size: .2rem
+    }
+
+    .lc-wrap[_ngcontent-c4] {
+        margin-top: -.1rem
+    }
+
+    .lc-wrap[_ngcontent-c4] img[_ngcontent-c4] {
+        display: block
+    }
+
+    .yard-content[_ngcontent-c4] {
+        padding-top: .26rem;
+        height: 4.79rem;
+        background: url(yard-content.6e9b4d9155bf27255e63.jpg) 0 0 no-repeat;
+        background-size: cover
+    }
+
+    .yard-content[_ngcontent-c4] .yard-link[_ngcontent-c4] {
+        display: block;
+        margin: 0 auto;
+        width: 6.94rem;
+        height: 4.3rem;
+        background-color: #fff;
+        border-radius: .05rem
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] {
+        position: relative;
+        height: 1.19rem;
+        padding: .13rem .1rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        overflow: hidden
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .user[_ngcontent-c4] {
+        width: .86rem;
+        height: .86rem;
+        border: .03rem solid #bfa46f;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: .18rem
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .yard-bd[_ngcontent-c4] {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        line-height: 1
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .yard-bd[_ngcontent-c4] h4[_ngcontent-c4] {
+        font-weight: 400;
+        font-size: .24rem;
+        margin-bottom: .1rem
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .yard-bd[_ngcontent-c4] .yard-disc[_ngcontent-c4] span[_ngcontent-c4] {
+        font-size: .18rem;
+        vertical-align: middle;
+        color: #737373;
+        margin-right: .2rem;
+        margin-left: .02rem
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .yard-bd[_ngcontent-c4] .yard-disc[_ngcontent-c4] i[_ngcontent-c4] {
+        font-size: .2rem;
+        vertical-align: middle;
+        color: #b69454
+    }
+
+    .yard-content[_ngcontent-c4] .yard-media[_ngcontent-c4] .yard-now[_ngcontent-c4] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: -.66rem;
+        margin-right: -.66rem;
+        width: 1.32rem;
+        height: 1.32rem;
+        background-color: #b69454;
+        font-size: .18rem;
+        color: #fff;
+        text-align: center;
+        padding-top: 1rem;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+
+    .yard-content[_ngcontent-c4] .yard-pic-list[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    .yard-content[_ngcontent-c4] .yard-pic-list[_ngcontent-c4] .yard-pic[_ngcontent-c4] {
+        width: 2.11rem;
+        height: 2.79rem;
+        background-size: cover;
+        margin-left: .15rem;
+        border-radius: .05rem
+    }
+
+    .yard-footer[_ngcontent-c4] {
+        height: 1.1rem;
+        background-color: #3f4852;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .yard-footer[_ngcontent-c4] .user[_ngcontent-c4] {
+        width: .86rem;
+        height: .86rem;
+        border: .03rem solid #fff;
+        background-size: cover;
+        border-radius: 50%
+    }
+
+    .yard-footer[_ngcontent-c4] .user[_ngcontent-c4] + .user[_ngcontent-c4] {
+        margin-left: .15rem
+    }
+
+    .yard-footer[_ngcontent-c4] .user.active[_ngcontent-c4] {
+        border-color: #bfa46f;
+        position: relative
+    }
+
+    .yard-footer[_ngcontent-c4] .user.active[_ngcontent-c4]:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -.28rem;
+        margin-left: -.18rem;
+        width: .35rem;
+        height: .15rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAPCAYAAABut3YUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ODlBNjUyM0IzNDFFNzExODdEMTkyNzhBOEI4M0VBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGQ0Q3OUUwRDc4NjkxMUU4OUI2NUU5QTkyMjhFOEExNyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGQ0Q3OUUwQzc4NjkxMUU4OUI2NUU5QTkyMjhFOEExNyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMGNlMzkxZi0xZDE3LTRhMDctYjU5OS1iMTAzZDkxMDI0YTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Nzg5QTY1MjNCMzQxRTcxMTg3RDE5Mjc4QThCODNFQTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6L/mGwAAAApElEQVR42sTOMQ6CQBCFYX13IG4jNRR6BVpLwz1I6Gk5DydQOIKcgZ47+Dah2KgbdifZcZK/msnkO1a3+iCcE+vYnZ3ZwgbWs1XyEELIhc2s2SB2ctayFyu0MBbyZMazt7hJAoIQku3cGQkICSBiEBJBRCAkhESDkBgSBYICJBgEJUgQCIqQXRCUIZ+g0oe5KkFc0OiC4EAeipCfIPwR8gV6CzAA0MUh87uSMNcAAAAASUVORK5CYII=) 0 0 no-repeat;
+        background-size: 100% 100%
+    }
+
+    .pp-swiper[_ngcontent-c4] {
+        margin-bottom: .2rem
+    }
+
+    .pp-swiper[_ngcontent-c4] .swiper-slide[_ngcontent-c4] .slide-link[_ngcontent-c4] span[_ngcontent-c4] {
+        background-color: transparent;
+        font-size: .22rem
+    }
+
+    .index-tab[_ngcontent-c4] {
+        background-color: #fff
+    }
+
+    .index-tab[_ngcontent-c4] .tab-hd[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        border-top: .03rem solid #9fa3a8;
+        background-color: #9fa3a8
+    }
+
+    .index-tab[_ngcontent-c4] .tab-hd[_ngcontent-c4] a[_ngcontent-c4] {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: .57rem;
+        line-height: .6rem;
+        text-align: center;
+        font-size: .3rem;
+        color: #fff
+    }
+
+    .index-tab[_ngcontent-c4] .tab-hd[_ngcontent-c4] a.active[_ngcontent-c4] {
+        line-height: .57rem;
+        background-color: #fff;
+        color: #bfa46f
+    }
+
+    .index-tab[_ngcontent-c4] .tab-bd[_ngcontent-c4] {
+        padding: 0 .3rem
+    }
+
+    .index-tab[_ngcontent-c4] .more[_ngcontent-c4] .weui-btn[_ngcontent-c4] {
+        line-height: .3rem;
+        width: 1.13rem;
+        text-align: center;
+        margin: 0 auto;
+        font-size: .2rem;
+        color: #bfa46f;
+        border-radius: 2px
+    }
+
+    .index-tab[_ngcontent-c4] .more[_ngcontent-c4] .weui-btn[_ngcontent-c4]:after {
+        border-radius: 4px;
+        border-color: #bfa46f
+    }
+
+    .news-list[_ngcontent-c4] {
+        list-style: none
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: .3rem 0
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .hd[_ngcontent-c4] {
+        margin-right: .15rem;
+        width: .63rem;
+        height: .84rem;
+        text-align: center;
+        padding-top: .06rem
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .hd[_ngcontent-c4] strong[_ngcontent-c4] {
+        display: block;
+        line-height: 1;
+        font-size: .48rem;
+        color: #7e7f81;
+        font-weight: 400
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .hd[_ngcontent-c4] span[_ngcontent-c4] {
+        display: block;
+        font-size: .18rem;
+        font-weight: 400;
+        color: #22262b
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .bd[_ngcontent-c4] {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        overflow: hidden
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .bd[_ngcontent-c4] h4[_ngcontent-c4] {
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: .26rem;
+        font-weight: 400;
+        color: #000;
+        margin-bottom: .1rem
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] .bd[_ngcontent-c4] p[_ngcontent-c4] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: .2rem;
+        line-height: .25rem;
+        color: rgba(0, 0, 0, .8)
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4]:last-child a[_ngcontent-c4] {
+        border: 0
+    }
+
+    .news-list[_ngcontent-c4] li[_ngcontent-c4]:last-child a[_ngcontent-c4]:after, .news-list[_ngcontent-c4] li[_ngcontent-c4]:last-child a[_ngcontent-c4]:before {
+        display: none
+    }</style>
+    <style>
+        .swiper-container {
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
+        }
+
+        .swiper-container-no-flexbox .swiper-slide {
+            float: left;
+        }
+
+        .swiper-container-vertical > .swiper-wrapper {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: -webkit-transform;
+            -o-transition-property: transform;
+            transition-property: transform;
+            transition-property: transform, -webkit-transform;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        .swiper-container-android .swiper-slide, .swiper-wrapper {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .swiper-container-multirow > .swiper-wrapper {
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .swiper-container-free-mode > .swiper-wrapper {
+            -webkit-transition-timing-function: ease-out;
+            -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: -webkit-transform;
+            -o-transition-property: transform;
+            transition-property: transform;
+            transition-property: transform, -webkit-transform;
+        }
+
+        .swiper-invisible-blank-slide {
+            visibility: hidden;
+        }
+
+        .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
+            height: auto;
+        }
+
+        .swiper-container-autoheight .swiper-wrapper {
+            -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -webkit-transition-property: height, -webkit-transform;
+            transition-property: height, -webkit-transform;
+            -o-transition-property: transform, height;
+            transition-property: transform, height;
+            transition-property: transform, height, -webkit-transform;
+        }
+
+        .swiper-container-3d {
+            -webkit-perspective: 1200px;
+            perspective: 1200px;
+        }
+
+        .swiper-container-3d .swiper-cube-shadow, .swiper-container-3d .swiper-slide, .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top, .swiper-container-3d .swiper-wrapper {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-bottom, .swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-left {
+            background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+            background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-right {
+            background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+            background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-top {
+            background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+            background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-bottom {
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+            background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .swiper-container-wp8-horizontal, .swiper-container-wp8-horizontal > .swiper-wrapper {
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+        }
+
+        .swiper-container-wp8-vertical, .swiper-container-wp8-vertical > .swiper-wrapper {
+            -ms-touch-action: pan-x;
+            touch-action: pan-x;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            width: 27px;
+            height: 44px;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+            background-size: 27px 44px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+            opacity: .35;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+            left: 10px;
+            right: auto;
+        }
+
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+            right: 10px;
+            left: auto;
+        }
+
+        .swiper-button-prev.swiper-button-white, .swiper-container-rtl .swiper-button-next.swiper-button-white {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .swiper-button-next.swiper-button-white, .swiper-container-rtl .swiper-button-prev.swiper-button-white {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .swiper-button-prev.swiper-button-black, .swiper-container-rtl .swiper-button-next.swiper-button-black {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .swiper-button-next.swiper-button-black, .swiper-container-rtl .swiper-button-prev.swiper-button-black {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .swiper-button-lock {
+            display: none;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            -webkit-transition: .3s opacity;
+            -o-transition: .3s opacity;
+            transition: .3s opacity;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            z-index: 10;
+        }
+
+        .swiper-pagination.swiper-pagination-hidden {
+            opacity: 0;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+        }
+
+        .swiper-pagination-bullets-dynamic {
+            overflow: hidden;
+            font-size: 0;
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+            -webkit-transform: scale(0.33);
+            -ms-transform: scale(0.33);
+            transform: scale(0.33);
+            position: relative;
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+            -webkit-transform: scale(0.66);
+            -ms-transform: scale(0.66);
+            transform: scale(0.66);
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+            -webkit-transform: scale(0.33);
+            -ms-transform: scale(0.33);
+            transform: scale(0.33);
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+            -webkit-transform: scale(0.66);
+            -ms-transform: scale(0.66);
+            transform: scale(0.66);
+        }
+
+        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+            -webkit-transform: scale(0.33);
+            -ms-transform: scale(0.33);
+            transform: scale(0.33);
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #000;
+            opacity: .2;
+        }
+
+        button.swiper-pagination-bullet {
+            border: none;
+            margin: 0;
+            padding: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .swiper-pagination-clickable .swiper-pagination-bullet {
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #007aff;
+        }
+
+        .swiper-container-vertical > .swiper-pagination-bullets {
+            right: 10px;
+            top: 50%;
+            -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+        }
+
+        .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 6px 0;
+            display: block;
+        }
+
+        .swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 8px;
+        }
+
+        .swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+            display: inline-block;
+            -webkit-transition: .2s top, .2s -webkit-transform;
+            transition: .2s top, .2s -webkit-transform;
+            -o-transition: .2s transform, .2s top;
+            transition: .2s transform, .2s top;
+            transition: .2s transform, .2s top, .2s -webkit-transform;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 4px;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+            -webkit-transition: .2s left, .2s -webkit-transform;
+            transition: .2s left, .2s -webkit-transform;
+            -o-transition: .2s transform, .2s left;
+            transition: .2s transform, .2s left;
+            transition: .2s transform, .2s left, .2s -webkit-transform;
+        }
+
+        .swiper-container-horizontal.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+            -webkit-transition: .2s right, .2s -webkit-transform;
+            transition: .2s right, .2s -webkit-transform;
+            -o-transition: .2s transform, .2s right;
+            transition: .2s transform, .2s right;
+            transition: .2s transform, .2s right, .2s -webkit-transform;
+        }
+
+        .swiper-pagination-progressbar {
+            background: rgba(0, 0, 0, 0.25);
+            position: absolute;
+        }
+
+        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+            background: #007aff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+        }
+
+        .swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+            -webkit-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+            width: 100%;
+            height: 4px;
+            left: 0;
+            top: 0;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite, .swiper-container-vertical > .swiper-pagination-progressbar {
+            width: 4px;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .swiper-pagination-white .swiper-pagination-bullet-active {
+            background: #fff;
+        }
+
+        .swiper-pagination-progressbar.swiper-pagination-white {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
+            background: #fff;
+        }
+
+        .swiper-pagination-black .swiper-pagination-bullet-active {
+            background: #000;
+        }
+
+        .swiper-pagination-progressbar.swiper-pagination-black {
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill {
+            background: #000;
+        }
+
+        .swiper-pagination-lock {
+            display: none;
+        }
+
+        .swiper-scrollbar {
+            border-radius: 10px;
+            position: relative;
+            -ms-touch-action: none;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-container-horizontal > .swiper-scrollbar {
+            position: absolute;
+            left: 1%;
+            bottom: 3px;
+            z-index: 50;
+            height: 5px;
+            width: 98%;
+        }
+
+        .swiper-container-vertical > .swiper-scrollbar {
+            position: absolute;
+            right: 3px;
+            top: 1%;
+            z-index: 50;
+            width: 5px;
+            height: 98%;
+        }
+
+        .swiper-scrollbar-drag {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            left: 0;
+            top: 0;
+        }
+
+        .swiper-scrollbar-cursor-drag {
+            cursor: move;
+        }
+
+        .swiper-scrollbar-lock {
+            display: none;
+        }
+
+        .swiper-zoom-container {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .swiper-zoom-container > canvas, .swiper-zoom-container > img, .swiper-zoom-container > svg {
+            max-width: 100%;
+            max-height: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+        }
+
+        .swiper-slide-zoomed {
+            cursor: move;
+        }
+
+        .swiper-lazy-preloader {
+            width: 42px;
+            height: 42px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -21px;
+            margin-top: -21px;
+            z-index: 10;
+            -webkit-transform-origin: 50%;
+            -ms-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-animation: swiper-preloader-spin 1s steps(12, end) infinite;
+            animation: swiper-preloader-spin 1s steps(12, end) infinite;
+        }
+
+        .swiper-lazy-preloader:after {
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%236c6c6c'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+            background-position: 50%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .swiper-lazy-preloader-white:after {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%23fff'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+        }
+
+        @-webkit-keyframes swiper-preloader-spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes swiper-preloader-spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .swiper-container .swiper-notification {
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            opacity: 0;
+            z-index: -1000;
+        }
+
+        .swiper-container-fade.swiper-container-free-mode .swiper-slide {
+            -webkit-transition-timing-function: ease-out;
+            -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+        .swiper-container-fade .swiper-slide {
+            pointer-events: none;
+            -webkit-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+        }
+
+        .swiper-container-fade .swiper-slide .swiper-slide {
+            pointer-events: none;
+        }
+
+        .swiper-container-fade .swiper-slide-active, .swiper-container-fade .swiper-slide-active .swiper-slide-active {
+            pointer-events: auto;
+        }
+
+        .swiper-container-cube {
+            overflow: visible;
+        }
+
+        .swiper-container-cube .swiper-slide {
+            pointer-events: none;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            z-index: 1;
+            visibility: hidden;
+            -webkit-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-container-cube .swiper-slide .swiper-slide {
+            pointer-events: none;
+        }
+
+        .swiper-container-cube.swiper-container-rtl .swiper-slide {
+            -webkit-transform-origin: 100% 0;
+            -ms-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+        }
+
+        .swiper-container-cube .swiper-slide-active, .swiper-container-cube .swiper-slide-active .swiper-slide-active {
+            pointer-events: auto;
+        }
+
+        .swiper-container-cube .swiper-slide-active, .swiper-container-cube .swiper-slide-next, .swiper-container-cube .swiper-slide-next + .swiper-slide, .swiper-container-cube .swiper-slide-prev {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .swiper-container-cube .swiper-slide-shadow-bottom, .swiper-container-cube .swiper-slide-shadow-left, .swiper-container-cube .swiper-slide-shadow-right, .swiper-container-cube .swiper-slide-shadow-top {
+            z-index: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .swiper-container-cube .swiper-cube-shadow {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: .6;
+            -webkit-filter: blur(50px);
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        .swiper-container-flip {
+            overflow: visible;
+        }
+
+        .swiper-container-flip .swiper-slide {
+            pointer-events: none;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            z-index: 1;
+        }
+
+        .swiper-container-flip .swiper-slide .swiper-slide {
+            pointer-events: none;
+        }
+
+        .swiper-container-flip .swiper-slide-active, .swiper-container-flip .swiper-slide-active .swiper-slide-active {
+            pointer-events: auto;
+        }
+
+        .swiper-container-flip .swiper-slide-shadow-bottom, .swiper-container-flip .swiper-slide-shadow-left, .swiper-container-flip .swiper-slide-shadow-right, .swiper-container-flip .swiper-slide-shadow-top {
+            z-index: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .swiper-container-coverflow .swiper-wrapper {
+            -ms-perspective: 1200px;
+        }
+
+        swiper {
+
+        }
+
+        swiper[fxflex] {
+            display: flex;
+            flex-direction: inherit;
+            -webkit-box-orient: inherit;
+            -webkit-box-direction: inherit;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        swiper[fxflex] > .swiper.s-wrapper {
+            flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            -webkit-box-flex: 1;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        swiper > .swiper.s-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        swiper > .swiper.s-wrapper .swiper-wrapper .swiper-slide {
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        swiper > .swiper.s-wrapper .swiper-pagination {
+            pointer-events: none;
+        }
+
+        swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle {
+            position: relative;
+            display: inline-block;
+            padding: 4px;
+            margin: 2px;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet {
+            display: inline-block;
+            margin: 0;
+            pointer-events: none;
+        }
+
+        swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet-last,
+        swiper > .swiper.s-wrapper .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet-first {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-button-prev {
+            top: 10px;
+            left: 50%;
+            margin-top: 0;
+            margin-left: -13px;
+            transform: rotate(90deg);
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-button-next {
+            top: auto;
+            bottom: 10px;
+            left: 50%;
+            margin-top: 0;
+            margin-left: -13px;
+            transform: rotate(90deg);
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-scrollbar {
+            width: 8px;
+            transition: width 250ms ease-in-out;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-scrollbar:hover {
+            width: 16px;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-pagination .swiper-pagination-handle {
+            display: block;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet {
+            display: inline-block;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet.swiper-pagination-bullet-last, swiper > .swiper.s-wrapper.swiper-container-vertical > .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet.swiper-pagination-bullet-first {
+            margin: 0 -1px;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-horizontal > .swiper-scrollbar {
+            height: 8px;
+            transition: height 250ms ease-in-out;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-horizontal > .swiper-scrollbar:hover {
+            height: 16px;
+        }
+
+        swiper > .swiper.s-wrapper.swiper-container-horizontal > .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet.swiper-pagination-bullet-last, swiper > .swiper.s-wrapper.swiper-container-horizontal > .swiper-pagination .swiper-pagination-handle .swiper-pagination-bullet.swiper-pagination-bullet-first {
+            margin: -1px 0;
+        }
+
+        /*# sourceMappingURL=swiper.component.css.map */</style>
+    <style>
+        .m-footer[_ngcontent-c6] {
+        padding-top: .35rem;
+        padding-bottom: .2rem;
+        text-align: center;
+        font-size: .16rem;
+        color: #595757
+    }</style>
+    <style>
+        .nav-modal[_ngcontent-c7] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #fff;
+        opacity: 0;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s
+    }
+
+    .nav-modal.open[_ngcontent-c7] {
+        z-index: 12;
+        opacity: 1
+    }
+
+    .nav-header[_ngcontent-c7] {
+        padding: .3rem .35rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .nav-header[_ngcontent-c7] .back[_ngcontent-c7] {
+        font-size: .26rem;
+        border: 1px solid #bfa46f;
+        line-height: .56rem;
+        width: 2rem;
+        text-align: center;
+        border-radius: .28rem
+    }
+
+    .nav-header[_ngcontent-c7] .back[_ngcontent-c7] i[_ngcontent-c7] {
+        font-size: inherit;
+        color: #bfa46f;
+        margin-right: .05rem
+    }
+
+    .nav-header[_ngcontent-c7] .closed[_ngcontent-c7] {
+        font-size: .4rem
+    }
+
+    .nav-body[_ngcontent-c7] {
+        height: calc(100vh - 1.56rem);
+        overflow: auto
+    }
+
+    .nav-panel[_ngcontent-c7] .nav-panel-header[_ngcontent-c7] {
+        padding: .3rem 0 .2rem;
+        text-align: center;
+        font-size: .35rem;
+        line-height: 1
+    }
+
+    .nav-panel[_ngcontent-c7] .nav-panel-body[_ngcontent-c7] {
+        padding: 0 .1rem
+    }
+
+    .nav-list[_ngcontent-c7] {
+        overflow: hidden
+    }
+
+    .nav-list[_ngcontent-c7] a[_ngcontent-c7] {
+        float: left;
+        width: 25%;
+        height: 1.25rem;
+        text-align: center;
+        line-height: 1;
+        padding-top: .15rem
+    }
+
+    .nav-list[_ngcontent-c7] a[_ngcontent-c7] i[_ngcontent-c7] {
+        font-size: .6rem;
+        color: #c6a96f
+    }
+
+    .nav-list[_ngcontent-c7] a[_ngcontent-c7] span[_ngcontent-c7] {
+        margin-top: .1rem;
+        display: block;
+        font-size: .22rem
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:first-child i[_ngcontent-c7] {
+        color: #5d7cab
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:nth-child(2) i[_ngcontent-c7] {
+        color: #71ab5d
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:nth-child(3) i[_ngcontent-c7] {
+        color: #ab824c
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:nth-child(4) i[_ngcontent-c7] {
+        color: #596baf
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:nth-child(5) i[_ngcontent-c7] {
+        color: #c53a3a
+    }
+
+    .nav-list.colors[_ngcontent-c7] a[_ngcontent-c7]:nth-child(6) i[_ngcontent-c7] {
+        color: #549993
+    }
+
+    .nav-ad[_ngcontent-c7] {
+        margin-top: .6rem;
+        padding: 0 .35rem .2rem
+    }</style>
 </head>
-<body>
-    <p>这是手机端</p>
+<body style="font-size: 0.28rem;">
+<app-root _nghost-c0="" ng-version="5.2.8">
+    <router-outlet _ngcontent-c0=""></router-outlet>
+    <main _nghost-c1="">
+        <router-outlet _ngcontent-c1=""></router-outlet>
+        <home _nghost-c4="">
+            <div _ngcontent-c4="" class="navbar trans">
+            <a _ngcontent-c4="" class="nav-link city-link" href="/suzhou/city">
+        <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>
+        苏州
+        <i _ngcontent-c4="" class="iconfont icon-icon_Underthearrow"></i>
+    </a>
+    <div _ngcontent-c4="" class="nav-title logo"></div>
+    <a _ngcontent-c4="" class="nav-link">导航
+        <i _ngcontent-c4="" class="iconfont icon-menu"></i>
+    </a>
+</div>
+
+    <div _ngcontent-c4="" class="view">
+        <div _ngcontent-c4="" class="page has-navbar has-tabbar">
+            <swiper _ngcontent-c4="" class="swiper-banner"><div class="s-wrapper swiper swiper-container swiper-container-horizontal swiper-container-android">
+                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+
+                    <!----><div _ngcontent-c4="" class="swiper-slide swiper-slide-active">
+                    <a _ngcontent-c4="" class="slide-link" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/100005/2019/1/23/2228647709495.jpg&quot;);"></a>
+                </div>
+
+                </div>
+
+                <div class="swiper-scrollbar" hidden=""></div>
+
+                <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true" disabled="true"></div>
+                <div class="swiper-button-next swiper-button-disabled" tabindex="0" role="button" aria-label="Next slide" aria-disabled="true" disabled="true"></div>
+
+                <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-handle" index="0"><span class="swiper-pagination-bullet swiper-pagination-bullet-first swiper-pagination-bullet-active" index="0"></span></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </swiper>
+            <div _ngcontent-c4="" class="discounts-panel">
+                <div _ngcontent-c4="" class="discounts-panel-body">
+                    <div _ngcontent-c4="" class="name">最新优惠</div>
+                    <div _ngcontent-c4="" class="phone ratina-bd bd-all">
+                        <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-invalid" name="phoneNumber" placeholder="输入号码，优惠详情发送至手机" required="" type="text">
+                    </div>
+                    <a _ngcontent-c4="" class="btn">一键查询</a>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="nav-wrap">
+                <div _ngcontent-c4="" class="row">
+                    <a _ngcontent-c4="" class="item" href="/suzhou/designers">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_people"></i>
+                        <span _ngcontent-c4="">选设计师</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/cases">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_picture"></i>
+                        <span _ngcontent-c4="">装修案例</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/yards">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_workers"></i>
+                        <span _ngcontent-c4="">看工地</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/residentials">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_house"></i>
+                        <span _ngcontent-c4="">热装楼盘</span>
+                    </a>
+                </div>
+                <div _ngcontent-c4="" class="row">
+                    <a _ngcontent-c4="" class="item" href="/gonglve">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_Gonglue"></i>
+                        <span _ngcontent-c4="">装修攻略</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/services/triple">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_sanfang"></i>
+                        <span _ngcontent-c4="">环保三防</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/services">
+                        <i _ngcontent-c4="" class="iconfont icon-chengnuo4"></i>
+                        <span _ngcontent-c4="">服务保障</span>
+                    </a>
+                    <a _ngcontent-c4="" class="item" href="/suzhou/about">
+                        <i _ngcontent-c4="" class="iconfont icon-icon_notebook"></i>
+                        <span _ngcontent-c4="">了解业之峰</span>
+                    </a>
+                </div>
+            </div>
+
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">环保装修解决方案</strong>
+                    <small _ngcontent-c4="">/ 更多臻品满足不同需求的你</small>
+                </div>
+                <div _ngcontent-c4="" class="index-panel-body pdr-none">
+                    <swiper _ngcontent-c4="" class="project-swiper"><div class="s-wrapper swiper swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+                        <div class="swiper-wrapper" style="width: 425.73px; transform: translate3d(0px, 0px, 0px);">
+
+                            <div _ngcontent-c4="" class="swiper-slide swiper-slide-active">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/project-1.jpg);" href="/suzhou/topics/saving">
+                                    <dl _ngcontent-c4="">
+                                        <dt _ngcontent-c4="">诺华整装</dt>
+                                        <dd _ngcontent-c4="">时尚一族的高性价比之选</dd>
+                                    </dl>
+                                </a>
+                            </div>
+                            <div _ngcontent-c4="" class="swiper-slide swiper-slide-next">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/project-2.jpg);" href="/suzhou/topics/custom">
+                                    <dl _ngcontent-c4="">
+                                        <dt _ngcontent-c4="">私人订制</dt>
+                                        <dd _ngcontent-c4="">超过80%精英阶层优选</dd>
+                                    </dl>
+                                </a>
+                            </div>
+                            <div _ngcontent-c4="" class="swiper-slide">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/project-3.jpg);" href="/suzhou/topics/villa">
+                                    <dl _ngcontent-c4="">
+                                        <dt _ngcontent-c4="">别墅大宅</dt>
+                                        <dd _ngcontent-c4="">更懂中国人的别墅设计</dd>
+                                    </dl>
+                                </a>
+                            </div>
+                            <!---->
+                            <!---->
+                            <!---->
+
+                        </div>
+
+                        <div class="swiper-scrollbar" hidden=""></div>
+
+                        <div class="swiper-button-prev" hidden="" disabled="true"></div>
+                        <div class="swiper-button-next" hidden=""></div>
+
+                        <div class="swiper-pagination" hidden=""></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </swiper>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">本周人气设计师</strong>
+                    <small _ngcontent-c4="">/ 打造品味空间 悦享无限生活</small>
+                </div>
+                <div _ngcontent-c4="" class="index-panel-body pdr-none">
+                    <swiper _ngcontent-c4="" class="designer-swiper"><div class="s-wrapper swiper swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+                        <div class="swiper-wrapper" style="width: 647.513px; transform: translate3d(0px, 0px, 0px);">
+
+                            <!----><div _ngcontent-c4="" class="swiper-slide swiper-slide-active">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/1056" style="background-image: url(&quot;http://picfw.yzf.com.cn/2016/7/29/1444134106287.jpg_325x485.jpg&quot;);">
+                                <span _ngcontent-c4="">梁侠</span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide swiper-slide-next">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/836" style="background-image: url(&quot;http://picfw.yzf.com.cn/2017/3/31/1655973498900.jpg_325x485.jpg&quot;);">
+                                <span _ngcontent-c4="">吴文</span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/3301" style="background-image: url(&quot;http://picfw.yzf.com.cn/2017/5/19/1698315224624.jpg_325x485.jpg&quot;);">
+                                <span _ngcontent-c4="">陈晓龙</span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/1639" style="background-image: url(&quot;http://picfw.yzf.com.cn/2017/12/1/1867479489026.jpg_325x485.jpg&quot;);">
+                                <span _ngcontent-c4="">张超</span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/3403" style="background-image: url(&quot;http://picfw.yzf.com.cn/100058/2018/2/2/1921914287063.jpg_300x400.jpg&quot;);">
+                                <span _ngcontent-c4="">周李伟</span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/designer/detail/3926" style="background-image: url(&quot;http://picfw.yzf.com.cn/100058/2018/2/3/1922855260251.jpg_300x400.jpg&quot;);">
+                                <span _ngcontent-c4="">周佳</span>
+                            </a>
+                        </div>
+
+                        </div>
+
+                        <div class="swiper-scrollbar" hidden=""></div>
+
+                        <div class="swiper-button-prev" hidden="" disabled="true"></div>
+                        <div class="swiper-button-next" hidden=""></div>
+
+                        <div class="swiper-pagination" hidden=""></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </swiper>
+                    <div _ngcontent-c4="" class="btn-wrap">
+                        <a _ngcontent-c4="" class="weui-btn weui-btn_default" href="/suzhou/designers">查看全部设计师</a>
+                    </div>
+                    <div _ngcontent-c4="" class="yy-form">
+                        <div _ngcontent-c4="" class="form-header">
+                            <strong _ngcontent-c4="">每日限量免费设计
+                                <span _ngcontent-c4=""></span>
+                            </strong>
+                            <span _ngcontent-c4="" class="pull-right">
+              今日剩余名额
+              <b _ngcontent-c4="">066</b>
+            </span>
+                        </div>
+                        <div _ngcontent-c4="" class="form-body">
+                            <ul _ngcontent-c4="" class="form-list">
+                                <li _ngcontent-c4="">
+                                    <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-invalid" name="name" placeholder="您的称呼" required="" type="text">
+                                </li>
+                                <li _ngcontent-c4="">
+                                    <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-invalid" name="phoneNumber" placeholder="您的联系方式" required="" type="text">
+
+                                </li>
+                                <li _ngcontent-c4="">
+                                    <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-valid" name="residentialName" placeholder="小区名称" type="text">
+
+                                </li>
+                            </ul>
+                            <a _ngcontent-c4="" class="yy-btn">立即
+                                <br _ngcontent-c4="">预约</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">苏州装修案例</strong>
+                    <small _ngcontent-c4="">/ 高颜值家装设计 你值得拥有</small>
+                </div>
+                <div _ngcontent-c4="" class="tags-wrap">
+                    <!----><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E4%B8%AD%E5%8D%97%E4%B8%96%E7%BA%AA%E5%9F%8E">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>中南世纪城
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E8%8B%8F%E5%B7%9E%E5%BE%A1%E5%9B%AD">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>苏州御园
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E4%B8%96%E8%B4%B8%E5%BE%A1%E7%8F%91%E5%A2%85">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>世贸御珑墅
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E4%B8%87%E7%A7%91%E7%B2%BE%E5%93%81%E5%AE%B6%E5%9B%AD">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>万科精品家园
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E9%87%91%E9%83%BD%E5%9F%8E">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>金都城
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E6%A1%A6%E6%9E%97%E5%BD%A9%E4%BA%91%E5%9F%8E">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>桦林彩云城
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E5%8D%97%E5%B1%B1%E6%AA%80%E9%83%A1">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>南山檀郡
+                </a><a _ngcontent-c4="" class="tag ratina-bd bd-all" href="/suzhou/cases?keywords=%E6%96%B0%E6%9C%AA%E6%9D%A5%E8%8A%B1%E5%9B%AD%E6%BD%87%E9%82%A6">
+                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>新未来花园潇邦
+                </a>
+                </div>
+                <div _ngcontent-c4="" class="index-panel-body pdr-none">
+                    <swiper _ngcontent-c4="" class="case-swiper"><div class="s-wrapper swiper swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+                        <div class="swiper-wrapper" style="width: 1759.2px; transform: translate3d(0px, 0px, 0px);">
+
+                            <!----><div _ngcontent-c4="" class="swiper-slide swiper-slide-active">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/55810" style="background-image: url(&quot;http://picfw.yzf.com.cn/2017/2/28/1629342131803.jpg&quot;);">
+              <span _ngcontent-c4="">狮山原著户简约风格
+                <small _ngcontent-c4="">三居 丨 141㎡ 丨 现代简约风格</small>
+              </span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide swiper-slide-next">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/51012" style="background-image: url(&quot;http://picfw.yzf.com.cn/2016/8/18/1461432314288.jpg&quot;);">
+              <span _ngcontent-c4="">旭辉朗香郡田园风格
+                <small _ngcontent-c4="">五居 丨 110㎡ 丨 其他</small>
+              </span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/27098" style="background-image: url(&quot;http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/9/27/91226660d3baec9c-3.jpg&quot;);">
+              <span _ngcontent-c4="">栖霞栖庭
+                <small _ngcontent-c4="">三居 丨 140㎡ 丨 现代简约风格</small>
+              </span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/27099" style="background-image: url(&quot;http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/9/26/19305023060e6ba50-8.jpg&quot;);">
+              <span _ngcontent-c4="">保利居上
+                <small _ngcontent-c4="">四居 丨 142㎡ 丨 美式风格</small>
+              </span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/28200" style="background-image: url(&quot;http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/6/24/165629111ad518264-0.jpg&quot;);">
+              <span _ngcontent-c4="">中海橙郡--简欧
+                <small _ngcontent-c4="">三居 丨 146㎡ 丨 其他</small>
+              </span>
+                            </a>
+                        </div><div _ngcontent-c4="" class="swiper-slide">
+                            <a _ngcontent-c4="" class="slide-link" href="/suzhou/case/detail/28218" style="background-image: url(&quot;http://picfw2.yzf.com.cn/UpLoadFile/Images/2015/6/21/925277030fa39ae6-e.jpg&quot;);">
+              <span _ngcontent-c4="">太阳城-现代
+                <small _ngcontent-c4="">三居 丨 110㎡ 丨 现代简约风格</small>
+              </span>
+                            </a>
+                        </div>
+
+                        </div>
+
+                        <div class="swiper-scrollbar" hidden=""></div>
+
+                        <div class="swiper-button-prev" hidden="" disabled="true"></div>
+                        <div class="swiper-button-next" hidden=""></div>
+
+                        <div class="swiper-pagination" hidden=""></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </swiper>
+                    <div _ngcontent-c4="" class="btn-wrap">
+                        <a _ngcontent-c4="" class="weui-btn weui-btn_default" href="/suzhou/cases">查看全部装修案例</a>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">服务流程</strong>
+                </div>
+                <div _ngcontent-c4="" class="lc-wrap">
+                    <img _ngcontent-c4="" alt="" src="../../../assets/images/lc.jpg">
+                </div>
+                <div _ngcontent-c4="" class="index-panel-body pdr-none">
+                    <div _ngcontent-c4="" class="yy-form">
+                        <div _ngcontent-c4="" class="form-header">
+                            <strong _ngcontent-c4="">免费完成家装前三步！</strong>
+                            <span _ngcontent-c4="" class="pull-right">
+              今日已有
+              <b _ngcontent-c4="">066</b> 人预约成功
+            </span>
+                        </div>
+                        <div _ngcontent-c4="" class="form-body">
+                            <ul _ngcontent-c4="" class="form-list">
+                                <li _ngcontent-c4="">
+                                    <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-invalid" name="name" placeholder="您的称呼" required="" type="text">
+                                </li>
+                                <li _ngcontent-c4="">
+                                    <input _ngcontent-c4="" class="weui-input ng-untouched ng-pristine ng-invalid" name="phoneNumber" placeholder="您的联系方式" required="" type="text">
+
+                                </li>
+                                <li _ngcontent-c4="">
+                                    <a _ngcontent-c4="" class="weui-btn">立即预约</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">看工地</strong>
+                    <small _ngcontent-c4="">/ 看看邻居家的装修</small>
+                </div>
+                <div _ngcontent-c4="" class="yard-content">
+                    <a _ngcontent-c4="" class="yard-link" href="/suzhou/yard/detail/652">
+                        <div _ngcontent-c4="" class="yard-media">
+                            <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271205602599.png&quot;);"></div>
+                            <!---->
+                            <div _ngcontent-c4="" class="yard-bd">
+                                <h4 _ngcontent-c4="">中航樾园</h4>
+                                <div _ngcontent-c4="" class="yard-disc">
+                                    <i _ngcontent-c4="" class="iconfont icon-icon_positioning-"></i>
+                                    <span _ngcontent-c4="">中航樾园</span>
+                                    <i _ngcontent-c4="" class="iconfont icon-icon_house1"></i>
+                                    <span _ngcontent-c4="">三居 0平</span>
+                                    <i _ngcontent-c4="" class="iconfont icon-icon_workers"></i>
+                                    <span _ngcontent-c4="">10</span>
+                                </div>
+                            </div>
+                            <!----><!---->
+                            <!----><div _ngcontent-c4="" class="yard-now">水电工程</div>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+
+                        </div>
+                        <div _ngcontent-c4="" class="yard-pic-list">
+                            <!----><div _ngcontent-c4="" class="yard-pic" style="background-image: url(&quot;http://picfw3.yzf.com.cn/100019/2018/10/17/2143973656692.jpg&quot;);"></div><div _ngcontent-c4="" class="yard-pic" style="background-image: url(&quot;http://picfw3.yzf.com.cn/100019/2018/10/17/2143973653828.jpg&quot;);"></div><div _ngcontent-c4="" class="yard-pic" style="background-image: url(&quot;http://picfw3.yzf.com.cn/100019/2018/10/17/2143973649487.jpg&quot;);"></div>
+                        </div>
+                    </a>
+                </div>
+                <div _ngcontent-c4="" class="yard-footer">
+                    <!----><!---->
+                    <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271190568572.png&quot;);"></div>
+                    <!---->
+                    <!---->
+                    <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271192481270.png&quot;);"></div>
+                    <!---->
+                    <!---->
+                    <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271194160520.png&quot;);"></div>
+                    <!---->
+                    <!---->
+                    <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271195660270.png&quot;);"></div>
+                    <!---->
+                    <!---->
+                    <!----><div _ngcontent-c4="" class="user" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271198377435.png&quot;);"></div>
+                    <!---->
+                    <!---->
+                    <!----><div _ngcontent-c4="" class="user active" style="background-image: url(&quot;http://picfwoss.yzf.com.cn/999999/2019/3/13/2271205602599.png&quot;);"></div>
+                    <!---->
+
+                    <div _ngcontent-c4="" class="user" style="background-image: url(../../../assets/images/more.jpg);" tabindex="0"></div>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">五零靠谱承诺</strong>
+                    <a _ngcontent-c4="" class="pull-right" href="/suzhou/services/promise">了解详情
+                        <i _ngcontent-c4="" class="iconfont icon-icon_left"></i>
+                    </a>
+                </div>
+                <div _ngcontent-c4="" class="lc-wrap">
+                    <img _ngcontent-c4="" alt="" src="../../../assets/images/5d.png">
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-panel">
+                <div _ngcontent-c4="" class="index-panel-header">
+                    <strong _ngcontent-c4="">品牌力量</strong>
+                </div>
+                <div _ngcontent-c4="" class="index-panel-body pdr-none">
+                    <swiper _ngcontent-c4="" class="case-swiper pp-swiper"><div class="s-wrapper swiper swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+                        <div class="swiper-wrapper" style="width: 876.48px; transform: translate3d(0px, 0px, 0px);">
+
+                            <div _ngcontent-c4="" class="swiper-slide swiper-slide-active">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/power-img1.jpg);">
+                                    <span _ngcontent-c4="">独家冠名CCTV-2《空间榜样》</span>
+                                </a>
+                            </div>
+                            <div _ngcontent-c4="" class="swiper-slide swiper-slide-next">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/power-img2.jpg);">
+                                    <span _ngcontent-c4="">&lt;中国网球公开赛&gt; 指定装修赞助商</span>
+                                </a>
+                            </div>
+                            <div _ngcontent-c4="" class="swiper-slide">
+                                <a _ngcontent-c4="" class="slide-link" style="background-image: url(../../../assets/images/power-img3.jpg);">
+                                    <span _ngcontent-c4="">国家五星级服务认证</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-scrollbar" hidden=""></div>
+
+                        <div class="swiper-button-prev" hidden="" disabled="true"></div>
+                        <div class="swiper-button-next" hidden=""></div>
+
+                        <div class="swiper-pagination" hidden=""></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </swiper>
+                </div>
+            </div>
+            <div _ngcontent-c4="" class="index-tab">
+                <div _ngcontent-c4="" class="tab-hd">
+                    <a _ngcontent-c4="" class="active">企业新闻</a>
+                    <a _ngcontent-c4="" class="">业主感言</a>
+                </div>
+                <!----><div _ngcontent-c4="" class="tab-bd">
+                <ul _ngcontent-c4="" class="news-list">
+                    <!----><li _ngcontent-c4="">
+                    <a _ngcontent-c4="" class="ratina-bd bd-b" href="/suzhou/news/detail/7463">
+                        <div _ngcontent-c4="" class="hd ratina-bd bd-all">
+                            <strong _ngcontent-c4="">13</strong>
+                            <span _ngcontent-c4="">Mar</span>
+                        </div>
+                        <div _ngcontent-c4="" class="bd">
+                            <h4 _ngcontent-c4="">再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</h4>
+                            <p _ngcontent-c4="">再次严重声明！！向“长春业之峰”侵权行为“亮剑”宣战！！</p>
+                        </div>
+                    </a>
+                </li><li _ngcontent-c4="">
+                    <a _ngcontent-c4="" class="ratina-bd bd-b" href="/suzhou/news/detail/7451">
+                        <div _ngcontent-c4="" class="hd ratina-bd bd-all">
+                            <strong _ngcontent-c4="">26</strong>
+                            <span _ngcontent-c4="">Jan</span>
+                        </div>
+                        <div _ngcontent-c4="" class="bd">
+                            <h4 _ngcontent-c4="">有榜样·不一样！CCTV-2《空间榜样》与业之峰独家战略合作伙伴签约仪式在京举行!</h4>
+                            <p _ngcontent-c4="">有榜样·不一样！1月20日，CCTV-2《空间榜样》|业之峰独家战略合作伙伴签约</p>
+                        </div>
+                    </a>
+                </li><li _ngcontent-c4="">
+                    <a _ngcontent-c4="" class="ratina-bd bd-b" href="/suzhou/news/detail/7793">
+                        <div _ngcontent-c4="" class="hd ratina-bd bd-all">
+                            <strong _ngcontent-c4="">27</strong>
+                            <span _ngcontent-c4="">Feb</span>
+                        </div>
+                        <div _ngcontent-c4="" class="bd">
+                            <h4 _ngcontent-c4="">汇巢</h4>
+                            <p _ngcontent-c4="">汇巢</p>
+                        </div>
+                    </a>
+                </li>
+
+                </ul>
+                <div _ngcontent-c4="" class="more">
+                    <a _ngcontent-c4="" class="weui-btn" href="/suzhou/news">MORE</a>
+                </div>
+            </div>
+                <!---->
+
+                <footer _ngcontent-c4="" _nghost-c6=""><div _ngcontent-c6="" class="m-footer">
+                    业之峰诺华家居装饰集团股份有限公司版权所有
+                    <br _ngcontent-c6=""> 2000-2018 京ICP备16022901号 | 京公网安备11010502001310号
+                    <!----><div _ngcontent-c6="" class="fixed-tools">
+
+
+                    <!---->
+                    <!----><a _ngcontent-c6="" target="_blank" href="https://chat.talk99.cn/chat/chat/p.do?c=20001829&amp;f=10063849&amp;g=10064078&amp;refer=sjsz">
+                    <i _ngcontent-c6="" class="iconfont icon-zixun "></i>
+                </a>
+                    <!---->
+                    <!----><a _ngcontent-c6="" href="tel:15050137040">
+                    <i _ngcontent-c6="" class="iconfont icon-tel "></i>
+                </a>
+                </div>
+
+                </div>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+    <div _ngcontent-c4="" class="tab-bar">
+
+        <a _ngcontent-c4="" class="fixed-link" href="https://dsp.yzf.com.cn/pmbj5.html?bid=suzhou">
+            <i _ngcontent-c4="" class="iconfont icon-quotation"></i>免费报价</a>
+    </div>
+
+    <nav _ngcontent-c4="" _nghost-c7=""><div _ngcontent-c7="" class="nav-modal">
+        <div _ngcontent-c7="" class="nav-header">
+            <a _ngcontent-c7="" class="back" href="/suzhou">
+                <i _ngcontent-c7="" class="iconfont icon-back"></i>返回首页
+            </a>
+            <a _ngcontent-c7="" class="closed iconfont icon-close"></a>
+        </div>
+        <div _ngcontent-c7="" class="nav-body">
+            <div _ngcontent-c7="" class="nav-panel">
+                <div _ngcontent-c7="" class="nav-panel-header">客户服务</div>
+                <div _ngcontent-c7="" class="nav-panel-body">
+                    <div _ngcontent-c7="" class="nav-list">
+                        <a _ngcontent-c7="" href="/suzhou/designers"><i _ngcontent-c7="" class="iconfont icon-icon_Renqun"></i><span _ngcontent-c7="">选设计师</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/cases"><i _ngcontent-c7="" class="iconfont icon-icon_picture"></i><span _ngcontent-c7="">装修案例</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/residentials"><i _ngcontent-c7="" class="iconfont icon-icon_house"></i><span _ngcontent-c7="">热装楼盘</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/yards"><i _ngcontent-c7="" class="iconfont icon-icon_Gongren"></i><span _ngcontent-c7="">看工地</span></a>
+                        <a _ngcontent-c7="" href="/gonglve"><i _ngcontent-c7="" class="iconfont icon-icon_Gonglue"></i><span _ngcontent-c7="">装修攻略</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/thanks"><i _ngcontent-c7="" class="iconfont icon-icon_liuyan"></i><span _ngcontent-c7="">业主感言</span></a>
+                        <a _ngcontent-c7=""><i _ngcontent-c7="" class="iconfont icon-icon_shenqing"></i><span _ngcontent-c7="">申请售后</span></a>
+                        <a _ngcontent-c7=""><i _ngcontent-c7="" class="iconfont icon-icon_jianyi"></i><span _ngcontent-c7="">投诉建议</span></a>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c7="" class="nav-panel">
+                <div _ngcontent-c7="" class="nav-panel-header">品牌力量</div>
+                <div _ngcontent-c7="" class="nav-panel-body">
+                    <div _ngcontent-c7="" class="nav-list colors">
+                        <a _ngcontent-c7="" href="/suzhou/services/blue"><i _ngcontent-c7="" class="iconfont icon-icon_lanzuan"></i><span _ngcontent-c7="">蓝钻工程</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/services/triple"><i _ngcontent-c7="" class="iconfont icon-icon_sanfang"></i><span _ngcontent-c7="">环保三防</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/services/promise"><i _ngcontent-c7="" class="iconfont icon-chengnuo4"></i><span _ngcontent-c7="">五零承诺</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/services/service"><i _ngcontent-c7="" class="iconfont icon-icon_fuwu"></i><span _ngcontent-c7="">五星服务</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/news"><i _ngcontent-c7="" class="iconfont icon-icon_news"></i><span _ngcontent-c7="">企业新闻</span></a>
+                        <a _ngcontent-c7="" href="/suzhou/about"><i _ngcontent-c7="" class="iconfont icon-icon_notebook"></i><span _ngcontent-c7="">了解业之峰</span></a>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c7="" class="nav-ad">
+                <img _ngcontent-c7="" alt="" src="../../../../assets/images/nav-ad.jpg">
+            </div>
+        </div>
+    </div>
+    </nav>
+    <share-to-wx _ngcontent-c4="" desc="品牌主材，德系工艺，大牌设计，致力于提供更环保的高端装饰服务。" title="业之峰装饰，更环保的高端装饰" _nghost-c8=""></share-to-wx>
+</home>
+    <userinfo _ngcontent-c1="" _nghost-c2="">
+        <!---->
+    </userinfo>
+    <shadow _ngcontent-c1="" _nghost-c3=""><!---->
+    </shadow></main></app-root>
+<script type="text/javascript" src="inline.80a0a627305ffe222ee7.bundle.js"></script>
+<script type="text/javascript" src="polyfills.d0f92964d8e2334d69d2.bundle.js"></script>
+<script type="text/javascript" src="scripts.34b8ecd4e802cdaa1729.bundle.js"></script>
+<script type="text/javascript" src="main.ae8808d6acfd84157f4a.bundle.js"></script>
+
 </body>
 </html>
