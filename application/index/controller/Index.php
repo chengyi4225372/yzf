@@ -61,6 +61,10 @@ class Index extends Common {
 
      //指尖
      $zhi  = Db::name('zhi_jian')->field('id,title,time')->select();
+
+     //装修攻略轮播图
+     $sbanner = Db::name('save_banner')->field('id,title,img,url')->select();
+      $this->assign('sbanner',$sbanner);
       $this->assign('zhi',$zhi);
       $this->assign('cailist',$cailist);
       $this->assign('knowlist',$knowlist);

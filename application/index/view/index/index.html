@@ -732,32 +732,25 @@
             <div class="index-class-left">
                 <div class="index-class-banner">
                     <div class="index-class-box">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/List/157" style="display: block">
-                            <img src="__STATIC__/home/image/index-class-banner1.jpg" alt="">
+                        {volist name="sbanner" id="vo" key="k" }
+                          {if condition="$k eq 1"}
+                        <a href="{$vo.url|default='#'}" style="display: block">
+                            <img src="{$vo.img}" alt="">
                         </a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/List/160">
-                            <img src="__STATIC__/home/image/index-class-banner2.jpg" alt="">
+                        {else /}
+                        <a href="{$vo.url|default='#'}" style="display: none;">
+                            <img src="{$vo.img}" alt="">
                         </a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/List/158">
-                            <img src="__STATIC__/home/image/index-class-banner3.jpg" alt="">
-                        </a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/List/155">
-                            <img src="__STATIC__/home/image/index-class-banner4.jpg" alt="">
-                        </a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/List/177">
-                            <img src="__STATIC__/home/image/index-class-banner5.jpg" alt="">
-                        </a>
+                        {/if}
+                        {/volist}
                     </div>
-
                     <img class="right-tag" src="__STATIC__/home/image/gl-a-c-corner.png" alt="">
                 </div>
                 <div class="index-class-user">
                     <ul class="class-user-list">
-                        <li class="active"><a href="http://www.yzf.com.cn/DecorationRaiders/List/157">蓝钻<br>工程</a></li>
-                        <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/160">21<br>周年庆</a></li>
-                        <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/158">业之峰<br>短剧</a></li>
-                        <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/155">群星<br>助阵</a></li>
-                        <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/177">空间<br>榜样</a></li>
+                         {volist name="sbanner" id="vo" key="k"}
+                        <li {if condition="$k eq 1"}class="active"{/if}><a href="{$vo.url}">{$vo.title|mb_substr='0','2','utf-8'}<br>{$vo.title|mb_substr='2','10','utf-8'}</a></li>
+                         {/volist}
                         <li class="more"><a href="{:url('zhi/index')}"><i class="iconfont icon-gengduo"></i></a></li>
                     </ul>
                 </div>
