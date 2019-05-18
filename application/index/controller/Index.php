@@ -48,6 +48,18 @@ class Index extends Common {
       $new =Db::name('new')->select();
       //业主感言
       $thank = Db::name('thank')->field('id,img,title,jian')->where('tuijian',1)->order('id desc')->limit(3)->select();
+     //装修攻略
+     $media = Db::name('media_cate')->field('id,title')->select();
+     $know = Db::name('know_cate')->field('id,title')->select();
+     $cai = Db::name('cai_cate')->field('id,title')->select();
+     $feng = Db::name('feng_cate')->field('id,title')->select();
+     $que = Db::name('que_cate')->field('id,title')->select();
+     $this->assign('media',$media);
+     $this->assign('know',$know);
+     $this->assign('cai',$cai);
+     $this->assign('feng',$feng);
+     $this->assign('que',$que);
+
 
       $this->assign('lingan',$lingan);
       $this->assign('thank',$thank);

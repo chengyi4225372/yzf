@@ -21,12 +21,7 @@
         </div>
     </div>
 
-    <div class="layui-form-item layui-inline">
-        <label class="layui-form-label">创建时间</label>
-        <div class="layui-input-inline">
-            <input name="date" id="create_at" value="{$Think.get.date}" placeholder="请选择创建时间" class="layui-input">
-        </div>
-    </div>
+
 
     <div class="layui-form-item layui-inline">
         <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
@@ -49,7 +44,6 @@
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
             <th class='text-left nowrap'>分类名称</th>
-            <th class='text-left nowrap'>创建时间</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -61,9 +55,6 @@
             </td>
             <td class='text-left nowrap'>
                 {$vo.title|default=''}
-            </td>
-            <td class='text-left nowrap'>
-                {$vo.time|date='Y-m-d H:i:s'|default=''}
             </td>
             <td class='text-left nowrap'>
 
