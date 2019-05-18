@@ -67,5 +67,17 @@ class Raiders extends Common {
         return $this->fetch();
     }
 
-    
+    //装修自媒体
+    public function media(){
+        $mid = input('get.mid');
+        $list  = Db::name('media_list')->where('mid',$mid)->select();
+        $this->assign('list',$list);
+        return  $this->fetch();
+    }
+
+    public function media_detail(){
+        return $this->fetch();
+    }
+
+
 }

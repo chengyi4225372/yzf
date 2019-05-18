@@ -700,34 +700,29 @@
                 <div class="normal-wrap">
 
                     <div class="normal-body" style="display: block;">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/119">幸福家居课堂</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/123">业之峰在线</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/178">家装小课堂</a>
+                        {volist  name="media" id="me"}
+                        <a href="{:url('raiders/media')}?mid={$me.id}">{$me.title}</a>
+                        {/volist}
                     </div>
                     <div class="normal-body" style="">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/128">装修前</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/127">装修中</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/126">装修后</a>
+                        {volist  name="know" id="kn"}
+                        <a href="{:url('raiders/know')}?kid={$kn.id}">{$kn.title}</a>
+                        {/volist}
                     </div>
                     <div class="normal-body" style="">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/109">瓷砖</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/110">地板</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/111">油漆</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/112">橱柜</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/113">其他</a>
+                        {volist name="cai" id="ci"}
+                        <a href="{:url('raiders/cai')}?cid={$ci.id}">{$ci.title}</a>
+                        {/volist}
                     </div>
                     <div class="normal-body" style="">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/104">户型</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/105">空间</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/108">其他</a>
+                        {volist name="feng" id="fe"}
+                        <a href="{:url('raiders/feng')}?fid={$fe.id}">{$fe.title}</a>
+                        {/volist}
                     </div>
                     <div class="normal-body" style="">
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/50">攻略类</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/51">技巧类</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/52">质检类</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/53">财务类</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/54">客服类</a>
-                        <a href="http://www.yzf.com.cn/DecorationRaiders/list/103">其他</a>
+                        {volist name="que" id="qu"}
+                        <a href="{:url('raiders/que')}?qid={$qu.id}">{$qu.title}</a>
+                        {/volist}
                     </div>
                 </div>
             </div>

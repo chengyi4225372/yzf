@@ -30,7 +30,7 @@ class Fenglist extends BasicAdmin {
 
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['cates'] = Db::name($this->table)->where('id', '=', $val['mid'])->value('title');
+            $data[$key]['cates'] = Db::name($this->table)->where('id', '=', $val['fid'])->value('title');
         }
     }
 
