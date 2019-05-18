@@ -169,10 +169,10 @@
                                {volist name="zhi" id="vo"}
                                 <li>
                                     <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/479"><img src="{$vo.img|default=''}" alt=""></a>
+                                        <a href="{:url('zhi/detail')}?id={$vo.id}"><img src="{$vo.img|default=''}" alt=""></a>
                                     </div>
                                     <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/479">{$vo.title}</a></h3>
+                                        <h3><a href="{:url('zhi/detail')}?id={$vo.id}">{$vo.title}</a></h3>
                                         <p>{$vo.info|default=''}</p>
                                         <div class="strategy-control">
                                             <span class="pull-right">{$vo.time|date=" y-m-d"}</span>

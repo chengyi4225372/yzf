@@ -81,4 +81,10 @@ class Common extends Controller {
         return $arr;
     }
 
+    //装修知识
+    public function know(){
+        $arr =Db::name('know_list')->field('id,kid,title,img,time')->select();
+        return $arr ? $arr:'';
+    }
+
 }

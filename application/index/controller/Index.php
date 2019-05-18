@@ -61,11 +61,10 @@ class Index extends Common {
 
      //指尖
      $zhi  = Db::name('zhi_jian')->field('id,title,time')->select();
-     $this->assign('zhi',$zhi);
-
-     $this->assign('cailist',$cailist);
-     $this->assign('knowlist',$knowlist);
-     $this->assign('fenglist',$fenglist);
+      $this->assign('zhi',$zhi);
+      $this->assign('cailist',$cailist);
+      $this->assign('knowlist',$knowlist);
+      $this->assign('fenglist',$fenglist);
 
       $this->assign('media',$media);
       $this->assign('know',$know);

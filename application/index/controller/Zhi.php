@@ -24,12 +24,19 @@ class Zhi extends Common{
         return $this->fetch();
     }
 
-
+    //todo 详情页 url 视频地址未完成
     public function detail(){
         $id = input('get.id');
         $detail = Db::name($this->table)->where('id',$id)->find();
+        $re = $this->remen();
+        $know = $this->know();
+        $this->assign('know',$know);
+        $this->assign('re',$re);
         $this->assign('detail',$detail);
         return $this->fetch();
     }
+
+
+
 
 }

@@ -823,7 +823,7 @@
                             {volist  name="zhi" id="zo" }
                             <li>
                                 <span>{$zo.time|date='m-d'}</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/465">{$zo.title}</a>
+                                <a href="{:url('zhi/detail')}?id={$zo.id}">{$zo.title}</a>
                             </li>
                             {/volist}
                         </ul>
