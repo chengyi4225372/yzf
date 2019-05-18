@@ -25,10 +25,10 @@
                         </dl>
                         <div class="calculator-screen"></div>
                         <form class="form-horizontal calculator-form">
-                            <input name="Channel" value="攻略站报价计算器" type="hidden" />
+                            <input name="g_channel" value="攻略站报价计算器" type="hidden" />
                             <div class="form-group">
                                 <div class="col-xs-4">
-                                    <select class="form-control  remark">
+                                    <select class="form-control  remark" name="g_shi">
                                         <option value="1室">1室</option>
                                         <option value="2室">2室</option>
                                         <option value="3室" selected="">3室</option>
@@ -38,7 +38,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="g_ting">
                                         <option value="1厅" selected="">1厅</option>
                                         <option value="2厅">2厅</option>
                                         <option value="3厅">3厅</option>
@@ -48,7 +48,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="g_chu">
                                         <option value="1厨" selected="">1厨</option>
                                         <option value="2厨">2厨</option>
                                         <option value="3厨">3厨</option>
@@ -57,14 +57,14 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-6">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="g_wei">
                                         <option value="1卫" selected="">1卫</option>
                                         <option value="2卫">2卫</option>
                                         <option value="3卫">3卫</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <select class="form-control remark">
+                                    <select class="form-control remark" name="g_tai">
                                         <option value="1阳台" selected="">1阳台</option>
                                         <option value="2阳台">2阳台</option>
                                         <option value="3阳台">3阳台</option>
@@ -73,18 +73,18 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12 area">
-                                    <input type="text" class="form-control" name="SquareMeters" placeholder="输入您的房屋面积">
+                                    <input type="text" class="form-control" name="g_square" placeholder="输入您的房屋面积">
                                     <span class="m2">㎡</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <input type="text" class="form-control" name="PhoneNumber" placeholder="报价结果将发送到您的手机上">
+                                    <input type="text" class="form-control" name="g_phone" placeholder="报价结果将发送到您的手机上">
                                 </div>
                             </div>
                             <div class="form-group btn-box submit">
                                 <div class="col-xs-12">
-                                    <a class="btn btn-block">发送至手机</a>
+                                    <a class="btn btn-block" id="gongnue">发送至手机</a>
                                 </div>
                             </div>
                         </form>
@@ -93,10 +93,10 @@
 
 
                     <div class="side-adv">
-                        <a target="_blank" href="http://wh.yzf.com.cn/s2017/qgkjby0901"><img src="/images/side-adv.jpg" alt=""></a>
+                        <a target="_blank" href="http://wh.yzf.com.cn/s2017/qgkjby0901"><img src="__STATIC__/home/images/side-adv.jpg" alt=""></a>
                     </div>
                     <div class="side-adv">
-                        <a><img src="/images/side-advlr.png" alt=""></a>
+                        <a><img src="__STATIC__/home/images/side-advlr.png" alt=""></a>
                     </div>
 
 
@@ -478,79 +478,55 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var Mask = false;
-    $(".submit").on("click", function () {
-        var $form = $(this).parent("form");
 
-        if (!Mask) {
-            Mask = true;
-            var Phone = $form.find("[name='PhoneNumber']").val();
-            if (RegPhone(Phone)) {
-
-                var $remark = $form.find(".remark");
-                if ($remark.length > 0) {
-                    var remarkval = '';
-                    $remark.each(function () {
-                        remarkval += $(this).val();
-                    });
-                    var $remark = $form.find("[name='remark']");
-                    if ($remark.length > 0) {
-                        $remark.val(remarkval);
-                    }
-                    else {
-                        $form.append("<input type='hidden' value='" + remarkval + "' name='remark' />");
+<script>
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //攻略
+    $("#gongnue").click(function(){
+        var shi = $("select[name='g_shi']").val();
+        var ting = $("select[name='g_ting']").val();
+        var chu = $("select[name='g_chu']").val();
+        var wei = $("select[name='g_wei']").val();
+        var tai = $("select[name='g_tai']").val();
+        var channel = $("input[name='g_channel']").val();
+        var phone = $("input[name='g_phone']").val();
+        var square = $("input[name='g_square']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+        }else if (square == '' ||square == undefined ){
+            alert('请填写户型大小！');;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 2000){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else if(res.code== 4002){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
                     }
                 }
-
-                $.ajax({
-                    type: "post",
-                    url: "/Registration/Insert",
-                    data: $form.serialize(),
-                    success: function (json) {
-                        //debugger;
-                        //var json = eval("(" + json + ")");
-                        if (json.MessageType == 1) {
-                            $('form')[0].reset();
-                            alert("恭喜您，报名成功");
-                        }
-                        else {
-                            alert("同一手机号码只能领取一次！");
-                        }
-                        Mask = false;
-                    }
-                });
-            }
-            else {
-                alert("请输入正确的电话号码");
-                Mask = false;
-            }
+            })
         }
-        return false;
-    });
+    })
 
-    function RegPhone(Phone) {
 
-        /*验证电话号码
-            验证规则：区号+号码，区号以0开头，3位或4位号码由7位或8位数字组成
-            区号与号码之间可以无连接符，也可以“-”连接
-            如01088888888,010-88888888,0955-7777777 */
-        var isPhone = /^0\d{2,3}-?\d{7,8}$/;
-        /*验证手机号码
-        移动：134(1349除外）135 136 137 138 139 147 150 151 152 157 158 159 182 183 184 187 188
-        联通：130 131 132 155 156 185 186 145
-        电信：133 153 177 180 181 189*/
-        //var isMob = /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
 
-        var isMob = /^1\d{10}$/;
-        if (isMob.test(Phone) || isPhone.test(Phone)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 </script>
+
+
 <script src="__STATIC__/home/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
