@@ -58,6 +58,11 @@ class Index extends Common {
      $cailist = Db::name('cai_list')->field('id,cid,title')->select();
      $knowlist = Db::name('know_list')->field('id,kid,title')->select();
      $fenglist = Db::name('feng_list')->field('id,fid,title')->select();
+
+     //指尖
+     $zhi  = Db::name('zhi_jian')->field('id,title,time')->select();
+     $this->assign('zhi',$zhi);
+
      $this->assign('cailist',$cailist);
      $this->assign('knowlist',$knowlist);
      $this->assign('fenglist',$fenglist);

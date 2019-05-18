@@ -110,36 +110,14 @@
                         </div>
                         <div class="side-panel-body">
                             <ul class="side-media">
+                                {volist  name="re" id="v1"}
                                 <li>
-                                    <a href="/DecorationRaiders/Detail/188" title="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <span>感受设计情怀，简美风格案例赏析 龙源国际城</span>
+                                    <a href="{:url('raiders/z_detail')}?id={$v1.id}" title="{$v1.title}">
+                                        <img src="{$v1.img}" alt="{$v1.title}">
+                                        <span>{$v1.title}</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/258" title="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914377488611.png_360x255.png" alt="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <span>暗香留心！业之峰，于岁月流转中不负芳华！</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/275" title="油漆后的家具为何会泛黄?怎样预防?">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="油漆后的家具为何会泛黄?怎样预防?">
-                                        <span>油漆后的家具为何会泛黄?怎样预防?</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/288" title="买房风水禁忌 最宜居住的家居风水布局">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="买房风水禁忌 最宜居住的家居风水布局">
-                                        <span>买房风水禁忌 最宜居住的家居风水布局</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/1356" title="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <img src="http://picfw3.yzf.com.cn/wx/9e8402efb8bb4b5c80260b531fb2f931.jpg" alt="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <span>【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》</span>
-                                    </a>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
@@ -172,7 +150,7 @@
                                 <span><i class="iconfont icon-xin"></i>0人气</span>
                             </h4>
                             <p>
-                            <p><span style=";font-family:宋体;font-size:14px"><span style="font-family:宋体">业之峰装饰装修攻略，指尖上的装修频道汇集各类装修风格、装修技巧、装修教程等知识，包括装修风格选择、装修公司选择、装修过程工程等，为您提供全方位的装修参考</span></span></p>
+                            <p><span style=";font-family:宋体;font-size:14px"><span style="font-family:宋体">尺渡装饰装修攻略，指尖上的装修频道汇集各类装修风格、装修技巧、装修教程等知识，包括装修风格选择、装修公司选择、装修过程工程等，为您提供全方位的装修参考</span></span></p>
                             </p>
                         </div>
                         <div class="vd-top-ft">
@@ -181,124 +159,39 @@
                     </div>
                     <div class="list-filter vd-filter">
                         <ul>
-                            <li class=""><a href="/DecorationRaiders/List/124?orderby=sortid">按浏览热度 <i class="iconfont icon-shang"></i></a></li>
-                            <li class="active"><a href="/DecorationRaiders/List/124?orderby=DateCreated">按时间顺序 <i class="iconfont icon-xia"></i></a></li>
+                            <!--<li class=""><a href="/DecorationRaiders/List/124?orderby=sortid">按浏览热度 <i class="iconfont icon-shang"></i></a></li>-->
+                            <!--<li class="active"><a href="/DecorationRaiders/List/124?orderby=DateCreated">按时间顺序 <i class="iconfont icon-xia"></i></a></li>-->
                         </ul>
                     </div>
                     <div class="news-panel">
                         <div class="news-panel-body">
                             <ul class="strategy-list audio">
-
+                               {volist name="zhi" id="vo"}
                                 <li>
                                     <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/479"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963562627222.jpg" alt=""></a>
+                                        <a href="/DecorationRaiders/Detail/479"><img src="{$vo.img|default=''}" alt=""></a>
                                     </div>
                                     <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/479">防水工程（二次闭水实验）</a></h3>
-                                        <p>防水工程（二次闭水实验）</p>
+                                        <h3><a href="/DecorationRaiders/Detail/479">{$vo.title}</a></h3>
+                                        <p>{$vo.info|default=''}</p>
                                         <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
+                                            <span class="pull-right">{$vo.time|date=" y-m-d"}</span>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/478"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963562086045.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/478">交底 </a></h3>
-                                        <p>交底 </p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/477"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963561273410.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/477">隐蔽工程----水电改造</a></h3>
-                                        <p>隐蔽工程----水电改造</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/476"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963560756959.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/476">成品保护（下）</a></h3>
-                                        <p>成品保护（下）</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/475"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963560045039.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/475">成品保护（上）</a></h3>
-                                        <p>成品保护（上）</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/474"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963559452664.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/474">隐蔽工程之水、电验收</a></h3>
-                                        <p>隐蔽工程之水、电验收</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/473"><img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963558947640.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/473">指尖上的装修宣传片</a></h3>
-                                        <p>指尖上的装修宣传片</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-03-22</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-
+                                {/volist}
                             </ul>
                         </div>
                     </div>
 
                     <nav class="text-center">
                         <ul class="pagination">
-                            <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                            <li class="active"><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=1">1</a></li>
-                            <li class=""><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=2">2</a></li>
-                            <li class=""><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=3">3</a></li>
-
-                            <li><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=2">下一页</a></li>
-
+                              {$zhi|raw}
+                            <!--<li class="active"><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=1">1</a></li>-->
+                            <!--<li class=""><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=2">2</a></li>-->
+                            <!--<li class=""><a data-pjax="" href="/DecorationRaiders/list/124?PageIndex=3">3</a></li>-->
                         </ul>
                     </nav>
-
-
                 </div>
             </div>
         </div>

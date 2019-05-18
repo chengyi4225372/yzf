@@ -13,9 +13,23 @@ use think\Db;
 use app\index\controller\Common;
 
 class Zhi extends Common{
+    public $table = 'zhi_jian';
+
 
     public  function index(){
-        return $this->view->fetch();
+        $zhi = Db::name($this->table)->paginate(6);
+        $re = $this->remen();
+        $this->assign('zhi',$zhi);
+        $this->assign('re',$re);
+        return $this->fetch();
+    }
+
+
+    public function detail(){
+        $id = input('get.id');
+        $detail = Db::name($this->table)->where('id',$id)->find();
+        $this->assign('detail',$detail);
+        return $this->fetch();
     }
 
 }

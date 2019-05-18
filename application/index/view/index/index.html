@@ -758,7 +758,7 @@
                         <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/158">业之峰<br>短剧</a></li>
                         <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/155">群星<br>助阵</a></li>
                         <li><a href="http://www.yzf.com.cn/DecorationRaiders/List/177">空间<br>榜样</a></li>
-                        <li class="more"><a href="http://www.yzf.com.cn/DecorationRaiders/List/124"><i class="iconfont icon-gengduo"></i></a></li>
+                        <li class="more"><a href="{:url('zhi/index')}"><i class="iconfont icon-gengduo"></i></a></li>
                     </ul>
                 </div>
                 <div class="class-panel-wrap">
@@ -820,31 +820,12 @@
                             </a>
                         </div>
                         <ul class="video-list">
-
+                            {volist  name="zhi" id="zo" }
                             <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/465 ">峰格汇家居（下）</a>
+                                <span>{$zo.time|date='m-d'}</span>
+                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/465">{$zo.title}</a>
                             </li>
-                            <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/464 ">业之峰环保三重防护体系</a>
-                            </li>
-                            <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/463 ">风格定位—欧洲古典风格</a>
-                            </li>
-                            <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/461 ">风格定位—现代简约风格</a>
-                            </li>
-                            <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/459 ">风格定位—新古典风格</a>
-                            </li>
-                            <li>
-                                <span>03-22</span>
-                                <a href="http://www.yzf.com.cn/DecorationRaiders/Detail/458 ">风格定位—新中式风格</a>
-                            </li>
+                            {/volist}
                         </ul>
                     </div>
                 </div>
