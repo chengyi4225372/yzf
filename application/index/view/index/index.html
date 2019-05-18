@@ -765,60 +765,42 @@
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/cai')}" class="more">更多》</a>
+                            <a href="{:url('raiders/cai_list')}" class="more">更多》</a>
                             装修材料
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/194 " title="窗帘盒制作、安装应符合哪些质量要求?">·  窗帘盒制作、安装应符合哪些质量要求?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/193 " title="穿线电管为什么不能使用90度弯头和三通?">·  穿线电管为什么不能使用90度弯头和三通?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/192 " title="插座导线与照明导线可以在同一回路吗?">·  插座导线与照明导线可以在同一回路吗?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/191 " title="玻璃饰面吊顶的质量要求是什么?">·  玻璃饰面吊顶的质量要求是什么?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/190 " title="安装浴缸有何质量要求?">·  安装浴缸有何质量要求?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/189 " title="安装暖气罩有何质量要求?">·  安装暖气罩有何质量要求?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/185 " title="自己买主材请家装公司装修 这种做法是否划算?">·  自己买主材请家装公司装修 这种做法是否划算?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/179 " title="怎样选材才能达到环保要求?">·  怎样选材才能达到环保要求?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/170 " title="家装中使用的材料大致有哪些?">·  家装中使用的材料大致有哪些?</a></li>
+                                {volist name="cailist" id="list"}
+                                <li><a href="{:url('raiders/cai_detail')}?pid={$list.cid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/water')}" class="more">更多》</a>
+                            <a href="{:url('raiders/feng_list')}" class="more">更多》</a>
                             装修风水
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/150 " title="如何处理卧房的灯光及色彩?">·  如何处理卧房的灯光及色彩?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/145 " title="环保家装包括哪些内容?">·  环保家装包括哪些内容?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/144 " title="何谓过度装修?原因有哪些?">·  何谓过度装修?原因有哪些?</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/16 " title="家居装修莫大意 事后补救来不及!">·  家居装修莫大意 事后补救来不及!</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/8 " title="看到了就别错过!教你打造顺风顺水的好风水!">·  看到了就别错过!教你打造顺风顺水的好风水!</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/7 " title="照这5点儿装修 家居风水才会好!">·  照这5点儿装修 家居风水才会好!</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/6 " title="挡也挡不住的桃花运 家居风水真给力!">·  挡也挡不住的桃花运 家居风水真给力!</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/4 " title="阳台植物巧摆放 好风景更有好风水">·  阳台植物巧摆放 好风景更有好风水</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/3 " title="想要新年行大运?这些装修风水禁忌怎能不知?">·  想要新年行大运?这些装修风水禁忌怎能不知?</a></li>
+                                {volist name="fenglist" id="list"}
+                                <li><a href="{:url('raiders/feng_detail')}?pid={$list.fid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/bai')}" class="more">更多》</a>
-                            装修百科
+                            <a href="{:url('raiders/knonw_list')}" class="more">更多》</a>
+                            装修知识
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/62 " title="施工班长要跟客户私增项，这可以吗？对客户有什么不好？">·  施工班长要跟客户私增项，这可以吗？对客户有什么不好？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/61 " title="水电要施工了，到底怎么走线，怎么计算费用？">·  水电要施工了，到底怎么走线，怎么计算费用？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/60 " title="防水工程应涂刷几遍？涂刷要求是什么？">·  防水工程应涂刷几遍？涂刷要求是什么？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/59 " title="防水处理是否需要铲除原墙体防水基层？">·  防水处理是否需要铲除原墙体防水基层？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/58 " title="水电验收标准是什么？">·  水电验收标准是什么？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/57 " title="瓷砖薄贴与普贴有区别吗？">·  瓷砖薄贴与普贴有区别吗？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/56 " title="墙皮为什么要铲除？">·  墙皮为什么要铲除？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/55 " title="业之峰的材料正规吗？">·  业之峰的材料正规吗？</a></li>
-                                <li><a href="http://www.yzf.com.cn/DecorationRaiders/Detail/54 " title="业之峰的材料环保么？">·  业之峰的材料环保么？</a></li>
+                                {volist name="knowlist" id="list"}
+                                <li><a href="{:url('raiders/know_detail')}?pid={$list.kid}&id={$list.id}" title="{$list.title}">·{$list.title}</a></li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>

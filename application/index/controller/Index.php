@@ -54,12 +54,19 @@ class Index extends Common {
      $cai = Db::name('cai_cate')->field('id,title')->select();
      $feng = Db::name('feng_cate')->field('id,title')->select();
      $que = Db::name('que_cate')->field('id,title')->select();
-     $this->assign('media',$media);
-     $this->assign('know',$know);
-     $this->assign('cai',$cai);
-     $this->assign('feng',$feng);
-     $this->assign('que',$que);
+     //装修攻略分类 列表
+     $cailist = Db::name('cai_list')->field('id,cid,title')->select();
+     $knowlist = Db::name('know_list')->field('id,kid,title')->select();
+     $fenglist = Db::name('feng_list')->field('id,fid,title')->select();
+     $this->assign('cailist',$cailist);
+     $this->assign('knowlist',$knowlist);
+     $this->assign('fenglist',$fenglist);
 
+      $this->assign('media',$media);
+      $this->assign('know',$know);
+      $this->assign('cai',$cai);
+      $this->assign('feng',$feng);
+      $this->assign('que',$que);
 
       $this->assign('lingan',$lingan);
       $this->assign('thank',$thank);
