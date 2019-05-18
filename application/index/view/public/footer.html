@@ -52,27 +52,9 @@
             </div>
             <div class="footer-a-bot">
                 <span>友情链接：</span>
-                <a target="_blank" href="http://qd.yzf.com.cn">青岛装修公司</a>
-                <a target="_blank" href="http://zz.yzf.com.cn">郑州装修公司</a>
-                <a target="_blank" href="http://nb.yzf.com.cn">宁波装修公司</a>
-                <a target="_blank" href="http://xa.yzf.com.cn">西安装修公司</a>
-                <a target="_blank" href="http://tj.yzf.com.cn">天津装修公司</a>
-                <a target="_blank" href="http://gy.yzf.com.cn">贵阳装修公司</a>
-                <a target="_blank" href="http://lz.yzf.com.cn">兰州装修公司</a>
-                <a target="_blank" href="http://heb.yzf.com.cn">哈尔滨装修公司</a>
-                <a target="_blank" href="http://jn.yzf.com.cn">济南装修公司</a>
-                <a target="_blank" href="http://cqhd.yzf.com.cn">重庆装修公司</a>
-                <a target="_blank" href="http://sjz.yzf.com.cn">石家庄装修公司</a>
-                <a target="_blank" href="http://cd.yzf.com.cn">成都装修公司</a>
-                <a target="_blank" href="http://nj.yzf.com.cn">南京装修公司</a>
-                <a target="_blank" href="http://nc.yzf.com.cn">南昌装修公司</a>
-                <a target="_blank" href="http://dl.yzf.com.cn">大连装修公司</a>
-                <a target="_blank" href="http://wh.yzf.com.cn">武汉装修公司</a>
-                <a target="_blank" href="http://sy.yzf.com.cn">沈阳装修公司</a>
-                <a target="_blank" href="http://ty.yzf.com.cn">太原装修公司</a>
-                <a target="_blank" href="http://wf.yzf.com.cn">潍坊装修公司</a>
-                <a target="_blank" href="http://suzhou.yzf.com.cn">苏州装修公司</a>
-                <a target="_blank" href="http://www.yzftx.cn">业之峰连锁官网</a>
+                 {volist name="footer" id="vo" }
+                <a target="_blank" href="{$vo.url}">{$vo.title}</a>
+                {/volist}
             </div>
         </div>
     </div>

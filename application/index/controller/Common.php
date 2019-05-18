@@ -25,6 +25,7 @@ class Common extends Controller {
     public $news_problem = 'news_problem';
     public $page = 'single_page';
     public $problem = 'news_problem';
+    public $foot    ='chi_url';
     
     public function initialize() {
 
@@ -65,6 +66,10 @@ class Common extends Controller {
         //menu 热门搜索
         $hot = Db::name('remen_lou')->field('id,title')->where('search',1)->order('id desc')->limit(8)->select();
         $this->assign('hot',$hot);
+        //底部导航
+        $footer = Db::name($this->foot)->select();
+        $this->assign('footer',$footer);
+
         if(isMobile()){
             $this->redirect('@mobile/index/index');
         }

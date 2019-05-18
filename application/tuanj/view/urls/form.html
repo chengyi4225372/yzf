@@ -1,0 +1,37 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">外链网站名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" value='{$vo.title|default=""}' title="网站名称" placeholder="网站名称" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">url跳转链接地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="url" value='{$vo.url|default=""}' title="请输入url链接" placeholder="请输入url链接" class="layui-input">
+            <span style="color: #ff524e;">*注意在填写地址时候，外网请加上https和外网地址！</span>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+
