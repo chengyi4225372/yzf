@@ -14,18 +14,21 @@ use think\Db;
 use app\index\controller\Common;
 
 class Raiders extends Common {
+     public $zhi = 'zhijian';
 
     //装修攻略 首页
     public function index(){
+        $zhi = Db::name('zhi_jian')->field('id,img,title')->select();
+        $this->assign('zhi',$zhi);
         return  $this->fetch();
     }
 
-    //空间榜样视屏
+    //空间榜样视屏 todo
     public function lists(){
         return $this->fetch();
     }
 
-    //空间榜样视屏详情
+    //空间榜样视屏详情 todo
     public function detail(){
         return $this->fetch();
     }

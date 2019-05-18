@@ -701,27 +701,27 @@
 
                     <div class="normal-body" style="display: block;">
                         {volist  name="media" id="me"}
-                        <a href="{:url('raiders/media')}?mid={$me.id}">{$me.title}</a>
+                        <a href="{:url('infos/media')}?mid={$me.id}">{$me.title}</a>
                         {/volist}
                     </div>
                     <div class="normal-body" style="">
                         {volist  name="know" id="kn"}
-                        <a href="{:url('raiders/know')}?kid={$kn.id}">{$kn.title}</a>
+                        <a href="{:url('infos/know')}?kid={$kn.id}">{$kn.title}</a>
                         {/volist}
                     </div>
                     <div class="normal-body" style="">
                         {volist name="cai" id="ci"}
-                        <a href="{:url('raiders/cai')}?cid={$ci.id}">{$ci.title}</a>
+                        <a href="{:url('infos/cai')}?cid={$ci.id}">{$ci.title}</a>
                         {/volist}
                     </div>
                     <div class="normal-body" style="">
                         {volist name="feng" id="fe"}
-                        <a href="{:url('raiders/feng')}?fid={$fe.id}">{$fe.title}</a>
+                        <a href="{:url('infos/feng')}?fid={$fe.id}">{$fe.title}</a>
                         {/volist}
                     </div>
                     <div class="normal-body" style="">
                         {volist name="que" id="qu"}
-                        <a href="{:url('raiders/que')}?qid={$qu.id}">{$qu.title}</a>
+                        <a href="{:url('infos/que')}?qid={$qu.id}">{$qu.title}</a>
                         {/volist}
                     </div>
                 </div>
@@ -758,13 +758,13 @@
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/cai_list')}" class="more">更多》</a>
+                            <a href="{:url('infos/cai')}" class="more">更多》</a>
                             装修材料
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="cailist" id="list"}
-                                <li><a href="{:url('raiders/cai_detail')}?pid={$list.cid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/cai_detail')}?pid={$list.cid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>
@@ -772,13 +772,13 @@
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/feng_list')}" class="more">更多》</a>
+                            <a href="{:url('infos/feng')}" class="more">更多》</a>
                             装修风水
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="fenglist" id="list"}
-                                <li><a href="{:url('raiders/feng_detail')}?pid={$list.fid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/feng_detail')}?pid={$list.fid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>
@@ -786,13 +786,13 @@
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('raiders/knonw_list')}" class="more">更多》</a>
+                            <a href="{:url('infos/knonw')}" class="more">更多》</a>
                             装修知识
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="knowlist" id="list"}
-                                <li><a href="{:url('raiders/know_detail')}?pid={$list.kid}&id={$list.id}" title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/know_detail')}?pid={$list.kid}&id={$list.id}" title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>

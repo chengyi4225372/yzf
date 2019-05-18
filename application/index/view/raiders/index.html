@@ -64,24 +64,23 @@
             <div class="gl-a-r">
                 <div class="gl-panel">
                     <div class="gl-panel-header">
-                        <a href="/DecorationRaiders/list/124" class="more">MORE</a>
+                        <a href="{:url('zhi/index')}" class="more">MORE</a>
                         <strong>指尖上的装修</strong>
                     </div>
                     <div class="gl-panel-body">
 
                         <div class="gl-r-header">
-                            <a href="/DecorationRaiders/Detail/465">
-                                <img src="http://picfw.yzf.com.cn/100021/2018/3/22/1963554827305.jpg" alt="">
-                                <span title="峰格汇家居（下）">峰格汇家居（下）</span>
+                            {volist name="zhi" id="vo" offset="0" length='1'}
+                            <a href="{:url('zhi/detail')}?id={$vo.id}">
+                                <img src="{$vo.img}" alt="">
+                                <span title="{$vo.title}">{$vo.title}</span>
                             </a>
+                            {/volist}
                         </div>
                         <ul class="video-list">
-
-                            <li><a href="/DecorationRaiders/Detail/464" title="业之峰环保三重防护体系">业之峰环保三重防护体系</a></li>
-                            <li><a href="/DecorationRaiders/Detail/463" title="风格定位—欧洲古典风格">风格定位—欧洲古典风格</a></li>
-                            <li><a href="/DecorationRaiders/Detail/461" title="风格定位—现代简约风格">风格定位—现代简约风格</a></li>
-                            <li><a href="/DecorationRaiders/Detail/459" title="风格定位—新古典风格">风格定位—新古典风格</a></li>
-                            <li><a href="/DecorationRaiders/Detail/458" title="风格定位—新中式风格">风格定位—新中式风格</a></li>
+                              {volist name="zhi" id="vo" offset='1' length='11'}
+                            <li><a href="{:url('zhi/detail')}?id={$vo.id}" title="{$vo.title}">{$vo.title}</a></li>
+                              {/volist}
                         </ul>
                     </div>
                 </div>

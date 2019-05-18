@@ -1,0 +1,353 @@
+{include file="public/header-two" /}
+<!-- 所在位置 -->
+{include file="public/location-two" /}
+
+<div class="header">
+    {include file="public/menu" /}
+</div>
+<div id="RenderBody">
+
+
+    <div class="content">
+        <div class="auto-box">
+            <ol class="breadcrumb normal">
+                <span>当前位置：</span>
+                <li><a href="/">首页</a></li>
+                <li><a href="{:url('raiders/index')}">装修攻略</a></li>
+                <li>装修自媒体</li>
+            </ol>
+            <div class="list-filter">
+                <ul>
+                    <li class=""><a href="/DecorationRaiders/List/50?orderby=sortid">按浏览热度 <i class="iconfont icon-shang"></i></a></li>
+                    <li class="active"><a href="/DecorationRaiders/List/50?orderby=DateCreated">按时间顺序 <i class="iconfont icon-xia"></i></a></li>
+                </ul>
+            </div>
+            <div class="content-body">
+                <div class="side-left">
+                    <div class="side-panel">
+                        <div class="side-panel-header">装修自媒体</div>
+                        <div class="side-panel-body">
+                            <ul class="side-list">
+                                <li class="active"><a href="/DecorationRaiders/List/50">攻略类</a></li>
+                                <li class=""><a href="/DecorationRaiders/List/51">技巧类</a></li>
+                                <li class=""><a href="/DecorationRaiders/List/52">质检类</a></li>
+                                <li class=""><a href="/DecorationRaiders/List/53">财务类</a></li>
+                                <li class=""><a href="/DecorationRaiders/List/54">客服类</a></li>
+                                <li class=""><a href="/DecorationRaiders/List/103">其他</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="side-calculator">
+                        <dl>
+                            <dt>我家装修要花多少钱？</dt>
+                            <dd>超精准计算，一步解决预算问题</dd>
+                        </dl>
+                        <div class="calculator-screen"></div>
+                        <form class="form-horizontal calculator-form">
+                            <input name="Channel" value="攻略站报价计算器" type="hidden" />
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="SquareMeters" placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="PhoneNumber" placeholder="报价结果将发送到您的手机上">
+                                </div>
+                            </div>
+                            <div class="form-group btn-box submit">
+                                <div class="col-xs-12">
+                                    <a class="btn btn-block">发送至手机</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="side-adv">
+                        <a target="_blank" href="/"><img src="__STATIC__/home/images/side-adv.jpg" alt=""></a>
+                    </div>
+                    <div class="side-adv">
+                        <a><img src="__STATIC__/home/images/side-advlr.png" alt=""></a>
+                    </div>
+
+
+
+
+
+                    <div class="side-panel">
+                        <div class="side-panel-header">
+
+                            热门文章排行榜
+                        </div>
+                        <div class="side-panel-body">
+                            <ul class="side-media">
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/188" title="感受设计情怀，简美风格案例赏析 龙源国际城">
+                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="感受设计情怀，简美风格案例赏析 龙源国际城">
+                                        <span>感受设计情怀，简美风格案例赏析 龙源国际城</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/258" title="暗香留心！业之峰，于岁月流转中不负芳华！">
+                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914377488611.png_360x255.png" alt="暗香留心！业之峰，于岁月流转中不负芳华！">
+                                        <span>暗香留心！业之峰，于岁月流转中不负芳华！</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/275" title="油漆后的家具为何会泛黄?怎样预防?">
+                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="油漆后的家具为何会泛黄?怎样预防?">
+                                        <span>油漆后的家具为何会泛黄?怎样预防?</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/288" title="买房风水禁忌 最宜居住的家居风水布局">
+                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="买房风水禁忌 最宜居住的家居风水布局">
+                                        <span>买房风水禁忌 最宜居住的家居风水布局</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/DecorationRaiders/Detail/1356" title="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
+                                        <img src="http://picfw3.yzf.com.cn/wx/9e8402efb8bb4b5c80260b531fb2f931.jpg" alt="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
+                                        <span>【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    <ul class="strategy-list">
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/1509"><img src="http://picfw3.yzf.com.cn/100021/2018/9/17/2118066027036.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/1509">自装还是找装修公司，看完你会有答案，尤其是第六条...</a></h3>
+                                <p>扒一扒，装修是找装修公司好还是自己装好？</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2018-09-16</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/176"><img src="http://picfw.yzf.com.cn/100021/2018/2/7/1926426912764.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/176">怎样让居室角落生动起来?</a></h3>
+                                <p>居室角落若巧扮得当，不仅司以充分挖掘空间的使用功能，还可为家居环境增添光彩。</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2017-12-01</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/54"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/54">业之峰的材料环保么？</a></h3>
+                                <p>装修新家更多的是为提高居住环境</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/55"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/55">业之峰的材料正规吗？</a></h3>
+                                <p>业之峰所使用的材料均为正规厂家生产的材料</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/56"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/56">墙皮为什么要铲除？</a></h3>
+                                <p>“铲墙皮”指的是铲除墙面原有的装饰层</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/57"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/57">瓷砖薄贴与普贴有区别吗？</a></h3>
+                                <p>薄贴与普贴的区别在于施工工艺的区别。</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/58"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/58">水电验收标准是什么？</a></h3>
+                                <p>水路验收时，水管打压0.6Mpa（工作压力的1.5倍）</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/59"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/59">防水处理是否需要铲除原墙体防水基层？</a></h3>
+                                <p></p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/60"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/60">防水工程应涂刷几遍？涂刷要求是什么？</a></h3>
+                                <p>按工程施工要求涂刷2-3遍</p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="strategy-hd">
+                                <span class="strategy-tag">推荐</span>
+                                <a href="/DecorationRaiders/Detail/61"><img src="/images/logo.jpg" alt=""></a>
+                            </div>
+                            <div class="strategy-bd">
+                                <h3><a href="/DecorationRaiders/Detail/61">水电要施工了，到底怎么走线，怎么计算费用？</a></h3>
+                                <p></p>
+                                <div class="strategy-control">
+                                    <span class="pull-right">2014-03-14</span>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
+
+                            <li class="active"><a data-pjax="" href="/DecorationRaiders/list/50?PageIndex=1">1</a></li>
+                            <li class=""><a data-pjax="" href="/DecorationRaiders/list/50?PageIndex=2">2</a></li>
+                            <li class=""><a data-pjax="" href="/DecorationRaiders/list/50?PageIndex=3">3</a></li>
+
+                            <li><a data-pjax="" href="/DecorationRaiders/list/50?PageIndex=2">下一页</a></li>
+
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{include file="public/footer" /}
+
+{include file="public/menu_right" /}
+
+{include file="public/price" /}
+
+{include file="public/yuyue" /}
+<script src="__STATIC__/home/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
+<script src="__STATIC__/home/js/main.js"></script>
+<script>
+    // Slideshow 2
+    $(".gl-kn-ul li").hover(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.gl-kn-cont a').eq($(this).index()).stop(true, true).fadeIn(100).siblings().hide();
+    });
+    $(".gl-kn-tab").mouseleave(function () {
+        $('.gl-kn-cont a').hide();
+        $(".gl-kn-ul li").removeClass('active');
+    })
+</script>
+
+</body>
+</html>
