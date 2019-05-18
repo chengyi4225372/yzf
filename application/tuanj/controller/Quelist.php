@@ -3,22 +3,21 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2019/5/18
- * Time: 11:06
+ * Time: 11:35
  */
-
 namespace app\tuanj\controller;
 
 use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Knowcate extends BasicAdmin {
+class Quelist extends BasicAdmin {
 
-    private $dataform = 'know_cate';
-
+    private $dataform = 'que_list';
+    public $table ='que_cate';
 
     public function index() {
-        $this->title = '装修知识分类';
+        $this->title = '装修常见问题列表';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title|url', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -28,11 +27,21 @@ class Knowcate extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+            $data[$key]['cates'] = Db::name($this->table)->where('id', '=', $val['mid'])->value('title');
+        }
+    }
+
+
     /**
      * 添加
      * @return type
      */
     public function add() {
+        $cates =Db::name($this->table)->field('id,title')->select();
+        $this->assign('cates',$cates);
         return $this->_form($this->dataform, 'form');
     }
 
@@ -41,6 +50,8 @@ class Knowcate extends BasicAdmin {
      * @return type
      */
     public function edit() {
+        $cates =Db::name($this->table)->field('id,title')->select();
+        $this->assign('cates',$cates);
         return $this->_form($this->dataform, 'form');
     }
 
@@ -50,7 +61,7 @@ class Knowcate extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/knowcate/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/quelist/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

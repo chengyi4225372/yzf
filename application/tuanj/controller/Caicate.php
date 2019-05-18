@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2019/5/18
- * Time: 11:06
+ * Time: 11:14
  */
 
 namespace app\tuanj\controller;
@@ -12,13 +12,13 @@ use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Knowcate extends BasicAdmin {
+class Caicate extends BasicAdmin {
 
-    private $dataform = 'know_cate';
+    private $dataform = 'cai_cate';
 
 
     public function index() {
-        $this->title = '装修知识分类';
+        $this->title = '装修材料分类';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title|url', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -50,7 +50,7 @@ class Knowcate extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/knowcate/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/caicate/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }
