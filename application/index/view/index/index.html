@@ -706,7 +706,7 @@
                     </div>
                     <div class="normal-body" style="">
                         {volist  name="know" id="kn"}
-                        <a href="{:url('infos/know')}?kid={$kn.id}">{$kn.title}</a>
+                        <a href="{:url('infos/knows')}?kid={$kn.id}">{$kn.title}</a>
                         {/volist}
                     </div>
                     <div class="normal-body" style="">
@@ -764,7 +764,7 @@
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="cailist" id="list"}
-                                <li><a href="{:url('infos/cai_detail')}?pid={$list.cid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/cdetail')}?id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>
@@ -778,7 +778,7 @@
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="fenglist" id="list"}
-                                <li><a href="{:url('infos/feng_detail')}?pid={$list.fid}&id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/fdetail')}?id={$list.id} " title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>
@@ -786,13 +786,13 @@
 
                     <div class="side-panel">
                         <div class="side-panel-header">
-                            <a href="{:url('infos/knonw')}" class="more">更多》</a>
+                            <a href="{:url('infos/knows')}" class="more">更多》</a>
                             装修知识
                         </div>
                         <div class="side-panel-body">
                             <ul class="sense-list">
                                 {volist name="knowlist" id="list"}
-                                <li><a href="{:url('infos/know_detail')}?pid={$list.kid}&id={$list.id}" title="{$list.title}">·{$list.title}</a></li>
+                                <li><a href="{:url('infos/kdetail')}?id={$list.id}" title="{$list.title}">·{$list.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>

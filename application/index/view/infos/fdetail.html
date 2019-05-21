@@ -1,0 +1,267 @@
+{include file="public/header-two" /}
+
+
+{include file="public/location-two" /}
+
+<div class="header">
+    {include file="public/menu" /}
+</div>
+<div id="RenderBody">
+
+
+    <div class="content">
+        <div class="auto-box">
+            <ol class="breadcrumb normal">
+                <span>当前位置：</span>
+                <li><a href="/">首页</a></li>
+                <li><a href="{:url('infos/feng')}">装修风水</a></li>
+            </ol>
+            <div class="content-body">
+                <div class="side-right">
+                    <div class="side-calculator">
+                        <dl>
+                            <dt>算一算装成这样多少钱？</dt>
+                            <dd>超精准计算，一步解决预算问题</dd>
+                        </dl>
+                        <div class="calculator-screen"></div>
+                        <form class="form-horizontal calculator-form">
+                            <input name="gn_channel" value="攻略站报价计算器" type="hidden" />
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <select class="form-control  remark" name="gn_shi">
+                                        <option value="1室">1室</option>
+                                        <option value="2室">2室</option>
+                                        <option value="3室" selected="">3室</option>
+                                        <option value="4室">4室</option>
+                                        <option value="5室">5室</option>
+                                        <option value="6室">6室</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark" name="gn_ting">
+                                        <option value="1厅" selected="">1厅</option>
+                                        <option value="2厅">2厅</option>
+                                        <option value="3厅">3厅</option>
+                                        <option value="4厅">4厅</option>
+                                        <option value="5厅">5厅</option>
+                                        <option value="6厅">6厅</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4">
+                                    <select class="form-control remark" name="gn_chu">
+                                        <option value="1厨" selected="">1厨</option>
+                                        <option value="2厨">2厨</option>
+                                        <option value="3厨">3厨</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <select class="form-control remark" name="gn_wei">
+                                        <option value="1卫" selected="">1卫</option>
+                                        <option value="2卫">2卫</option>
+                                        <option value="3卫">3卫</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <select class="form-control remark" name="gn_tai">
+                                        <option value="1阳台" selected="">1阳台</option>
+                                        <option value="2阳台">2阳台</option>
+                                        <option value="3阳台">3阳台</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 area">
+                                    <input type="text" class="form-control" name="gn_square" placeholder="输入您的房屋面积">
+                                    <span class="m2">㎡</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" name="gn_phone" placeholder="报价结果将发送到您的手机上">
+                                </div>
+                            </div>
+                            <div class="form-group btn-box submit">
+                                <div class="col-xs-12">
+                                    <a class="btn btn-block" id="gongnue">发送至手机</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="side-adv">
+                        <a target="_blank" href="{:url('special/kjby')}"><img src="__STATIC__/home/image/side-adv.jpg" alt=""></a>
+                    </div>
+                    <div class="side-adv">
+                        <a><img src="__STATIC__/home/Images/side-advlr.png" /></a>
+                    </div>
+
+
+                    <!-- 热门 文章 -->
+                    <div class="side-panel">
+                        <div class="side-panel-header">
+                            <a href="{:url('raiders/index')}" class="more">更多》</a>
+                            热门文章排行榜
+                        </div>
+                        <div class="side-panel-body">
+                            <ul class="side-media">
+                                {volist name="re" id="vo"}
+                                <li>
+                                    <a href="{:url('raiders/z_detail')}?id={$vo.id}" title="{$vo.title}">
+                                        <img src="{$vo.img}" alt="{$vo.title}">
+                                        <span>{$vo.title}</span>
+                                    </a>
+                                </li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--装修常识-->
+                    <div class="side-panel">
+                        <div class="side-panel-header">
+                            <a href="{:url('infos/fdetail')}" class="more">更多》</a>
+                            装修知识
+                        </div>
+                        <div class="side-panel-body">
+                            <ul class="sense-list">
+                                {volist name='know' id='vo'}
+                                <li><a href="{:url('infos/fdetail')}?id={$vo.id}" title="{$vo.title}">·  {$vo.title}</a></li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <div class="main-detail-box">
+                        <div class="detail-head">
+                            <h1>{$res.title}</h1>
+                            <div class="detail-disc">
+                                <span>时间：{$res.time|date='Y-m-d'}</span>
+
+                                <span>来源：尺渡装饰</span>
+                            </div>
+                        </div>
+                        <div class="detail-body">
+                            <p style="text-align: left;">{$res.content|raw}</p>
+                        </div>
+                        <div class="detail-control">
+                            <div class="detail-share">
+                                <span class="share-text"><i class="iconfont icon-fenxiang"></i>分享至</span>
+                                <!-- JiaThis Button BEGIN -->
+                                <div class="jiathis_style_24x24">
+                                    <a class="jiathis_button_weixin"><i class="iconfont icon-weixin"></i></a>
+                                    <a class="jiathis_button_tsina"><i class="iconfont icon-weibo"></i></a>
+                                    <a class="jiathis_button_cqq"><i class="iconfont icon-QQ"></i></a>
+                                    <a class="jiathis_button_tieba"><i class="iconfont icon-baidu1"></i></a>
+                                    <!--<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>-->
+                                </div>
+                                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                                <!-- JiaThis Button END -->
+                            </div>
+
+                        </div>
+                        <div class="xq-wrap">
+                            <div class="xq-footer">
+                                <div class="declare-media">
+                                    <div class="declare-media-hd">声明</div>
+                                    <ul class="declare-media-bd">
+                                        <li>1.本站遵循行业规范，任何转载的稿件都会明确标注作者和来源；</li>
+                                        <li>2.本站的原创文章，请转载时务必注明文章作者和来源，不尊重原创的行为我们将追究责任；</li>
+                                        <li>3.作者投稿可能会经我们编辑修改和补充。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{include file="public/footer" /}
+
+{include file="public/menu_right"  /}
+
+{include file="public/price" /}
+
+{include file="public/yuyue" /}
+
+<script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
+<script src="__STATIC__/home/js/main.js"></script>
+<script>
+    // Slideshow 2
+    $(".gl-kn-ul li").hover(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.gl-kn-cont a').eq($(this).index()).stop(true, true).fadeIn(100).siblings().hide();
+    });
+    $(".gl-kn-tab").mouseleave(function () {
+        $('.gl-kn-cont a').hide();
+        $(".gl-kn-ul li").removeClass('active');
+    })
+</script>
+
+<script>
+    $('#a_qq').click(function () {
+        $('#consultation').trigger('click');
+    });
+</script>
+
+<script>
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //攻略
+    $("#gongnue").click(function(){
+        var shi = $("select[name='gn_shi']").val();
+        var ting = $("select[name='gn_ting']").val();
+        var chu = $("select[name='gn_chu']").val();
+        var wei = $("select[name='gn_wei']").val();
+        var tai = $("select[name='gn_tai']").val();
+        var channel = $("input[name='gn_channel']").val();
+        var phone = $("input[name='gn_phone']").val();
+        var square = $("input[name='gn_square']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+        }else if (square == '' ||square == undefined ){
+            alert('请填写户型大小！');;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 2000){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else if(res.code== 4002){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+</html>
+

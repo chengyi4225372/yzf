@@ -14,7 +14,7 @@
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
                 <li><a href="{:url('raiders/index')}">装修攻略</a></li>
-                <li>装修自媒体</li>
+                <li>装修材料</li>
             </ol>
             <div class="list-filter">
             </div>
@@ -25,7 +25,7 @@
                         <div class="side-panel-body">
                             <ul class="side-list">
                                 {volist name="cates" id="vo"}
-                                <li {if condition="$Think.get.mid eq $vo.id"}class="active"{/if}><a href="{:url('infos/media')}?mid={$vo.id}">{$vo.title}</a></li>
+                                <li {if condition="$Think.get.cid eq $vo.id"}class="active"{/if}><a href="{:url('infos/cai')}?cid={$vo.id}">{$vo.title}</a></li>
                                 {/volist}
                             </ul>
                         </div>
@@ -138,10 +138,10 @@
                         <li>
                             <div class="strategy-hd">
                                 <span class="strategy-tag">推荐</span>
-                                <a href="{:url('infos/mdetail')}?id={$vo.id}"><img src="{$vo.img}" alt=""></a>
+                                <a href="{:url('infos/cdetail')}?id={$vo.id}"><img src="{$vo.img}" alt=""></a>
                             </div>
                             <div class="strategy-bd">
-                                <h3><a href="{:url('infos/mdetail')}?id={$vo.id}">{$vo.title|mb_substr='0','30','utf-8'}</a></h3>
+                                <h3><a href="{:url('infos/cdetail')}?id={$vo.id}">{$vo.title|mb_substr='0','30','utf-8'}</a></h3>
                                 <p>{$vo.desc|default=''}</p>
                                 <div class="strategy-control">
                                     <span class="pull-right">{$vo.time|date='Y-m-d'}</span>

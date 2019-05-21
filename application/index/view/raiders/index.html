@@ -191,9 +191,7 @@
                     <div class="gl-task-panel">
                         <div class="gl-task-panel-header">
                             <strong>美家董师傅</strong>
-
                         </div>
-
                         <div class="gl-task-panel-body">
                             <ul class="gl-task-list">
                                 <li>
@@ -264,9 +262,9 @@
                         <div class="gl-task-panel-body">
                             <div class="gl-space-main">
                                 <img class="right-tag" src="__STATIC__/home/image/right-tag-new.png" alt="">
-                                <a class="gl-space-side" href="/DecorationRaiders/Detail/257">
+                                <a class="gl-space-side" href="{:url('infos/media')}">
                                     <img src="http://picfw.yzf.com.cn/2018/1/24/1914373629310.png" alt="">
-                                    <span>至尊银光！业之峰，无思想不“私享”！</span>
+                                    <span>至尊银光！尺渡，无思想不“私享”！</span>
                                 </a>
                             </div>
 
@@ -328,11 +326,9 @@
                 <div class="gl-panel">
                     <div class="gl-panel-header">
                         <div class="pull-right">
-                            <a target="_blank" href="/DecorationRaiders/list/109">瓷砖</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/110">地板</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/111">油漆</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/112">橱柜</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/113">其他</a> |
+                            {volist name="cai" id="vo"}
+                            <a target="_blank" href="{:url('infos/cai')}?cid={$vo.id}">{$vo.title}</a> |
+                             {/volist}
                         </div>
                         <strong>装修材料</strong>
                     </div>
@@ -357,6 +353,7 @@
                                     <li><a href="/DecorationRaiders/Detail/261" title="如何检查厨房卫生间地砖、墙砖的铺贴质量?"><span style="color:#696969;">[瓷砖]</span>如何检查厨房卫生间地砖、墙砖的铺贴质量? </a></li>
                                 </ul>
                             </div>
+
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
                                     <a class="gl-info-link" href="/DecorationRaiders/Detail/261">
@@ -374,6 +371,7 @@
                                     <li><a href="/DecorationRaiders/Detail/199" title="关于电源导线的颜色有何规定?"><span style="color:#696969;">[其他]</span>关于电源导线的颜色有何规定? </a></li>
                                 </ul>
                             </div>
+
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
                                     <a class="gl-info-link" href="/DecorationRaiders/Detail/199">
@@ -439,16 +437,15 @@
                 <div class="gl-panel">
                     <div class="gl-panel-header">
                         <div class="pull-right">
-                            <a target="_blank" href="/DecorationRaiders/list/104">户型</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/105">空间</a> |
-                            <a target="_blank" href="/DecorationRaiders/list/108">其他</a> |
+                            {volist name="feng" id="vo"}
+                            <a target="_blank" href="{:url('infos/feng')}?fid={$vo.id}">{$vo.title}</a> |
+                            {/volist}
                         </div>
                         <strong>装修风水</strong>
                     </div>
 
                     <div class="gl-panel-body">
                         <div class="gl-info-main">
-
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
                                     <a class="gl-info-link" href="/DecorationRaiders/Detail/288">
@@ -554,22 +551,26 @@
                             <dl>
                                 <dt><a href="/DecorationRaiders/list/50">攻略类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/59">防水处理是否需要铲除原墙体防水基层？</a><a href="/DecorationRaiders/Detail/58">水电验收标准是什么？</a><a href="/DecorationRaiders/Detail/57">瓷砖薄贴与普贴有区别吗？</a><a href="/DecorationRaiders/Detail/56">墙皮为什么要铲除？</a><a href="/DecorationRaiders/Detail/55">业之峰的材料正规吗？</a><a href="/DecorationRaiders/Detail/54">业之峰的材料环保么？</a>                                </dd>
+                                    <a href="/DecorationRaiders/Detail/59">防水处理是否需要铲除原墙体防水基层？</a>
+                                 </dd>
                             </dl>
                             <dl>
                                 <dt><a href="/DecorationRaiders/list/51">技巧类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/81">什么叫“差价三倍赔”？</a><a href="/DecorationRaiders/Detail/80">业之峰给我的优惠什么时候兑现？能抵主材款吗？</a><a href="/DecorationRaiders/Detail/79">在峰格汇家居选购的产品还有没有安装费？现在的合同里包含安装费吗？</a><a href="/DecorationRaiders/Detail/78">峰格汇家居的主材售后服务有保障吗？</a><a href="/DecorationRaiders/Detail/77">在峰格汇家居订购主材产品后，如果需要发票如何开？没有发票主材是否 可以保修？</a><a href="/DecorationRaiders/Detail/76">材料选好后，是不是由业之峰进行统一配送？ </a>                                </dd>
+                                    <a href="/DecorationRaiders/Detail/81">什么叫“差价三倍赔”？</a>
+                                </dd>
                             </dl>
                             <dl>
                                 <dt><a href="/DecorationRaiders/list/52">质检类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/104">如果对质检员不满意，可以更换质检员吗？</a><a href="/DecorationRaiders/Detail/103">客户质疑施工队和质检员都是业之峰的，如果互相包庇怎么办，发现问题不说怎么办？</a><a href="/DecorationRaiders/Detail/102">为什么不等主材全部装完再做竣工验收？</a><a href="/DecorationRaiders/Detail/101">施工过程中出现质量问题应该怎么办？</a><a href="/DecorationRaiders/Detail/100">如果质检员不在场，施工队要求验收或签字，客户能答应吗？</a><a href="/DecorationRaiders/Detail/99">客户在现场发现问题，第一时间应该联系谁解决？</a>                                </dd>
+                                    <a href="/DecorationRaiders/Detail/104">如果对质检员不满意，可以更换质检员吗？</a>
+                                </dd>
                             </dl>
                             <dl>
                                 <dt><a href="/DecorationRaiders/list/53">财务类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/113">什么时候可以开发票？发票抬头可以开什么？内容可以开什么？</a><a href="/DecorationRaiders/Detail/112">为什么结算完才能开发票？</a><a href="/DecorationRaiders/Detail/111">为什么在业之峰购买的主材，业之峰不给开主材的发票？</a><a href="/DecorationRaiders/Detail/110">客户交完尾款后应该怎么办理结算手续？</a><a href="/DecorationRaiders/Detail/109">为什么客户已经和家居顾问核对主材后还无法办理结算？ </a><a href="/DecorationRaiders/Detail/108">客户的结算周期为什么要15到20个工作日这么久？</a>                                </dd>
+                                    <a href="/DecorationRaiders/Detail/113">什么时候可以开发票？发票抬头可以开什么？内容可以开什么？</a>
+                                </dd>
                             </dl>
                         </div>
                     </div>

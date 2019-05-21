@@ -34,6 +34,14 @@
     </div>
 
     <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">简介</label>
+        <div class="layui-input-block">
+            <textarea name="desc" class="layui-textarea">{if isset($vo['id'])}{$vo.desc}{/if}</textarea>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">内容详情</label>
         <div class="layui-input-block">
             <textarea name="content" class="layui-textarea">{if isset($vo['id'])}{$vo.content}{/if}</textarea>
