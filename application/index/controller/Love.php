@@ -11,7 +11,7 @@ namespace app\index\controller;
 use think\Db;
 use app\index\controller\Common;
 
-class Loves extends Common
+class Love extends Common
 {
    public function index(){
        return $this->fetch();
