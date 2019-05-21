@@ -19,6 +19,16 @@ class Raiders extends Common {
     //装修攻略 首页
     public function index(){
         $zhi = Db::name('zhi_jian')->field('id,img,title')->select();
+        $cai =db('cai_cate')->select();
+        //瓷砖
+        $ci_one = db('cai_list')->where('cid',1)->select();
+        $ci_two = db('cai_list')->where('cid',2)->select();
+        $ci_thr = db('cai_list')->where('cid',3)->select();
+        $ci_four = db('cai_list')->where('cid',4)->select();
+
+        $feng=db('feng_cate')->select();
+        $this->assign('cai',$cai);
+        $this->assign('feng',$feng);
         $this->assign('zhi',$zhi);
         return  $this->fetch();
     }
@@ -67,18 +77,6 @@ class Raiders extends Common {
         $re= $this->remen();
         $this->assign('re',$re);
         $this->assign('info',$info);
-        return $this->fetch();
-    }
-
-    //装修自媒体
-    public function media(){
-        $mid = input('get.mid');
-        $list  = Db::name('media_list')->where('mid',$mid)->select();
-        $this->assign('list',$list);
-        return  $this->fetch();
-    }
-
-    public function media_detail(){
         return $this->fetch();
     }
 
