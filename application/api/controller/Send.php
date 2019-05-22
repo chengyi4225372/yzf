@@ -81,7 +81,7 @@ class  Send extends Controller
         }
     }
 
-    //我的户型
+    //我的户型  免费预约平面设计
     public function sheji(){
         $data = input('post.');
         $res = Db::name('yuyue')->insert(
@@ -99,7 +99,7 @@ class  Send extends Controller
         if($res){
           $this->result('','200','提交成功！','json');
         }else{
-            $this->result('','400','提交失败！','json');
+            $this->result('','400','提交失败，请刷新页面重新提交！','json');
         }
     }
 
@@ -183,7 +183,6 @@ class  Send extends Controller
         }
     }
 
-
     //算算我家房子装修花多少钱 sp.html todo 需要连接短信接口
     public function jisuan(){
         $data = input('post.');
@@ -208,8 +207,6 @@ class  Send extends Controller
 
     }
 
-
-
    //免费家装前三步
     public function mianfei(){
         $data = input('post.');
@@ -221,8 +218,6 @@ class  Send extends Controller
         }
     }
 
-
-
     //专属优惠
     public function youhui(){
         $data = input('post.');
@@ -233,7 +228,6 @@ class  Send extends Controller
             $this->result('','400','对不起，请重新提交！','json');
         }
     }
-
 
     //第三方环保监测 环保是否达标
     public function jiance(){
