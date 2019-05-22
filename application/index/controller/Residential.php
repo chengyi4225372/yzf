@@ -332,6 +332,8 @@ class Residential extends Common{
             ->limit(10) //默认10条
             ->select();
         $this->assign('hot',$hot);
+        $know=$this->know();
+        $this->assign('know',$know);
         return $this->fetch();
     }
 

@@ -33,6 +33,8 @@ class Site extends Common
            $list['data'][$k]['z_img'] = explode('|', $list['data'][$k]['z_img']);
            $list['data'][$k]['h_img'] = explode('|', $list['data'][$k]['h_img']);
        }
+       $know =$this->know();
+       $this->assign('know',$know);
        $this->assign('list',$list['data']);
        $this->assign('page',$page);
        return $this->fetch();

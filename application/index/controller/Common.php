@@ -69,10 +69,11 @@ class Common extends Controller {
         //底部导航
         $footer = Db::name($this->foot)->select();
         $this->assign('footer',$footer);
-
+       /*todo 手机端 暂时注释
         if(isMobile()){
             $this->redirect('@mobile/index/index');
         }
+       */
     }
 
     //热门文章排行榜

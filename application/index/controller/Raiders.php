@@ -110,6 +110,8 @@ class Raiders extends Common {
         //热门文章
         $re= $this->remen();
         $this->assign('re',$re);
+        $know=$this->know();
+        $this->assign('know',$know);
         $this->assign('info',$info);
         return $this->fetch();
     }
