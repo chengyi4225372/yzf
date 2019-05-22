@@ -210,7 +210,16 @@ class  Send extends Controller
 
 
 
-
+   //免费家装前三步
+    public function mianfei(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insertGetId($data);
+        if($res !=false){
+            $this->result('','200','恭喜你,报名成功！','json');
+        }else{
+            $this->result('','400','对不起，提交失败！','json');
+        }
+    }
 
 
 

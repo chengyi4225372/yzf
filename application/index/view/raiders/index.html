@@ -22,16 +22,16 @@
                         <a class="last"  href="JavaScript:;"><img src="__STATIC__/home/image/step-3.jpg" alt=""></a>
                     </div>
                     <div class="step-form">
-                        <form action="">
-                            <input name="Channel" value="glz_yzf_index" type="hidden" />
+                        <form>
+                            <input name="m_channel" value="免费家装前三步" type="hidden" />
                             <div class="form-group" id="formPost">
-                                <input name="Name" type="text" class="form-control" placeholder="您的称呼">
+                                <input name="m_name" type="text" class="form-control" placeholder="您的称呼">
                             </div>
                             <div class="form-group">
-                                <input name="PhoneNumber" type="text" class="form-control" placeholder="您的联系方式">
+                                <input name="m_phone" type="text" class="form-control" placeholder="您的联系方式">
                             </div>
                             <div class="form-group submit">
-                                <a class="btn btn-block" href="javascript:;">我要报名</a>
+                                <a class="btn btn-block" id="mianfei">我要报名</a>
                             </div>
                         </form>
 
@@ -196,7 +196,7 @@
                             <ul class="gl-task-list">
                                 <li>
                                     <div class="gl-task-list-hd">
-                                        <a href="/DecorationRaiders/Detail/241">
+                                        <a href="{:url('index/thing')}">
                                             <img src="http://picfw.yzf.com.cn/2018/1/24/1914279471179.jpg_360x255.jpg" alt="">
                                         </a>
                                     </div>
@@ -322,7 +322,6 @@
                 </div>
             </div>
             <div class="gl-info-wrap">
-
                 <div class="gl-panel">
                     <div class="gl-panel-header">
                         <div class="pull-right">
@@ -338,101 +337,71 @@
 
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/275">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="">
-                                        <span>油漆后的家具为何会泛黄?怎样预防? </span>
+                                   {volist name="ci_one" id="vo"  offset='0' length='1'}
+                                    <a class="gl-info-link" href="{:url('infos/cdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title} </span>
                                     </a>
+                                   {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/320" title="地面砖、瓷砖可分为哪几类？"><span style="color:#696969;">[瓷砖]</span>地面砖、瓷砖可分为哪几类？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/274" title="油漆干燥后为什么会有裂痕?"><span style="color:#696969;">[油漆]</span>油漆干燥后为什么会有裂痕? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/273" title="油漆干燥后还感觉粘手怎么办?"><span style="color:#696969;">[油漆]</span>油漆干燥后还感觉粘手怎么办? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/270" title="如何检查铝扣板(条形、方形)的施工质量?"><span style="color:#696969;">[其他]</span>如何检查铝扣板(条形、方形)的施工质量? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/269" title="如何检查铝合金门窗的质量？"><span style="color:#696969;">[其他]</span>如何检查铝合金门窗的质量？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/263" title="如何检查防盗门的安装质量?"><span style="color:#696969;">[其他]</span>如何检查防盗门的安装质量? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/261" title="如何检查厨房卫生间地砖、墙砖的铺贴质量?"><span style="color:#696969;">[瓷砖]</span>如何检查厨房卫生间地砖、墙砖的铺贴质量? </a></li>
+                                    {volist name="ci_one" id="vo"  offset='1'}
+                                    <li><a href="{:url('infos/cdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[瓷砖]</span>{$vo.title} </a></li>
+                                    {/volist}
                                 </ul>
                             </div>
 
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/261">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/22/1939403478749.jpg_360x255.jpg" alt="">
-                                        <span>如何检查厨房卫生间地砖、墙砖的铺贴质量? </span>
+                                    {volist name="ci_two" id="vo"  offset='0' length='1'}
+                                    <a class="gl-info-link" href="{:url('infos/cdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title} </span>
                                     </a>
+                                    {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/213" title="如何把握吊顶木龙骨架质量？"><span style="color:#696969;">[其他]</span>如何把握吊顶木龙骨架质量？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/212" title="铺设塑胶地板的质量要点是什么?"><span style="color:#696969;">[地板]</span>铺设塑胶地板的质量要点是什么? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/210" title="木质踢脚线(板)有何质量要求?"><span style="color:#696969;">[地板]</span>木质踢脚线(板)有何质量要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/209" title="吊柜、壁柜安装应符合哪些质量要求?"><span style="color:#696969;">[橱柜]</span>吊柜、壁柜安装应符合哪些质量要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/208" title="门窗玻璃安装的质量要求有哪些？"><span style="color:#696969;">[其他]</span>门窗玻璃安装的质量要求有哪些？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/207" title="接地线安装质量有何要求?"><span style="color:#696969;">[其他]</span>接地线安装质量有何要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/199" title="关于电源导线的颜色有何规定?"><span style="color:#696969;">[其他]</span>关于电源导线的颜色有何规定? </a></li>
+                                    {volist name="ci_two" id="vo"  offset='1'}
+                                    <li><a href="{:url('infos/cdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[地板]</span>{$vo.title} </a></li>
+                                    {/volist}
                                 </ul>
                             </div>
 
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/199">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/23/1940051219635.jpg_360x255.jpg" alt="">
-                                        <span>关于电源导线的颜色有何规定? </span>
+                                    {volist name="ci_thr" id="vo"  offset='0' length='1'}
+                                    <a class="gl-info-link" href="{:url('infos/cdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title}</span>
                                     </a>
+                                    {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/197" title="电源开关板面及插座面板的安装和质量有何要求?"><span style="color:#696969;">[其他]</span>电源开关板面及插座面板的安装和质量有何要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/196" title="电源导线及线路有何技术安全要求?"><span style="color:#696969;">[其他]</span>电源导线及线路有何技术安全要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/195" title="地毯的铺设应有怎样的质量要求?"><span style="color:#696969;">[地板]</span>地毯的铺设应有怎样的质量要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/194" title="窗帘盒制作、安装应符合哪些质量要求?"><span style="color:#696969;">[其他]</span>窗帘盒制作、安装应符合哪些质量要求? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/193" title="穿线电管为什么不能使用90度弯头和三通?"><span style="color:#696969;">[其他]</span>穿线电管为什么不能使用90度弯头和三通? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/192" title="插座导线与照明导线可以在同一回路吗?"><span style="color:#696969;">[其他]</span>插座导线与照明导线可以在同一回路吗? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/191" title="玻璃饰面吊顶的质量要求是什么?"><span style="color:#696969;">[其他]</span>玻璃饰面吊顶的质量要求是什么? </a></li>
+                                    {volist name="ci_thr" id="vo"  offset='1'}
+                                    <li><a href="{:url('infos/cdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[油漆]</span>{$vo.title}</a></li>
+                                    {/volist}
                                 </ul>
                             </div>
                         </div>
                         <div class="gl-info-side">
                             <ul class="info-side-media">
+                                {volist name="ci_four" id="vo"}
                                 <li>
                                     <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/185">
-                                            <img src="http://picfw.yzf.com.cn/100021/2018/2/5/1924709870520.jpg_360x255.jpg" alt=""></a>
+                                        <a href="{:url('infos/cdetail')}?id={$vo.id}">
+                                            <img src="{$vo.img}" alt=""></a>
                                     </div>
                                     <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/185">自己买主材请家装公司装修 这种做法是否划算?</a></h4>
-                                        <p>这里说的主材主要指地板砖或木地板，用于厨房、卫生间... </p>
-                                        <div class="info-date">2017/12/1</div>
+                                        <h4><a href="{:url('infos/cdetail')}?id={$vo.id}">{$vo.title}</a></h4>
+                                        <p>{$vo.desc|default=''}</p>
+                                        <div class="info-date">{$vo.time|date="Y/m/d"}</div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/179">
-                                            <img src="http://picfw.yzf.com.cn/100021/2018/2/22/1939387404138.jpg_360x255.jpg" alt=""></a>
-                                    </div>
-                                    <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/179">怎样选材才能达到环保要求?</a></h4>
-                                        <p>一般来说，装修材料中大部分无机材料是安全和无害的，... </p>
-                                        <div class="info-date">2017/12/1</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/170">
-                                            <img src="http://picfw.yzf.com.cn/100021/2018/2/6/1925548454435.jpg_360x255.jpg" alt=""></a>
-                                    </div>
-                                    <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/170">家装中使用的材料大致有哪些?</a></h4>
-                                        <p>地面。①木地板(实木地板、复合实木地板、强化复合地... </p>
-                                        <div class="info-date">2017/11/30</div>
-                                    </div>
-                                </li>
+                                 {/volist}
                             </ul>
                         </div>
                     </div>
                 </div>
-
-
-
-
 
                 <div class="gl-panel">
                     <div class="gl-panel-header">
@@ -448,98 +417,69 @@
                         <div class="gl-info-main">
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/288">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="">
-                                        <span>买房风水禁忌 最宜居住的家居风水布局 </span>
+                                    {volist name="feng_hu" id="vo" offset='0' length='1'}
+                                    <a class="gl-info-link" href="{:url('infos/fdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title}</span>
                                     </a>
+                                    {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/291" title="装修风水禁忌有哪些?"><span style="color:#696969;">[空间]</span>装修风水禁忌有哪些? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/290" title="家装风水的禁忌"><span style="color:#696969;">[空间]</span>家装风水的禁忌 </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/289" title="卧室门可以对着客厅吗？"><span style="color:#696969;">[空间]</span>卧室门可以对着客厅吗？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/287" title="怎样处理书房照明与灯具的问题?"><span style="color:#696969;">[其他]</span>怎样处理书房照明与灯具的问题? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/285" title="怎样处理客厅的照明问题?"><span style="color:#696969;">[空间]</span>怎样处理客厅的照明问题? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/284" title="怎样处理厨房照明与灯具的问题?"><span style="color:#696969;">[其他]</span>怎样处理厨房照明与灯具的问题? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/283" title="餐厅的属性"><span style="color:#696969;">[空间]</span>餐厅的属性 </a></li>
+                                    {volist name="feng_hu" id="vo" offset='1'}
+                                    <li><a href="{:url('infos/fdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[户型]</span>{$vo.title}</a></li>
+                                    {/volist}
                                 </ul>
                             </div>
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/283">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/22/1939245590052.jpg_360x255.jpg" alt="">
-                                        <span>餐厅的属性 </span>
+                                    {volist name="feng_kong" id="vo" offset='0' length='1'}
+                                    <a class="gl-info-link" href="{:url('infos/fdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title} </span>
                                     </a>
+                                    {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/282" title="怎样安装座便器才算正确?"><span style="color:#696969;">[其他]</span>怎样安装座便器才算正确? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/281" title="怎样安装镜子？"><span style="color:#696969;">[其他]</span>怎样安装镜子？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/278" title="室内布艺的选择应注意哪些问题?"><span style="color:#696969;">[其他]</span>室内布艺的选择应注意哪些问题? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/276" title="家居环境污染种类有哪些"><span style="color:#696969;">[其他]</span>家居环境污染种类有哪些 </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/171" title="选用装饰装修材料要坚持哪些原则?"><span style="color:#696969;">[其他]</span>选用装饰装修材料要坚持哪些原则? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/158" title="如何走出装修误区？"><span style="color:#696969;">[其他]</span>如何走出装修误区？ </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/154" title="如何巧妙运用射灯?"><span style="color:#696969;">[空间]</span>如何巧妙运用射灯? </a></li>
+                                    {volist name="feng_kong" id="vo" offset='1' }
+                                    <li><a href="{:url('infos/fdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[空间]</span>{$vo.title}</a></li>
+                                    {/volist}
                                 </ul>
                             </div>
                             <div class="gl-info-item">
                                 <div class="gl-info-head">
-                                    <a class="gl-info-link" href="/DecorationRaiders/Detail/154">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/31/1920236989245.jpg_360x255.jpg" alt="">
-                                        <span>如何巧妙运用射灯? </span>
+                                    {volist name="feng_style" id="vo" offset='0' length='1' }
+                                    <a class="gl-info-link" href="{:url('infos/fdetail')}?id={$vo.id}">
+                                        <img src="{$vo.img}" alt="">
+                                        <span>{$vo.title} </span>
                                     </a>
+                                    {/volist}
                                 </div>
                                 <ul class="gl-info-ul">
-                                    <li><a href="/DecorationRaiders/Detail/153" title="如何定位居室设计装修层次?"><span style="color:#696969;">[空间]</span>如何定位居室设计装修层次? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/152" title="如何搭配色调比较合理?"><span style="color:#696969;">[其他]</span>如何搭配色调比较合理? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/151" title="如何从设计中体现住宅使用功能的合理布局?"><span style="color:#696969;">[空间]</span>如何从设计中体现住宅使用功能的合理布局? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/150" title="如何处理卧房的灯光及色彩?"><span style="color:#696969;">[其他]</span>如何处理卧房的灯光及色彩? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/145" title="环保家装包括哪些内容?"><span style="color:#696969;">[其他]</span>环保家装包括哪些内容? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/144" title="何谓过度装修?原因有哪些?"><span style="color:#696969;">[其他]</span>何谓过度装修?原因有哪些? </a></li>
-                                    <li><a href="/DecorationRaiders/Detail/16" title="家居装修莫大意 事后补救来不及!"><span style="color:#696969;">[空间]</span>家居装修莫大意 事后补救来不及! </a></li>
+                                    {volist name="feng_style" id="vo" offset='1'  }
+                                    <li><a href="{:url('infos/fdetail')}?id={$vo.id}" title="{$vo.title}"><span style="color:#696969;">[风格]</span>{$vo.title} </a></li>
+                                    {/volist}
                                 </ul>
                             </div>
                         </div>
                         <div class="gl-info-side">
                             <ul class="info-side-media">
+                                {volist name="feng_other" id="vo" }
                                 <li>
                                     <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/6">
-                                            <img src="http://picfw.yzf.com.cn/2016/1/24/1282549056126.jpg_360x255.jpg" alt=""></a>
+                                        <a href="{:url('infos/fdetail')}?id={$vo.id}">
+                                            <img src="{$vo.img}" alt=""></a>
                                     </div>
                                     <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/6">挡也挡不住的桃花运 家居风水真给力!</a></h4>
-                                        <p>每个人都希望自己的爱情能够甜蜜浪漫，婚姻能够幸福美... </p>
-                                        <div class="info-date">2016/1/13</div>
+                                        <h4><a href="{:url('infos/fdetail')}?id={$vo.id}">{$vo.title}</a></h4>
+                                        <p>{$vo.desc|default=''}</p>
+                                        <div class="info-date">{$vo.time|date='Y/m/d'}</div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/4">
-                                            <img src="http://picfw.yzf.com.cn/2016/1/24/1282547046413.jpg_360x255.jpg" alt=""></a>
-                                    </div>
-                                    <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/4">阳台植物巧摆放 好风景更有好风水</a></h4>
-                                        <p>在阳台放上几盆绿植，再摆上一张摇椅，一个舒适而又美... </p>
-                                        <div class="info-date">2016/1/13</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="side-media-hd">
-                                        <a href="/DecorationRaiders/Detail/3">
-                                            <img src="http://picfw.yzf.com.cn/2016/1/13/1273033071496.jpg_360x255.jpg" alt=""></a>
-                                    </div>
-                                    <div class="side-media-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/3">想要新年行大运?这些装修风水禁忌怎能不知?</a></h4>
-                                        <p>好的家居风水，能够对我们的运势产生一定的促进作用。... </p>
-                                        <div class="info-date">2016/1/13</div>
-                                    </div>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <div class="gl-panel">
                     <div class="gl-panel-header">
@@ -549,27 +489,35 @@
 
                         <div class="gl-bk-row">
                             <dl>
-                                <dt><a href="/DecorationRaiders/list/50">攻略类 </a></dt>
+                                <dt><a href="{:url('infos/que')}?qid=1">攻略类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/59">防水处理是否需要铲除原墙体防水基层？</a>
-                                 </dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="/DecorationRaiders/list/51">技巧类 </a></dt>
-                                <dd>
-                                    <a href="/DecorationRaiders/Detail/81">什么叫“差价三倍赔”？</a>
+                                    {volist name="gong" id="vo"}
+                                    <a href="{:url('infos/qdetail')}?id={$vo.id}">{$vo.title}</a>
+                                    {/volist}
                                 </dd>
                             </dl>
                             <dl>
-                                <dt><a href="/DecorationRaiders/list/52">质检类 </a></dt>
+                                <dt><a href="{:url('infos/que')}?qid=2">技巧类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/104">如果对质检员不满意，可以更换质检员吗？</a>
+                                    {volist name="gong_two" id="vo"}
+                                    <a href="{:url('infos/qdetail')}?id={$vo.id}">{$vo.title}</a>
+                                    {/volist}
                                 </dd>
                             </dl>
                             <dl>
-                                <dt><a href="/DecorationRaiders/list/53">财务类 </a></dt>
+                                <dt><a href="{:url('infos/que')}?qid=3">质检类 </a></dt>
                                 <dd>
-                                    <a href="/DecorationRaiders/Detail/113">什么时候可以开发票？发票抬头可以开什么？内容可以开什么？</a>
+                                    {volist name="gong_thr" id="vo"}
+                                    <a href="{:url('infos/qdetail')}?id={$vo.id}">{$vo.title}</a>
+                                    {/volist}
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="{:url('infos/que')}?qid=4">财务类 </a></dt>
+                                <dd>
+                                    {volist name="gong_four" id="vo"}
+                                    <a href="{:url('infos/qdetail')}?id={$vo.id}">{$vo.title}</a>
+                                    {/volist}
                                 </dd>
                             </dl>
                         </div>
@@ -598,23 +546,23 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
-                    <input name="z_channel" value="装修礼包" type="hidden" />
+                    <input name="l_channel" value="装修礼包" type="hidden" />
                     <div class="form-group">
                         <label class="col-xs-2 control-label">姓名</label>
                         <div class="col-xs-10">
-                            <input name="z_name" type="text" class="form-control" placeholder="输入姓名">
+                            <input name="l_names" type="text" class="form-control" placeholder="输入姓名">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-2 control-label">手机</label>
                         <div class="col-xs-10">
-                            <input name="z_phone" type="text" class="form-control" placeholder="输入手机号">
+                            <input name="l_phone" type="text" class="form-control" placeholder="输入手机号">
                         </div>
                     </div>
 
                     <div class="form-group submit">
                         <div class="btn-wrap">
-                            <button type="button" class="btn btn-gold btn-block" id="zhuangxiu">立即领取</button>
+                            <button type="button" class="btn btn-gold btn-block" id="libao">立即领取</button>
                         </div>
                     </div>
                     <div class="form-disc">*尺渡装饰向您承诺，您的个人隐私我们会严格保密！</div>
@@ -623,8 +571,48 @@
         </div>
     </div>
 </div>
+<!-- 专属礼包-->
+<script>
+    //手机正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+    //预约提交
+    $("#libao").click(function(){
+        var channel = $("input[name='l_channel']").val();
+        var names = $("input[name='l_names']").val();
+        var phone = $("input[name='l_phone']").val();
+        if (isPhoneNo(phone) == false || phone == 'null') {
+            alert('手机号不合法！');
+        }else if (names == '' ||names == undefined ){
+            alert('用户名不能为空！');;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/libao')}",
+                type:'post',
+                data:{'channel':channel,'names':names,'phone':phone},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 2000){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else if(res.code==4001){
+                        alert(res.code);
+                    }else if(res.code== 4002){
+                        alert(res.code);
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
 
 
+
+</script>
 
 {include file="public/price" /}
 
@@ -642,24 +630,24 @@
                     <div class="fixed-white-l">
                         <div class="fixed-panel-body">
                             <form class="form-horizontal calculator-form">
-                                <input name="Channel" value="装修计算器" type="hidden" />
+                                <input name="zx_channel" value="装修计算器" type="hidden" />
                                 <div class="form-group">
                                     <label class="col-xs-3 control-label">房屋户型：<em>*</em></label>
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <select class="form-control  remark">
+                                                <select class="form-control  remark" name="zx_shi" >
                                                     <option value="1室">1室</option>
                                                     <option value="2室">2室</option>
-                                                    <option value="3室" selected="">3室</option>
+                                                    <option value="3室" selected>3室</option>
                                                     <option value="4室">4室</option>
                                                     <option value="5室">5室</option>
                                                     <option value="6室">6室</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
-                                                    <option value="1厅" selected="">1厅</option>
+                                                <select class="form-control remark" name="zx_ting">
+                                                    <option value="1厅" selected>1厅</option>
                                                     <option value="2厅">2厅</option>
                                                     <option value="3厅">3厅</option>
                                                     <option value="4厅">4厅</option>
@@ -668,22 +656,22 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <select class="form-control remark">
-                                                    <option value="1厨" selected="">1厨</option>
+                                                <select class="form-control remark" name="zx_chu">
+                                                    <option value="1厨" selected>1厨</option>
                                                     <option value="2厨">2厨</option>
                                                     <option value="3厨">3厨</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
-                                                    <option value="1卫" selected="">1卫</option>
+                                                <select class="form-control remark" name="zx_wei">
+                                                    <option value="1卫" selected>1卫</option>
                                                     <option value="2卫">2卫</option>
                                                     <option value="3卫">3卫</option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
-                                                <select class="form-control remark">
-                                                    <option value="1阳台" selected="">1阳台</option>
+                                                <select class="form-control remark" name="zx_tai">
+                                                    <option value="1阳台" selected>1阳台</option>
                                                     <option value="2阳台">2阳台</option>
                                                     <option value="3阳台">3阳台</option>
                                                 </select>
@@ -696,8 +684,7 @@
                                     <div class="col-xs-9">
                                         <div class="row">
                                             <div class="col-xs-12 area">
-                                                <input  name="SquareMeters"  type="text" class="form-control" placeholder="输入您的房屋面积">
-                                                <span class="m2">㎡</span>
+                                                <input name="zx_square" type="text" class="form-control" placeholder="输入您的房屋面积"><span class="m2">㎡</span>
                                             </div>
                                         </div>
                                     </div>
@@ -706,16 +693,14 @@
                                     <label class="col-xs-3 control-label">手机号码：<em>*</em></label>
                                     <div class="col-xs-9">
                                         <div class="row">
-                                            <div class="col-xs-12">
-                                                <input  name="PhoneNumber"  type="text" class="form-control" placeholder="报价结果将发送到您的手机">
-                                            </div>
+                                            <div class="col-xs-12"><input name="zx_phone" type="text" class="form-control" placeholder="报价结果将发送到您的手机"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group group-disc">
                                     *尺渡装饰向您承诺，您的个人隐私我们会严格保密！
                                 </div>
-                                <button type="submit" class="btn submit-label-btn submit">开始计算</button>
+                                <button type="button"  id="jisuan" class="btn submit-label-btn submit">开始计算</button>
                                 <span class="circle-animate"></span>
                             </form>
                         </div>
@@ -734,6 +719,50 @@
         </div>
     </div>
 </div>
+<!-- 装修计算器-->
+<script>
+    //手机号正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    //装修计算器
+    $("#jisuan").click(function(){
+        var channel = $("input[name='zx_channel']").val();
+        var shi = $("select[name='zx_shi']").val();
+        var ting = $("select[name='zx_ting']").val();
+        var chu = $("select[name='zx_chu']").val();
+        var wei = $("select[name='zx_wei']").val();
+        var tai = $("select[name='zx_tai']").val();
+        var square = $("input[name='zx_square']").val();
+        var phone = $("input[name='zx_phone']").val();
+
+        if(square=='' || square==undefined){
+            alert('请填写户型面积大小！');
+        }else if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+        }else{
+            $.ajax({
+                url:"{:url('api/send/zhuang')}",
+                type:'post',
+                data:{'channel':channel,'square':square,'phone':phone,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+</script>
+
 <div class="modal fade" id="percentModal" style="display: none;">
     <div class="modal-dialog yzf-modal lg">
         <div class="modal-content">
@@ -1120,6 +1149,44 @@
     $(".gl-kn-tab").mouseleave(function () {
         $('.gl-kn-cont a').hide();
         $(".gl-kn-ul li").removeClass('active');
+    })
+</script>
+
+
+<!-- 免费前三部-->
+<script>
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+
+    $('#mianfei').click(function(){
+         var channel = $("input[name='m_channel']").val();
+         var names = $("input[name='m_name']").val();
+         var phone = $("input[name='m_phone']").val();
+         if(names ==''|| names==undefined){
+             alert('用户名不能为空！');
+             return false;
+         }
+         if(phone==''|| isPhoneNo(phone) == false){
+             alert('手机号码不合法！')
+             return false;
+         }
+         $.ajax({
+             url:"{:url('api/send/mianfei')}",
+             type:'post',
+             data:{'channel':channel,'names':names,'phone':phone},
+             success:function(res){
+               if(res.code == 200){
+                   alert(res.msg);
+                   window.location.reload();
+               }else{
+                   alert(res,msg);
+                   window.location.reload();
+               }
+             }
+         })
     })
 </script>
 
