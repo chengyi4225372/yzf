@@ -25,7 +25,6 @@ class Raiders extends Common {
         $ci_two = db('cai_list')->field('id,title,img,time')->where('cid',2)->order('id desc')->limit(8)->select();
         $ci_thr = db('cai_list')->field('id,title,img,time')->where('cid',3)->order('id desc')->limit(8)->select();
         $ci_four = db('cai_list')->field('id,title,img,time')->where('cid',4)->order('id desc')->limit(3)->select();
-
         $feng=db('feng_cate')->select();
 
         //常见问题分类
@@ -40,7 +39,12 @@ class Raiders extends Common {
         $feng_style =  db('feng_list')->field('id,title,img,time')->where('fid',4)->order('id desc')->limit(8)->select();
         $feng_other = db('feng_list')->field('id,title,img,time')->where('fid',3)->order('id desc')->limit(3)->select();
 
-
+        //装修哪些事
+        $thing = Db::name('thing_list')->field('id,title,img,time')->order('id desc')->limit(5)->select();
+        //爱家
+        $love = Db::name('love_list')->field('id,title,time')->order('id desc')->limit(8)->select();
+        $this->assign('thing',$thing);
+        $this->assign('love',$love);
          //材料
         $this->assign('ci_one',$ci_one);
         $this->assign('ci_two',$ci_two);

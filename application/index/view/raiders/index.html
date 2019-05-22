@@ -189,66 +189,23 @@
                 <div class="gl-task-l">
                     <div class="gl-task-panel">
                         <div class="gl-task-panel-header">
-                               <!-- todo 装修那些事-->
-                            <strong>美家董师傅</strong>
+                            <strong>装修那些事</strong>
                         </div>
                         <div class="gl-task-panel-body">
                             <ul class="gl-task-list">
+                                {volist name="thing" id="vo"}
                                 <li>
                                     <div class="gl-task-list-hd">
-                                        <a href="{:url('index/thing')}">
-                                            <img src="http://picfw.yzf.com.cn/2018/1/24/1914279471179.jpg_360x255.jpg" alt="">
+                                        <a href="{:url('thing/detail')}?id={$vo.id}">
+                                            <img src="{$vo.img}" alt="">
                                         </a>
                                     </div>
                                     <div class="gl-task-list-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/241">家里装修房子，这样设计开关、插座会让你生活的更舒适</a></h4>
-                                        <p>2018/1/24 </p>
+                                        <h4><a href="{:url('thing/detail')}?id={$vo.id}">{$vo.title}</a></h4>
+                                        <p>{$vo.time|date="Y/m/d"} </p>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="gl-task-list-hd">
-                                        <a href="/DecorationRaiders/Detail/240">
-                                            <img src="http://picfw.yzf.com.cn/2018/1/24/1914190309851.jpg_360x255.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="gl-task-list-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/240">新房装修3个月，总结装修周期几个关键点的经验，帮你避免进坑</a></h4>
-                                        <p>2018/1/24 </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="gl-task-list-hd">
-                                        <a href="/DecorationRaiders/Detail/239">
-                                            <img src="http://picfw.yzf.com.cn/2018/1/24/1914188038362.jpg_360x255.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="gl-task-list-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/239">新家装修遇到问题的补救小技巧，学会之后你不吃亏</a></h4>
-                                        <p>2018/1/24 </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="gl-task-list-hd">
-                                        <a href="/DecorationRaiders/Detail/238">
-                                            <img src="http://picfw.yzf.com.cn/2018/1/24/1914184501219.jpg_360x255.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="gl-task-list-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/238">家庭装修吊顶最常见的轻钢龙骨石膏板吊顶选材与安装讲解</a></h4>
-                                        <p>2018/1/24 </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="gl-task-list-hd">
-                                        <a href="/DecorationRaiders/Detail/235">
-                                            <img src="" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="gl-task-list-bd">
-                                        <h4><a href="/DecorationRaiders/Detail/235">新房装修晾晒通风半年可以住进去，这事靠谱吗？</a></h4>
-                                        <p>2018/1/24 </p>
-                                    </div>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
@@ -275,45 +232,18 @@
                                     </div>
                                     <div class="space-media-bd">
                                         <h4>爱家物语</h4>
-                                        <p>业之峰装饰集团爱家物语系列原创软文</p>
+                                        <p>尺渡装饰集团爱家物语系列原创软文</p>
                                     </div>
                                 </div>
                                 <div class="gl-space-wrap">
                                     <span class="gl-space-tag">最新文章</span>
                                     <ul class="gl-space-list">
+                                        {volist name="love" id="vo"}
                                         <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/256" title="心之所向！业之峰，给你生活的“诗和远方“！">心之所向！业之峰，给你生活的“诗和远方“！</a>
+                                            <span>{$vo.time|date="Y/m/d"}</span>
+                                            <a href="{:url('love/detail')}?id={$vo.id}" title="{$vo.title}">{$vo.title}</a>
                                         </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/255" title="情归轻奢！业之峰，打造内心自由的专属浪漫！">情归轻奢！业之峰，打造内心自由的专属浪漫！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/254" title="回归本性！业之峰，只为这一场生命的修行！">回归本性！业之峰，只为这一场生命的修行！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/253" title="上善若水！业之峰，惊艳时光者，唯禅意圆满！">上善若水！业之峰，惊艳时光者，唯禅意圆满！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/252" title="以长情告白！ 业之峰，感恩每一次的信任和遇见！">以长情告白！ 业之峰，感恩每一次的信任和遇见！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/251" title="中西交融！业之峰，山海城畔演绎“最青岛”！">中西交融！业之峰，山海城畔演绎“最青岛”！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/250" title="心临北欧！业之峰，演绎童话国度的幸福与希望！">心临北欧！业之峰，演绎童话国度的幸福与希望！</a>
-                                        </li>
-                                        <li>
-                                            <span>2018/1/24</span>
-                                            <a href="/DecorationRaiders/Detail/249" title="沉稳如斯！业之峰，时间沉淀，方得厚重！">沉稳如斯！业之峰，时间沉淀，方得厚重！</a>
-                                        </li>
-
+                                        {/volist}
                                     </ul>
                                 </div>
                             </div>
