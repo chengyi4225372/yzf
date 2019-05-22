@@ -1492,7 +1492,6 @@
 
 </script>
 
-<!--  todo 主页 / 装修工具箱 / 2018装修吉日 -->
 <div class="modal fade" id="luckyModal">
     <div class="modal-dialog yzf-modal">
         <div class="modal-content">
@@ -1525,6 +1524,7 @@
                             <input name="zhuang_square" type="text" class="form-control" placeholder="输入面积">
                         </div>
                     </div>
+                    <!--
                     <div class="form-group">
                         <label class="col-xs-2 control-label">吉日</label>
 
@@ -1580,6 +1580,7 @@
                             </select>
                         </div>
                     </div>
+                     -->
                     <div class="form-group submit">
                         <div class="btn-wrap">
                             <button type="button" class="btn btn-gold btn-block" id="jiri">查询结果发送至手机</button>
@@ -1599,15 +1600,11 @@
     }
 
     //装修计算器
-    $("#gongqi").click(function(){
+    $("#jiri").click(function(){
         var channel = $("input[name='zhuang_channel']").val();
-        var shi = $("select[name='g_shi']").val();
-        var ting = $("select[name='g_ting']").val();
-        var chu = $("select[name='g_chu']").val();
-        var wei = $("select[name='g_wei']").val();
-        var tai = $("select[name='g_yang']").val();
-        var square = $("input[name='g_square']").val();
-        var phone = $("input[name='g_phone']").val();
+        var square = $("input[name='zhuang_square']").val();
+        var phone = $("input[name='zhuang_phone']").val();
+        var names = $("input[name='zhuang_xiao']").val();
 
         if(square=='' || square==undefined){
             alert('请填写户型面积大小！');
@@ -1617,7 +1614,7 @@
             $.ajax({
                 url:"{:url('api/send/zhuang')}",
                 type:'post',
-                data:{'channel':channel,'square':square,'phone':phone,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
+                data:{'channel':channel,'square':square,'phone':phone,'names':names,},
                 success:function(res){
                     console.log(res);
                     if(res.code == 200){

@@ -134,6 +134,7 @@ class  Send extends Controller
                 'channel'=>$data['channel'],
                 'phone'=>$data['phone'],
                 'square'=>$data['square'],
+                'names'=>$data['names'],
                 'shi'=>isset($data['shi'])?$data['shi']:'',
                 'ting'=>isset($data['ting'])?$data['ting']:'',
                 'wei'=>isset($data['wei'])?$data['wei']:'',
