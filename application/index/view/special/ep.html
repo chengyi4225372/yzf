@@ -130,21 +130,22 @@
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal">
+                        <input name="j_channel" value="第三方环保监测" type="hidden" />
                         <div class="form-group">
                             <label class="col-xs-2 control-label">姓名</label>
                             <div class="col-xs-10">
-                                <input type="text" name="Name" class="form-control" placeholder="输入姓名">
+                                <input type="text" name="j_name" class="form-control" placeholder="输入姓名">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-2 control-label">手机</label>
                             <div class="col-xs-10">
-                                <input type="text" name="PhoneNumber" class="form-control" placeholder="输入手机号">
+                                <input type="text" name="j_phone" class="form-control" placeholder="输入手机号">
                             </div>
                         </div>
                         <div class="form-group submit">
                             <div class="btn-wrap">
-                                <button type="button" class="btn btn-gold btn-block ">免费领取特权</button>
+                                <button type="button" class="btn btn-gold btn-block" id="jiance">免费领取特权</button>
                             </div>
                         </div>
                         <div class="form-disc">*可与线下活动同时享用</div>
@@ -153,6 +154,43 @@
             </div>
         </div>
     </div>
+    <script>
+        function isPhoneNo(phones) {
+            var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+            return  isPhone.test(phones);
+        }
+        $("#jiance").click(function(){
+            var channel = $("input[name='j_channel']").val();
+            var names = $("input[name='j_name']").val();
+            var phone = $("input[name='j_phone']").val();
+            if(isPhoneNo(phone)==false || phone ==''){
+                alert('请填写正确的手机号码！');
+                return false;
+            }else if(names == ''){
+                alert('用户姓名不能为空！');
+                return false;
+            }else{
+                $.ajax({
+                    url:"{:url('api/send/jiance')}",
+                    type:'post',
+                    data:{'channel':channel,'names':names,'phone':phone,},
+                    success:function(res){
+                        if(res.code == 200){
+                            alert(res.msg);
+                            window.location.reload();
+                        }else{
+                            alert(res.msg);
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+
+
+
+
     <div class="modal fade" id="reimburseModal">
         <div class="modal-dialog yzf-modal">
             <div class="modal-content">
@@ -162,21 +200,22 @@
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal">
+                        <input name="h_channel" value="环保是否达标" type="hidden" />
                         <div class="form-group">
                             <label class="col-xs-2 control-label">姓名</label>
                             <div class="col-xs-10">
-                                <input type="text" name="Name" class="form-control" placeholder="输入姓名">
+                                <input type="text" name="h_name" class="form-control" placeholder="输入姓名">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-2 control-label">手机</label>
                             <div class="col-xs-10">
-                                <input type="text" name="PhoneNumber" class="form-control" placeholder="输入手机号">
+                                <input type="text" name="h_phone" class="form-control" placeholder="输入手机号">
                             </div>
                         </div>
                         <div class="form-group submit">
                             <div class="btn-wrap">
-                                <button type="button" class="btn btn-gold btn-block ">免费领取特权</button>
+                                <button type="button" class="btn btn-gold btn-block " id="huanbao">免费领取特权</button>
                             </div>
                         </div>
                         <div class="form-disc">*可与线下活动同时享用</div>
@@ -185,8 +224,39 @@
             </div>
         </div>
     </div>
-
-
+    <script>
+        function isPhoneNo(phones) {
+            var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+            return  isPhone.test(phones);
+        }
+        $("#huanbao").click(function(){
+            var channel = $("input[name='h_channel']").val();
+            var names = $("input[name='h_name']").val();
+            var phone = $("input[name='h_phone']").val();
+            if(isPhoneNo(phone)==false || phone ==''){
+                alert('请填写正确的手机号码！');
+                return false;
+            }else if(names == ''){
+                alert('用户姓名不能为空！');
+                return false;
+            }else{
+                $.ajax({
+                    url:"{:url('api/send/jiance')}",
+                    type:'post',
+                    data:{'channel':channel,'names':names,'phone':phone,},
+                    success:function(res){
+                        if(res.code == 200){
+                            alert(res.msg);
+                            window.location.reload();
+                        }else{
+                            alert(res.msg);
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        })
+    </script>
 
 </div>
 
