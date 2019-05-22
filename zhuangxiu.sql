@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-05-21 23:30:04
+Date: 2019-05-22 17:14:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for anli
+-- Table structure for `anli`
 -- ----------------------------
 DROP TABLE IF EXISTS `anli`;
 CREATE TABLE `anli` (
@@ -47,7 +47,7 @@ INSERT INTO `anli` VALUES ('2', '戴德梁行团建方案', '/static/upload/c78f
 INSERT INTO `anli` VALUES ('3', '灿锐科技新员工拓展培训', '/static/upload/ec5cbc6944cd34c2/fa09afbc400f3e19.jpg', '/static/upload/77d1ada462101d3e/a366febcc6ae09aa.jpg', '新员工拓展', '', '4', '3', '4', '80', '1', '2', '拓展培训一天行程', '七星湾游艇会', '<p>拓展+野炊+烧烤+趣味运动会+羽毛球PK</p>', '2018-12-25 15:21:39');
 
 -- ----------------------------
--- Table structure for banner
+-- Table structure for `banner`
 -- ----------------------------
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE `banner` (
@@ -70,7 +70,7 @@ INSERT INTO `banner` VALUES ('11', '标题2', '', 'http://www.baidu.com', '0', '
 INSERT INTO `banner` VALUES ('12', '百度', '', 'http://www.baidu.com', '0', '3', '2018-12-28 11:28:48');
 
 -- ----------------------------
--- Table structure for cai_cate
+-- Table structure for `cai_cate`
 -- ----------------------------
 DROP TABLE IF EXISTS `cai_cate`;
 CREATE TABLE `cai_cate` (
@@ -88,7 +88,7 @@ INSERT INTO `cai_cate` VALUES ('0000000003', '油漆');
 INSERT INTO `cai_cate` VALUES ('0000000004', '其他');
 
 -- ----------------------------
--- Table structure for cai_list
+-- Table structure for `cai_list`
 -- ----------------------------
 DROP TABLE IF EXISTS `cai_list`;
 CREATE TABLE `cai_list` (
@@ -111,7 +111,7 @@ INSERT INTO `cai_list` VALUES ('0000000003', '1', '哪些家居风水容易导�
 INSERT INTO `cai_list` VALUES ('0000000004', '3', '放晴生活！业之峰，以东南亚风情拥抱大自然！', '/static/upload/4a6e48d74ef7b361/7755830b1ddcf113.jpg', '<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section><img data-ratio=\"0.55625\" data-w=\"640\" src=\"http://picfw3.yzf.com.cn/2018/4/28/1995535043270.jpg\" /></section>\r\n</section>\r\n</section>\r\n\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<section>\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<p><strong>生活在大自然的怀抱里...</strong></p>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section>\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<p>&nbsp;</p>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<p>Living in the embrace of nature...</p>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section>&nbsp;</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<p>法国伟大的启蒙思想家卢梭在他的《生活在大自然的怀抱里》这样写道：&ldquo;大自然在我眼前展开一幅永远清新的华丽的图景。金色的燃料木、紫红的欧石楠非常繁茂，给我深刻的印象，使我欣悦；我头上树木的宏伟、我四周灌木的纤丽、我脚下花草的惊人的纷繁使我目不暇接，不知道应该观赏还是赞叹，这么多美好的东西争相吸引我的注意力，使我眼花缭乱，使我在每件东西面前留连&hellip;&hellip;&rdquo;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>是啊，不论我们如何成长，在大自然的面前总是孩子，让心灵不时的在大自然的怀抱里撒个欢儿 ，或许是每个人在平淡生活中的小愿望。就像陶渊明的《归园田居》中写到的那样：&ldquo;久在樊笼里，复得返自然。&rdquo;</p>\r\n\r\n<p>&nbsp;</p>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section><img data-ratio=\"0.75\" data-w=\"640\" src=\"http://picfw3.yzf.com.cn/2018/4/28/1995535049038.jpg\" /></section>\r\n</section>\r\n</section>\r\n\r\n<section powered-by=\"xiumi.us\">\r\n<section>\r\n<section>\r\n<p><strong>（沈阳&middot;龙湖花千树&middot;175平米东南亚风格）</strong></p>\r\n</section>\r\n</section>\r\n</section>', '2019-05-21 17:32:31', '放晴生活！业之峰，以东南亚风情拥抱大自然！');
 
 -- ----------------------------
--- Table structure for category
+-- Table structure for `category`
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
@@ -142,7 +142,7 @@ INSERT INTO `category` VALUES ('16', '204', '4', '团队魔训', '2018-12-29 10:
 INSERT INTO `category` VALUES ('17', '205', '4', '海岛生存', '2018-12-29 10:15:25');
 
 -- ----------------------------
--- Table structure for chi_url
+-- Table structure for `chi_url`
 -- ----------------------------
 DROP TABLE IF EXISTS `chi_url`;
 CREATE TABLE `chi_url` (
@@ -161,7 +161,7 @@ INSERT INTO `chi_url` VALUES ('0000000002', '郑州装修公司', 'https://www.b
 INSERT INTO `chi_url` VALUES ('0000000003', '宁波装修公司', 'https://www.baidu.com', '2019-05-18 15:31:32');
 
 -- ----------------------------
--- Table structure for condition
+-- Table structure for `condition`
 -- ----------------------------
 DROP TABLE IF EXISTS `condition`;
 CREATE TABLE `condition` (
@@ -183,7 +183,7 @@ INSERT INTO `condition` VALUES ('5', '0', '拓展天数', '0', '2018-12-19 17:14
 INSERT INTO `condition` VALUES ('6', '0', '团队凝聚力', '1', '2018-12-19 17:19:44');
 
 -- ----------------------------
--- Table structure for designer
+-- Table structure for `designer`
 -- ----------------------------
 DROP TABLE IF EXISTS `designer`;
 CREATE TABLE `designer` (
@@ -218,7 +218,7 @@ INSERT INTO `designer` VALUES ('0000000008', '/static/upload/aabf2082cfae89a2/3a
 INSERT INTO `designer` VALUES ('0000000009', '/static/upload/aabf2082cfae89a2/3ae8e3ee87c500cf.png', '李四光', '2010年工作至今', '湖北武汉工业大学', '点点点都是大是大非', '给您最舒适的家！', '', '', '/static/upload/7ea7b87542dff6e6/aa11bace84e9193c.jpg', '1,5,9', '3,4,5', '7', '10', '0');
 
 -- ----------------------------
--- Table structure for dingzhi
+-- Table structure for `dingzhi`
 -- ----------------------------
 DROP TABLE IF EXISTS `dingzhi`;
 CREATE TABLE `dingzhi` (
@@ -245,14 +245,14 @@ CREATE TABLE `dingzhi` (
 INSERT INTO `dingzhi` VALUES ('1', '出发地', '目的地', '10', '1', '20', '500', '特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求', '10086', '女士', '10010', '4845', '0', '2018-12-27 11:43:31');
 
 -- ----------------------------
--- Table structure for feng_cate
+-- Table structure for `feng_cate`
 -- ----------------------------
 DROP TABLE IF EXISTS `feng_cate`;
 CREATE TABLE `feng_cate` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `title` varchar(100) DEFAULT NULL COMMENT '分类名',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of feng_cate
@@ -260,9 +260,10 @@ CREATE TABLE `feng_cate` (
 INSERT INTO `feng_cate` VALUES ('0000000001', '户型');
 INSERT INTO `feng_cate` VALUES ('0000000002', '空间');
 INSERT INTO `feng_cate` VALUES ('0000000003', '其他');
+INSERT INTO `feng_cate` VALUES ('0000000004', '风格');
 
 -- ----------------------------
--- Table structure for feng_list
+-- Table structure for `feng_list`
 -- ----------------------------
 DROP TABLE IF EXISTS `feng_list`;
 CREATE TABLE `feng_list` (
@@ -274,7 +275,7 @@ CREATE TABLE `feng_list` (
   `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of feng_list
@@ -282,9 +283,14 @@ CREATE TABLE `feng_list` (
 INSERT INTO `feng_list` VALUES ('0000000001', '3', '如何处理卧房的灯光及色彩?', '/static/upload/01583ee0115b3a64/7918ac9ff724bf16.jpg', '<p>&nbsp;卧房是我们在忙碌一天后舒展疲惫身体并得以放松的空间，在我们生活中占非常重要的地位。在设计卧房时应周到地考虑灯光、色彩等因素。卧房是一个需要安静的地方，所以在灯光方面，要尽可能选用辅助光源来取光，避免强烈的光线直接照射；在色彩方面，大部分人能够接受淡雅、柔和的颜色，某些年轻人可能会喜欢刺激性的颜色，如果这样的话，应尽量降低照明的亮度，并尽量用背景光，避免给人以视觉上的冲击，为睡眠提供一个良好的环境。</p>\r\n\r\n<p><img alt=\"1916962479446.jpg\" src=\"http://picfw.yzf.com.cn/zt/2018/1/30/1919531568371.jpg\" title=\"1916962479446.jpg\" /></p>', '2019-05-18 14:12:16', null);
 INSERT INTO `feng_list` VALUES ('0000000002', '1', '看到了就别错过!教你打造顺风顺水的好风水!', '/static/upload/c803468241b1fcea/4dc9ad97329a54aa.jpg', '<p>顺风顺水，指的不仅仅是事业发展顺利，同时也应该包括家人身体健康、财运亨通、爱情甜蜜等。那么怎样才能打造出顺风又顺水的家居好风水呢？别急，下面就跟着小编我来一探究竟吧。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037484548.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;门</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;1.门口地毯的作用是入房或入门时揩净鞋底的脏物，故只能放在门外，不可放在门内。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2.入门两边不可放置高大的盘栽植物，这种布置令人有压迫感。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 3.正对大门的地方不可以安置装饰屏风，妨碍地气进入（风水布置除外）。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 4.大门在左，通入内室的门忌开向右方。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 5.入门先见厨或厕，不吉，主败。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037492485.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;宅内</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1.住宅内部，地面一定要平坦，不可有凹凸的地方，门外也是。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2.天花板忌用方形直线条的图形，最好用圆图案。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 3.天花板的颜色须比四周墙壁的颜色浅，以防有压迫感。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 4.宅内如果铺地毯，不应因房门格调不同而铺设不用颜色的地毯。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 5.墙纸或地板如果有局部损毁，要挖去一块，另补一块，一定要切成正方形，不宜只顺着损坏之部分裁成不等边形状补上。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 6.宅内三角形的装饰物过多，主不祥。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037499476.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;客厅</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1.客厅要求视觉良好，不能有碍眼（阻碍视线）的家私摆设。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2.客厅如果是用吊灯，就不适宜另加其他形状的灯饰。天花板上，略加一些浮雕形状的装修则无大碍。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 3.客厅不能采用反光物品，否则等于将煞气布满客厅。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 4.客厅的门，对面忌开室内宫。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 5.大厅忌有螺旋形楼梯（类似电钻），尤忌在大厅中央。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 6.客厅沙发套数不能重复，一套即可，最忌一套半或者是两套不相干的桌椅。犹忌义方一圆、两套不同之沙发与桌椅并用。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 7.客厅局面初分如过于宽大，忌分间一室作卧室。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 8.一间住宅有两个客厅，其面积不宜相近，应一大一小，前厅面积大些，后厅面积要小些。小客厅与厨房太接近，又或饭厅与厨房距离太近，都主大凶。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037501043.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;厨房</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1.煤气、石油气炉不可对正自来水头。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2.厨房忌毗邻卧室、厕所、神位。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 3.厨房忌与厕所相连，或是面对面，否则影响健康。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 4.厨房地面宜平坦，忌比宅内各房阔和高。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 5.厨房宜用浅颜色，忌深色。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 6.厨房最忌露天（因天空有许多垢污掉下）。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 7.厨房忌设在住宅或客厅前面。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 8.厨房后面不可有房间，亦即是必须将厨房设在全宅之后半部。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 9.厨房形状忌圆形或半月形。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 10.厨房或厕所设在宅之中央，大忌。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037509343.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;卧室</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1.卧室忌用圆形物体布置，即使是盘景。镜子、化妆桌椅等也尽量用方形。否则难以松弛入睡。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2.在同一间房间之内，如有二扇门，忌一左开，一右开，最好是同一个方向开门。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 3.卧室不可开圆形单窗。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 4.卧室窗户的高度一定要比门还高。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 5.卧室门正对浴室，不吉。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 6.卧室宜方形，不宜有卫浴套间，如有应将之间出方形卧室之外。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 7.卫浴套间的地面高度，切忌高于卧室的地面。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 8.忌床位正对房门。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 9.凡卧室只宜正方形或近似正方形，切忌&ldquo;狭长&rdquo;形，否则不能酣睡。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 10.同一门内的窗户，高度应大致相同。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 11.同一间房，房门的开门方向，忌与卫浴套间开门方向相反。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 12.卧室不论是否长方，不可有斜边形的格局，梳妆桌的镜子不宜对正床或房门。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 13.卧室不宜加用天花板，天花板一定要清、纯，不可有凹凸或悬浮物。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 14.卧室连接的墙壁最忌安置神位，木板犹忌。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 15.卧室之内少用铁制用品如铁床、三角架等，卧室应以厚、暖、柔为主，不宜用冷、硬、坚的设施，以木制为佳。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 16.厨房不可设在两卧室之间。</p>\r\n\r\n<p><img alt=\"看到了就别错过!教你打造顺风顺水的好风水!\" border=\"0\" src=\"http://picfw.yzf.com.cn/2016/1/13/1273037516270.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;家居旺财风水六大秘诀</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 一、在家中的财位放置五种颜色（白青黑赤黄）的水晶，可增加贵人缘及财运，工薪阶层亦能得加薪或升职；如果发觉自己常无法集中精神及多口舌是非、招惹小人缠身，则可在床头的两旁放一对圆润饱满的陶瓷瓶，在其下面各压一个红包袋，袋内放入少许的米、茶叶、新钞及榕树叶，可化煞并可开财运。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 水晶分为天然水晶和人造水晶，其中天然水晶的作用更强、效果更佳。如有条件，尽量使用天然水晶。水晶应一般放于病煞星之位，一者可以化病消灾，二来可以化病为财。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 二、宅运旺，才会利于事业，一般可以在家里放对麒麟，这样可以使家运旺，且麒麟不仅旺财也是利于送子的，现代人压力大以及其它原因，不孕或晚孕的人相对比较多，而放置麒麟可加强这方面的运势，麒麟头宜朝外。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 三、想要升职、加薪、创业及得偏财者，如在家中的北面贴上一张用金色颜料、毛笔写上&quot;财&quot;字的红纸，再将床头移往南面，床尾下方放一张红色的踏垫，则有旺助事业及增加偏财之功效。此外，在家中北方放置五颗白水晶，及在房门入口放一块红地毯，在地毯的下面再放一个红包、内装新钞、古铜钱及茶叶、米少许，则有化煞招财增福之效。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 四、想旺偏财者，身上可佩带五帝钱或十运钱，以增进财气运势，如将五帝钱（顺治、康熙、雍正、乾隆、嘉庆 ）等钱币串起，挂在腰间，能防馋言及小人所害；而如果进入丧家，或经常出入不乾净的场所时，可将五帝钱拨弄一下，离开时，在门外再以剑指在手掌心写一〝除〞字，即可去晦辟邪；而平日入庙参拜时，也可将五帝钱取下，在香炉上绕三圈，或是放在自家神案前四十九天，也可增强五帝钱之开运能量。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 黄色一向被用来代表财富，而西方则被认为是主导事业及财运的方位，若放上黄色的家具饰物如黄水晶或其它黄色物品也可，可带来旺盛的财气，令事业飞&ldquo;黄&rdquo;腾达。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 五、日月水招财术：先准备空碗一只，放置于顶楼阳台，至少七天，如能得雨水（非自来水），将之取回带入室内，放于月光能照射到的窗户（此时不可再照射到阳光），经过七日后，将碗内剩余的水分取出一些装入小瓶中，平日随身配载，或放于大衣、皮包、口袋内，水旺财来，可增加自己的偏财运。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 六、旺财风水六：准备一个香包或小瓶，将五色宝石（天然水晶或属于青、赤、黄、白、黑此五色的天然矿石，都可使用），代表木、火、土、金、水，成分包括白水晶、黑碧玺、橄榄石、红玉髓、黄水晶等，依照五行相生互旺的原理排列，再放入有德行的老师所加持过的催财符及铜钱；将五行招财袋（或宝瓶）放在自己的口袋、皮包中，能产生出源源不绝之开运招财能量磁场，也将助您一整年的财运顺心、凡事心想事成！在股市投资、签彩券或牌桌上，则妙不可言，护佑自己财运旺盛，更有助于集中精神，增强本身气场。</p>', '2019-05-21 17:33:01', '');
 INSERT INTO `feng_list` VALUES ('0000000003', '2', '书香国韵！业之峰，诗词作伴好踏青！', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>fgdsfdgh</p>', '2019-05-21 17:34:18', 'rjhyrhjtjm');
+INSERT INTO `feng_list` VALUES ('0000000004', '4', '更待何时的火锅店', '/static/upload/2b0ca47cfc77837f/24d6375a39293357.jpg', '<p>单方事故反倒是广东省&nbsp;</p>', '2019-05-22 10:43:27', '更合适的感受到付');
+INSERT INTO `feng_list` VALUES ('0000000005', '1', '防水处理是否需要铲除原墙体防水基层？', '/static/upload/2b0ca47cfc77837f/24d6375a39293357.jpg', '<h1>防水处理是否需要铲除原墙体防水基层？</h1>', '2019-05-22 10:56:54', '防水处理是否需要铲除原墙体防水基层？');
+INSERT INTO `feng_list` VALUES ('0000000006', '2', '防水处理是否需要铲除原墙体防水基层？', '/static/upload/2b0ca47cfc77837f/24d6375a39293357.jpg', '<h1>防水处理是否需要铲除原墙体防水基层？</h1>', '2019-05-22 10:57:13', '防水处理是否需要铲除原墙体防水基层？');
+INSERT INTO `feng_list` VALUES ('0000000007', '3', '防水处理是否需要铲除原墙体防水基层？', '/static/upload/4a6e48d74ef7b361/7755830b1ddcf113.jpg', '<h1>防水处理是否需要铲除原墙体防水基层？</h1>', '2019-05-22 10:57:32', '防水处理是否需要铲除原墙体防水基层？');
+INSERT INTO `feng_list` VALUES ('0000000008', '4', '水电费第三方', '/static/upload/01583ee0115b3a64/7918ac9ff724bf16.jpg', '<p>打女的飒飒</p>', '2019-05-22 10:58:06', '大V发深V啊');
 
 -- ----------------------------
--- Table structure for goods
+-- Table structure for `goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -340,7 +346,7 @@ INSERT INTO `goods` VALUES ('23', '帆船竞速体验团建', '/static/upload/b3
 INSERT INTO `goods` VALUES ('25', '团建实验', '/static/upload/80b76c70f20fea26/f208f687dd420f23.jpg', '/static/upload/bcd6d7d48fcd48a2/859afeebff4d0925.jpg|/static/upload/88b2f08df0d7c3c9/a3032ab0e8498fd0.jpg', '5', '5', '5', '亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，', '体育团建，活力团队，户外体育', '80', '1', '2', 'jjty20190101', '350', '', '', '', '', '3', '1', '2019-01-04 17:00:19');
 
 -- ----------------------------
--- Table structure for huxing
+-- Table structure for `huxing`
 -- ----------------------------
 DROP TABLE IF EXISTS `huxing`;
 CREATE TABLE `huxing` (
@@ -363,7 +369,7 @@ INSERT INTO `huxing` VALUES ('0000000008', '别墅');
 INSERT INTO `huxing` VALUES ('0000000009', '办公空间');
 
 -- ----------------------------
--- Table structure for jibie
+-- Table structure for `jibie`
 -- ----------------------------
 DROP TABLE IF EXISTS `jibie`;
 CREATE TABLE `jibie` (
@@ -385,7 +391,7 @@ INSERT INTO `jibie` VALUES ('0000000007', '首席设计师');
 INSERT INTO `jibie` VALUES ('0000000008', '设计总监');
 
 -- ----------------------------
--- Table structure for know_cate
+-- Table structure for `know_cate`
 -- ----------------------------
 DROP TABLE IF EXISTS `know_cate`;
 CREATE TABLE `know_cate` (
@@ -402,7 +408,7 @@ INSERT INTO `know_cate` VALUES ('0000000002', '装修中');
 INSERT INTO `know_cate` VALUES ('0000000003', '装修后');
 
 -- ----------------------------
--- Table structure for know_list
+-- Table structure for `know_list`
 -- ----------------------------
 DROP TABLE IF EXISTS `know_list`;
 CREATE TABLE `know_list` (
@@ -423,7 +429,7 @@ INSERT INTO `know_list` VALUES ('0000000001', '2', '电线也能影响风水？�
 INSERT INTO `know_list` VALUES ('0000000002', '2', '选窗帘也要看风水?对的 你没听错!', '/static/upload/5ba74e32c9c81605/cd05834445d3fac0.jpg', '<p>窗帘价格适中，却能起到很好的装饰作用，因此不少家庭为了彰显生活的品味，在窗帘的选购上就会多花一点心思。窗帘的材质和样式非常的多样，那么什么样的窗帘能够帮助打造出良好的家居风水呢？别急，下面就跟着小编一起通过下面的内容来了解一下吧。</p>\r\n\r\n<p><img alt=\"选窗帘也要看风水?对的你没听错!\" border=\"0\" src=\"http://img2.525j.com.cn/files/Content/201512301611531251576.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;如何从风水的角度选购窗帘？</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;房间大小</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在窗帘种类中，落地的长帘可营造出一种恬静而温暖的气氛，但这前提是针对较大面积的空间，若是运用到较小的房间内，小窗房会减低阳光的照射，所以小窗户以容易让大量的光线透过的百叶窗为佳。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在较大面积的房间内，布窗帘装饰将是不错的选择，因布窗帘有助于睡眠与阻挡外界的不良影响。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 餐厅是全家人就餐厅吃饭的地方，白色的窗帘装饰将成了是首选；为了在就餐厅时不会叫人倒胃口，在选择时则应该避免灰色、芥末黄、紫或青绿色色彩的出现；当然若您正在节食，那么蓝色、绿色与灰色窗帘也可以成为帮手哦！</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;户型朝向</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在家居户型之中，偏暗的朝北房间，适合中性偏冷色调，情调优雅的窗帘装饰；而采光较好的房间，以粟红色或黄色窗帘为佳，因这两种色调可以将强光调节成纤柔的散光，协调阴阳。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;窗户朝向</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 户型设计中，正对玻璃幕墙大厦的窗户，若没利用窗帘来装饰，那么阳光将会通过玻璃幕墙反射入屋，形成&ldquo;光煞&rdquo;，使之影响人情绪，这时可以装置纱帘，并落帘至日落，去除煞气，当然了若窗外有霓虹光管，那么则日夜都落帘了。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 窗户外正对医院或尖锐的屋角、不洁之物等等，都将是吉利的，但可以安装木质百叶窗，避免煞气入侵，平时以少打开为宜。</p>\r\n\r\n<p><img alt=\"选窗帘也要看风水?对的你没听错!\" border=\"0\" src=\"http://img3.525j.com.cn/files/Content/201512301613266251702.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;窗帘款式、色彩</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在窗帘选购之中，过厚的窗帘装饰将会减少家人团聚，而华丽图案的却会有罕见访客的现象。目前市场上那么简单朴素或花纹图案的窗帘，可以说是人们选择家居窗饰时最佳的选择。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 粉红色，虽说是女孩子们最爱的色彩，但窗帘的选用最为不要用粉红色的，因为粉红色的窗帘会使人产生脑神经衰弱、慌恐、不安、易发脾气，而吵架之事必然常常发生。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;窗帘搭配</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 窗帘与地面颜色也要避免红与绿、青与橙、红与蓝、黄与紫的颜色搭配，以免产生不好的心理感觉。除此之外，窗帘与墙面、家具要尽量避免相似色调的搭配，如黄色调墙面，搭配上米黄色的窗帘，看似和谐，其实在如此配色的居室待久了，心理上难免会感到&ldquo;晕&rdquo;。</p>\r\n\r\n<p><img alt=\"选窗帘也要看风水?对的你没听错!\" border=\"0\" src=\"http://img3.525j.com.cn/files/Content/201512301614593126791.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;窗帘的风水作用</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;一、窗帘对主人运势的影响</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1、符合主人命理五行所喜的窗帘色彩、材质，是主人运势的辅助器在装饰伊始，就结合主人命理，来选择窗帘的色彩、材质，当可对主人的感情、健康、财运、事业等方面运势，起到生助的作用。不注意这个问题，则可能会起到反作用。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 比方说，如果主人命理喜木，就可选择绿色的、木质的窗帘；主人命理喜火，就可选择红色、紫色系列的，人造纤维窗帘；如果主人命理喜土，则选择黄色、土黄色系列色彩的罗马帘；如果主人命理喜金，选择白色的金属窗帘；主人命理喜水，就用蓝色、黑色的水波帘。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;二、化解四方煞气</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在使用窗帘的时候，也要非常慎重，注意了解各种材质，各种样式窗帘的风水作用。一般按照风水的观点来说，人造纤维材质的窗帘在五行上属火，根据火克金的原理，可以用来挡住来自西方和西北面属于金的煞气。罗马窗帘因为既能够分成几段向上拉，也可以拉升起来，所以从风水的角度来看，其五行属土，也能够挡住来自北方的水的煞气。水波帘呈波浪形，根据火克火的原理，可以用来挡住来自南面的火煞。百叶窗常采用铝质材质制成，五行属金，利用金克木的原理，如果在东面和东南面的窗户上悬挂百叶窗，能够抵挡木煞。</p>\r\n\r\n<p><img alt=\"选窗帘也要看风水?对的你没听错!\" border=\"0\" src=\"http://img2.525j.com.cn/files/Content/201512301617134376424.jpg\" /></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;三、防止泄气</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 家居生活中，很多人都喜欢宽敞明亮的落地窗，因为通过它可能看到更多的景致，但实际上落地窗并不符合风水之道，主要是房间的吉气从大面积的窗户中泄气过多，这样会导致钱财不聚，运气下降，影响夫妻感情等。正常都是带阳台那种，不管是高点还是矫点都具有收气的作用，落地窗的风水格局只好用窗帘来进行挡气了，因此最好是有没人的时候要经常拉上窗帘，这样对主人是最有利的。同时还可以在阳台内挂二条富贵有余进行化解。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;四、抑制火气</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 在窗户上安装窗帘，通常都是为了保持私密性，同时遮蔽外面过于强烈的阳光。窗帘在风水上可以用来化解火过多的情况，特别是对于命中火旺为忌神的人来说更是重要了。当然，对于那些本来就命中缺火的人，还是需要大量的火属性物质，从而就需要得到大量的阳光照射，因此他不适合悬挂过厚的窗帘。</p>', '2019-05-18 14:20:55', null);
 
 -- ----------------------------
--- Table structure for list
+-- Table structure for `list`
 -- ----------------------------
 DROP TABLE IF EXISTS `list`;
 CREATE TABLE `list` (
@@ -453,7 +459,7 @@ INSERT INTO `list` VALUES ('9', '0', '新闻中心', 'News center', '', '', '', 
 INSERT INTO `list` VALUES ('10', '0', '联系我们', 'Contact us', '', '', '', '');
 
 -- ----------------------------
--- Table structure for lou_anli
+-- Table structure for `lou_anli`
 -- ----------------------------
 DROP TABLE IF EXISTS `lou_anli`;
 CREATE TABLE `lou_anli` (
@@ -481,7 +487,7 @@ INSERT INTO `lou_anli` VALUES ('0000000001', '/static/upload/fb4bce040f5d9624/a3
 INSERT INTO `lou_anli` VALUES ('0000000002', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png|/static/upload/fb4bce040f5d9624/a348f09721d58432.jpg|/static/upload/467d985372f5f5db/3f7f43465b90b505.jpg|/static/upload/3380d64a1951f1da/1d53e5a88173c2b4.jpg', '', '11', '2', '3', '10', '1', '9', '/static/upload/385e5a7561f2ab07/aabd4d83c42cc218.png', '115', '', '1', '60');
 
 -- ----------------------------
--- Table structure for lou_gongdi
+-- Table structure for `lou_gongdi`
 -- ----------------------------
 DROP TABLE IF EXISTS `lou_gongdi`;
 CREATE TABLE `lou_gongdi` (
@@ -507,7 +513,7 @@ INSERT INTO `lou_gongdi` VALUES ('0000000002', '2', '2', '150', '', '水电工�
 INSERT INTO `lou_gongdi` VALUES ('0000000003', '3', '3', '150', '竣工工程', '', '', '/static/upload/e013295826e0b6f0/eee03c43c7e973b8.jpg|/static/upload/373377723d54117b/98222961a6eba708.jpg|/static/upload/e158fdeb6889acf7/48fe049fc75e9e70.jpg|/static/upload/b0e7129eefbec045/4120a3c450093f41.jpg|/static/upload/b2ad64265c171cfc/3654947b660d7084.jpg|/static/upload/76391228433df16c/cf0e29a6d2a3432a.jpg', '', '', '1');
 
 -- ----------------------------
--- Table structure for lou_huxing
+-- Table structure for `lou_huxing`
 -- ----------------------------
 DROP TABLE IF EXISTS `lou_huxing`;
 CREATE TABLE `lou_huxing` (
@@ -529,7 +535,27 @@ INSERT INTO `lou_huxing` VALUES ('0000000003', '1', '二期22#标准层D户型',
 INSERT INTO `lou_huxing` VALUES ('0000000004', '1', '标准层150平', '3室2厅2卫1厨  150㎡', '/static/upload/556cbe1dab7aea02/584659c02e90f1fd.jpg', '<p>各个空间户型方正，方便室内家具布置；整个空间全明通透，采光良好，同时利于居住空间通风；整体空间布局合理，能够保证动静分离和居室通风，方便使用；卧室厨卫等各个功能区的面积大小都比较合理，居住体验便利，整体舒适度高；公摊高于15%且低于25%，符合住宅公摊正常范围。</p>');
 
 -- ----------------------------
--- Table structure for media_cate
+-- Table structure for `love_list`
+-- ----------------------------
+DROP TABLE IF EXISTS `love_list`;
+CREATE TABLE `love_list` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL COMMENT '新闻标题',
+  `img` varchar(255) NOT NULL COMMENT '展示图',
+  `desc` varchar(255) DEFAULT NULL,
+  `content` text,
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of love_list
+-- ----------------------------
+INSERT INTO `love_list` VALUES ('0000000009', '放晴生活！业之峰，以东南亚风情拥抱大自然！', '/static/upload/5ba74e32c9c81605/cd05834445d3fac0.jpg', '范德萨发', '<p>是山大地方的刷单的范德萨发的说法是大多数是大多数</p>', '2019-05-22 14:29:34');
+INSERT INTO `love_list` VALUES ('0000000010', '嫁给爱情！业之峰，以地中海风情，鉴证浪漫一生！', '/static/upload/01583ee0115b3a64/7918ac9ff724bf16.jpg', '发送到敢不敢不发', '<p>共和国的不代表的烦恼会感到会更好好几个会感到</p>', '2019-05-22 14:30:44');
+
+-- ----------------------------
+-- Table structure for `media_cate`
 -- ----------------------------
 DROP TABLE IF EXISTS `media_cate`;
 CREATE TABLE `media_cate` (
@@ -545,7 +571,7 @@ INSERT INTO `media_cate` VALUES ('0000000001', '幸福家居课堂');
 INSERT INTO `media_cate` VALUES ('0000000002', '家装小课堂');
 
 -- ----------------------------
--- Table structure for media_list
+-- Table structure for `media_list`
 -- ----------------------------
 DROP TABLE IF EXISTS `media_list`;
 CREATE TABLE `media_list` (
@@ -566,7 +592,7 @@ INSERT INTO `media_list` VALUES ('0000000001', '1', '怎样让居室角落生动
 INSERT INTO `media_list` VALUES ('0000000002', '2', '材料环保么？', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>　　装修新家更多的是为提高居住环境。环保、安全是第一位的。家装行业，在环保方面最具权威性的就是业之峰了。2010年业之峰成立了中国室内环保研究院并推出了三重防护体系，让环保工程更环保。业之峰郑重承诺：环保不达标，全额退款。</p>', '2019-05-21 16:39:19', '东莞市房公司规定');
 
 -- ----------------------------
--- Table structure for mianji
+-- Table structure for `mianji`
 -- ----------------------------
 DROP TABLE IF EXISTS `mianji`;
 CREATE TABLE `mianji` (
@@ -586,7 +612,7 @@ INSERT INTO `mianji` VALUES ('0000000010', '90-120㎡');
 INSERT INTO `mianji` VALUES ('0000000011', '121-180㎡');
 
 -- ----------------------------
--- Table structure for new
+-- Table structure for `new`
 -- ----------------------------
 DROP TABLE IF EXISTS `new`;
 CREATE TABLE `new` (
@@ -611,7 +637,7 @@ INSERT INTO `new` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a
 INSERT INTO `new` VALUES ('5', '庆祝建军90周年 “业之峰将军杯”高尔夫邀请赛圆满收杆', '/static/upload/c00e92f99cc70c8d/50ecc20d043f42d5.jpg', '<p>　　2017年8月1日，第五届庆八一&ldquo;业之峰将军杯&rdquo;中国将军队高尔夫邀请赛圆满结束，活动由业之峰装饰集团主办，高尔夫酒、水素水和品德装饰赞助，众多高尔夫爱好者与相关领导共同参加了此次活动，并在高尔夫俱乐部宴会厅举行了颁奖晚宴。<br />\r\n<br />\r\n　　今年是中国人民解放军建军90周年，中共中央总书记、国家主席、中央军委主席习近平在发表重要讲话时强调，人民军队的历史辉煌，是鲜血生命铸就的，永远值得我们铭记。人民军队的历史经验，是艰辛探索得来的，永远需要我们弘扬。人民军队的历史发展，是忠诚担当推动的，永远激励我们向前。中华民族实现伟大复兴，中国人民实现更加美好生活，必须加快把人民军队建设成为世界一流军队。我们要不忘初心、继续前进，坚定不移走中国特色强军之路，把强军事业不断推向前进，努力实现党在新形势下的强军目标。<br />\r\n<br />\r\n本次比赛的主办方邀请了多位中国人民解放军的老将军和国家部委老领导参加，业之峰集团董事长张钧发表了精彩的致辞。他表示，90年来，伟大的人民军队历经硝烟战火，一路披荆斩棘，付出巨大牺牲，取得一个又一个辉煌胜利，为党和人民建立了伟大的历史功勋。业之峰集团成立20年来，也一直把军民共建活动作为精神文明工作的重要内容，不断发扬军民团结、鱼水情深的光荣传统，深入持久地开展军民共建活动，这充分展示了&ldquo;和谐共建&rdquo;的新型军民关系，也进一步融洽了心连心、同呼吸、共命运的军民关系。</p>\r\n\r\n<p>&nbsp;<img alt=\"_O4A9668.jpg\" src=\"http://picfw.yzf.com.cn/2017/8/2/1763045531588.jpg\" title=\"_O4A9668.jpg\" /></p>\r\n\r\n<p>业之峰装饰董事长张钧讲话</p>\r\n\r\n<p>　　据了解，业之峰装饰已经连续五年主办高尔夫邀请赛，比赛旨在为众多注重居住品质的高球爱好者提供高端、广阔的交流平台。张钧表示，高尔夫运动所体现出的尊贵气质和优雅时尚的生活态度与业之峰装饰一直以来倡导的健康、高品质的生活方式相得益彰，高尔夫运动能完美传达出业之峰的品牌价值与理念。业之峰作为一家家装企业，重视通过建立和谐的互动关系来创造良好的社会环境。通过对高尔夫等体育赛事的支持，业之峰将健康、积极向上的精神融入企业文化，并通过比赛平台将业之峰的企业文化与更多的人分享，而这也是业之峰赞助体育赛事的初衷。<br />\r\n<br />\r\n　　经过有趣而又紧张激烈的角逐，当天的各个奖项尘埃落定。最终，将军队获得了团队冠军的最高荣誉。</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>', '集团企划中心', '2019-04-01 15:57:08', '1', '');
 
 -- ----------------------------
--- Table structure for new_cates
+-- Table structure for `new_cates`
 -- ----------------------------
 DROP TABLE IF EXISTS `new_cates`;
 CREATE TABLE `new_cates` (
@@ -628,7 +654,7 @@ INSERT INTO `new_cates` VALUES ('0000000002', '装修中');
 INSERT INTO `new_cates` VALUES ('0000000003', '装修后');
 
 -- ----------------------------
--- Table structure for partner
+-- Table structure for `partner`
 -- ----------------------------
 DROP TABLE IF EXISTS `partner`;
 CREATE TABLE `partner` (
@@ -653,7 +679,7 @@ INSERT INTO `partner` VALUES ('14', '中海地产', '/static/upload/2b49a556d02a
 INSERT INTO `partner` VALUES ('15', '万科地产', '/static/upload/1ed56a82ec0c36d3/dc5fb272c5f1353d.jpg', '#', '0', '1', '2018-12-25 15:30:06');
 
 -- ----------------------------
--- Table structure for que_cate
+-- Table structure for `que_cate`
 -- ----------------------------
 DROP TABLE IF EXISTS `que_cate`;
 CREATE TABLE `que_cate` (
@@ -673,7 +699,7 @@ INSERT INTO `que_cate` VALUES ('0000000005', '客服类');
 INSERT INTO `que_cate` VALUES ('0000000006', '其他类');
 
 -- ----------------------------
--- Table structure for que_list
+-- Table structure for `que_list`
 -- ----------------------------
 DROP TABLE IF EXISTS `que_list`;
 CREATE TABLE `que_list` (
@@ -685,15 +711,20 @@ CREATE TABLE `que_list` (
   `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of que_list
 -- ----------------------------
 INSERT INTO `que_list` VALUES ('0000000001', '6', '你是谁', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>看到你佛is你弟on搜&nbsp;</p>', '2019-05-21 17:14:38', '毒奶粉的看法呢');
+INSERT INTO `que_list` VALUES ('0000000002', '1', '防水处理是否需要铲除原墙体防水基层？', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>　　这个需要看原墙体防水基层是否牢固，如果原墙体防水基层较差，必须要铲除，否则会影响防水质量，严重的会导致瓷砖脱落。如果客户要求不铲除原防水层，需客户本人签署书面免责协议后，方可施工。</p>', '2019-05-22 10:09:51', '是非法的吧');
+INSERT INTO `que_list` VALUES ('0000000003', '2', '防水处理是否需要铲除原墙体防水基层？', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>VB都仿部分</p>', '2019-05-22 10:10:43', '官方归属感');
+INSERT INTO `que_list` VALUES ('0000000004', '3', '富商大贾', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>发给范冰冰的国防部官方回复回复后官方回复的共和国</p>', '2019-05-22 10:11:10', 'ukuu7ytf');
+INSERT INTO `que_list` VALUES ('0000000005', '4', '风格大概回复股东会', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>根深蒂固不是大概大概是多少贵公司</p>', '2019-05-22 10:11:42', '官方都不敢对白癜风');
+INSERT INTO `que_list` VALUES ('0000000006', '1', '鬼地方个', '/static/upload/2b5c699a130a0d7d/e9172eabaa5011d5.jpg', '<p>电饭煲都不敢打吧</p>', '2019-05-22 10:29:19', '的收费割发代首');
 
 -- ----------------------------
--- Table structure for region
+-- Table structure for `region`
 -- ----------------------------
 DROP TABLE IF EXISTS `region`;
 CREATE TABLE `region` (
@@ -717,7 +748,7 @@ INSERT INTO `region` VALUES ('0000000017', '虎丘区');
 INSERT INTO `region` VALUES ('0000000018', '市辖区');
 
 -- ----------------------------
--- Table structure for remen_lou
+-- Table structure for `remen_lou`
 -- ----------------------------
 DROP TABLE IF EXISTS `remen_lou`;
 CREATE TABLE `remen_lou` (
@@ -742,7 +773,7 @@ INSERT INTO `remen_lou` VALUES ('0000000002', '13', '万科苏高新四季风景
 INSERT INTO `remen_lou` VALUES ('0000000003', '13', '新湖明珠城', '吴江江陵西路1888号（仲英大道与江陵西路交汇处）', '<p>新湖明珠城位于南苏州仲英大道和江陵西路交界处，西北面由太湖环抱，与2.3公里原生态太湖水岸线，宽40米左右的湖岸绿化带相邻，与苏州石湖风景区遥隔相望，南接规划中的生态公园和吴江市中心，通过苏震桃跨湖大桥与苏州市区相连，距苏州市中心约12公里。 新湖明珠城占地1600余亩，总建筑面积约165万平方米，建筑风格为合院式地中海风情小镇，休闲化的全新生活形态。 新湖明珠城香湖苑推出，建筑风格为地中海风格，位于整个小区中轴正北面，坐拥3万方郁金香公园，临近太湖景观大堤。</p>', '2019-04-20 15:40:16', '/static/upload/cb0959a7bbc7bcb0/f58fb6a92f9a4c76.jpg', '70', '40', '1');
 
 -- ----------------------------
--- Table structure for save_banner
+-- Table structure for `save_banner`
 -- ----------------------------
 DROP TABLE IF EXISTS `save_banner`;
 CREATE TABLE `save_banner` (
@@ -763,7 +794,7 @@ INSERT INTO `save_banner` VALUES ('0000000003', '群星助阵', 'index/index/ind
 INSERT INTO `save_banner` VALUES ('0000000004', '空间榜样', 'index/index/index', '/static/upload/876c525fd559044d/aaca27d79c12c3e8.jpg', '2019-05-18 17:10:22');
 
 -- ----------------------------
--- Table structure for sheji
+-- Table structure for `sheji`
 -- ----------------------------
 DROP TABLE IF EXISTS `sheji`;
 CREATE TABLE `sheji` (
@@ -783,7 +814,7 @@ INSERT INTO `sheji` VALUES ('0000000002', '', '', '', '', '2019-04-08 11:42:42')
 INSERT INTO `sheji` VALUES ('0000000003', '', '', '', '', '2019-04-08 11:46:25');
 
 -- ----------------------------
--- Table structure for style
+-- Table structure for `style`
 -- ----------------------------
 DROP TABLE IF EXISTS `style`;
 CREATE TABLE `style` (
@@ -802,7 +833,7 @@ INSERT INTO `style` VALUES ('0000000004', '东南亚风格');
 INSERT INTO `style` VALUES ('0000000005', '地中海风格');
 
 -- ----------------------------
--- Table structure for system_auth
+-- Table structure for `system_auth`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth`;
 CREATE TABLE `system_auth` (
@@ -823,7 +854,7 @@ CREATE TABLE `system_auth` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for system_auth_node
+-- Table structure for `system_auth_node`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth_node`;
 CREATE TABLE `system_auth_node` (
@@ -840,7 +871,7 @@ CREATE TABLE `system_auth_node` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for system_config
+-- Table structure for `system_config`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_config`;
 CREATE TABLE `system_config` (
@@ -890,7 +921,7 @@ INSERT INTO `system_config` VALUES ('81', 'lng', '114.306812');
 INSERT INTO `system_config` VALUES ('82', 'lat', '31.590857');
 
 -- ----------------------------
--- Table structure for system_log
+-- Table structure for `system_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_log`;
 CREATE TABLE `system_log` (
@@ -902,7 +933,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=275 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -1179,10 +1210,11 @@ INSERT INTO `system_log` VALUES ('269', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('270', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-06 09:32:38');
 INSERT INTO `system_log` VALUES ('271', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-18 09:59:43');
 INSERT INTO `system_log` VALUES ('272', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-21 15:51:37');
-INSERT INTO `system_log` VALUES ('273', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-21 22:52:31');
+INSERT INTO `system_log` VALUES ('273', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-22 11:59:05');
+INSERT INTO `system_log` VALUES ('274', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-05-22 17:09:19');
 
 -- ----------------------------
--- Table structure for system_menu
+-- Table structure for `system_menu`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_menu`;
 CREATE TABLE `system_menu` (
@@ -1200,7 +1232,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -1279,13 +1311,15 @@ INSERT INTO `system_menu` VALUES ('183', '182', '常见问题分类', '', 'fa fa
 INSERT INTO `system_menu` VALUES ('184', '182', '常见问题列表', '', 'fa fa-inbox', 'tuanj/quelist/index', '', '_self', '0', '1', '0', '2019-05-18 11:23:27');
 INSERT INTO `system_menu` VALUES ('186', '117', '首页装修轮播图', '', 'fa fa-flag-checkered', '#', '', '_self', '0', '1', '0', '2019-05-18 11:41:00');
 INSERT INTO `system_menu` VALUES ('187', '186', '攻略轮播图', '', 'fa fa-creative-commons', 'tuanj/save/index', '', '_self', '0', '1', '0', '2019-05-18 11:41:48');
-INSERT INTO `system_menu` VALUES ('188', '117', '指尖装修设置', '', 'fa fa-envelope-o', '#', '', '_self', '0', '1', '0', '2019-05-18 11:42:50');
+INSERT INTO `system_menu` VALUES ('188', '117', '指尖+爱家+事', '', 'fa fa-envelope-o', '#', '', '_self', '0', '1', '0', '2019-05-18 11:42:50');
 INSERT INTO `system_menu` VALUES ('189', '188', '指尖装修列表', '', 'fa fa-tree', 'tuanj/zhilist/index', '', '_self', '0', '1', '0', '2019-05-18 11:43:31');
 INSERT INTO `system_menu` VALUES ('190', '117', '底部友情链接', '', 'fa fa-pencil-square-o', '#', '', '_self', '0', '1', '0', '2019-05-18 11:44:45');
 INSERT INTO `system_menu` VALUES ('191', '190', '友情链接列表', '', 'fa fa-simplybuilt', 'tuanj/urls/index', '', '_self', '0', '1', '0', '2019-05-18 11:45:30');
+INSERT INTO `system_menu` VALUES ('192', '188', '爱家新闻列表', '', 'fa fa-heart', 'tuanj/loves/index', '', '_self', '0', '1', '0', '2019-05-22 13:18:50');
+INSERT INTO `system_menu` VALUES ('193', '188', '装修那些事新闻', '', 'fa fa-commenting', 'tuanj/things/index', '', '_self', '0', '1', '0', '2019-05-22 13:19:27');
 
 -- ----------------------------
--- Table structure for system_node
+-- Table structure for `system_node`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_node`;
 CREATE TABLE `system_node` (
@@ -1345,7 +1379,7 @@ INSERT INTO `system_node` VALUES ('358', 'admin/index/pass', '', '0', '1', '1', 
 INSERT INTO `system_node` VALUES ('359', 'admin/index/info', '', '0', '1', '1', '2018-06-04 09:44:02');
 
 -- ----------------------------
--- Table structure for system_sequence
+-- Table structure for `system_sequence`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_sequence`;
 CREATE TABLE `system_sequence` (
@@ -1364,7 +1398,7 @@ CREATE TABLE `system_sequence` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for system_user
+-- Table structure for `system_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `system_user`;
 CREATE TABLE `system_user` (
@@ -1394,7 +1428,7 @@ CREATE TABLE `system_user` (
 INSERT INTO `system_user` VALUES ('10000', 'admin', '超级管理员', '21232f297a57a5a743894a0e4a801fc3', '', '', null, '', '', '23296', '2018-03-23 17:05:40', '1', '1', '0', null, '2015-11-13 15:14:22');
 
 -- ----------------------------
--- Table structure for thank
+-- Table structure for `thank`
 -- ----------------------------
 DROP TABLE IF EXISTS `thank`;
 CREATE TABLE `thank` (
@@ -1420,7 +1454,27 @@ INSERT INTO `thank` VALUES ('5', '庆祝建军90周年 “业之峰将军杯”�
 INSERT INTO `thank` VALUES ('6', '业主感谢信', '/static/upload/a07f5574e0ff7899/e200669297b93c81.jpg', '<p><img border=\"0\" src=\"/static/upload/c1b7ec8a217d7cc1/f456ac2de7de2225.jpg\" style=\"max-width:880px\" title=\"image\" /></p>', '哈哈哈', '2019-04-17 15:13:00', '0', null);
 
 -- ----------------------------
--- Table structure for tousu
+-- Table structure for `thing_list`
+-- ----------------------------
+DROP TABLE IF EXISTS `thing_list`;
+CREATE TABLE `thing_list` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL COMMENT '新闻标题',
+  `img` varchar(255) NOT NULL COMMENT '展示图',
+  `desc` varchar(255) DEFAULT NULL,
+  `content` text,
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of thing_list
+-- ----------------------------
+INSERT INTO `thing_list` VALUES ('0000000009', '精致生活-二手房改造~', '/static/upload/6a77c4c5a840f626/b97488f1bc0043ff.jpg', '丰东股份第三个感受到', '<p><img data-ratio=\"0.6984375\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/0bc81140100e4f5ca9109334aa140160.jpg\" data-type=\"jpeg\" data-w=\"1280\" src=\"http://picfw3.yzf.com.cn/wx/0bc81140100e4f5ca9109334aa140160.jpg\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>本案位于南开区华苑的一处二手房改造，简约主义风格将设计的元素、色彩、照明、原材料简化到最少的程度，但对色彩、材料的质感要求很高。简约的空间设计通常非常含蓄，往往能达到以少胜多、以简胜繁的效果。但是简约并不是简单，简洁是优良品质经不断组合并筛选出来的精华，是将物体形态的通俗表象，提升凝练为一种高度浓缩、高度概括的抽象形式。简练出的新概念，摒弃传统的陈俗与浮华，它多半运用新材料、新技术、新手法，与人们的新思想、新观念相统一，达到以人为本的境界。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/a90f1c13c5db4517bbe570263da7d532.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/a90f1c13c5db4517bbe570263da7d532.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/060b7797ce384fe5869bb443ad074250.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/060b7797ce384fe5869bb443ad074250.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/b58cedf01fd34e1d8f0c96e343b82d96.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/b58cedf01fd34e1d8f0c96e343b82d96.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/242b57fc696a43b4b2e03d315c841e45.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/242b57fc696a43b4b2e03d315c841e45.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/c07879b8428349079438a90bd9287c5a.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/c07879b8428349079438a90bd9287c5a.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/c6277246d17b4fc8bf628e694f52c3f8.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/c6277246d17b4fc8bf628e694f52c3f8.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"0.75\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/f57707ba1f90437d90f53876bb6ca7d7.jpg\" data-type=\"jpeg\" data-w=\"1240\" src=\"http://picfw3.yzf.com.cn/wx/f57707ba1f90437d90f53876bb6ca7d7.jpg\" /></p>', '2019-05-22 14:32:27');
+INSERT INTO `thing_list` VALUES ('0000000010', '【阿里员工的事件】还不够引起你对“环保家装”的重视吗？', '/static/upload/3ceb1cfbd2dee41a/b1807e19fa34fe12.jpg', '发生过大范甘迪', '<p>9月1日，一篇名为《阿里P7员工得白血病身故，生前租了自如甲醛房》的公众号文章引起广泛关注。文章称，该员工因病去世，是因为生前租住的自如房间甲醛严重超标。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img data-ratio=\"1.7763636363636364\" data-src=\"http://picfw3.yzf.com.cn/wx/e40e14762932408e93846afcfd331e1f.jpg\" data-type=\"jpeg\" data-w=\"550\" src=\"http://picfw3.yzf.com.cn/wx/e40e14762932408e93846afcfd331e1f.jpg\" title=\"1535877074947442.jpg\" /></p>\r\n\r\n<p>为此，其家属通过第三方检测机构检测结果显示，房内客厅、主卧和储藏室的甲醛浓度值均高于国家规定。在入驻此出租房前阿里员工做过体检，结果证明其身体无异样。</p>\r\n\r\n<p><img data-ratio=\"0.7545454545454545\" data-src=\"http://picfw3.yzf.com.cn/wx/d07e49de1b144f9d9382195689b31e50.jpg\" data-type=\"jpeg\" data-w=\"550\" src=\"http://picfw3.yzf.com.cn/wx/d07e49de1b144f9d9382195689b31e50.jpg\" title=\"1535878798837382.jpg\" /></p>\r\n\r\n<section>\r\n<section data-width=\"100%\">\r\n<section>\r\n<p>针对此事，小编仅代表个人对其人表示悲痛，愿世间再无病痛，愿逝者亲人能得到相应的补偿。</p>\r\n\r\n<p>人生在世，有太多的牵挂，嗷嗷待哺的孩子，年迈的父母，更有大好的世界等着我们去转转~</p>\r\n\r\n<section>&nbsp;</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section>\r\n<section>\r\n<section data-width=\"90%\"><img data-ratio=\"0.1953125\" data-src=\"http://picfw3.yzf.com.cn/wx/5486c85ae48044a3aa81c4c4bf26dece.jpg\" data-type=\"other\" data-w=\"640\" data-width=\"69%\" src=\"http://picfw3.yzf.com.cn/wx/5486c85ae48044a3aa81c4c4bf26dece.jpg\" /></section>\r\n</section>\r\n</section>\r\n\r\n<p>也许我们穷其所有，在追求财富、名誉、豪宅、名车等等，但是在生命面前这些东西都会变得不值一提；生命可以创造财富，但很多时候财富不一定能创造生命。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<section>\r\n<section>\r\n<section data-width=\"100%\">\r\n<section>\r\n<section>\r\n<section data-width=\"100%\">\r\n<section>\r\n<section>\r\n<section><img data-ratio=\"0.13848920863309352\" data-src=\"http://picfw3.yzf.com.cn/wx/4e173bb30d8942c8ad90d007b37a486b.jpg\" data-type=\"png\" data-w=\"556\" src=\"http://picfw3.yzf.com.cn/wx/4e173bb30d8942c8ad90d007b37a486b.jpg\" /></section>\r\n</section>\r\n</section>\r\n\r\n<section>\r\n<section>\r\n<section data-width=\"100%\">\r\n<section>\r\n<section>\r\n<section>\r\n<p>蓝天白云曾是我们最不在乎的，而今却成了我们最奢望的；健康平时我们大多人不怎么在乎，但是等到失去的时候我们才会醒悟。</p>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<p><img data-ratio=\"0.75\" data-src=\"http://picfw3.yzf.com.cn/wx/e3c0158941734882871e2211b7da512d.jpg\" data-type=\"jpeg\" data-w=\"500\" src=\"http://picfw3.yzf.com.cn/wx/e3c0158941734882871e2211b7da512d.jpg\" title=\"1535878569473854.jpg\" /></p>\r\n\r\n<p>装修产生有害物质这已经是公开的秘密了，装修材料中或多或少的会有一些化学物质有损我们的健康，这点目前的科技能力也无能为力，我们唯一能做的就是把这种伤害降到最低。</p>\r\n\r\n<p>小编认为，<strong>房子装修最重要的是环保</strong>，不在乎多豪华，多漂亮。装修房子找一家更环保的高端装饰吧，有没有赞同的？<img data-ratio=\"1.4055636896046853\" data-src=\"http://picfw3.yzf.com.cn/wx/68f54b3afb5d4b609eb3101e3de7e712.jpg\" data-type=\"jpeg\" data-w=\"1366\" src=\"http://picfw3.yzf.com.cn/wx/68f54b3afb5d4b609eb3101e3de7e712.jpg\" title=\"1535878945857613.jpg\" /></p>\r\n\r\n<p><strong>中华人民共和国环境部颁发的环保&ldquo;十环认证&rdquo;证书</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<hr />\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>业之峰装饰专注环保装修21年</strong></p>\r\n\r\n<p><img data-copyright=\"0\" data-ratio=\"0.9087591240875912\" data-s=\"300,640\" data-src=\"http://picfw3.yzf.com.cn/wx/0b1d016df0f44ca2bcd226171ea54c29.jpg\" data-type=\"jpeg\" data-w=\"822\" src=\"http://picfw3.yzf.com.cn/wx/0b1d016df0f44ca2bcd226171ea54c29.jpg\" /></p>\r\n\r\n<p><img data-ratio=\"1.7838235294117648\" data-src=\"http://picfw3.yzf.com.cn/wx/17c94e2c87ac48e398c087c9dea779b8.jpg\" data-type=\"jpeg\" data-w=\"680\" src=\"http://picfw3.yzf.com.cn/wx/17c94e2c87ac48e398c087c9dea779b8.jpg\" title=\"1535879464312525.jpg\" /></p>\r\n\r\n<p>业之峰采用高科技产品&mdash;&mdash;负氧离子触发器，正是让居室环境更加环保的重要保证。&ldquo;负氧离子触发剂&rdquo;能够在紫外线、自然光或日光灯等光线的作用下，有效分解空气中的有机有害气体和细菌等有害物，降解甲醛、苯、氨、TVOC等污染物，使室内空气达到清新、健康的状况。</p>\r\n\r\n<p><strong>业之峰装饰承诺</strong></p>\r\n\r\n<p><strong>环保不达标&nbsp; 全额退款</strong></p>\r\n\r\n<p><strong>做环保装修，我们是认真的</strong></p>\r\n\r\n<p><img data-ratio=\"1.8514705882352942\" data-src=\"http://picfw3.yzf.com.cn/wx/8877080948434ae29602a6fa04c32597.jpg\" data-type=\"jpeg\" data-w=\"680\" src=\"http://picfw3.yzf.com.cn/wx/8877080948434ae29602a6fa04c32597.jpg\" title=\"1535016037518246.jpg\" /></p>\r\n\r\n<section>\r\n<section>\r\n<section>\r\n<section>\r\n<section>\r\n<section>\r\n<section>\r\n<section>\r\n<p><strong>业之峰</strong></p>\r\n\r\n<p><strong>/更环保的高端装饰</strong></p>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n</section>\r\n\r\n<section>\r\n<section>\r\n<section>\r\n<section data-color=\"#888\">\r\n<p><img data-ratio=\"0.035483870967741936\" data-src=\"http://picfw3.yzf.com.cn/wx/275e49b5a6d342699976a87c57752ef0.jpg\" data-type=\"png\" data-w=\"620\" src=\"http://picfw3.yzf.com.cn/wx/275e49b5a6d342699976a87c57752ef0.jpg\" width=\"556\" /></p>\r\n\r\n<p><strong>21年专注环保装修</strong></p>\r\n\r\n<p><strong>129个城市的装修领航</strong></p>\r\n\r\n<p><strong>3000多家设计店面精品设计</strong></p>\r\n\r\n<p><strong>20万家庭的装修选择&mdash;&mdash;业之</strong><strong>峰装饰</strong></p>\r\n\r\n<p><strong>业之峰数十载传承的精神让我们不敢懈怠</strong></p>\r\n\r\n<p><strong>感谢您21年来的陪伴、支持与信赖</strong></p>\r\n\r\n<p><strong>有些感触尽在不言中</strong></p>\r\n\r\n<p><img data-ratio=\"0.028125\" data-src=\"http://picfw3.yzf.com.cn/wx/e665d9080b3042328a7f6885321a4694.jpg\" data-type=\"png\" data-w=\"640\" src=\"http://picfw3.yzf.com.cn/wx/e665d9080b3042328a7f6885321a4694.jpg\" width=\"556\" /></p>\r\n</section>\r\n</section>\r\n</section>\r\n</section>', '2019-05-22 14:33:03');
+
+-- ----------------------------
+-- Table structure for `tousu`
 -- ----------------------------
 DROP TABLE IF EXISTS `tousu`;
 CREATE TABLE `tousu` (
@@ -1453,7 +1507,7 @@ INSERT INTO `tousu` VALUES ('0000000016', '0', '0', '鹅鹅鹅', '对对对对',
 INSERT INTO `tousu` VALUES ('0000000017', '1', '1', '4698884989', '个非官方个', '2019-04-01 18:25:40', '碎屏');
 
 -- ----------------------------
--- Table structure for tuandui
+-- Table structure for `tuandui`
 -- ----------------------------
 DROP TABLE IF EXISTS `tuandui`;
 CREATE TABLE `tuandui` (
@@ -1483,7 +1537,7 @@ INSERT INTO `tuandui` VALUES ('9', '0', '汤姆•克鲁斯', '/static/upload/19
 INSERT INTO `tuandui` VALUES ('10', '0', '尼古拉斯·凯奇', '/static/upload/efde1ce2a23c4d26/1a12ec0ec2ccba97.jpg', '团建教练', '1982年，17岁的尼古拉斯·凯奇进入电影行业，出演影片《开放的美国学府》。1984年，凯奇主演了影片《鸟人》。1988年，他出演了《吸血鬼之吻》。1992年，他凭借影片《我心狂野》中的表演，获得了第43届戛纳电影节金棕榈大奖。1996年，他主演的动作片《勇闯夺命岛》，并凭借《离开拉斯维加斯》中的酒鬼一角获得当年奥斯卡最佳男主角奖。而后出演《变脸》、《空中监狱》等动作片。', '#', '2018-12-25 15:55:30');
 
 -- ----------------------------
--- Table structure for yuyue
+-- Table structure for `yuyue`
 -- ----------------------------
 DROP TABLE IF EXISTS `yuyue`;
 CREATE TABLE `yuyue` (
@@ -1500,64 +1554,67 @@ CREATE TABLE `yuyue` (
   `chu` varchar(200) DEFAULT NULL COMMENT '厨房',
   `tai` varchar(200) DEFAULT NULL COMMENT '阳台',
   `status` int(10) unsigned DEFAULT NULL COMMENT '是否领取过礼包 0=》no 1=》yes',
-  `mon` varchar(50) DEFAULT NULL COMMENT '月份',
-  `dates` varchar(50) DEFAULT NULL COMMENT '日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of yuyue
 -- ----------------------------
-INSERT INTO `yuyue` VALUES ('0000000001', '设计师报价计算器', '简介', '18672536680', '哈哈哈', '155', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000002', '预约设计', '简介', '18672536680', '看看', '125', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000003', '预约设计', '简介', '18672536680', '看看', '125', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000004', '预约设计', '方法', '18672536680', '看看', '125', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000005', '预约设计', '方法', '13258974121', '看看', '155', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000006', '预约设计', '简介', '1867253668', '我也不知', '188', '', '', '', null, null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000022', '您的户型', '简介', '18672536680', '快快快', '188', '3室', '4厅', '3卫', '2019-04-19 15:19:19', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000023', '您的户型', '简介', '18672536685', '那你', '200', '5室', '6厅', '3卫', '2019-04-19 15:20:33', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000024', '您的户型', '简介', '18672536680', 'FF ', '188', '4室', '3厅', '3卫', '2019-04-19 15:21:16', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000025', '您的户型', '你', '18547896327', '', '', '', '', '', '2019-04-19 15:36:42', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000026', '您的户型', '你是', '15896314789', '', '', '', '', '', '2019-04-19 15:37:56', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000027', '您的户型', '你是', '15896314789', '', '', '', '', '', '2019-04-19 15:38:32', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000028', '您的户型', '点点点', '15823741158', '', '', '', '', '', '2019-04-19 15:41:10', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000029', '您的户型', '无聊', '18672569922', '天润', '155', '', '', '', '2019-04-19 15:42:36', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000030', '您的户型', '无聊', '18672536699', '天润', '156', '', '', '', '2019-04-19 15:43:43', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000031', '您的户型', 'wuliao ', '18675369988', '天润', '180', '', '', '', '2019-04-19 15:46:07', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000032', '您的户型', '', '18672539988', '', '155', '', '', '', '2019-04-19 16:29:30', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000033', '您的户型', '', '18672539988', '', '158', '', '', '', '2019-04-19 16:30:29', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000034', '您的户型', '', '18677759696', '', '198', '', '', '', '2019-04-19 16:33:22', '', '', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000035', '获取装修报价', '许家印', '18688888880', '恒大', '58', '', '', '', '2019-04-19 16:56:45', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000036', '获取楼盘专属优惠', '张三丰', '18672536680', 'false', '', '', '', '', '2019-04-20 11:46:02', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000037', '获取楼盘专属优惠', '简介', '18672536680', '看看', '', '', '', '', '2019-04-20 11:51:41', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000038', '获取楼盘专属优惠', '简介', '18672536699', '我也不知', '', '', '', '', '2019-04-20 11:53:28', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000039', '设计师报价计算器', '', '18677759696', '', '155', '', '', '', '2019-04-20 12:02:42', '', '', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000040', '预约设计', 'wuliao ', '18675369988', '不咋地', '', '', '', '', '2019-04-20 16:06:37', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000041', '获取详情报价', '你好', '18672536699', '恒大公馆', '152', '', '', '', '2019-04-20 16:15:07', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000042', '装修计算器', '', '18948478956', '', '188', '', '', '', '2019-04-20 16:24:22', '', '', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000043', '装修计算器', '', '18927341185', '', '230', '', '', '', '2019-04-20 16:26:11', '', '', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000044', '装修计算器', '', '18948478954', '', '230', '3室', '1厅', '1卫', '2019-04-20 16:33:45', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000045', '装修计算器', '', '18948478999', '', '235', '3室', '3厅', '2卫', '2019-04-20 16:34:56', '3厨', '2阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000046', '获取楼盘专属优惠', '简介', '18672536680', '看看', '', null, null, null, '2019-04-20 16:49:00', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000047', '申请五零靠谱工程特权', '你是谁', '18672533997', '恒大', '158', '', '', '', '2019-04-20 17:03:55', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000048', '申请五零靠谱工程特权', '你是谁', '18672533997', '恒大', '158', '', '', '', '2019-04-20 17:05:21', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000049', '申请五零靠谱工程特权', '你是谁', '18672533998', '恒大', '167', '', '', '', '2019-04-20 17:05:46', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000050', '攻略站报价计算器', '', '18652369988', '', '158', '3室', '1厅', '1卫', '2019-04-20 17:21:54', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000051', '攻略站报价计算器', '', '18652369988', '', '158', '6室', '1厅', '3卫', '2019-04-20 17:26:35', '1厨', '3阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000052', '装修计算器', '', '18948478956', '', '188', '3室', '1厅', '', '2019-04-20 17:54:59', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000053', '装修费用比例', '', '18652369988', '', '158', '3室', '1厅', '1卫', '2019-04-20 18:03:20', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000054', '攻略站报价计算器', '', '15987523641', '', '188', '3室', '1厅', '1卫', '2019-04-22 09:55:42', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000055', '攻略站报价计算器', '', '15987523641', '', '158', '3室', '1厅', '1卫', '2019-04-22 13:51:47', '1厨', '2阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000056', '算算我家房子装修花多少钱', '', '18672539988', '', '155', '3室', '1厅', '1卫', '2019-04-22 14:50:43', null, '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000057', '算算我家房子装修花多少钱', '', '18677759696', '', '155', '4室', '1厅', '1卫', '2019-04-22 14:51:42', null, '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000058', '获取楼盘专属优惠', '飞翔的荷兰人', '18672536007', '恒大首府', '', null, null, null, '2019-04-22 16:56:25', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000067', '攻略站报价计算器', '', '18672536007', '', '112', '3室', '1厅', '1卫', '2019-05-18 17:28:48', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000066', '攻略站报价计算器', '', '18672536007', '', '112', '3室', '1厅', '1卫', '2019-05-18 16:55:13', '1厨', '1阳台', null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000065', '官网专属礼包', '胡凯', '17786105741', '', '', null, null, null, '2019-04-22 17:12:12', null, null, null, null, null);
-INSERT INTO `yuyue` VALUES ('0000000064', '获取楼盘专属优惠', '张无忌', '18672536007', '广州恒大', '', null, null, null, '2019-04-22 17:05:31', null, null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000001', '设计师报价计算器', '简介', '18672536680', '哈哈哈', '155', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000002', '预约设计', '简介', '18672536680', '看看', '125', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000003', '预约设计', '简介', '18672536680', '看看', '125', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000004', '预约设计', '方法', '18672536680', '看看', '125', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000005', '预约设计', '方法', '13258974121', '看看', '155', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000006', '预约设计', '简介', '1867253668', '我也不知', '188', '', '', '', null, null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000022', '您的户型', '简介', '18672536680', '快快快', '188', '3室', '4厅', '3卫', '2019-04-19 15:19:19', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000023', '您的户型', '简介', '18672536685', '那你', '200', '5室', '6厅', '3卫', '2019-04-19 15:20:33', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000024', '您的户型', '简介', '18672536680', 'FF ', '188', '4室', '3厅', '3卫', '2019-04-19 15:21:16', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000025', '您的户型', '你', '18547896327', '', '', '', '', '', '2019-04-19 15:36:42', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000026', '您的户型', '你是', '15896314789', '', '', '', '', '', '2019-04-19 15:37:56', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000027', '您的户型', '你是', '15896314789', '', '', '', '', '', '2019-04-19 15:38:32', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000028', '您的户型', '点点点', '15823741158', '', '', '', '', '', '2019-04-19 15:41:10', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000029', '您的户型', '无聊', '18672569922', '天润', '155', '', '', '', '2019-04-19 15:42:36', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000030', '您的户型', '无聊', '18672536699', '天润', '156', '', '', '', '2019-04-19 15:43:43', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000031', '您的户型', 'wuliao ', '18675369988', '天润', '180', '', '', '', '2019-04-19 15:46:07', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000032', '您的户型', '', '18672539988', '', '155', '', '', '', '2019-04-19 16:29:30', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000033', '您的户型', '', '18672539988', '', '158', '', '', '', '2019-04-19 16:30:29', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000034', '您的户型', '', '18677759696', '', '198', '', '', '', '2019-04-19 16:33:22', '', '', null);
+INSERT INTO `yuyue` VALUES ('0000000035', '获取装修报价', '许家印', '18688888880', '恒大', '58', '', '', '', '2019-04-19 16:56:45', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000036', '获取楼盘专属优惠', '张三丰', '18672536680', 'false', '', '', '', '', '2019-04-20 11:46:02', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000037', '获取楼盘专属优惠', '简介', '18672536680', '看看', '', '', '', '', '2019-04-20 11:51:41', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000038', '获取楼盘专属优惠', '简介', '18672536699', '我也不知', '', '', '', '', '2019-04-20 11:53:28', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000039', '设计师报价计算器', '', '18677759696', '', '155', '', '', '', '2019-04-20 12:02:42', '', '', null);
+INSERT INTO `yuyue` VALUES ('0000000040', '预约设计', 'wuliao ', '18675369988', '不咋地', '', '', '', '', '2019-04-20 16:06:37', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000041', '获取详情报价', '你好', '18672536699', '恒大公馆', '152', '', '', '', '2019-04-20 16:15:07', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000042', '装修计算器', '', '18948478956', '', '188', '', '', '', '2019-04-20 16:24:22', '', '', null);
+INSERT INTO `yuyue` VALUES ('0000000043', '装修计算器', '', '18927341185', '', '230', '', '', '', '2019-04-20 16:26:11', '', '', null);
+INSERT INTO `yuyue` VALUES ('0000000044', '装修计算器', '', '18948478954', '', '230', '3室', '1厅', '1卫', '2019-04-20 16:33:45', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000045', '装修计算器', '', '18948478999', '', '235', '3室', '3厅', '2卫', '2019-04-20 16:34:56', '3厨', '2阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000046', '获取楼盘专属优惠', '简介', '18672536680', '看看', '', null, null, null, '2019-04-20 16:49:00', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000047', '申请五零靠谱工程特权', '你是谁', '18672533997', '恒大', '158', '', '', '', '2019-04-20 17:03:55', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000048', '申请五零靠谱工程特权', '你是谁', '18672533997', '恒大', '158', '', '', '', '2019-04-20 17:05:21', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000049', '申请五零靠谱工程特权', '你是谁', '18672533998', '恒大', '167', '', '', '', '2019-04-20 17:05:46', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000050', '攻略站报价计算器', '', '18652369988', '', '158', '3室', '1厅', '1卫', '2019-04-20 17:21:54', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000051', '攻略站报价计算器', '', '18652369988', '', '158', '6室', '1厅', '3卫', '2019-04-20 17:26:35', '1厨', '3阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000052', '装修计算器', '', '18948478956', '', '188', '3室', '1厅', '', '2019-04-20 17:54:59', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000053', '装修费用比例', '', '18652369988', '', '158', '3室', '1厅', '1卫', '2019-04-20 18:03:20', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000054', '攻略站报价计算器', '', '15987523641', '', '188', '3室', '1厅', '1卫', '2019-04-22 09:55:42', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000055', '攻略站报价计算器', '', '15987523641', '', '158', '3室', '1厅', '1卫', '2019-04-22 13:51:47', '1厨', '2阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000056', '算算我家房子装修花多少钱', '', '18672539988', '', '155', '3室', '1厅', '1卫', '2019-04-22 14:50:43', null, '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000057', '算算我家房子装修花多少钱', '', '18677759696', '', '155', '4室', '1厅', '1卫', '2019-04-22 14:51:42', null, '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000058', '获取楼盘专属优惠', '飞翔的荷兰人', '18672536007', '恒大首府', '', null, null, null, '2019-04-22 16:56:25', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000068', '免费家装前三步', '你好', '13255669988', '', '', null, null, null, '2019-05-22 09:59:10', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000067', '攻略站报价计算器', '', '18672536007', '', '112', '3室', '1厅', '1卫', '2019-05-18 17:28:48', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000066', '攻略站报价计算器', '', '18672536007', '', '112', '3室', '1厅', '1卫', '2019-05-18 16:55:13', '1厨', '1阳台', null);
+INSERT INTO `yuyue` VALUES ('0000000065', '官网专属礼包', '胡凯', '17786105741', '', '', null, null, null, '2019-04-22 17:12:12', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000064', '获取楼盘专属优惠', '张无忌', '18672536007', '广州恒大', '', null, null, null, '2019-04-22 17:05:31', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000069', '领取专属优惠', '', '18672536007', '恒大世纪广场', '', null, null, null, '2019-05-22 15:57:24', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000070', '领取专属优惠', '张翠山', '18672536008', '恒大世纪广场', '', null, null, null, '2019-05-22 15:58:18', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000071', '第三方环保监测', '发生过', '15627341191', '', '', null, null, null, '2019-05-22 16:04:19', null, null, null);
+INSERT INTO `yuyue` VALUES ('0000000072', '预约免费平面设计', '你好', '13255669988', '恒大世纪广场', '188', '', '', '', '2019-05-22 17:08:59', null, null, null);
 
 -- ----------------------------
--- Table structure for yu_designer
+-- Table structure for `yu_designer`
 -- ----------------------------
 DROP TABLE IF EXISTS `yu_designer`;
 CREATE TABLE `yu_designer` (
@@ -1576,7 +1633,7 @@ CREATE TABLE `yu_designer` (
 INSERT INTO `yu_designer` VALUES ('0000000001', '李四光', '白眉鹰王', '18523568520', '地中海风格', '2019-04-20 17:47:09');
 
 -- ----------------------------
--- Table structure for zhi_jian
+-- Table structure for `zhi_jian`
 -- ----------------------------
 DROP TABLE IF EXISTS `zhi_jian`;
 CREATE TABLE `zhi_jian` (
@@ -1596,7 +1653,7 @@ INSERT INTO `zhi_jian` VALUES ('0000000001', '防水工程（二次闭水实验�
 INSERT INTO `zhi_jian` VALUES ('0000000002', '交底', '交底', '/static/upload/10080e2382bdccbb/6fc3e14d75949edd.jpg', '', '2019-05-18 15:20:31');
 
 -- ----------------------------
--- Table structure for z_news
+-- Table structure for `z_news`
 -- ----------------------------
 DROP TABLE IF EXISTS `z_news`;
 CREATE TABLE `z_news` (
