@@ -55,15 +55,15 @@ class Index extends Common {
      $feng = Db::name('feng_cate')->field('id,title')->select();
      $que = Db::name('que_cate')->field('id,title')->select();
      //装修攻略分类 列表
-     $cailist = Db::name('cai_list')->field('id,cid,title')->select();
-     $knowlist = Db::name('know_list')->field('id,kid,title')->select();
-     $fenglist = Db::name('feng_list')->field('id,fid,title')->select();
+     $cailist = Db::name('cai_list')->field('id,cid,title')->order('id desc')->limit(9)->select();
+     $knowlist = Db::name('know_list')->field('id,kid,title')->order('id desc')->limit(9)->select();
+     $fenglist = Db::name('feng_list')->field('id,fid,title')->order('id desc')->limit(9)->select();
 
      //指尖
-     $zhi  = Db::name('zhi_jian')->field('id,title,time')->select();
+     $zhi  = Db::name('zhi_jian')->field('id,title,time')->order('id desc')->limit(7)->select();
 
      //装修攻略轮播图
-     $sbanner = Db::name('save_banner')->field('id,title,img,url')->select();
+     $sbanner = Db::name('save_banner')->field('id,title,img,url')->order('id desc')->limit(8)->select();
       $this->assign('sbanner',$sbanner);
       $this->assign('zhi',$zhi);
       $this->assign('cailist',$cailist);

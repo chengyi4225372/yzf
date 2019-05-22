@@ -77,13 +77,13 @@ class Common extends Controller {
 
     //热门文章排行榜
     public  function remen (){
-        $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->select();
+        $arr  = Db::name('z_news')->field('id,img,title')->where('tuijian',1)->order('id desc')->limit(5)->select();
         return $arr;
     }
 
     //装修知识
     public function know(){
-        $arr =Db::name('know_list')->field('id,kid,title,img,time')->select();
+        $arr =Db::name('know_list')->field('id,kid,title,img,time')->order('id desc')->limit(10)->select();
         return $arr ? $arr:'';
     }
 

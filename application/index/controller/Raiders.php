@@ -18,7 +18,7 @@ class Raiders extends Common {
 
     //装修攻略 首页
     public function index(){
-        $zhi = Db::name('zhi_jian')->field('id,img,title')->select();
+        $zhi = Db::name('zhi_jian')->field('id,img,title')->order('id desc')->limit(10)->select();
         $cai =db('cai_cate')->select();
         //装修材料
         $ci_one = db('cai_list')->field('id,title,img,time')->where('cid',1)->order('id desc')->limit(8)->select();
