@@ -1,8 +1,8 @@
-
 {include file="public/header-two" /}
 
-<link rel="stylesheet" href="__STATIC__/home/css_/main.css" />
+
 {include file="public/location-two" /}
+
 <div class="header">
     {include file="public/menu" /}
 </div>
@@ -14,49 +14,21 @@
             <ol class="breadcrumb normal">
                 <span>当前位置：</span>
                 <li><a href="/">首页</a></li>
-                <li><a href="{:url('raiders/index')}">装修攻略</a></li>
-                <li class="active">爱家物语</li>
+                <li><a href="{:url('thing/index')}">装修那些事</a></li>
             </ol>
             <div class="content-body">
-                <div class="side-left">
-
-
-                    <div class="side-panel">
-                        <div class="side-panel-header">
-                            幸福家居课堂
-                        </div>
-                        <div class="side-panel-body">
-                            <ul class="side-media-img">
-                                <li class="active">
-                                    <a class="side-media-hd" href="{:url('love/index')}">
-                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914363234222.png_100x100.png" alt=""></a>
-                                    <div class="side-media-bd">
-                                        <h4><a href="{:url('love/index')}">爱家物语</a></h4>
-                                        <p>尺度装饰集团爱家物语系列原创软文  </p>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <a class="side-media-hd" href="{:url('thing/index')}"><img src="http://picfw.yzf.com.cn/999999/2018/3/20/1961849086400.png_100x100.png" alt=""></a>
-                                    <div class="side-media-bd">
-                                        <h4><a href="{:url('thing/index')}">装修的那些事儿</a></h4>
-                                        <p>听尺度老师傅讲装修攻略  </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
+                <div class="side-right">
                     <div class="side-calculator">
                         <dl>
-                            <dt>我家装修要花多少钱？</dt>
+                            <dt>算一算装成这样多少钱？</dt>
                             <dd>超精准计算，一步解决预算问题</dd>
                         </dl>
                         <div class="calculator-screen"></div>
                         <form class="form-horizontal calculator-form">
-                            <input name="g_channel" value="攻略站报价计算器" type="hidden" />
+                            <input name="gn_channel" value="攻略站报价计算器" type="hidden" />
                             <div class="form-group">
                                 <div class="col-xs-4">
-                                    <select class="form-control  remark" name="g_shi">
+                                    <select class="form-control  remark" name="gn_shi">
                                         <option value="1室">1室</option>
                                         <option value="2室">2室</option>
                                         <option value="3室" selected="">3室</option>
@@ -66,7 +38,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark" name="g_ting">
+                                    <select class="form-control remark" name="gn_ting">
                                         <option value="1厅" selected="">1厅</option>
                                         <option value="2厅">2厅</option>
                                         <option value="3厅">3厅</option>
@@ -76,7 +48,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-4">
-                                    <select class="form-control remark" name="g_chu">
+                                    <select class="form-control remark" name="gn_chu">
                                         <option value="1厨" selected="">1厨</option>
                                         <option value="2厨">2厨</option>
                                         <option value="3厨">3厨</option>
@@ -85,14 +57,14 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-6">
-                                    <select class="form-control remark" name="g_wei">
+                                    <select class="form-control remark" name="gn_wei">
                                         <option value="1卫" selected="">1卫</option>
                                         <option value="2卫">2卫</option>
                                         <option value="3卫">3卫</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <select class="form-control remark" name="g_tai">
+                                    <select class="form-control remark" name="gn_tai">
                                         <option value="1阳台" selected="">1阳台</option>
                                         <option value="2阳台">2阳台</option>
                                         <option value="3阳台">3阳台</option>
@@ -101,13 +73,13 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12 area">
-                                    <input type="text" class="form-control" name="g_square" placeholder="输入您的房屋面积">
+                                    <input type="text" class="form-control" name="gn_square" placeholder="输入您的房屋面积">
                                     <span class="m2">㎡</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <input type="text" class="form-control" name="g_phone" placeholder="报价结果将发送到您的手机上">
+                                    <input type="text" class="form-control" name="gn_phone" placeholder="报价结果将发送到您的手机上">
                                 </div>
                             </div>
                             <div class="form-group btn-box submit">
@@ -119,16 +91,17 @@
                     </div>
 
                     <div class="side-adv">
-                        <a target="_blank" href="/"><img src="__STATIC__/home/images/side-adv.jpg" alt=""></a>
+                        <a target="_blank" href="{:url('special/kjby')}"><img src="__STATIC__/home/image/side-adv.jpg" alt=""></a>
                     </div>
                     <div class="side-adv">
-                        <a><img src="__STATIC__/home/images/side-advlr.png" alt=""></a>
+                        <a><img src="__STATIC__/home/Images/side-advlr.png" /></a>
                     </div>
 
 
+                    <!-- 热门 文章 -->
                     <div class="side-panel">
                         <div class="side-panel-header">
-
+                            <a href="{:url('raiders/index')}" class="more">更多》</a>
                             热门文章排行榜
                         </div>
                         <div class="side-panel-body">
@@ -145,14 +118,38 @@
                         </div>
                     </div>
 
-
+                    <!--装修常识-->
+                    <div class="side-panel">
+                        <div class="side-panel-header">
+                            <a href="{:url('infos/knows')}" class="more">更多》</a>
+                            装修知识
+                        </div>
+                        <div class="side-panel-body">
+                            <ul class="sense-list">
+                                {volist name='know' id='vo'}
+                                <li><a href="{:url('infos/kdetail')}?id={$vo.id}" title="{$vo.title}">·  {$vo.title}</a></li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="main">
-                    <div class="vd-top">
-                        <div class="gl-space-tag">
-                            <span>分享<i class="iconfont icon-fenxiang"></i></span>
-                            <div class="drop-share">
+                    <div class="main-detail-box">
+                        <div class="detail-head">
+                            <h1>{$res.title}</h1>
+                            <div class="detail-disc">
+                                <span>时间：{$res.time|date='Y-m-d'}</span>
+
+                                <span>来源：尺渡装饰</span>
+                            </div>
+                        </div>
+                        <div class="detail-body">
+                            <p style="text-align: left;">{$res.content|raw}</p>
+                        </div>
+                        <div class="detail-control">
+                            <div class="detail-share">
+                                <span class="share-text"><i class="iconfont icon-fenxiang"></i>分享至</span>
                                 <!-- JiaThis Button BEGIN -->
                                 <div class="jiathis_style_24x24">
                                     <a class="jiathis_button_weixin"><i class="iconfont icon-weixin"></i></a>
@@ -164,77 +161,40 @@
                                 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
                                 <!-- JiaThis Button END -->
                             </div>
-                        </div>
-                        <div class="vd-top-hd"><img src="http://picfw.yzf.com.cn/2018/1/24/1914363234222.png" alt=""></div>
-                        <div class="vd-top-bd">
-                            <h4>
-                                <strong>爱家物语</strong>
-                                <span><i class="iconfont icon-yinpin"></i>{$count}作品</span>
-                                <span><i class="iconfont icon-xin"></i>1000人气</span>
-                            </h4>
-                            <p>
-                            <p>尺渡装饰集团爱家物语系列原创软文</p>
-                            </p>
-                        </div>
-                        <div class="vd-top-ft">
-                            <a  href="JavaScript:;" class="btn">+ 关注</a>
-                        </div>
-                    </div>
 
-                    <div class="list-filter vd-filter">
-                        <ul>
-                            <!--
-                            <li class=""><a href="/DecorationRaiders/List/120?orderby=sortid">按浏览热度 <i class="iconfont icon-shang"></i></a></li>
-                            <li class="active"><a href="/DecorationRaiders/List/120?orderby=DateCreated">按时间顺序 <i class="iconfont icon-xia"></i></a></li>
-                          -->
-                        </ul>
-                    </div>
-                    <div class="news-panel">
-                        <div class="news-panel-body">
-                            <ul class="strategy-list audio">
-                                {volist name="list" id="vo"}
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="{:url('love/detail')}?id={$vo.id}"><img src="{$vo.img}" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="{:url('love/detail')}?id={$vo.id}">{$vo.title}</a></h3>
-                                        <p>{$vo.desc|default=''}</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">{$vo.time|date='Y-m-d'}</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                {/volist}
-                            </ul>
                         </div>
+                        <div class="xq-wrap">
+                            <div class="xq-footer">
+                                <div class="declare-media">
+                                    <div class="declare-media-hd">声明</div>
+                                    <ul class="declare-media-bd">
+                                        <li>1.本站遵循行业规范，任何转载的稿件都会明确标注作者和来源；</li>
+                                        <li>2.本站的原创文章，请转载时务必注明文章作者和来源，不尊重原创的行为我们将追究责任；</li>
+                                        <li>3.作者投稿可能会经我们编辑修改和补充。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <nav class="text-center">
-                        <ul class="pagination">
-                            {$list|raw}
-                        </ul>
-                    </nav>
-
 
                 </div>
             </div>
         </div>
     </div>
 
+
 </div>
 
 {include file="public/footer" /}
 
-{include file="public/menu_right" /}
+{include file="public/menu_right"  /}
 
 {include file="public/price" /}
 
 {include file="public/yuyue" /}
 
-
-
-<script src="__STATIC__/home/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
+<script src="__STATIC__/home/assets/plugins/ResponsiveSlides.js-master/responsiveslides.js"></script>
 <script src="__STATIC__/home/js/main.js"></script>
 <script>
     // Slideshow 2
@@ -249,6 +209,12 @@
 </script>
 
 <script>
+    $('#a_qq').click(function () {
+        $('#consultation').trigger('click');
+    });
+</script>
+
+<script>
     //手机正则
     function isPhoneNo(phones) {
         var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
@@ -256,14 +222,14 @@
     }
     //攻略
     $("#gongnue").click(function(){
-        var shi = $("select[name='g_shi']").val();
-        var ting = $("select[name='g_ting']").val();
-        var chu = $("select[name='g_chu']").val();
-        var wei = $("select[name='g_wei']").val();
-        var tai = $("select[name='g_tai']").val();
-        var channel = $("input[name='g_channel']").val();
-        var phone = $("input[name='g_phone']").val();
-        var square = $("input[name='g_square']").val();
+        var shi = $("select[name='gn_shi']").val();
+        var ting = $("select[name='gn_ting']").val();
+        var chu = $("select[name='gn_chu']").val();
+        var wei = $("select[name='gn_wei']").val();
+        var tai = $("select[name='gn_tai']").val();
+        var channel = $("input[name='gn_channel']").val();
+        var phone = $("input[name='gn_phone']").val();
+        var square = $("input[name='gn_square']").val();
         if (isPhoneNo(phone) == false || phone == 'null') {
             alert('手机号不合法！');
         }else if (square == '' ||square == undefined ){
@@ -295,5 +261,7 @@
 
 </script>
 
+
 </body>
 </html>
+

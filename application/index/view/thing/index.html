@@ -139,36 +139,14 @@
                         </div>
                         <div class="side-panel-body">
                             <ul class="side-media">
+                                {volist name="re" id="vo"}
                                 <li>
-                                    <a href="/DecorationRaiders/Detail/188" title="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <img src="http://picfw.yzf.com.cn/2017/12/6/1872013323427.jpg_360x255.jpg" alt="感受设计情怀，简美风格案例赏析 龙源国际城">
-                                        <span>感受设计情怀，简美风格案例赏析 龙源国际城</span>
+                                    <a href="{:url('raiders/z_detail')}?id={$vo.id}" title="{$vo.title}">
+                                        <img src="{$vo.img}" alt="{$vo.title}">
+                                        <span>{$vo.title}</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/258" title="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <img src="http://picfw.yzf.com.cn/2018/1/24/1914377488611.png_360x255.png" alt="暗香留心！业之峰，于岁月流转中不负芳华！">
-                                        <span>暗香留心！业之峰，于岁月流转中不负芳华！</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/275" title="油漆后的家具为何会泛黄?怎样预防?">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/2/3/1922774359130.jpg_360x255.jpg" alt="油漆后的家具为何会泛黄?怎样预防?">
-                                        <span>油漆后的家具为何会泛黄?怎样预防?</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/288" title="买房风水禁忌 最宜居住的家居风水布局">
-                                        <img src="http://picfw.yzf.com.cn/100021/2018/1/27/1916961741151.jpg_360x255.jpg" alt="买房风水禁忌 最宜居住的家居风水布局">
-                                        <span>买房风水禁忌 最宜居住的家居风水布局</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/DecorationRaiders/Detail/1356" title="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <img src="http://picfw3.yzf.com.cn/wx/9e8402efb8bb4b5c80260b531fb2f931.jpg" alt="【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》">
-                                        <span>【谭旭辉作品】第八届筑巢奖获奖作品——《欧式中的东方风情》</span>
-                                    </a>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
@@ -198,11 +176,11 @@
                         <div class="vd-top-bd">
                             <h4>
                                 <strong>装修的那些事儿</strong>
-                                <span><i class="iconfont icon-yinpin"></i>22作品</span>
-                                <span><i class="iconfont icon-xin"></i>0人气</span>
+                                <span><i class="iconfont icon-yinpin"></i>{$count}作品</span>
+                                <span><i class="iconfont icon-xin"></i>100人气</span>
                             </h4>
                             <p>
-                            <p>听业之峰老师傅讲装修攻略</p>
+                            <p>听尺渡老师傅讲装修攻略</p>
                             </p>
                         </div>
                         <div class="vd-top-ft">
@@ -251,99 +229,20 @@
                     <div class="news-panel">
                         <div class="news-panel-body">
                             <ul class="strategy-list audio">
-
+                                {volist name="list" id="vo"}
                                 <li>
                                     <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/1497"><img src="http://picfw3.yzf.com.cn/wx/824c5735b7a142789f701280fa1ab3e8.jpg" alt=""></a>
+                                        <a href="{:url('thing/detail')}?id={$vo.id}"><img src="{$vo.img}" alt=""></a>
                                     </div>
                                     <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/1497">精致生活-二手房改造~</a></h3>
-                                        <p>本案位于南开区华苑的一出二手房改造，简约主义风格的特色是将设计的元素、色彩、照明、原材料简化到最少的程度.</p>
+                                        <h3><a href="{:url('thing/detail')}?id={$vo.id}">{$vo.title}</a></h3>
+                                        <p>{$vo.desc|default=''}</p>
                                         <div class="strategy-control">
-                                            <span class="pull-right">2018-09-13</span>
-
+                                            <span class="pull-right">{$vo.time|date='Y-m-d'}</span>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/1476"><img src="http://picfw3.yzf.com.cn/wx/c1a5118a0ea4454a9211dd934bc1cd8e.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/1476">【阿里员工的事件】还不够引起你对“环保家装”的重视吗？</a></h3>
-                                        <p>业之峰装饰承诺“环保不达标  全额退款”
-                                            做环保装修，我们是认真的。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-09-13</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/1468"><img src="http://picfw3.yzf.com.cn/wx/f5ffcaec78004c348f3206c6da9d46a4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/1468">包看包会｜五分钟读懂高品质装修流程…</a></h3>
-                                        <p>金九银十装修季来临！别再两眼一抹黑了！</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-09-13</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/1464"><img src="http://picfw3.yzf.com.cn/wx/80cef7914c7a479f9d64bfbddc2af81a.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/1464">重磅！精装、整装、套装之后的家装新选择来了！</a></h3>
-                                        <p>小花费，大改变！零烦恼的局部翻新是一种怎样的装修体验？业之峰告诉你.......</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-09-13</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/1403"><img src="http://picfw3.yzf.com.cn/wx/5f8a00b2e6cc4a029dec2db2d0b35903.jpg" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/1403">五月将过，六月你好！</a></h3>
-                                        <p>五月将过，六月你好。美好的时光总会过去，但业之峰人的热情与专业永不会褪色。六月我们整装待发，用我们专业的、专心的服务给您的新家一份完美的答卷。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-06-03</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/267"><img src="http://picfw.yzf.com.cn/100021/2018/1/25/1915045961273.png" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/267">房屋装修报价中，轻钢龙骨费用也成为你预算里不可缺少的一部分</a></h3>
-                                        <p>现在家庭装修大部分都会采用到集成吊顶，木龙骨慢慢退出室内装修市场，，随着轻钢龙骨普遍的运用，轻钢龙骨的报价也变成装修过程中一个重要的因素，那么今天就来分享一下室内吊顶。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-01-25</span>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="strategy-video-hd">
-                                        <a href="/DecorationRaiders/Detail/266"><img src="http://picfw.yzf.com.cn/100021/2018/1/25/1915045069083.png" alt=""></a>
-                                    </div>
-                                    <div class="strategy-bd">
-                                        <h3><a href="/DecorationRaiders/Detail/266">一份独门秘诀送给你，《选购瓷砖的秘籍》！</a></h3>
-                                        <p>怎样选瓷砖？这里有一份独门秘诀送给你。直接进入正题。</p>
-                                        <div class="strategy-control">
-                                            <span class="pull-right">2018-01-25</span>
-
-                                        </div>
-                                    </div>
-                                </li>
+                                {/volist}
 
                             </ul>
                         </div>
@@ -351,14 +250,7 @@
 
                     <nav class="text-center">
                         <ul class="pagination">
-                            <li><a data-pjax="" href="javascripte:void(0);">上一页</a></li>
-
-                            <li class="active"><a data-pjax="" href="/DecorationRaiders/List/122?PageIndex=1">1</a></li>
-                            <li class=""><a data-pjax="" href="/DecorationRaiders/List/122?PageIndex=2">2</a></li>
-                            <li class=""><a data-pjax="" href="/DecorationRaiders/List/122?PageIndex=3">3</a></li>
-
-                            <li><a data-pjax="" href="/DecorationRaiders/List/122?PageIndex=2">下一页</a></li>
-
+                            {$list|raw}
                         </ul>
                     </nav>
 
