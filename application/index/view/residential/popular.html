@@ -48,12 +48,12 @@
                                     <div class="hpt-z-hd">
                                         <span class="tuangou">团购活动中</span>
                                         <a href="{:url('residential/detail')}?id={$vo.id}" class="img-box">
-                                            <img src="{$vo.img}" alt="楼盘图片" /></a>
+                                            <img src="{$vo.img}" alt="" /></a>
                                     </div>
                                     <div class="hpt-z-bd">
                                         <div class="hpt-tit">
                                             <a href="{:url('residential/detail')}?id={$vo.id}">{$vo.title}</a>
-                                            <span title="新区狮山路与塔园路交汇处（苏州乐园度假酒店东面）">{$vo.location|mb_substr='0','30'}<i class="iconfont icon-dibiao"></i></span>
+                                            <span title="{$vo.title}">{$vo.location|mb_substr='0','30'}<i class="iconfont icon-dibiao"></i></span>
                                         </div>
                                         <p>
 

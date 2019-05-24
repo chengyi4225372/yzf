@@ -7,18 +7,14 @@
 </div>
 <div id="RenderBody">
 
-    <div class="case-banner" style="background-image:url(/Images/residentialcase_banner/suzhou.jpg)  ">
+    <div class="case-banner" style="background-image:url(__STATIC__/home/image/case-banner.jpg)  ">
         <div class="auto-box">
             <div class="case-search">
                 <div class="case-search-left">
                     <span>热装小区：</span>
-                    <a class="" href="/ResidentialCase?residentialId=5685">太阳城</a>
-                    <a class="" href="/ResidentialCase?residentialId=5586">荷澜庭</a>
-                    <a class="" href="/ResidentialCase?residentialId=5599">龙湖时代天街</a>
-                    <a class="" href="/ResidentialCase?residentialId=8245">禧悦</a>
-                    <a class="" href="/ResidentialCase?residentialId=7948">狮山御园</a>
-                    <a class="" href="/ResidentialCase?residentialId=2438">海德公园</a>
-
+                    {volist name="hot" id="vo"}
+                    <a   class="" href="{:url('residential/popular')}?searchkey={$vo.title}">{$vo.title}</a>
+                    {/volist}
                 </div>
                 <div class="case-search-right">
                     <div class="search-group">

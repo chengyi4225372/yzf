@@ -377,18 +377,14 @@
             alert('请填写户型大小！');;
         }else{
             $.ajax({
-                url:"{:url('api/send/libao')}",
+                url:"{:url('api/send/baojia')}",
                 type:'post',
                 data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
                 success:function(res){
                     console.log(res);
-                    if(res.code == 2000){
+                    if(res.code == 200){
                         alert(res.msg);
                         window.location.reload();
-                    }else if(res.code==4001){
-                        alert(res.code);
-                    }else if(res.code== 4002){
-                        alert(res.code);
                     }else{
                         alert(res.msg);
                         window.location.reload();
