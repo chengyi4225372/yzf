@@ -54,7 +54,7 @@
             <th class='text-left nowrap'>联系电话</th>
             <th class='text-left nowrap'>小区地址</th>
             <th class='text-left nowrap'>户型面积</th>
-            <th class='text-left nowrap'>是否领取过专属红包</th>
+            <!--<th class='text-left nowrap'>是否领取过专属红包</th>-->
             <th class='text-left nowrap'>创建时间</th>
             <th class='text-left nowrap'></th>
         </tr>
@@ -80,14 +80,14 @@
             <td class='text-left nowrap'>
                 {$vo.square?$vo.square.'㎡':''}
             </td>
-            <td class='text-left nowrap'>
-                 {eq name='vo.status' value='1'}
-                <a data-href="">已经领取过</a>
-                  {else /}
-                <a href="">未领取专属红包</a>
-                {/eq}
+            <!--<td class='text-left nowrap'>-->
+                 <!--{eq name='vo.status' value='1'}-->
+                <!--<a data-href="">已经领取过</a>-->
+                  <!--{else /}-->
+                <!--<a href="">未领取专属红包</a>-->
+                <!--{/eq}-->
 
-            </td>
+            <!--</td>-->
 
             <td class='text-left nowrap'>
                 {$vo.create_time|date='Y-m-d H:i:s'|default=''}
