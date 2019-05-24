@@ -228,20 +228,22 @@
                     </div>
 
 
+                    <!-- 热门 文章 -->
                     <div class="side-panel">
                         <div class="side-panel-header">
-
-                            竣工工地榜
+                            <a href="{:url('raiders/index')}" class="more">更多》</a>
+                            热门文章排行榜
                         </div>
                         <div class="side-panel-body">
-                            <ul class="phb-list">
+                            <ul class="side-media">
+                                {volist name="re" id="vo"}
                                 <li>
-                                    <a href="/Fabricatingyard/Detail/694 " title="万科精品家园">
-                                        <b>万科精品家园</b>
-                                        <i class="iconfont icon-rexiaoloupan"></i>
-                                        <span>万科精品家园</span>
+                                    <a href="{:url('raiders/z_detail')}?id={$vo.id}" title="{$vo.title}">
+                                        <img src="{$vo.img}" alt="{$vo.title}">
+                                        <span>{$vo.title}</span>
                                     </a>
                                 </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
@@ -315,13 +317,12 @@
             alert('请填写户型大小！');;
         }else{
             $.ajax({
-                url:"{:url('api/send/libao')}",
+                url:"{:url('api/send/zhuang')}",
                 type:'post',
                 data:{'channel':channel,'phone':phone,'square':square,'shi':shi,'ting':ting,'chu':chu,'wei':wei,'tai':tai},
                 success:function(res){
                     console.log(res);
                     if(res.code == 200){
-                        //todo 未知短信触发
                         window.location.reload();
                     }else if(res.code==4001){
                         alert(res.code);
