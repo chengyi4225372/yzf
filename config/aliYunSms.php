@@ -7,7 +7,11 @@
  */
 
 return [
-    'app_key'=>'LTAIMdrjceXNzMl0',
-    'app_secret'=>'BBc8Kc7zaeYpcUuTv9zEcGY5dQLGYo',
+    'app_key'=>'',
+    'app_secret'=>'',
     'sign_name'=>'尺渡空间设计',
 ];
+
+//LTAIMdrjceXNzMl0
+
+//BBc8Kc7zaeYpcUuTv9zEcGY5dQLGYo
