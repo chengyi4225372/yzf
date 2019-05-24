@@ -220,4 +220,27 @@ class  Send extends Controller
         }
     }
 
+
+    //预选节目样板间
+    public function yangban(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insertGetId($data);
+        if($res > 0){
+            $this->result('','200','恭喜你，参与成功！','json');
+        }else{
+            $this->result('','400','对不起，请重新提交！','json');
+        }
+    }
+
+    //预约免费平面设计
+    public function pingmian(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insertGetId($data);
+        if($res > 0){
+            $this->result('','200','谢谢您的参与！','json');
+        }else{
+            $this->result('','400','对不起，请重新提交！','json');
+        }
+    }
+
 }
