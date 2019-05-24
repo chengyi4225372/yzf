@@ -37,6 +37,8 @@ class Site extends Common
        $this->assign('know',$know);
        $this->assign('list',$list['data']);
        $this->assign('page',$page);
+       $re = $this->remen();
+       $this->assign('re',$re);
        return $this->fetch();
    }
 
@@ -51,6 +53,9 @@ class Site extends Common
         $info['re_title'] = Db::name('remen_lou')->where('id',$info['re_id'])->value('title');
        //户型 id 转换 标题
         $info['hu'] = Db::name('huxing')->where('id',$info['h_id'])->value('title');
+
+        $re = $this->remen();
+        $this->assign('re',$re);
         $this->assign('info',$info);
        return $this->fetch();
     }

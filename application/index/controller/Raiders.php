@@ -16,6 +16,8 @@ use app\index\controller\Common;
 class Raiders extends Common {
      public $zhi = 'zhijian';
 
+     public $table= 'kvideo';
+
     //装修攻略 首页
     public function index(){
         $zhi = Db::name('zhi_jian')->field('id,img,title')->order('id desc')->limit(10)->select();
@@ -67,13 +69,24 @@ class Raiders extends Common {
         return  $this->fetch();
     }
 
-    //空间榜样视屏 todo
+    //空间榜样视屏
     public function lists(){
+        $re =$this->remen();
+        $list  = Db::name($this->table)->field('id,title,img,infos,time')->select();
+        $this->assign('list',$list);
+        $this->assign('re',$re);
         return $this->fetch();
     }
 
-    //空间榜样视屏详情 todo
+    //空间榜样视屏详情
     public function detail(){
+        $re =$this->remen();
+        $know = $this->know();
+        $id = input('get.id');
+        $res = Db::name($this->table)->where('id',$id)->find();
+        $this->assign('res',$res);
+        $this->assign('know',$know);
+        $this->assign('re',$re);
         return $this->fetch();
     }
 

@@ -25,6 +25,8 @@ class News extends Common {
         //热门文章列表
         $re= $this->remen();
         $this->assign('re',$re);
+        $know = $this->know();
+        $this->assign('know',$know);
         return $this->view->fetch();
     }
 
@@ -63,6 +65,8 @@ class News extends Common {
         //热门文章列表
         $re= $this->remen();
         $this->assign('re',$re);
+        $know =$this->know();
+        $this->assign('know',$know);
         $this->assign('conn',$conn);
         return $this->fetch();
     }

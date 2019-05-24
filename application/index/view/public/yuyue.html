@@ -60,7 +60,7 @@
                 alert('请填写小区名称！');
             }else{
                 $.ajax({
-                    url:"{:url('api/send/yu')}",
+                    url:"{:url('api/send/zhuang')}",
                     type:'post',
                     data:{'channel':channel,'square':square,'xiao':xiaoq,'names':names,'phone':phone},
                     success:function(res){

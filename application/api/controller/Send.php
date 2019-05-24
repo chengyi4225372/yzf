@@ -13,73 +13,17 @@ use think\Db;
 use think\Request;
 use think\Exception;
 use think\facade\Config;
-
+use aliyunsms\demo\SmsDemo;
 class  Send extends Controller
 {
 
-
-
-    /**
-     * 请求接口返回内容
-     * @param  string $url [请求的URL地址]
-     * @param  string $params [请求的参数]
-     * @param  int $ipost [是否采用POST形式]
-     * @return  string
+    /*
+     * AccessKeyID：  LTAIKYEDd1wSv9kZ
+     * AccessKeySecret： SrKn9aJ3KNfiVUxVeyNVzIGB4USQye
+     *
+     *
+     *阿里短信
      */
-    protected function juhe_curl($url, $params = false, $ispost = 0)
-    {
-        $httpInfo = array();
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'JuheData');
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        if ($ispost) {
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-            curl_setopt($ch, CURLOPT_URL, $url);
-        } else {
-            if ($params) {
-                curl_setopt($ch, CURLOPT_URL, $url.'?'.$params);
-            } else {
-                curl_setopt($ch, CURLOPT_URL, $url);
-            }
-        }
-        $response = curl_exec($ch);
-        if ($response === FALSE) {
-            //echo "cURL Error: " . curl_error($ch);
-            return false;
-        }
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $httpInfo = array_merge($httpInfo, curl_getinfo($ch));
-        curl_close($ch);
-        return $response;
-    }
-
-
-    //聚合 发送短信方法
-    protected  function send_sms($phone){
-        $rand = mt_rand(0000,9999);
-        $url = "http://v.juhe.cn/sms/send";
-        $params = array(
-            'key'   => config('sms.key'), //您申请的APPKEY
-            'mobile'    => $phone, //接受短信的用户手机号码
-            'tpl_id'    => config('sms.tpl_id'), //您申请的短信模板ID，根据实际情况修改
-            'tpl_value' =>'%23code%23%3d'.$rand.'&#company#='.config('sms.company') ,//您设置的模板变量，根据实际情况修改
-        );
-        $paramstring = http_build_query($params);
-        $content = $this->juhe_curl($url, $paramstring);
-        $result = json_decode($content, true);
-        if ($result) {
-            //var_dump($result);
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     //我的户型  免费预约平面设计
     public function sheji(){
@@ -134,7 +78,6 @@ class  Send extends Controller
                 'channel'=>$data['channel'],
                 'phone'=>$data['phone'],
                 'square'=>$data['square'],
-                'names'=>$data['names'],
                 'shi'=>isset($data['shi'])?$data['shi']:'',
                 'ting'=>isset($data['ting'])?$data['ting']:'',
                 'wei'=>isset($data['wei'])?$data['wei']:'',
@@ -143,14 +86,75 @@ class  Send extends Controller
             )
         );
             if($res){
-                $this->result('','200','恭喜你，报名成功！','json');
+                $money = $data['square'] *0.12;
+                $response =SmsDemo::sendSms($data['phone'],$money);
+                if($response){
+                    $this->result('','200','结果，马上发送到您的手机！','json');
+                }
             }else{
-                $this->result('','400','sorry,请刷新下网页再报名！','json');
+                $this->result('','400','网络不流畅，请刷新后在提交！','json');
             }
         }
 
+    //算算我家房子装修花多少钱 sp.html
+    public function jisuan(){
+        $data = input('post.');
+        $arr = explode(' ',$data['remark']);
+        unset($arr['4']);
+        $res = Db::name('yuyue')->insert(
+            array(
+                'channel'=>$data['channel'],
+                'square'=>$data['square'],
+                'phone'=>$data['phone'],
+                'shi'=>$arr['0'],
+                'ting'=>$arr['1'],
+                'wei'=>$arr['2'],
+                'tai'=>$arr['3'],
+            )
+        );
+        if($res){
+            $money = $data['square'] *0.12;
+            $response =SmsDemo::sendSms($data['phone'],$money);
+            if($response){
+                $this->result('','200','结果，马上发送到您的手机！','json');
+            }
+        }else {
+            $this->result('','400','对不起，提交失败！','json');
+        }
+
+    }
+
+
+    public function baojia(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insert(
+            array(
+                'channel'=>$data['channel'],
+                'names'=>$data['names'],
+                'phone'=>$data['phone'],
+                'xiao'=>$data['xiao'],
+                'square'=>isset($data['square'])?$data['square']:'',
+                'shi'=>isset($data['shi'])?$data['shi']:'',
+                'ting'=>isset($data['ting'])?$data['ting']:'',
+                'wei'=>isset($data['wei'])?$data['wei']:'',
+            )
+        );
+        if($res){
+            $money = $data['square'] *0.12;
+            $response =SmsDemo::sendSms($data['phone'],$money);
+            if($response){
+                $this->result('','200','结果，马上发送到您的手机！','json');
+            }
+        }else{
+            $this->result('','400','提交失败,请重新尝试！','json');
+        }
+
+    }
+
+
+
+
    //礼包 + 热门楼盘  获取楼盘专属优惠 攻略站报价计算器
-    // 怎么触发短信 接果 未知
     public function libao(){
         $data = input('post.');
         $tel = Db::name('yuyue')->where('phone',$data['phone'])->value('status');
@@ -183,30 +187,6 @@ class  Send extends Controller
         }
     }
 
-    //算算我家房子装修花多少钱 sp.html todo 需要连接短信接口
-    public function jisuan(){
-        $data = input('post.');
-        $arr = explode(' ',$data['remark']);
-        unset($arr['4']);
-        $res = Db::name('yuyue')->insert(
-            array(
-                'channel'=>$data['channel'],
-                'square'=>$data['square'],
-                'phone'=>$data['phone'],
-                'shi'=>$arr['0'],
-                'ting'=>$arr['1'],
-                'wei'=>$arr['2'],
-                'tai'=>$arr['3'],
-            )
-        );
-     if($res){
-         $this->result('','200','恭喜你,稍后结果会发送到您的手机！','json');
-     }else {
-         $this->result('','400','对不起，提交失败！','json');
-     }
-
-    }
-
    //免费家装前三步
     public function mianfei(){
         $data = input('post.');
@@ -223,7 +203,7 @@ class  Send extends Controller
         $data = input('post.');
         $res = Db::name('yuyue')->insertGetId($data);
         if($res > 0){
-            $this->result('','200','您的专属礼包马上发送到你的手机上！','json');
+            $this->result('','200','恭喜你报名成功！','json');
         }else{
             $this->result('','400','对不起，请重新提交！','json');
         }
@@ -241,6 +221,26 @@ class  Send extends Controller
     }
 
 
+    //预选节目样板间
+    public function yangban(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insertGetId($data);
+        if($res > 0){
+            $this->result('','200','恭喜你，参与成功！','json');
+        }else{
+            $this->result('','400','对不起，请重新提交！','json');
+        }
+    }
 
+    //预约免费平面设计
+    public function pingmian(){
+        $data = input('post.');
+        $res = Db::name('yuyue')->insertGetId($data);
+        if($res > 0){
+            $this->result('','200','谢谢您的参与！','json');
+        }else{
+            $this->result('','400','对不起，请重新提交！','json');
+        }
+    }
 
 }

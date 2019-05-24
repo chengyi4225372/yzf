@@ -93,21 +93,18 @@
                         <p class="p2">预选节目样板间</p>
                     </div>
                     <form class="b">
-                        <input name="Channel" value="qgkjby0901" type="hidden" />
-
+                        <input name="y_channel" value="预选节目样板间" type="hidden" />
                         <div class="req">
-                            <input name="Name" type="text" placeholder="您的称呼" />
+                            <input name="y_name" type="text" valu="" placeholder="您的称呼" />
                         </div>
                         <div class="req">
-                            <input name="PhoneNumber" type="text" placeholder="预约电话" />
+                            <input name="y_phone" type="text"  value="" placeholder="预约电话" />
                         </div>
-                        <input name="ResidentialName" type="text" placeholder="楼盘小区" />
+                        <input name="y_xiao" type="text"  value="" placeholder="楼盘小区" />
                         <div class="m2">
-                            <input name="SquareMeters" type="text" placeholder="建筑面积" />
+                            <input name="y_square" type="text" value="" placeholder="建筑面积" />
                         </div>
-                        <div class="submit">
-
-                        </div>
+                        <div class="submit" id="yangban"></div>
                     </form>
                 </div>
             </div>
@@ -115,16 +112,14 @@
         <section class="s2">
             <p class="p1">大咖免费<br />平面方案</p>
             <form class="b">
-                <input name="Channel" value="qgkjby0901" type="hidden" />
-
-
+                <input name="p_channel" value="申请免费平面方案" type="hidden" />
                 <div class="req">
-                    <input name="Name" type="text" placeholder="您的称呼" />
+                    <input name="p_name" type="text" placeholder="您的称呼" />
                 </div>
                 <div class="req">
-                    <input name="PhoneNumber" type="text" placeholder="预约电话" />
+                    <input name="p_phone" type="text" placeholder="预约电话" />
                 </div>
-                <div class="submit">
+                <div class="submit" id="pingmian">
                     <p>申请免费平面方案 ></p>
                 </div>
                 <small>* 在线报名业主均可获得<br />【平面设计方案一套及10000元家装基金】</small>
@@ -216,6 +211,76 @@
     }
 </script>
 -->
+<script>
+    //手机号正则
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    //样板间
+    $("#yangban").click(function(){
+        var channel = $("input[name='y_channel']").val();
+        var names = $("input[name='y_name']").val();
+        var xiao = $("input[name='y_xiao']").val();
+        var square = $("input[name='y_square']").val();
+        var phone = $("input[name='y_phone']").val();
+
+        if(square=='' || square==undefined){
+            alert('请填写户型面积大小！');
+            return false;
+        }else if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+            return false;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/yangban')}",
+                type:'post',
+                data:{'channel':channel,'square':square,'phone':phone,'names':names,'xiao':xiao},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    });
+
+    $("#pingmian").click(function(){
+        var channel = $("input[name='p_channel']").val();
+        var names = $("input[name='p_name']").val();
+        var phone = $("input[name='p_phone']").val();
+
+        if(isPhoneNo(phone)==false || phone==''){
+            alert('手机号码填写不合法！');
+            return false;
+        }else{
+            $.ajax({
+                url:"{:url('api/send/pingmian')}",
+                type:'post',
+                data:{'channel':channel,'phone':phone,'names':names,},
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 200){
+                        alert(res.msg);
+                        window.location.reload();
+                    }else{
+                        alert(res.msg);
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+
+</script>
+
 
 </body>
 </html>

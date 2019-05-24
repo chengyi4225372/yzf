@@ -46,7 +46,7 @@
   width: 520px;
   color: #bcbcbc;
   position: relative;
-  float: left;
+  float: right;
 }
 .wrap .content .s1 .b1 .r .t h3 {
   position: absolute;
@@ -63,7 +63,7 @@
 .wrap .content .s1 .b1 .r .t .p3 {
   vertical-align: middle;
   position: absolute;
-  top: 5px;
+  top: -10px;
   left: 300px;
 }
 .wrap .content .s1 .b1 .r .t .p3 span {

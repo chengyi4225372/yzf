@@ -160,7 +160,7 @@
                              alert('请填写户型面积！')
                          }else{
                              $.ajax({
-                                 url:"{:url('api/send/sheji')}",
+                                 url:"{:url('api/send/baojia')}",
                                  type:'post',
                                  data:{'channel':channel,'square':square,'xiao':xiao,'names':names,'phone':phone,'shi':shi,'wei':wei,'ting':ting},
                                  success:function(res){
